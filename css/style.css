@@ -1,0 +1,63 @@
+/**
+ * styles help tooltips
+ */
+.pgntn_input {
+	float: left;
+}
+.pgntn_help_box {
+	background-image: url("../images/tooltip_icons.png");
+	background-repeat: no-repeat;
+	cursor: pointer;
+	float: left;
+	height: 29px;
+	position: relative;
+	margin: -3px 5px 3px;
+	width: 29px;
+}
+.pgntn_hidden_help_text {
+	display: none;
+	min-width: 240px;
+	background: #F4F4F4;
+	border: 1px solid #DCDCDC;
+	border-radius: 4px;
+	left: 40px;
+	padding: 5px 10px 11px;
+	position: absolute;
+	line-height: 1.5;
+	z-index: 100;
+}
+.pgntn_hidden_help_text:before {
+	content: url("../images/help.png");
+	left: -10px;
+	position: absolute;
+	top: 4px;
+}
+.pgntn-empty-position {
+	clear: left;
+}
+.pgntn_color_picker {
+	z-index: 100; 
+	background:#eee; 
+	border:1px solid #ccc; 
+	position: absolute; 
+	display: none;
+}
+@media only screen and ( max-width: 590px ) {
+	.pgntn_hidden_help_text:before {
+		content: none;
+	}
+	.pgntn_hidden_help_text {
+		border-radius: 0;
+	}
+}
+@media only screen and ( max-width: 320px ) {
+	#pgntn_settings_page code {
+		display: block;
+		width: 200px;
+	}
+	.pgntn_hidden_help_text {
+		min-width: auto;
+		width: 220px;
+
+	}
+}

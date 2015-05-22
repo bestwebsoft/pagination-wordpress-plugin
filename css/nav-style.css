@@ -1,0 +1,51 @@
+/** 
+ * styles for block of pagination
+ */
+.pgntn-page-pagination { 
+	margin: 1em 0; 
+	padding: 0; 
+	overflow: hidden; 
+	text-align: center;
+	clear: both;
+}
+.pgntn-page-pagination .dots {
+	display: block;
+	float: left; 
+	margin-bottom: 0.5em;
+    margin-left: 0.5em;
+    padding: 0.3em 0.5em;
+}
+.pgntn-page-pagination-intro { 
+	float: left; 
+	padding: 0.3em 0.5em; 
+	margin: 0 1em 1em 0; 
+	background: #efefef; 
+	border: .1em solid #ccc; 
+}
+.pgntn-multipage .pgntn-elipses,
+.pgntn-multipage .pgntn-page-pagination-intro {
+	display: block;
+	float: left;
+	margin-right: 0;
+	text-align: center;
+}
+.pgntn-multipage .pgntn-page-pagination-block a:first-of-type {
+	margin-left: 0;
+}
+.pgntn-multipage .pgntn-page-pagination-block span:first-of-type ~ a {
+	margin-left: 0.5em;
+}
+
+.pgntn-comments *,
+.pgntn-multipage * { 
+	font-size: 0.8rem;
+}
+.pgntn-page-pagination-intro,
+.pgntn-page-pagination a,
+.pgntn-page-pagination .current {
+	display: block;
+	float: left;
+	margin-left: 0.5rem;
+	margin-bottom: 0.5rem;
+	padding: 0.3rem 0.5rem;
+}
