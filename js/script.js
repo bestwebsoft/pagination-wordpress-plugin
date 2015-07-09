@@ -70,26 +70,6 @@
 			}
 		});
 				
-		$( '.pgntn_help_box' ).mouseover( function() {
-			$( this ).children().css( 'display', 'block' );
-			if ( window_width < 580 ) {
-				var offset = $( this ).offset(),
-					left   = Math.round( ( $(window).width() - $( this ).children().width() ) / 2 - offset.left ) - 10;
-				$( this ).children().css( {
-					left: left,
-					top:  30 
-				});
-			} else {
-				$( this ).children().css( {
-					left: 36,
-					top:  0 
-				});
-			}
-		});
-		$( '.pgntn_help_box' ).mouseout( function() {
-			$( this ).children().css( 'display', 'none' );
-		});
-
 		$( '#pgntn_display_next_prev' ).change( function() {
 			if ( $( this ).is( ':checked' ) ) {
 				$( '#pgntn_prev_text, #pgntn_next_text' ).attr( 'disabled', false );

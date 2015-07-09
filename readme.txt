@@ -4,7 +4,7 @@ Donate link: http://bestwebsoft.com/donate/
 Tags: pagination, pages navigation, page navigation, custom navigation, multiple navigation, comments, navigation, page, paginate, pagination, wp-paginate, paginate, paginate plugin, content pagination, multiple pages, nextpage, pagination, pagination buttons, pagination buttons with text, post pagination, wordpress pagination plugins, free wordpress pagination plugins, pagination plugin, wordpress pagination
 Requires at least: 3.3
 Tested up to: 4.2.2
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -13,6 +13,10 @@ Add pagination block to your WordPress website.
 == Description ==
 
 The Pagination plugin allows you to add a custom pagination block to your webpages. The block is added automatically on the following pages: blog, search, archive, category, tags, author. All you have to do is to choose the position of the pagination block and configure its appearance on the plugin settings page.
+
+http://www.youtube.com/watch?v=TwAd3DWLGr8
+
+<a href="http://www.youtube.com/watch?v=Xh0LjOSgxzs" target="_blank">Video instruction on Installation</a>
 
 <a href="http://wordpress.org/plugins/pagination/faq/" target="_blank">FAQ</a>
 
@@ -53,6 +57,10 @@ We can fix some things for free for the users who provide translation of our plu
 2. Activate the plugin using the 'Plugins' menu in your WordPress admin panel.
 3. You can adjust the necessary settings using your WordPress admin panel in "BWS Plugins" > "Pagination".
 
+<a href="https://docs.google.com/document/d/1FIQaZEt0xVZkCXKh2DxVkjcHdrVDGlGSUjQE-qxzbKk/edit" target="_blank">View a Step-by-step Instruction on Pagination Installation</a>.
+
+http://www.youtube.com/watch?v=Xh0LjOSgxzs
+
 == Frequently Asked Questions ==
 
 = Where can I find the settings to adjust the plugin work after activation? =
@@ -89,12 +97,18 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 
 == Changelog ==
 
+= V1.0.1 - 09.07.2015 =
+* NEW : Ability to restore settings to defaults.
+
 = V1.0.0 - 20.05.2015 =
 * NEW : We added the ability to configure the custom pagination block.
 * NEW : The Russian and Ukrainian language files were added.
 * Update : We updated all functionality for wordpress 4.2.2.
 
 == Upgrade Notice ==
+
+= V1.0.1 =
+Ability to restore settings to defaults.
 
 = V1.0.0 =
 We added the ability to configure the custom pagination block. The Russian and Ukrainian language files were added. We updated all functionality for wordpress 4.2.2.

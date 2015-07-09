@@ -4,7 +4,7 @@ Plugin Name: Pagination by BestWebSoft
 Plugin URI: http://bestwebsoft.com/products/
 Description: Add multiple page pagination block to your WordPress website
 Author: BestWebSoft
-Version: 1.0.0
+Version: 1.0.1
 Author URI: http://bestwebsoft.com/
 License: GPLv3 or later
 */
@@ -90,7 +90,7 @@ if ( ! function_exists ( 'pgntn_admin_init' ) ) {
  */
 if ( ! function_exists( 'pgntn_settings' ) ) {
 	function pgntn_settings() {
-		global $pgntn_options, $pgntn_plugin_info;
+		global $pgntn_options, $pgntn_plugin_info, $pgntn_option_defaults;
 		
 		if ( ! $pgntn_plugin_info )
 			$pgntn_plugin_info = get_plugin_data( __FILE__ );
@@ -140,9 +140,10 @@ if ( ! function_exists( 'pgntn_settings' ) ) {
  */
 if ( ! function_exists( 'pgntn_settings_page' ) ) {
 	function pgntn_settings_page() {
-		global $pgntn_options, $pgntn_plugin_info, $title;
+		global $pgntn_options, $pgntn_plugin_info, $title, $pgntn_option_defaults;
 		$message = $error  = "";
 		$array_classes     = array();
+		
 		if ( isset( $_REQUEST['pgntn_form_submit'] ) && check_admin_referer( plugin_basename( __FILE__ ), 'pgntn_nonce_name' ) ) {
 			/* Takes all the changed settings on the plugin's admin page and saves them in array 'pgntn_options'. */
 			if ( isset( $_REQUEST['pgntn_where_display'] ) ) {
@@ -182,6 +183,13 @@ if ( ! function_exists( 'pgntn_settings_page' ) ) {
 
 			update_option( 'pgntn_options', $pgntn_options );
 			$message = __( 'Settings saved.', 'pagination' );
+		} 
+
+		/* Add restore function */
+		if ( isset( $_REQUEST['bws_restore_confirm'] ) && check_admin_referer( plugin_basename( __FILE__ ), 'bws_settings_nonce_name' ) ) {
+			$pgntn_options = $pgntn_option_defaults;
+			update_option( 'pgntn_options', $pgntn_options );
+			$message = __( 'All plugin settings were restored.', 'pagination' );
 		} ?>
 		<div class="wrap" id="pgntn_settings_page">
 			<div class="icon32 icon32-bws" id="icon-options-general"></div>
@@ -191,208 +199,199 @@ if ( ! function_exists( 'pgntn_settings_page' ) ) {
 				<a class="nav-tab<?php if ( isset( $_GET['action'] ) && 'appearance' == $_GET['action'] ) echo ' nav-tab-active'; ?>" href="admin.php?page=pagination.php&amp;action=appearance"><?php _e( 'Appearance', 'pagination' ); ?></a>
 				<a class="nav-tab" href="http://bestwebsoft.com/products/pagination/faq/" target="_blank"><?php _e( 'FAQ', 'pagination' ); ?></a>
 			</h2>
-			<div class="updated fade" <?php if ( ! isset( $_REQUEST['pgntn_form_submit'] ) || $error != "" ) echo "style=\"display:none\""; ?>><p><strong><?php echo $message; ?></strong></p></div>
-			<div id="pgntn_settings_notice" class="updated fade" style="display:none">
-				<p><strong><?php _e( "Notice:", 'pagination' ); ?></strong> <?php _e( "The plugin's settings have been changed. In order to save them, please don't forget to click the 'Save Changes' button.", 'pagination' ); ?></p>
-			</div>
-			<div id="pgntn_empty_page_type" class="updated fade"<?php if ( ( ! empty( $pgntn_options['where_display'] ) ) || ( isset( $_GET['action'] ) && 'appearance' == $_GET['action'] ) ) echo ' style="display: none;"'; ?>>
-				<p><strong><?php _e( "Notice:", 'pagination' ); ?></strong> <?php echo _e( 'Choose some page types to display plugin`s pagination in frontend of your site.', 'pagination' ); ?></p>
-			</div>
-			<div class="error"<?php if ( empty( $error ) ) echo " style=\"display:none\""; ?>><p><strong><?php echo $error; ?></strong></p></div>
-			<div<?php if ( isset( $_GET['action'] ) && 'appearance' == $_GET['action'] ) echo ' style="display: none;"'; ?>>
-				<p><?php _e( 'If you would like to display pagination block in a different place on your site, add the following strings into the file', 'pagination' ); ?>&nbsp;<i>index.php</i>&nbsp;<?php _e( 'of your theme', 'pagination' ); ?>:<br />
-					<code>if ( function_exists( 'pgntn_display_pagination' ) ) pgntn_display_pagination( 'posts' );</code><br/>
-					<?php _e( 'Also you can display pagination block for paginated posts or pages. Add the following strings into to the appropriate templates source code of your theme', 'pagination' ); ?>:<br />
-					<code>if ( function_exists( 'pgntn_display_pagination' ) ) pgntn_display_pagination( 'multipage' );</code><br/>
-					<?php _e( 'Paste this into the comments template if you want to display pagination for comments', 'pagination' ); ?>:<br>
-					<code>if ( function_exists( 'pgntn_display_pagination' ) ) pgntn_display_pagination( 'comments' );</code>
-				</p>
-			</div>
-			<?php $form_action = ( ! isset( $_GET['action'] ) ) ? 'admin.php?page=pagination.php' : 'admin.php?page=pagination.php&amp;action=' . $_GET['action']; ?>
-			<form method="post" action="<?php echo $form_action ?>" id="pgntn_settings_form">
+			<div class="updated fade" <?php if ( '' == $message || $error != "" ) echo "style=\"display:none\""; ?>><p><strong><?php echo $message; ?></strong></p></div>
+			<?php if ( isset( $_REQUEST['bws_restore_default'] ) && check_admin_referer( plugin_basename( __FILE__ ), 'bws_settings_nonce_name' ) ) {
+				bws_form_restore_default_confirm( plugin_basename( __FILE__ ) );
+			} else { ?>
+				<div id="pgntn_settings_notice" class="updated fade" style="display:none">
+					<p><strong><?php _e( "Notice:", 'pagination' ); ?></strong> <?php _e( "The plugin's settings have been changed. In order to save them, please don't forget to click the 'Save Changes' button.", 'pagination' ); ?></p>
+				</div>
+				<div id="pgntn_empty_page_type" class="updated fade"<?php if ( ( ! empty( $pgntn_options['where_display'] ) ) || ( isset( $_GET['action'] ) && 'appearance' == $_GET['action'] ) ) echo ' style="display: none;"'; ?>>
+					<p><strong><?php _e( "Notice:", 'pagination' ); ?></strong> <?php echo _e( 'Choose some page types to display plugin`s pagination in frontend of your site.', 'pagination' ); ?></p>
+				</div>
+				<div class="error"<?php if ( empty( $error ) ) echo " style=\"display:none\""; ?>><p><strong><?php echo $error; ?></strong></p></div>
 				<div<?php if ( isset( $_GET['action'] ) && 'appearance' == $_GET['action'] ) echo ' style="display: none;"'; ?>>
-					<table class="form-table"><!-- main settings -->
-						<tr>
-							<th scope="row"><?php _e( 'Display pagination', 'pagination' ); ?></th>
-							<td>
-								<input type="checkbox" id="pgntn_everywhere" value="everywhere" name="pgntn_where_display[]"<?php if ( in_array( 'everywhere', $pgntn_options['where_display'] ) ) { echo ' checked="checked"'; } ?> /><label for="pgntn_everywhere"><strong><?php _e( 'everywhere', 'pagination' ); ?></strong></label><br />
-								<input type="checkbox" id="pgntn_on_home" class="pgntn_where_display" value="home" name="pgntn_where_display[]"<?php if ( in_array( 'everywhere', $pgntn_options['where_display'] ) || in_array( 'home', $pgntn_options['where_display'] ) ) { echo ' checked="checked"'; } ?> /><label for="pgntn_on_home"><?php _e( 'on home page', 'pagination' ); ?></label><br />
-								<input type="checkbox" id="pgntn_on_blog" class="pgntn_where_display" value="blog" name="pgntn_where_display[]"<?php if ( in_array( 'everywhere', $pgntn_options['where_display'] ) || in_array( 'blog', $pgntn_options['where_display'] ) ) { echo ' checked="checked"'; } ?> /><label for="pgntn_on_blog"><?php _e( 'on blog page', 'pagination' ); ?></label><br />
-								<input type="checkbox" id="pgntn_on_archives" class="pgntn_where_display" value="archives" name="pgntn_where_display[]"<?php if ( in_array( 'everywhere', $pgntn_options['where_display'] ) || in_array( 'archives', $pgntn_options['where_display'] ) ) { echo ' checked="checked"'; } ?> /><label for="pgntn_on_archives"><?php _e( 'on archive pages ( by categories, date, tags etc. )', 'pagination' ); ?></label><br />
-								<input type="checkbox" id="pgntn_on_search" class="pgntn_where_display" value="search" name="pgntn_where_display[]"<?php if ( in_array( 'everywhere', $pgntn_options['where_display'] ) || in_array( 'search', $pgntn_options['where_display'] ) ) { echo ' checked="checked"'; } ?> /><label for="pgntn_on_search"><?php _e( 'on search results page', 'pagination' ); ?></label><br />
-							</td>
-						</tr>
-						<tr valign="top">
-							<th scope="row"><?php _e( 'Pagination position', 'pagination' ); ?></th>
-							<td>
-								<select name="pgntn_loop_position">
-									<option value="top"<?php echo "top" == $pgntn_options['loop_position'] ? ' selected="selected"' : "";?>><?php _e( 'above the main content', 'pagination' ); ?></option>
-									<option value="bottom"<?php echo "bottom" == $pgntn_options['loop_position'] ? ' selected="selected"' : "";?>><?php _e( 'below the main content', 'pagination' ); ?></option>
-									<option value="both"<?php echo "both" == $pgntn_options['loop_position'] ? ' selected="selected"' : "";?>><?php _e( 'above and below the main content', 'pagination' ); ?></option>
-									<option value="function"<?php echo "function" == $pgntn_options['loop_position'] ? ' selected="selected"' : "";?>><?php _e( 'via function only', 'pagination' ); ?></option>
-								<select>
-							</td>
-						</tr><!-- .pgntn_nav_position -->
-						<tr>
-							<th scope="row"><label for ="pgntn_display_info"><?php _e( "Display 'Page __ of __' block", 'pagination' ); ?></label></th>
-							<td>
-								<input type="checkbox" value="1" id="pgntn_display_info" name="pgntn_display_info"<?php echo 1 == $pgntn_options ['display_info'] ? ' checked="checked"' : ''; ?> />
-							</td>
-						</tr>
-						<tr>
-							<th scope="row"><label for ="pgntn_display_next_prev"><?php _e( 'Display Next/Previous arrows', 'pagination' ); ?></label></th>
-							<td>
-								<input type="checkbox" value="1" id="pgntn_display_next_prev" name="pgntn_display_next_prev"<?php echo 1 == $pgntn_options ['display_next_prev'] ? ' checked="checked"' : ''; ?> />
-								<div class="pgntn_links_text">
-									<input type="text" value="<?php echo $pgntn_options ['prev_text']; ?>"<?php echo 0 == $pgntn_options ['display_next_prev'] ? 'disabled="disabled"' : ''; ?> name="pgntn_prev_text" id="pgntn_prev_text" /><span class="pgntn_info">&nbsp;<?php _e( 'text for previous page link', 'pagination' ); ?></span><br/>
-									<input type="text" value="<?php echo $pgntn_options ['next_text']; ?>"<?php echo 0 == $pgntn_options ['display_next_prev'] ? 'disabled="disabled"' : ''; ?> name="pgntn_next_text" id="pgntn_next_text" /><span class="pgntn_info">&nbsp;<?php _e( 'text for next page link', 'pagination' ); ?></span><br/>
-								</div><!-- .pgntn_links_text -->
-							</td>
-						</tr>
-						<tr>
-							<th scope="row"><?php _e( 'Type of output', 'pagination' ); ?></th>
-							<td>
-								<input type="radio" value="1" id="pgntn_show_all" name="pgntn_show_all"<?php echo 1 == $pgntn_options ['show_all'] ? ' checked="checked"' : ''; ?> /><label for="pgntn_show_all"><?php _e( 'all numbers of pages', 'pagination' ); ?></label><br />
-								<input type="radio" value="0" id="pgntn_show_not_all" name="pgntn_show_all"<?php echo 0 == $pgntn_options ['show_all'] ? ' checked="checked"' : ''; ?> /><label for="pgntn_show_not_all"><?php _e( 'shorthand output', 'pagination' ); ?></label><br />
-								<input type="number" min="1" step="1" value="<?php echo $pgntn_options['display_count_page']; ?>"<?php echo 1 == $pgntn_options ['show_all'] ? ' disabled="disabled"' : ''; ?> id="pgntn_display_count_page" name="pgntn_display_count_page" /><span class="pgntn_info">&nbsp;<?php _e( 'numbers to either side of current page, but not including current page.', 'pagination' ); ?></span>
-							</td>
-						</tr>
-						<tr>
-							<th scope="row"><div><?php _e( 'Hide standard pagination', 'pagination' ); ?></div></th>
-							<td>
-								<div class="pgntn_input">
-									<input id="pgntn_display_posts_pagination" name='pgntn_display_standard_pagination[]' type='checkbox' value='posts' <?php if ( ( ! empty( $pgntn_options['display_standard_pagination'] ) ) && in_array( 'posts', $pgntn_options['display_standard_pagination'] ) ) echo 'checked="checked"'; ?> /> <label for="pgntn_display_posts_pagination"><?php _e( 'posts pagination', 'pagination' ); ?></label><br />
-									<input id="pgntn_display_multipage_pagination" name='pgntn_display_standard_pagination[]' type='checkbox' value='multipage' <?php if ( ( ! empty( $pgntn_options['display_standard_pagination'] ) ) && in_array( 'multipage', $pgntn_options['display_standard_pagination'] ) ) echo 'checked="checked"'; ?> /> <label for="pgntn_display_multipage_pagination"><?php _e( 'on paginated posts or pages', 'pagination' ); ?></label><br />
-									<input id="pgntn_display_comments_pagination" name='pgntn_display_standard_pagination[]' type='checkbox' value='comments' <?php if ( ( ! empty( $pgntn_options['display_standard_pagination'] ) ) && in_array( 'comments', $pgntn_options['display_standard_pagination'] ) ) echo 'checked="checked"'; ?> /> <label for="pgntn_display_comments_pagination"><?php _e( 'comments pagination', 'pagination' ); ?></label><br />
-								</div><!-- .pgntn_input -->
-								<div class="pgntn_help_box">
-									<div class="pgntn_hidden_help_text"><?php _e( 'Used for standard WordPress themes or themes, which use standard CSS-classes for displaying pagination blocks', 'pagination' ); ?></div>
-								</div><!-- .pgntn_help_box -->
-							</td>
-						</tr>
-						<tr>
-							<th scope="row"><?php _e( 'Hide custom pagination', 'pagination' ); ?></th>
-							<td>
-								<div class="pgntn_input">
-									<input id="pgntn_display_custom_pagination" name='pgntn_display_custom_pagination' type='checkbox' value='1' <?php if ( 1 == $pgntn_options['display_custom_pagination'] ) echo 'checked="checked"'; ?> />
-									<input type="text" value="<?php echo $pgntn_options['additional_pagination_style']; ?>" id="pgntn_additional_pagination_style" name="pgntn_additional_pagination_style"<?php echo 0 == $pgntn_options['display_custom_pagination'] ? ' disabled="disabled"' : ''; ?> />
-								</div><!-- .pgntn_input -->
-								<div class="pgntn_help_box">
-									<div class="pgntn_hidden_help_text">
-										<?php _e( 'Enter one (or more comma-separated) CSS-classes or ID of blocks which you would like to hide.', 'pagination' );?><br />
-										<?php _e( 'Example', 'pagination' ) ?>:<br />
-										<code>#nav_block</code><br />
-										<?php _e( "or", 'pagination' ); ?><br />
-										<code>.pagination</code><br />
-										<?php _e( "or", 'pagination' ); ?><br />
-										<code>#nav_block, .pagination</code>
-									</div>
-								</div><!-- .pgntn_help_box -->
-							</td>
-						</tr>
-					</table><!-- end of main settings -->
+					<p><?php _e( 'If you would like to display pagination block in a different place on your site, add the following strings into the file', 'pagination' ); ?>&nbsp;<i>index.php</i>&nbsp;<?php _e( 'of your theme', 'pagination' ); ?>:<br />
+						<code>if ( function_exists( 'pgntn_display_pagination' ) ) pgntn_display_pagination( 'posts' );</code><br/>
+						<?php _e( 'Also you can display pagination block for paginated posts or pages. Add the following strings into to the appropriate templates source code of your theme', 'pagination' ); ?>:<br />
+						<code>if ( function_exists( 'pgntn_display_pagination' ) ) pgntn_display_pagination( 'multipage' );</code><br/>
+						<?php _e( 'Paste this into the comments template if you want to display pagination for comments', 'pagination' ); ?>:<br>
+						<code>if ( function_exists( 'pgntn_display_pagination' ) ) pgntn_display_pagination( 'comments' );</code>
+					</p>
 				</div>
-				<div<?php if ( ! ( isset( $_GET['action'] ) && 'appearance' == $_GET['action'] ) ) echo ' style="display: none;"'; ?>>
-					<table class="form-table"><!-- additional settings -->
-						<tr>
-							<th scope="row"><?php _e( 'Page pagination block width', 'pagination' ); ?> </th>
-							<td>
-								<input type="number" step="1" min="0" max="100" value="<?php echo $pgntn_options['width']; ?>" id="pgntn_width" name="pgntn_width" />&nbsp;<span class="bws_info">%</span>
-							</td>
-						</tr>
-						<tr>
-							<th scope="row"><?php _e( 'Pagination align', 'pagination' ); ?> </th>
-							<td>
-								<input type="radio" value="left" <?php echo $pgntn_options['align'] == "left" ? 'checked="checked"': ""; ?> id="pgntn_align_left" name="pgntn_align" /> <label for="pgntn_align_left"><?php _e( 'Left', 'pagination' ); ?></label><br />
-								<input type="radio" value="center" <?php echo $pgntn_options['align'] == "center" ? 'checked="checked"': ""; ?> id="pgntn_align_center" name="pgntn_align" /> <label for="pgntn_align_center"><?php _e( 'Center', 'pagination' ); ?></label><br />
-								<input type="radio" value="right" <?php echo $pgntn_options['align'] == "right" ? 'checked="checked"': ""; ?> id="pgntn_align_right" name="pgntn_align" /> <label for="pgntn_align_right"><?php _e( 'Right', 'pagination' ); ?></label>
-							</td>
-						</tr>
-						<tr>
-							<th scope="row"><?php _e( 'Left margin', 'pagination' ); ?> </th>
-							<td>
-								<input type="number" step="1" min="0" value="<?php echo ! empty( $pgntn_options['margin_left'] ) ? $pgntn_options['margin_left'] : '0'; ?>" id="pgntn_margin_left" class="pgntn_margin" name="pgntn_margin_left"<?php echo $pgntn_options['align'] == "center" ? ' disabled="disabled"': ''; ?> />&nbsp;<span class="bws_info">px</span>
-							</td>
-						</tr>
-						<tr>
-							<th scope="row"><?php _e( 'Right margin', 'pagination' ); ?> </th>
-							<td>
-								<input type="number" step="1" min="0" value="<?php echo ! empty( $pgntn_options['margin_right'] ) ? $pgntn_options['margin_right'] : '0'; ?>" id="pgntn_margin_right" class="pgntn_margin" name="pgntn_margin_right"<?php echo $pgntn_options['align'] == "center" ? ' disabled="disabled"': ''; ?> />&nbsp;<span class="bws_info">px</span>
-							</td>
-						</tr>
-						<tr>
-							<th scope="row"><?php _e( 'Background color', 'pagination' ); ?> </th>
-							<td>
-								<input type="text" value="<?php echo $pgntn_options['background_color']; ?>" id="pgntn_background_color" name="pgntn_background_color" />
-								<div class="pgntn_color_picker"></div>
-							</td>
-						</tr>
-						<tr>
-							<th scope="row"><?php _e( 'Background color for current page', 'pagination' ); ?> </th>
-							<td>
-								<input type="text" value="<?php echo $pgntn_options['current_background_color']; ?>" id="pgntn_current_background_color" name="pgntn_current_background_color" />
-								<div class="pgntn_color_picker"></div>
-							</td>
-						</tr>
-						<tr>
-							<th scope="row"><?php _e( 'Text color for page', 'pagination' ); ?> </th>
-							<td>
-								<input type="text" value="<?php echo $pgntn_options['text_color']; ?>" id="pgntn_text_color" name="pgntn_text_color" />
-								<div class="pgntn_color_picker"></div>
-							</td>
-						</tr>
-						<tr>
-							<th scope="row"><?php _e( 'Text color for current page', 'pagination' ); ?> </th>
-							<td>
-								<input type="text" value="<?php echo $pgntn_options['current_text_color']; ?>" id="pgntn_current_text_color" name="pgntn_current_text_color" />
-								<div class="pgntn_color_picker"></div>
-							</td>
-						</tr>
-						<tr>
-							<th scope="row"><?php _e( 'Border color', 'pagination' ); ?> </th>
-							<td>
-								<input type="text" value="<?php echo $pgntn_options['border_color']; ?>" id="pgntn_border_color" name="pgntn_border_color" />
-								<div class="pgntn_color_picker"></div>
-							</td>
-						</tr>
-						<tr>
-							<th scope="row"><?php _e( 'Border width', 'pagination' ); ?> </th>
-							<td>
-								<input type="number" step="1" min="0" value="<?php echo ! empty( $pgntn_options['border_width'] ) ? $pgntn_options['border_width'] : '0'; ?>" id="pgntn_border_width" name="pgntn_border_width" />&nbsp;<span class="bws_info">px</span>
-							</td>
-						</tr>
-						<tr>
-							<th scope="row"><?php _e( 'Border radius', 'pagination' ); ?> </th>
-							<td>
-								<input type="number" step="1" min="0" value="<?php echo ! empty( $pgntn_options['border_radius'] ) ? $pgntn_options['border_radius'] : '0'; ?>" id="pgntn_border_radius" name="pgntn_border_radius" />&nbsp;<span class="bws_info">px</span>
-							</td>
-						</tr>
-					</table><!-- end of additional settings -->
-				</div>
-				<input type="hidden" name="pgntn_form_submit" value="submit" />
-				<p class="submit">
-					<input type="submit" class="button-primary" value="<?php _e( 'Save Changes', 'pagination' ) ?>" />
-				</p>
-				<?php wp_nonce_field( plugin_basename( __FILE__ ), 'pgntn_nonce_name' ); ?>
-			</form>
-			<?php bws_plugin_reviews_block( $pgntn_plugin_info['Name'], 'pagination' ); ?>
+				<?php $form_action = ( ! isset( $_GET['action'] ) ) ? 'admin.php?page=pagination.php' : 'admin.php?page=pagination.php&amp;action=' . $_GET['action']; ?>
+				<form method="post" action="<?php echo $form_action ?>" id="pgntn_settings_form">
+					<div<?php if ( isset( $_GET['action'] ) && 'appearance' == $_GET['action'] ) echo ' style="display: none;"'; ?>>
+						<table class="form-table"><!-- main settings -->
+							<tr>
+								<th scope="row"><?php _e( 'Display pagination', 'pagination' ); ?></th>
+								<td>
+									<input type="checkbox" id="pgntn_everywhere" value="everywhere" name="pgntn_where_display[]"<?php if ( in_array( 'everywhere', $pgntn_options['where_display'] ) ) { echo ' checked="checked"'; } ?> /><label for="pgntn_everywhere"><strong><?php _e( 'everywhere', 'pagination' ); ?></strong></label><br />
+									<input type="checkbox" id="pgntn_on_home" class="pgntn_where_display" value="home" name="pgntn_where_display[]"<?php if ( in_array( 'everywhere', $pgntn_options['where_display'] ) || in_array( 'home', $pgntn_options['where_display'] ) ) { echo ' checked="checked"'; } ?> /><label for="pgntn_on_home"><?php _e( 'on home page', 'pagination' ); ?></label><br />
+									<input type="checkbox" id="pgntn_on_blog" class="pgntn_where_display" value="blog" name="pgntn_where_display[]"<?php if ( in_array( 'everywhere', $pgntn_options['where_display'] ) || in_array( 'blog', $pgntn_options['where_display'] ) ) { echo ' checked="checked"'; } ?> /><label for="pgntn_on_blog"><?php _e( 'on blog page', 'pagination' ); ?></label><br />
+									<input type="checkbox" id="pgntn_on_archives" class="pgntn_where_display" value="archives" name="pgntn_where_display[]"<?php if ( in_array( 'everywhere', $pgntn_options['where_display'] ) || in_array( 'archives', $pgntn_options['where_display'] ) ) { echo ' checked="checked"'; } ?> /><label for="pgntn_on_archives"><?php _e( 'on archive pages ( by categories, date, tags etc. )', 'pagination' ); ?></label><br />
+									<input type="checkbox" id="pgntn_on_search" class="pgntn_where_display" value="search" name="pgntn_where_display[]"<?php if ( in_array( 'everywhere', $pgntn_options['where_display'] ) || in_array( 'search', $pgntn_options['where_display'] ) ) { echo ' checked="checked"'; } ?> /><label for="pgntn_on_search"><?php _e( 'on search results page', 'pagination' ); ?></label><br />
+								</td>
+							</tr>
+							<tr valign="top">
+								<th scope="row"><?php _e( 'Pagination position', 'pagination' ); ?></th>
+								<td>
+									<select name="pgntn_loop_position">
+										<option value="top"<?php echo "top" == $pgntn_options['loop_position'] ? ' selected="selected"' : "";?>><?php _e( 'above the main content', 'pagination' ); ?></option>
+										<option value="bottom"<?php echo "bottom" == $pgntn_options['loop_position'] ? ' selected="selected"' : "";?>><?php _e( 'below the main content', 'pagination' ); ?></option>
+										<option value="both"<?php echo "both" == $pgntn_options['loop_position'] ? ' selected="selected"' : "";?>><?php _e( 'above and below the main content', 'pagination' ); ?></option>
+										<option value="function"<?php echo "function" == $pgntn_options['loop_position'] ? ' selected="selected"' : "";?>><?php _e( 'via function only', 'pagination' ); ?></option>
+									<select>
+								</td>
+							</tr><!-- .pgntn_nav_position -->
+							<tr>
+								<th scope="row"><label for ="pgntn_display_info"><?php _e( "Display 'Page __ of __' block", 'pagination' ); ?></label></th>
+								<td>
+									<input type="checkbox" value="1" id="pgntn_display_info" name="pgntn_display_info"<?php echo 1 == $pgntn_options ['display_info'] ? ' checked="checked"' : ''; ?> />
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><label for ="pgntn_display_next_prev"><?php _e( 'Display Next/Previous arrows', 'pagination' ); ?></label></th>
+								<td>
+									<input type="checkbox" value="1" id="pgntn_display_next_prev" name="pgntn_display_next_prev"<?php echo 1 == $pgntn_options ['display_next_prev'] ? ' checked="checked"' : ''; ?> />
+									<div class="pgntn_links_text">
+										<input type="text" maxlength='250' value="<?php echo $pgntn_options ['prev_text']; ?>"<?php echo 0 == $pgntn_options ['display_next_prev'] ? 'disabled="disabled"' : ''; ?> name="pgntn_prev_text" id="pgntn_prev_text" /><span class="pgntn_info">&nbsp;<?php _e( 'text for previous page link', 'pagination' ); ?></span><br/>
+										<input type="text" maxlength='250' value="<?php echo $pgntn_options ['next_text']; ?>"<?php echo 0 == $pgntn_options ['display_next_prev'] ? 'disabled="disabled"' : ''; ?> name="pgntn_next_text" id="pgntn_next_text" /><span class="pgntn_info">&nbsp;<?php _e( 'text for next page link', 'pagination' ); ?></span><br/>
+									</div><!-- .pgntn_links_text -->
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><?php _e( 'Type of output', 'pagination' ); ?></th>
+								<td>
+									<fieldset>
+										<label><input type="radio" value="1" id="pgntn_show_all" name="pgntn_show_all"<?php echo 1 == $pgntn_options ['show_all'] ? ' checked="checked"' : ''; ?> /> <?php _e( 'all numbers of pages', 'pagination' ); ?></label><br />
+										<label><input type="radio" value="0" id="pgntn_show_not_all" name="pgntn_show_all"<?php echo 0 == $pgntn_options ['show_all'] ? ' checked="checked"' : ''; ?> /> <?php _e( 'shorthand output', 'pagination' ); ?></label><br />
+										<input type="number" min="1" step="1" value="<?php echo $pgntn_options['display_count_page']; ?>"<?php echo 1 == $pgntn_options ['show_all'] ? ' disabled="disabled"' : ''; ?> id="pgntn_display_count_page" name="pgntn_display_count_page" /><span class="pgntn_info">&nbsp;<?php _e( 'numbers to either side of current page, but not including current page.', 'pagination' ); ?></span>
+									</fieldset>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><div><?php _e( 'Hide standard pagination', 'pagination' ); ?></div></th>
+								<td>
+									<div class="pgntn_input">
+										<input id="pgntn_display_posts_pagination" name='pgntn_display_standard_pagination[]' type='checkbox' value='posts' <?php if ( ( ! empty( $pgntn_options['display_standard_pagination'] ) ) && in_array( 'posts', $pgntn_options['display_standard_pagination'] ) ) echo 'checked="checked"'; ?> /> <label for="pgntn_display_posts_pagination"><?php _e( 'posts pagination', 'pagination' ); ?></label><br />
+										<input id="pgntn_display_multipage_pagination" name='pgntn_display_standard_pagination[]' type='checkbox' value='multipage' <?php if ( ( ! empty( $pgntn_options['display_standard_pagination'] ) ) && in_array( 'multipage', $pgntn_options['display_standard_pagination'] ) ) echo 'checked="checked"'; ?> /> <label for="pgntn_display_multipage_pagination"><?php _e( 'on paginated posts or pages', 'pagination' ); ?></label><br />
+										<input id="pgntn_display_comments_pagination" name='pgntn_display_standard_pagination[]' type='checkbox' value='comments' <?php if ( ( ! empty( $pgntn_options['display_standard_pagination'] ) ) && in_array( 'comments', $pgntn_options['display_standard_pagination'] ) ) echo 'checked="checked"'; ?> /> <label for="pgntn_display_comments_pagination"><?php _e( 'comments pagination', 'pagination' ); ?></label><br />
+									</div><!-- .pgntn_input -->
+									<div class="pgntn_help_box">
+										<div class="pgntn_hidden_help_text"><?php _e( 'Used for standard WordPress themes or themes, which use standard CSS-classes for displaying pagination blocks', 'pagination' ); ?></div>
+									</div><!-- .pgntn_help_box -->
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><?php _e( 'Hide custom pagination', 'pagination' ); ?></th>
+								<td>
+									<div class="pgntn_input">
+										<input id="pgntn_display_custom_pagination" name='pgntn_display_custom_pagination' type='checkbox' value='1' <?php if ( 1 == $pgntn_options['display_custom_pagination'] ) echo 'checked="checked"'; ?> />
+										<input type="text" maxlength='250' value="<?php echo $pgntn_options['additional_pagination_style']; ?>" id="pgntn_additional_pagination_style" name="pgntn_additional_pagination_style"<?php echo 0 == $pgntn_options['display_custom_pagination'] ? ' disabled="disabled"' : ''; ?> />
+									</div><!-- .pgntn_input -->
+									<div class="pgntn_help_box">
+										<div class="pgntn_hidden_help_text">
+											<?php _e( 'Enter one (or more comma-separated) CSS-classes or ID of blocks which you would like to hide.', 'pagination' );?><br />
+											<?php _e( 'Example', 'pagination' ) ?>:<br />
+											<code>#nav_block</code><br />
+											<?php _e( "or", 'pagination' ); ?><br />
+											<code>.pagination</code><br />
+											<?php _e( "or", 'pagination' ); ?><br />
+											<code>#nav_block, .pagination</code>
+										</div>
+									</div><!-- .pgntn_help_box -->
+								</td>
+							</tr>
+						</table><!-- end of main settings -->
+					</div>
+					<div<?php if ( ! ( isset( $_GET['action'] ) && 'appearance' == $_GET['action'] ) ) echo ' style="display: none;"'; ?>>
+						<table class="form-table"><!-- additional settings -->
+							<tr>
+								<th scope="row"><?php _e( 'Page pagination block width', 'pagination' ); ?> </th>
+								<td>
+									<input type="number" step="1" min="0" max="100" value="<?php echo $pgntn_options['width']; ?>" id="pgntn_width" name="pgntn_width" />&nbsp;<span class="bws_info">%</span>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><?php _e( 'Pagination align', 'pagination' ); ?> </th>
+								<td>
+									<input type="radio" value="left" <?php echo $pgntn_options['align'] == "left" ? 'checked="checked"': ""; ?> id="pgntn_align_left" name="pgntn_align" /> <label for="pgntn_align_left"><?php _e( 'Left', 'pagination' ); ?></label><br />
+									<input type="radio" value="center" <?php echo $pgntn_options['align'] == "center" ? 'checked="checked"': ""; ?> id="pgntn_align_center" name="pgntn_align" /> <label for="pgntn_align_center"><?php _e( 'Center', 'pagination' ); ?></label><br />
+									<input type="radio" value="right" <?php echo $pgntn_options['align'] == "right" ? 'checked="checked"': ""; ?> id="pgntn_align_right" name="pgntn_align" /> <label for="pgntn_align_right"><?php _e( 'Right', 'pagination' ); ?></label>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><?php _e( 'Left margin', 'pagination' ); ?> </th>
+								<td>
+									<input type="number" step="1" min="0" max="10000" value="<?php echo ! empty( $pgntn_options['margin_left'] ) ? $pgntn_options['margin_left'] : '0'; ?>" id="pgntn_margin_left" class="pgntn_margin" name="pgntn_margin_left"<?php echo $pgntn_options['align'] == "center" ? ' disabled="disabled"': ''; ?> />&nbsp;<span class="bws_info">px</span>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><?php _e( 'Right margin', 'pagination' ); ?> </th>
+								<td>
+									<input type="number" step="1" min="0" max="10000" value="<?php echo ! empty( $pgntn_options['margin_right'] ) ? $pgntn_options['margin_right'] : '0'; ?>" id="pgntn_margin_right" class="pgntn_margin" name="pgntn_margin_right"<?php echo $pgntn_options['align'] == "center" ? ' disabled="disabled"': ''; ?> />&nbsp;<span class="bws_info">px</span>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><?php _e( 'Background color', 'pagination' ); ?> </th>
+								<td>
+									<input type="text" maxlength='7' value="<?php echo $pgntn_options['background_color']; ?>" id="pgntn_background_color" name="pgntn_background_color" />
+									<div class="pgntn_color_picker"></div>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><?php _e( 'Background color for current page', 'pagination' ); ?> </th>
+								<td>
+									<input type="text" maxlength='7' value="<?php echo $pgntn_options['current_background_color']; ?>" id="pgntn_current_background_color" name="pgntn_current_background_color" />
+									<div class="pgntn_color_picker"></div>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><?php _e( 'Text color for page', 'pagination' ); ?> </th>
+								<td>
+									<input type="text" maxlength='7' value="<?php echo $pgntn_options['text_color']; ?>" id="pgntn_text_color" name="pgntn_text_color" />
+									<div class="pgntn_color_picker"></div>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><?php _e( 'Text color for current page', 'pagination' ); ?> </th>
+								<td>
+									<input type="text" maxlength='7' value="<?php echo $pgntn_options['current_text_color']; ?>" id="pgntn_current_text_color" name="pgntn_current_text_color" />
+									<div class="pgntn_color_picker"></div>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><?php _e( 'Border color', 'pagination' ); ?> </th>
+								<td>
+									<input type="text" maxlength='7' value="<?php echo $pgntn_options['border_color']; ?>" id="pgntn_border_color" name="pgntn_border_color" />
+									<div class="pgntn_color_picker"></div>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><?php _e( 'Border width', 'pagination' ); ?> </th>
+								<td>
+									<input type="number" step="1" min="0" max="1000" value="<?php echo ! empty( $pgntn_options['border_width'] ) ? $pgntn_options['border_width'] : '0'; ?>" id="pgntn_border_width" name="pgntn_border_width" />&nbsp;<span class="bws_info">px</span>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><?php _e( 'Border radius', 'pagination' ); ?> </th>
+								<td>
+									<input type="number" step="1" min="0" max="1000" value="<?php echo ! empty( $pgntn_options['border_radius'] ) ? $pgntn_options['border_radius'] : '0'; ?>" id="pgntn_border_radius" name="pgntn_border_radius" />&nbsp;<span class="bws_info">px</span>
+								</td>
+							</tr>
+						</table><!-- end of additional settings -->
+					</div>
+					<input type="hidden" name="pgntn_form_submit" value="submit" />
+					<p class="submit">
+						<input type="submit" class="button-primary" value="<?php _e( 'Save Changes', 'pagination' ) ?>" />
+					</p>
+					<?php wp_nonce_field( plugin_basename( __FILE__ ), 'pgntn_nonce_name' ); ?>
+				</form>
+				<?php bws_form_restore_default_settings( plugin_basename( __FILE__ ) );
+			}
+			bws_plugin_reviews_block( $pgntn_plugin_info['Name'], 'pagination' ); ?>
 		</div>
-	<?php }
-}
-
-/**
- * Hide tooltips on settings page if javascript is disabled
- * @return void
- */
-if ( ! function_exists( 'pgntn_hide_tooltip' ) ) {
-	function pgntn_hide_tooltip() { ?>
-		<noscript>
-			<style type="text/css">
-				.pgntn_help_box {
-					display: none;
-				}
-			</style>
-		</noscript>
 	<?php }
 }
 
@@ -405,7 +404,6 @@ if ( ! function_exists( 'pgntn_admin_head' ) ) {
 		if ( isset( $_REQUEST['page'] ) && 'pagination.php' == $_REQUEST['page'] ) {
 			global $wp_version;
 			wp_enqueue_style( 'pgntn_stylesheet', plugins_url( 'css/style.css', __FILE__ ) );
-			wp_enqueue_style( 'pgntn_hide_tooltip', pgntn_hide_tooltip() );
 			if ( 3.5 < $wp_version ) {
 				wp_enqueue_script('farbtastic');
 				wp_enqueue_style('farbtastic');

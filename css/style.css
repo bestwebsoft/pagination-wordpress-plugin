@@ -1,36 +1,43 @@
 /**
- * styles help tooltips
+ * styles settings page
  */
 .pgntn_input {
 	float: left;
 }
 .pgntn_help_box {
-	background-image: url("../images/tooltip_icons.png");
-	background-repeat: no-repeat;
-	cursor: pointer;
-	float: left;
-	height: 29px;
 	position: relative;
-	margin: -3px 5px 3px;
+	float: left;
+	margin: 0 10px;
+	height: 29px;
 	width: 29px;
+	font-weight: normal;
+	background: url("../images/tooltip_icons.png") no-repeat;
 }
-.pgntn_hidden_help_text {
-	display: none;
-	min-width: 240px;
-	background: #F4F4F4;
-	border: 1px solid #DCDCDC;
-	border-radius: 4px;
-	left: 40px;
-	padding: 5px 10px 11px;
+.pgntn_help_box .pgntn_hidden_help_text:before {
 	position: absolute;
-	line-height: 1.5;
-	z-index: 100;
-}
-.pgntn_hidden_help_text:before {
-	content: url("../images/help.png");
+	top: 7px;
 	left: -10px;
+	content: url("../images/help.png");	
+}
+.pgntn_help_box .pgntn_hidden_help_text {
+	display: none;
 	position: absolute;
-	top: 4px;
+	left: 40px;
+	padding: 5px 10px;
+	width: 240px;
+	line-height: 1.5;
+	background: #f4f4f4;
+	border: 1px solid #dcdcdc;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	z-index: 10;
+}
+.pgntn_help_box:hover {
+	cursor: pointer;
+}
+.pgntn_help_box:hover .pgntn_hidden_help_text {
+	display: block;
 }
 .pgntn-empty-position {
 	clear: left;
@@ -38,7 +45,7 @@
 .pgntn_color_picker {
 	z-index: 100; 
 	background:#eee; 
-	border:1px solid #ccc; 
+	border: 1px solid #ccc; 
 	position: absolute; 
 	display: none;
 }
@@ -55,9 +62,13 @@
 		display: block;
 		width: 200px;
 	}
+	.pgntn_input,
+	.pgntn_help_box {
+		float: none;
+		margin-left: 0;
+	}
 	.pgntn_hidden_help_text {
 		min-width: auto;
-		width: 220px;
-
+		width: 200px;
 	}
 }
