@@ -1,10 +1,10 @@
 === Pagination by BestWebSoft ===
 Contributors: bestwebsoft
 Donate link: http://bestwebsoft.com/donate/
-Tags: pagination, pages navigation, page navigation, custom navigation, multiple navigation, comments, navigation, page, paginate, pagination, wp-paginate, paginate, paginate plugin, content pagination, multiple pages, nextpage, pagination, pagination buttons, pagination buttons with text, post pagination, wordpress pagination plugins, free wordpress pagination plugins, pagination plugin, wordpress pagination
-Requires at least: 3.3
-Tested up to: 4.2.2
-Stable tag: 1.0.1
+Tags: add custom block, add custom pagination block, add pagination block, add pagination buttons, best plugins, best pagination plugin, comments, content pagination, custom navigation, free, free plugins, free pagination plugin, free wp pagination plugin, free wordpress pagination plugins, improve pages navigation, multiple navigation, multiple pages, navigation, nextpage, page, page navigation, pages navigation, paginate, paginate plugin, pagination, pagination buttons, pagination buttons with text, pagination plugin, post pagination, simple paginate plugin, simple pagination plugin, simple pagination, replace standart pagination, wordpress pagination plugins, wordpress, wp, wp-paginate, wp plugin, wp free plugin, wp pagination, wp pagination plugin, wp simple pagination plugin, wp free pagination, wp free pagination plugin, wordpress plugin, wordpress free plugin, wordpress pagination, wordpress pagination plugin, wordpress simple pagination plugin, wordpress free pagination, wordpress free pagination plugin
+Requires at least: 3.8
+Tested up to: 4.3.1
+Stable tag: 1.0.2
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -16,18 +16,18 @@ The Pagination plugin allows you to add a custom pagination block to your webpag
 
 http://www.youtube.com/watch?v=TwAd3DWLGr8
 
-<a href="http://www.youtube.com/watch?v=Xh0LjOSgxzs" target="_blank">Video instruction on Installation</a>
+<a href="http://www.youtube.com/watch?v=Xh0LjOSgxzs" target="_blank">Pagination by BestWebSoft Video instruction on Installation</a>
 
-<a href="http://wordpress.org/plugins/pagination/faq/" target="_blank">FAQ</a>
+<a href="http://wordpress.org/plugins/pagination/faq/" target="_blank">Pagination by BestWebSoft FAQ</a>
 
-<a href="http://support.bestwebsoft.com" target="_blank">Support</a>
+<a href="http://support.bestwebsoft.com" target="_blank">Pagination by BestWebSoft Support</a>
 
 = Features =
 
-* Actions: Plugin allows you to add pagination to templates where it is absent or replace the standard pagination.
-* Display: You can configure custom pagination block to fit your theme.
-* Actions: You can choose block position on the page.
-* Display: Plugin will display custom pagination block for chosen post types only. 
+* Add pagination to templates where it is absent or replace the standard pagination.
+* Configure custom pagination block to fit your theme.
+* Choose block position on the page.
+* Display custom pagination block for chosen post types only. 
 
 = Recommended Plugins =
 
@@ -97,6 +97,10 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 
 == Changelog ==
 
+= V1.0.2 - 30.10.2015 =
+* Update : BWS plugins section is updated.
+* Update : We updated all functionality for wordpress 4.3.1.
+
 = V1.0.1 - 09.07.2015 =
 * NEW : Ability to restore settings to defaults.
 
@@ -106,6 +110,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 * Update : We updated all functionality for wordpress 4.2.2.
 
 == Upgrade Notice ==
+
+= V1.0.2 =
+BWS plugins section is updated. We updated all functionality for wordpress 4.3.1.
 
 = V1.0.1 =
 Ability to restore settings to defaults.

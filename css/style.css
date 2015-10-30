@@ -2,73 +2,25 @@
  * styles settings page
  */
 .pgntn_input {
-	float: left;
-}
-.pgntn_help_box {
-	position: relative;
-	float: left;
-	margin: 0 10px;
-	height: 29px;
-	width: 29px;
-	font-weight: normal;
-	background: url("../images/tooltip_icons.png") no-repeat;
-}
-.pgntn_help_box .pgntn_hidden_help_text:before {
-	position: absolute;
-	top: 7px;
-	left: -10px;
-	content: url("../images/help.png");	
-}
-.pgntn_help_box .pgntn_hidden_help_text {
-	display: none;
-	position: absolute;
-	left: 40px;
-	padding: 5px 10px;
-	width: 240px;
-	line-height: 1.5;
-	background: #f4f4f4;
-	border: 1px solid #dcdcdc;
-	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
-	border-radius: 4px;
-	z-index: 10;
-}
-.pgntn_help_box:hover {
-	cursor: pointer;
-}
-.pgntn_help_box:hover .pgntn_hidden_help_text {
-	display: block;
+	display: inline-block;
 }
 .pgntn-empty-position {
 	clear: left;
 }
 .pgntn_color_picker {
 	z-index: 100; 
-	background:#eee; 
+	background: #eee; 
 	border: 1px solid #ccc; 
 	position: absolute; 
 	display: none;
-}
-@media only screen and ( max-width: 590px ) {
-	.pgntn_hidden_help_text:before {
-		content: none;
-	}
-	.pgntn_hidden_help_text {
-		border-radius: 0;
-	}
 }
 @media only screen and ( max-width: 320px ) {
 	#pgntn_settings_page code {
 		display: block;
 		width: 200px;
 	}
-	.pgntn_input,
-	.pgntn_help_box {
-		float: none;
+	.pgntn_input {
+		display: block;
 		margin-left: 0;
-	}
-	.pgntn_hidden_help_text {
-		min-width: auto;
-		width: 200px;
 	}
 }
