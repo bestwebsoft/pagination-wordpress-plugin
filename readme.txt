@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: http://bestwebsoft.com/donate/
 Tags: add custom block, add custom pagination block, add pagination block, add pagination buttons, best plugins, best pagination plugin, comments, content pagination, custom navigation, free, free plugins, free pagination plugin, free wp pagination plugin, free wordpress pagination plugins, improve pages navigation, multiple navigation, multiple pages, navigation, nextpage, page, page navigation, pages navigation, paginate, paginate plugin, pagination, pagination buttons, pagination buttons with text, pagination plugin, post pagination, simple paginate plugin, simple pagination plugin, simple pagination, replace standart pagination, wordpress pagination plugins, wordpress, wp, wp-paginate, wp plugin, wp free plugin, wp pagination, wp pagination plugin, wp simple pagination plugin, wp free pagination, wp free pagination plugin, wordpress plugin, wordpress free plugin, wordpress pagination, wordpress pagination plugin, wordpress simple pagination plugin, wordpress free pagination, wordpress free pagination plugin
 Requires at least: 3.8
-Tested up to: 4.3.1
-Stable tag: 1.0.2
+Tested up to: 4.4
+Stable tag: 1.0.3
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -97,6 +97,10 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 
 == Changelog ==
 
+= V1.0.3 - 30.12.2015 =
+* Bugfix : Displaying pagination block on the archive page and multipages was fixed.
+* Bugfix : The bug with plugin menu duplicating was fixed.
+
 = V1.0.2 - 30.10.2015 =
 * Update : BWS plugins section is updated.
 * Update : We updated all functionality for wordpress 4.3.1.
@@ -110,6 +114,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 * Update : We updated all functionality for wordpress 4.2.2.
 
 == Upgrade Notice ==
+
+= V1.0.3 =
+Displaying pagination block on the archive page and multipages was fixed. The bug with plugin menu duplicating was fixed.
 
 = V1.0.2 =
 BWS plugins section is updated. We updated all functionality for wordpress 4.3.1.

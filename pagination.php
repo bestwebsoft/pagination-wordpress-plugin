@@ -6,7 +6,7 @@ Description: Add multiple page pagination block to your WordPress website
 Author: BestWebSoft
 Text Domain: pagination
 Domain Path: /languages
-Version: 1.0.2
+Version: 1.0.3
 Author URI: http://bestwebsoft.com/
 License: GPLv3 or later
 */
@@ -27,15 +27,13 @@ License: GPLv3 or later
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-global $pgntn_is_displayed;
-$pgntn_is_displayed = false;
 /**
  * Add Wordpress page 'bws_plugins' and sub-page of this plugin to admin-panel.
 * @return void
  */
  if ( ! function_exists ( 'pgntn_add_admin_menu' ) ) {
 	function pgntn_add_admin_menu() {
-		bws_add_general_menu( plugin_basename( __FILE__ ) );		
+		bws_general_menu();
 		/* add plugin page */
 		$settings = add_submenu_page( 'bws_plugins', __( 'Pagination Settings', 'pagination' ), 'Pagination', 'manage_options', 'pagination.php', 'pgntn_settings_page' );
 		add_action( 'load-' . $settings, 'pgntn_add_tabs' );
@@ -175,6 +173,9 @@ if ( ! function_exists( 'pgntn_settings_page' ) ) {
 			}
 			$pgntn_options['loop_position']               = isset( $_REQUEST['pgntn_loop_position'] ) ? $_REQUEST['pgntn_loop_position'] : 'bottom';
 			$pgntn_options['display_count_page']          = isset( $_REQUEST['pgntn_display_count_page'] ) ? intval( $_REQUEST['pgntn_display_count_page'] ) : $pgntn_options['display_count_page'];
+			if ( 1 > $pgntn_options['display_count_page'] )
+				$pgntn_options['display_count_page'] = 1;
+
 			$pgntn_options['display_info']                = isset( $_REQUEST['pgntn_display_info'] ) ? 1 : 0;
 			$pgntn_options['display_next_prev']           = isset( $_REQUEST['pgntn_display_next_prev'] ) ? 1 : 0;
 			$pgntn_options['prev_text']                   = isset( $_REQUEST['pgntn_prev_text'] ) ? stripslashes( esc_html( $_REQUEST['pgntn_prev_text'] ) ) : $pgntn_options['prev_text'];
@@ -205,7 +206,7 @@ if ( ! function_exists( 'pgntn_settings_page' ) ) {
 			$message = __( 'All plugin settings were restored.', 'pagination' );
 		} ?>
 		<div class="wrap" id="pgntn_settings_page">
-			<h2><?php echo $title; ?></h2>
+			<h1><?php echo $title; ?></h1>
 			<h2 class="nav-tab-wrapper">
 				<a class="nav-tab<?php if ( ! isset( $_GET['action'] ) ) echo ' nav-tab-active'; ?>" href="admin.php?page=pagination.php"><?php _e( 'Settings', 'pagination' ); ?></a>
 				<a class="nav-tab<?php if ( isset( $_GET['action'] ) && 'appearance' == $_GET['action'] ) echo ' nav-tab-active'; ?>" href="admin.php?page=pagination.php&amp;action=appearance"><?php _e( 'Appearance', 'pagination' ); ?></a>
@@ -533,25 +534,41 @@ if ( ! function_exists( 'pgntn_display' ) ) {
 		global $pgntn_options;
 		if ( empty( $pgntn_options ) )
 			$pgntn_options = get_option( 'pgntn_options' );
-		if ( ! ( is_admin() ) ) {
+		if ( ! is_admin() ) {
 			if ( 'top' == $pgntn_options['loop_position'] || 'both' == $pgntn_options['loop_position'] )
 				add_filter( 'loop_start', 'pgntn_display_with_loop' );
-			elseif ( 'bottom' == $pgntn_options['loop_position'] )
-				add_filter( 'loop_end', 'pgntn_display_with_loop' );
+			if ( 'bottom' == $pgntn_options['loop_position']  || 'both' == $pgntn_options['loop_position'] )
+				add_filter( 'loop_end', 'pgntn_display_with_loop_bottom' );
 		}
 	}
 }
 
 /**
- * Display pagination block in frontend below or top WordPress Loop
+ * Display pagination block in frontend top WordPress Loop
  * @param  array       $content         list with data of posts, which needs to displating in the loop
  * @return void
  */
 if ( ! function_exists( 'pgntn_display_with_loop' ) ) {
 	function pgntn_display_with_loop( $content ) {
-		global $wp_query;
-		if ( is_main_query() && $content === $wp_query ) { /* make sure that we display block of pagination only  with main loop */
-			pgntn_nav_display( 'posts' );
+		global $wp_query, $pgntn_display_top;
+		if ( is_main_query() && $content === $wp_query && ! $pgntn_display_top ) { /* make sure that we display block of pagination only with main loop */
+			$pgntn_display_top = true;
+			pgntn_nav_display( 'posts', 'top' );
+		}
+	}
+}
+
+/**
+ * Display pagination block in frontend bottom WordPress Loop
+ * @param  array       $content         list with data of posts, which needs to displating in the loop
+ * @return void
+ */
+if ( ! function_exists( 'pgntn_display_with_loop_bottom' ) ) {
+	function pgntn_display_with_loop_bottom( $content ) {
+		global $wp_query, $pgntn_display_bottom;
+		if ( is_main_query() && $content === $wp_query && ! $pgntn_display_bottom ) { /* make sure that we display block of pagination only with main loop */
+			$pgntn_display_bottom = true;
+			pgntn_nav_display( 'posts', 'bottom' );
 		}
 	}
 }
@@ -577,7 +594,7 @@ if ( ! function_exists( 'pgntn_display_pagination' ) ) {
  * @return   void
  */
 if ( ! function_exists( 'pgntn_nav_display' ) ) {
-	function pgntn_nav_display( $what ) {
+	function pgntn_nav_display( $what, $position = false ) {
 		global $pgntn_options;
 		if ( empty( $pgntn_options ) ) 
 			$pgntn_options = get_option( 'pgntn_options' );
@@ -592,52 +609,36 @@ if ( ! function_exists( 'pgntn_nav_display' ) ) {
 		$show_block = false;
 		switch ( $what ) {
 			case 'posts':
-				global $wp_query, $pgntn_is_displayed;
-				if ( ! $pgntn_is_displayed ) {
-					if ( 
-							( in_array( 'everywhere', $pgntn_options['where_display'] ) ||
-								( in_array( 'home', $pgntn_options['where_display'] ) && is_front_page() ) ||
-								( in_array( 'blog', $pgntn_options['where_display'] ) && pgntn_is_blog() ) ||
-								( in_array( 'archives', $pgntn_options['where_display'] ) && is_archive() ) ||
-								( in_array( 'search', $pgntn_options['where_display'] ) && is_search() )
-							) &&
-							! empty( $wp_query->max_num_pages )
-					) 
-					$show_block = true;
-					if ( $show_block ) {
-						$nav_settings['base']      = str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) );
-						$nav_settings['format']    = '?paged=%#%';
-						$nav_settings['current']   = max( 1, get_query_var('paged') );
-						$nav_settings['total']     = $wp_query->max_num_pages;
-						if ( 1 < intval( $nav_settings['total'] ) ) { ?>
-							<div class='pgntn-page-pagination'>
-								<div class="pgntn-page-pagination-block">
-									<?php if ( $display_info ) {
-										/* display block "Page __ of __" */ ?>
-										<div class='pgntn-page-pagination-intro'><?php echo __( 'Page', 'pagination' ) . ' ' . $nav_settings['current'] . ' ' . __( 'of', 'pagination' ) . ' ' . $nav_settings['total']; ?></div>
-									<?php }
-									echo paginate_links( $nav_settings ); ?>
-								</div>
-								<div class="clear"></div>
+				global $wp_query;
+
+				if ( 
+						( in_array( 'everywhere', $pgntn_options['where_display'] ) ||
+							( in_array( 'home', $pgntn_options['where_display'] ) && is_front_page() ) ||
+							( in_array( 'blog', $pgntn_options['where_display'] ) && pgntn_is_blog() ) ||
+							( in_array( 'archives', $pgntn_options['where_display'] ) && is_archive() ) ||
+							( in_array( 'search', $pgntn_options['where_display'] ) && is_search() )
+						) &&
+						! empty( $wp_query->max_num_pages )
+				) 
+				$show_block = true;
+				if ( $show_block ) {
+					$nav_settings['base']      = str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) );
+					$nav_settings['format']    = '?paged=%#%';
+					$nav_settings['current']   = max( 1, get_query_var('paged') );
+					$nav_settings['total']     = $wp_query->max_num_pages;
+					if ( 1 < intval( $nav_settings['total'] ) ) { ?>
+						<div class='pgntn-page-pagination<?php if ( $position ) echo ' pgntn-' . $position; ?>'>
+							<div class="pgntn-page-pagination-block">
+								<?php if ( $display_info ) {
+									/* display block "Page __ of __" */ ?>
+									<div class='pgntn-page-pagination-intro'><?php echo __( 'Page', 'pagination' ) . ' ' . $nav_settings['current'] . ' ' . __( 'of', 'pagination' ) . ' ' . $nav_settings['total']; ?></div>
+								<?php }
+								echo paginate_links( $nav_settings ); ?>
 							</div>
-						<?php }
-					}
-					/** 
-					 * Preventing unnecessary display 
-					 * of pagination block on archives page 
-					 */
-					if ( is_archive() && ( 'top' == $pgntn_options['loop_position'] || 'both' == $pgntn_options['loop_position'] ) ) {
-						$pgntn_is_displayed = true; 
-					} elseif ( 'both' == $pgntn_options['loop_position'] ) {
-						add_filter( 'loop_end', 'pgntn_display_with_loop' );
-					}
-					
-				} else {
-					if ( 'both' == $pgntn_options['loop_position'] ) {
-						$pgntn_is_displayed = false;
-						add_filter( 'loop_end', 'pgntn_display_with_loop' );
-					}						
-				}
+							<div class="clear"></div>
+						</div>
+					<?php }
+				}				
 				break;
 
 			case 'multipage':
@@ -657,26 +658,28 @@ if ( ! function_exists( 'pgntn_nav_display' ) ) {
 									/* display block "Page __ of __" */ ?>
 									<span class='pgntn-page-pagination-intro'><?php echo __( 'Pages', 'pagination' ) . ' ( ' . $nav_settings['current'] . ' ' . __( 'of', 'pagination' ) . ' ' . $nav_settings['total'] . ' ): '; ?></span>
 								<?php }
+								/* display "previous" link */
+								if ( $nav_settings['current'] != 1 && '1' == $pgntn_options ['display_next_prev'] ) {
+									$prev_link = $nav_settings['current'] - 1;
+									echo _wp_link_page( $prev_link ) . $nav_settings['prev_text'] . '</a>';
+								}
+
 								if ( $nav_settings['show_all'] ) {
 									for ( $i = 1; $i <= $nav_settings['total'] ; $i++ ) {
 										if ( $i == $nav_settings['current'] ) { ?>
-											<span class="page-numbers current"><?php echo $nav_settings['current'] ; ?></span>
+											<span class="page-numbers current"><?php echo $nav_settings['current']; ?></span>
 										<?php } else {
 											echo _wp_link_page( $i ) . $i . '</a>';
 										}
 									}
 								} else {
-									$start_number = $nav_settings['current'] - $nav_settings['mid_size'] ;
+									$start_number = $nav_settings['current'] - $nav_settings['mid_size'];
 									if ( $start_number < 1 )
 										$start_number = 1;
-									$end_number = $nav_settings['current'] + $nav_settings['mid_size'] ;
-										if ( $end_number >= $nav_settings['total'] ) 
-											$end_number = $nav_settings['total'] - 1;
-									/* display "previous" link */
-									if ( $nav_settings['current'] != 1 && '1' == $pgntn_options ['display_next_prev'] ) {
-										$prev_link = $nav_settings['current'] - 1;
-										echo _wp_link_page( $prev_link ) . $nav_settings['prev_text'] . '</a>';
-									}
+									$end_number = $nav_settings['current'] + $nav_settings['mid_size'];
+									if ( $end_number > $nav_settings['total'] ) 
+										$end_number = $nav_settings['total'];									
+									
 									/* display first link */
 									if ( $start_number >= 2 )
 										echo _wp_link_page( 1 ) . 1 . '</a>';
@@ -688,22 +691,23 @@ if ( ! function_exists( 'pgntn_nav_display' ) ) {
 									for ( $i = $start_number; $i < $nav_settings['current'] ; $i++ )
 										echo _wp_link_page( $i ) . $i . '</a>';
 									/* display current link */ ?>
-									<span class="page-numbers current"><?php echo $nav_settings['current'] ; ?></span>
+									<span class="page-numbers current"><?php echo $nav_settings['current']; ?></span>
 									<?php /* display aftercurrent links */
 									for ( $i = $nav_settings['current'] + 1; $i <= $end_number; $i++ )
 										echo _wp_link_page( $i ) . $i . '</a>';
 									/* display ... */
-									if ( $end_number < $nav_settings['total'] - 2 ) { ?> 
+									if ( $end_number < $nav_settings['total'] - 1 ) { ?> 
 										<span class="pgntn-elipses">...</span>
 									<?php }
 									/* display last link */
-									if ( $end_number < $nav_settings['total'] - 1 )
-										echo _wp_link_page( $nav_settings['total'] ) . $nav_settings['total'] . '</a>';
-									/* display "next" link */
-									if ( $nav_settings['current'] < $nav_settings['total'] && '1' == $pgntn_options ['display_next_prev'] ) {
-										$next_link = $nav_settings['current'] + 1;
-										echo _wp_link_page( $next_link ) . $nav_settings['next_text'] . '</a>';
-									} 
+									if ( $end_number < $nav_settings['total'] )
+										echo _wp_link_page( $nav_settings['total'] ) . $nav_settings['total'] . '</a>';									
+								} 
+
+								/* display "next" link */
+								if ( $nav_settings['current'] < $nav_settings['total'] && '1' == $pgntn_options ['display_next_prev'] ) {
+									$next_link = $nav_settings['current'] + 1;
+									echo _wp_link_page( $next_link ) . $nav_settings['next_text'] . '</a>';
 								} ?>
 							</div><!-- .pgntn-page-pagination-block -->
 							<div class="clear"></div>
@@ -749,7 +753,18 @@ if ( ! function_exists( 'pgntn_nav_display' ) ) {
 
 if ( ! function_exists( 'pgntn_is_blog' ) ) {
 	function pgntn_is_blog() {
-		return ( ( is_archive() || is_author() || is_category() || is_home() || is_single() || is_tag() ) && ( ! is_page() ) ) ? true : false;
+		if ( is_front_page() && is_home() ) {
+			// Default homepage
+			return false;
+		} elseif ( is_front_page() ) {
+			// static homepage
+			return false;
+		} elseif ( is_home() ) {
+			// blog page
+			return true;
+		} else {
+			return false;
+		}
 	}
 }
 
