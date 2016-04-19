@@ -7,6 +7,7 @@
 	overflow: hidden; 
 	text-align: center;
 	clear: both;
+	cursor: default;
 }
 .pgntn-page-pagination .dots {
 	display: inline-block;
@@ -34,11 +35,6 @@
 .pgntn-multipage .pgntn-page-pagination-block span:first-of-type ~ a {
 	margin-left: 0.5em;
 }
-
-.pgntn-comments *,
-.pgntn-multipage * { 
-	font-size: 0.8rem;
-}
 .pgntn-page-pagination-intro,
 .pgntn-page-pagination a,
 .pgntn-page-pagination .current {
@@ -47,4 +43,7 @@
 	margin-left: 0.5rem;
 	margin-bottom: 0.5rem;
 	padding: 0.3rem 0.5rem;
+}
+.pgntn-page-pagination a {
+	box-shadow: none !important;
 }

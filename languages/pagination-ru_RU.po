@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Pagination\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-10-29 18:56+0200\n"
+"POT-Creation-Date: 2016-03-11 17:17+0300\n"
 "PO-Revision-Date: \n"
-"Last-Translator: bestwebsoft.com <plugins@bestwebsoft.com>\n"
+"Last-Translator: plugin@bestwebsoft.com <plugin@bestwebsoft.com>\n"
 "Language-Team: BestWebSoft team <wp@bestwebsoft.com>\n"
 "Language: ru_RU\n"
 "MIME-Version: 1.0\n"
@@ -15,48 +15,52 @@ msgstr ""
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=4; plural=(n==1) ? 0 : (n%10==1 && n%100!=11) ? 3 : "
 "((n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20)) ? 1 : 2);\n"
-"X-Generator: Poedit 1.5.7\n"
+"X-Generator: Poedit 1.5.4\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: pagination.php:40
+#: pagination.php:38
 msgid "Pagination Settings"
 msgstr "Настройки Pagination"
 
-#: pagination.php:115
+#: pagination.php:109
 msgid "« Previous"
 msgstr "« Предыдущая"
 
-#: pagination.php:116
+#: pagination.php:110
 msgid "Next »"
 msgstr "Следующая »"
 
-#: pagination.php:198
+#: pagination.php:196
 msgid "Settings saved."
 msgstr "Настройки сохранены."
 
-#: pagination.php:205
+#: pagination.php:203
 msgid "All plugin settings were restored."
 msgstr "Все настройки плагина восстановлены."
 
-#: pagination.php:210 pagination.php:770 pagination.php:789
+#: pagination.php:208 pagination.php:807 pagination.php:826
 msgid "Settings"
 msgstr "Настройки"
 
-#: pagination.php:211
+#: pagination.php:209
 msgid "Appearance"
 msgstr "Отображение"
 
-#: pagination.php:219
+#: pagination.php:210
+msgid "Custom code"
+msgstr "Пользовательский код"
+
+#: pagination.php:218
 msgid "Notice:"
 msgstr "Примечание:"
 
-#: pagination.php:219
+#: pagination.php:218
 msgid ""
 "Choose some page types to display plugin`s pagination in frontend of your "
 "site."
 msgstr "Выберите типы страниц для вывода блока навигации."
 
-#: pagination.php:223
+#: pagination.php:222
 msgid ""
 "If you would like to display pagination block in a different place on your "
 "site, add the following strings into the file"
@@ -64,11 +68,11 @@ msgstr ""
 "Если Вы хотите отображать блок навигации в другом месте сайта, добавьте "
 "следующие строки в файл"
 
-#: pagination.php:223
+#: pagination.php:222
 msgid "of your theme"
 msgstr "Вашей темы"
 
-#: pagination.php:225
+#: pagination.php:224
 msgid ""
 "Also you can display pagination block for paginated posts or pages. Add the "
 "following strings into to the appropriate templates source code of your theme"
@@ -76,7 +80,7 @@ msgstr ""
 "Также Вы можете отобразить блок навигации для многостраничных записей или "
 "страниц. Добавьте следующие строки в соответствующие шаблоны Вашей темы"
 
-#: pagination.php:227
+#: pagination.php:226
 msgid ""
 "Paste this into the comments template if you want to display pagination for "
 "comments"
@@ -206,87 +210,87 @@ msgstr "Например"
 msgid "or"
 msgstr "или"
 
-#: pagination.php:319
+#: pagination.php:318
 msgid "Page pagination block width"
 msgstr "Ширина блока навигации"
 
-#: pagination.php:325
+#: pagination.php:324
 msgid "Pagination align"
 msgstr "Расположение навигации"
 
-#: pagination.php:327
+#: pagination.php:326
 msgid "Left"
 msgstr "Слева"
 
-#: pagination.php:328
+#: pagination.php:327
 msgid "Center"
 msgstr "По центру"
 
-#: pagination.php:329
+#: pagination.php:328
 msgid "Right"
 msgstr "Справа"
 
-#: pagination.php:333
+#: pagination.php:332
 msgid "Left margin"
 msgstr "Отступ слева"
 
-#: pagination.php:339
+#: pagination.php:338
 msgid "Right margin"
 msgstr "Отступ справа"
 
-#: pagination.php:345
+#: pagination.php:344
 msgid "Background color"
 msgstr "Цвет фона"
 
-#: pagination.php:352
+#: pagination.php:351
 msgid "Background color for current page"
 msgstr "Цвет фона для текущей страницы"
 
-#: pagination.php:359
+#: pagination.php:358
 msgid "Text color for page"
 msgstr "Цвет текста"
 
-#: pagination.php:366
+#: pagination.php:365
 msgid "Text color for current page"
 msgstr "Цвет текста текущей страницы"
 
-#: pagination.php:373
+#: pagination.php:372
 msgid "Border color"
 msgstr "Цвет границы"
 
-#: pagination.php:380
+#: pagination.php:379
 msgid "Border width"
 msgstr "Ширина границы"
 
-#: pagination.php:386
+#: pagination.php:385
 msgid "Border radius"
 msgstr "Закругление границ"
 
-#: pagination.php:394
+#: pagination.php:393
 msgid "Save Changes"
 msgstr "Сохранить Изменения"
 
-#: pagination.php:617
+#: pagination.php:637 pagination.php:657
 msgid "Page"
 msgstr "Страница"
 
-#: pagination.php:617 pagination.php:658 pagination.php:734
+#: pagination.php:637 pagination.php:657 pagination.php:681 pagination.php:760
 msgid "of"
 msgstr "из"
 
-#: pagination.php:658
+#: pagination.php:681
 msgid "Pages"
 msgstr "Страницы"
 
-#: pagination.php:734
+#: pagination.php:760
 msgid "Comments Page"
 msgstr "Страница комментариев"
 
-#: pagination.php:790
+#: pagination.php:827
 msgid "FAQ"
 msgstr "FAQ"
 
-#: pagination.php:791
+#: pagination.php:828
 msgid "Support"
 msgstr "Техподдержка"
 

@@ -75,15 +75,7 @@
 				$( '#pgntn_empty_page_type' ).show();
 			}
 		});
-
-		$( '#pgntn_position_loop').change( function() {
-			if ( $( this ).is( ':checked' ) ) {
-				$( '.pgntn-nav-position' ).show();
-			} else {
-				$( '.pgntn-nav-position' ).hide();
-			}
-		});
-				
+		
 		$( '#pgntn_display_next_prev' ).change( function() {
 			if ( $( this ).is( ':checked' ) ) {
 				$( '#pgntn_prev_text, #pgntn_next_text' ).attr( 'disabled', false );
