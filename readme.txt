@@ -1,14 +1,14 @@
 === Pagination by BestWebSoft ===
 Contributors: bestwebsoft
 Donate link: http://bestwebsoft.com/donate/
-Tags: add custom block, add custom pagination block, add pagination block, add pagination buttons, best plugins, best pagination plugin, comments, content pagination, custom navigation, free, free plugins, free pagination plugin, free wp pagination plugin, free wordpress pagination plugins, improve pages navigation, multiple navigation, multiple pages, navigation, nextpage, page, page navigation, pages navigation, paginate, paginate plugin, pagination, pagination buttons, pagination buttons with text, pagination plugin, post pagination, simple paginate plugin, simple pagination plugin, simple pagination, replace standart pagination, wordpress pagination plugins, wordpress, wp, wp-paginate, wp plugin, wp free plugin, wp pagination, wp pagination plugin, wp simple pagination plugin, wp free pagination, wp free pagination plugin, wordpress plugin, wordpress free plugin, wordpress pagination, wordpress pagination plugin, wordpress simple pagination plugin, wordpress free pagination, wordpress free pagination plugin
+Tags: pagination, pagination block, custom pagination block, multiple navigation, multiple pages, navigation, next page, post pagination, pagination buttons, pagination plugin, improve pages navigation, paginate plugin
 Requires at least: 3.8
-Tested up to: 4.5
-Stable tag: 1.0.4
+Tested up to: 4.5.3
+Stable tag: 1.0.5
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-Add pagination block to your WordPress website.
+Add customizable pagination to WordPress website. Split long content to multiple pages for better navigation.
 
 == Description ==
 
@@ -43,7 +43,7 @@ There is also a premium version of the plugin <a href="http://bestwebsoft.com/pr
 * Russian (ru_RU)
 * Ukrainian (uk)
 
-If you create your own language pack or update the existing one, you can send <a href="http://codex.wordpress.org/Translating_WordPress" target="_blank">the text in PO and MO files</a> for <a href="http://support.bestwebsoft.com" target="_blank">BestWebSoft</a> and we'll add it to the plugin. You can download the latest version of the program for work with PO and MO files <a href="http://www.poedit.net/download.php" target="_blank">Poedit</a>.
+If you create your own language pack or update the existing one, you can send <a href="http://codex.wordpress.org/Translating_WordPress" target="_blank">the text in PO and MO files</a> for <a href="http://support.bestwebsoft.com/hc/en-us/requests/new" target="_blank">BestWebSoft</a> and we'll add it to the plugin. You can download the latest version of the program for work with PO and MO files <a href="http://www.poedit.net/download.php" target="_blank">Poedit</a>.
 
 = Technical support =
 
@@ -57,7 +57,7 @@ We can fix some things for free for the users who provide translation of our plu
 
 1. Upload the `pagination` folder to the `/wp-content/plugins/` directory.
 2. Activate the plugin using the 'Plugins' menu in your WordPress admin panel.
-3. You can adjust the necessary settings using your WordPress admin panel in "BWS Plugins" > "Pagination".
+3. You can adjust the necessary settings using your WordPress admin panel in "BWS Panel" > "Pagination".
 
 <a href="https://docs.google.com/document/d/1FIQaZEt0xVZkCXKh2DxVkjcHdrVDGlGSUjQE-qxzbKk/edit" target="_blank">View a Step-by-step Instruction on Pagination Installation</a>.
 
@@ -103,6 +103,11 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 
 == Changelog ==
 
+= V1.0.5 - 20.07.2016 =
+* NEW : Ability to disable plugin styles.
+* Update : Color Picker was updated.
+* Update : BWS panel section was updated.
+
 = V1.0.4 - 19.04.2016 =
 * NEW : Ability to use for custom post types with custom queries to the dababase.
 * NEW : Ability to add custom styles.
@@ -125,6 +130,10 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 * Update : We updated all functionality for wordpress 4.2.2.
 
 == Upgrade Notice ==
+
+= V1.0.5 =
+* Functionality expanded.
+* Usability improved.
 
 = V1.0.4 =
 Ability to use for custom post types with custom queries to the dababase. Ability to add custom styles. The conflict in the RSS feed was fixed.

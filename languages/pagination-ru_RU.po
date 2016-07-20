@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Pagination\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-11 17:17+0300\n"
+"POT-Creation-Date: 2016-07-20 18:35+0300\n"
 "PO-Revision-Date: \n"
 "Last-Translator: plugin@bestwebsoft.com <plugin@bestwebsoft.com>\n"
 "Language-Team: BestWebSoft team <wp@bestwebsoft.com>\n"
@@ -22,45 +22,45 @@ msgstr ""
 msgid "Pagination Settings"
 msgstr "Настройки Pagination"
 
-#: pagination.php:109
+#: pagination.php:111
 msgid "« Previous"
 msgstr "« Предыдущая"
 
-#: pagination.php:110
+#: pagination.php:112
 msgid "Next »"
 msgstr "Следующая »"
 
-#: pagination.php:196
+#: pagination.php:201
 msgid "Settings saved."
 msgstr "Настройки сохранены."
 
-#: pagination.php:203
+#: pagination.php:207
 msgid "All plugin settings were restored."
 msgstr "Все настройки плагина восстановлены."
 
-#: pagination.php:208 pagination.php:807 pagination.php:826
+#: pagination.php:212 pagination.php:817 pagination.php:836
 msgid "Settings"
 msgstr "Настройки"
 
-#: pagination.php:209
+#: pagination.php:213
 msgid "Appearance"
 msgstr "Отображение"
 
-#: pagination.php:210
+#: pagination.php:214
 msgid "Custom code"
 msgstr "Пользовательский код"
 
-#: pagination.php:218
+#: pagination.php:222
 msgid "Notice:"
 msgstr "Примечание:"
 
-#: pagination.php:218
+#: pagination.php:222
 msgid ""
 "Choose some page types to display plugin`s pagination in frontend of your "
 "site."
 msgstr "Выберите типы страниц для вывода блока навигации."
 
-#: pagination.php:222
+#: pagination.php:226
 msgid ""
 "If you would like to display pagination block in a different place on your "
 "site, add the following strings into the file"
@@ -68,11 +68,11 @@ msgstr ""
 "Если Вы хотите отображать блок навигации в другом месте сайта, добавьте "
 "следующие строки в файл"
 
-#: pagination.php:222
+#: pagination.php:226
 msgid "of your theme"
 msgstr "Вашей темы"
 
-#: pagination.php:224
+#: pagination.php:228
 msgid ""
 "Also you can display pagination block for paginated posts or pages. Add the "
 "following strings into to the appropriate templates source code of your theme"
@@ -80,7 +80,7 @@ msgstr ""
 "Также Вы можете отобразить блок навигации для многостраничных записей или "
 "страниц. Добавьте следующие строки в соответствующие шаблоны Вашей темы"
 
-#: pagination.php:226
+#: pagination.php:230
 msgid ""
 "Paste this into the comments template if you want to display pagination for "
 "comments"
@@ -88,101 +88,101 @@ msgstr ""
 "Вставьте этот код в темплейт комментариев, если Вы хотите отображать блок "
 "навигации для комментариев"
 
-#: pagination.php:235
+#: pagination.php:239
 msgid "Display pagination"
 msgstr "Отображение навигации"
 
-#: pagination.php:237
+#: pagination.php:242
 msgid "everywhere"
 msgstr "Повсюду"
 
-#: pagination.php:238
+#: pagination.php:243
 msgid "on home page"
 msgstr "на домашней странице"
 
-#: pagination.php:239
+#: pagination.php:244
 msgid "on blog page"
 msgstr "на странице блога"
 
-#: pagination.php:240
+#: pagination.php:245
 msgid "on archive pages ( by categories, date, tags etc. )"
 msgstr "в архивах ( по категориям, датам, тегам и т.д.  )"
 
-#: pagination.php:241
+#: pagination.php:246
 msgid "on search results page"
 msgstr "на странице вывода результатов поиска"
 
-#: pagination.php:245
+#: pagination.php:251
 msgid "Pagination position"
 msgstr "Расположение навигации"
 
-#: pagination.php:248
+#: pagination.php:254
 msgid "above the main content"
 msgstr "перед основным контентом"
 
-#: pagination.php:249
+#: pagination.php:255
 msgid "below the main content"
 msgstr "после основного контента"
 
-#: pagination.php:250
+#: pagination.php:256
 msgid "above and below the main content"
 msgstr "перед и после основного контента"
 
-#: pagination.php:251
+#: pagination.php:257
 msgid "via function only"
 msgstr "только с помощью функции"
 
-#: pagination.php:256
+#: pagination.php:262
 msgid "Display 'Page __ of __' block"
 msgstr "Отобразить блок 'Страница __ из __'"
 
-#: pagination.php:262
+#: pagination.php:268
 msgid "Display Next/Previous arrows"
 msgstr "Отобразить Предыдущую/Следующую стрелки"
 
-#: pagination.php:266
+#: pagination.php:272
 msgid "text for previous page link"
 msgstr "текст для ссылки на предыдущую страницу"
 
-#: pagination.php:267
+#: pagination.php:273
 msgid "text for next page link"
 msgstr "текст для ссылки на следующую страницу"
 
-#: pagination.php:272
+#: pagination.php:278
 msgid "Type of output"
 msgstr "Тип вывода"
 
-#: pagination.php:275
+#: pagination.php:281
 msgid "all numbers of pages"
 msgstr "номера всех страниц"
 
-#: pagination.php:276
+#: pagination.php:282
 msgid "shorthand output"
 msgstr "сокращённый вывод"
 
-#: pagination.php:277
+#: pagination.php:283
 msgid "numbers to either side of current page, but not including current page."
 msgstr ""
 "количество номеров страниц по обеим сторонам от текущей страницы, исключая "
 "её."
 
-#: pagination.php:282
+#: pagination.php:288
 msgid "Hide standard pagination"
 msgstr "Скрыть стандартную навигацию"
 
-#: pagination.php:285
+#: pagination.php:291
 msgid "posts pagination"
 msgstr "навигация по записям"
 
-#: pagination.php:286
+#: pagination.php:292
 msgid "on paginated posts or pages"
 msgstr "для многостраничных записей"
 
-#: pagination.php:287
+#: pagination.php:293
 msgid "comments pagination"
 msgstr "навигация по комментариям"
 
-#: pagination.php:290
+#: pagination.php:296
 msgid ""
 "Used for standard WordPress themes or themes, which use standard CSS-classes "
 "for displaying pagination blocks"
@@ -190,11 +190,11 @@ msgstr ""
 "Применимо для стандартных тем WordPress и тем, использующих стандартные CSS-"
 "классы для отображения блока навигации"
 
-#: pagination.php:295
+#: pagination.php:301
 msgid "Hide custom pagination"
 msgstr "Скрыть дополнительную навигацию"
 
-#: pagination.php:303
+#: pagination.php:309
 msgid ""
 "Enter one (or more comma-separated) CSS-classes or ID of blocks which you "
 "would like to hide."
@@ -202,95 +202,99 @@ msgstr ""
 "Введите один (или несколько разделенных запятыми) CSS классов или ID блоков, "
 "которые необходимо скрыть."
 
-#: pagination.php:304
+#: pagination.php:310
 msgid "Example"
 msgstr "Например"
 
-#: pagination.php:306 pagination.php:308
+#: pagination.php:312 pagination.php:314
 msgid "or"
 msgstr "или"
 
-#: pagination.php:318
+#: pagination.php:324
+msgid "Add styles"
+msgstr "Добавить стили"
+
+#: pagination.php:330
 msgid "Page pagination block width"
 msgstr "Ширина блока навигации"
 
-#: pagination.php:324
+#: pagination.php:336
 msgid "Pagination align"
 msgstr "Расположение навигации"
 
-#: pagination.php:326
+#: pagination.php:338
 msgid "Left"
 msgstr "Слева"
 
-#: pagination.php:327
+#: pagination.php:339
 msgid "Center"
 msgstr "По центру"
 
-#: pagination.php:328
+#: pagination.php:340
 msgid "Right"
 msgstr "Справа"
 
-#: pagination.php:332
+#: pagination.php:344
 msgid "Left margin"
 msgstr "Отступ слева"
 
-#: pagination.php:338
+#: pagination.php:350
 msgid "Right margin"
 msgstr "Отступ справа"
 
-#: pagination.php:344
+#: pagination.php:356
 msgid "Background color"
 msgstr "Цвет фона"
 
-#: pagination.php:351
+#: pagination.php:362
 msgid "Background color for current page"
 msgstr "Цвет фона для текущей страницы"
 
-#: pagination.php:358
+#: pagination.php:368
 msgid "Text color for page"
 msgstr "Цвет текста"
 
-#: pagination.php:365
+#: pagination.php:374
 msgid "Text color for current page"
 msgstr "Цвет текста текущей страницы"
 
-#: pagination.php:372
+#: pagination.php:380
 msgid "Border color"
 msgstr "Цвет границы"
 
-#: pagination.php:379
+#: pagination.php:386
 msgid "Border width"
 msgstr "Ширина границы"
 
-#: pagination.php:385
+#: pagination.php:392
 msgid "Border radius"
 msgstr "Закругление границ"
 
-#: pagination.php:393
+#: pagination.php:400
 msgid "Save Changes"
 msgstr "Сохранить Изменения"
 
-#: pagination.php:637 pagination.php:657
+#: pagination.php:647 pagination.php:667
 msgid "Page"
 msgstr "Страница"
 
-#: pagination.php:637 pagination.php:657 pagination.php:681 pagination.php:760
+#: pagination.php:647 pagination.php:667 pagination.php:691 pagination.php:770
 msgid "of"
 msgstr "из"
 
-#: pagination.php:681
+#: pagination.php:691
 msgid "Pages"
 msgstr "Страницы"
 
-#: pagination.php:760
+#: pagination.php:770
 msgid "Comments Page"
 msgstr "Страница комментариев"
 
-#: pagination.php:827
+#: pagination.php:837
 msgid "FAQ"
 msgstr "FAQ"
 
-#: pagination.php:828
+#: pagination.php:838
 msgid "Support"
 msgstr "Техподдержка"
 

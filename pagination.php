@@ -1,12 +1,12 @@
 <?php
 /*
 Plugin Name: Pagination by BestWebSoft
-Plugin URI: http://bestwebsoft.com/products/
-Description: Add multiple page pagination block to your WordPress website
+Plugin URI: http://bestwebsoft.com/products/pagination/
+Description: Add customizable pagination to WordPress website. Split long content to multiple pages for better navigation.
 Author: BestWebSoft
 Text Domain: pagination
 Domain Path: /languages
-Version: 1.0.4
+Version: 1.0.5
 Author URI: http://bestwebsoft.com/
 License: GPLv3 or later
 */
@@ -28,14 +28,14 @@ License: GPLv3 or later
 */
 
 /**
- * Add Wordpress page 'bws_plugins' and sub-page of this plugin to admin-panel.
+ * Add Wordpress page 'bws_panel' and sub-page of this plugin to admin-panel.
 * @return void
  */
  if ( ! function_exists ( 'pgntn_add_admin_menu' ) ) {
 	function pgntn_add_admin_menu() {
 		bws_general_menu();
 		/* add plugin page */
-		$settings = add_submenu_page( 'bws_plugins', __( 'Pagination Settings', 'pagination' ), 'Pagination', 'manage_options', 'pagination.php', 'pgntn_settings_page' );
+		$settings = add_submenu_page( 'bws_panel', __( 'Pagination Settings', 'pagination' ), 'Pagination', 'manage_options', 'pagination.php', 'pgntn_settings_page' );
 		add_action( 'load-' . $settings, 'pgntn_add_tabs' );
 	}
 }
@@ -69,7 +69,7 @@ if ( ! function_exists ( 'pgntn_init' ) ) {
 		}
 
 		/* Function check if plugin is compatible with current WP version */
-		bws_wp_min_version_check( plugin_basename( __FILE__ ), $pgntn_plugin_info, '3.8', '3.3' );
+		bws_wp_min_version_check( plugin_basename( __FILE__ ), $pgntn_plugin_info, '3.8' );
 
 		pgntn_settings();
 		pgntn_display();
@@ -84,7 +84,7 @@ if ( ! function_exists ( 'pgntn_admin_init' ) ) {
 	function pgntn_admin_init() {
 		global $bws_plugin_info, $pgntn_plugin_info, $pagenow;
 
-		if ( ! isset( $bws_plugin_info ) || empty( $bws_plugin_info ) )
+		if ( empty( $bws_plugin_info ) )
 			$bws_plugin_info = array( 'id' => '212', 'version' => $pgntn_plugin_info["Version"] );
 	}
 }
@@ -102,17 +102,20 @@ if ( ! function_exists( 'pgntn_settings' ) ) {
 
 		$pgntn_option_defaults = array(
 			'plugin_option_version'			=> $pgntn_plugin_info["Version"],
+			'display_settings_notice'		=> 1,
+			'suggest_feature_banner'		=> 1,
 			'where_display'					=> array( 'everywhere' ),
 			'loop_position'					=> 'bottom',
 			'display_info'					=> 1,
 			'display_next_prev'				=> 1,
-			'prev_text'						=> __('« Previous', 'pagination' ),
-			'next_text'						=> __('Next »', 'pagination' ),
+			'prev_text'						=> __( '« Previous', 'pagination' ),
+			'next_text'						=> __( 'Next »', 'pagination' ),
 			'show_all'						=> 0,
 			'display_count_page'			=> 2,
 			'display_standard_pagination'	=> array( 'posts', 'multipage' , 'comments' ),
 			'additional_pagination_style'	=> '',
 			'display_custom_pagination'		=> 1,
+			'add_appearance'				=> 1,
 			'width'							=> '60',
 			'align'							=> 'center',
 			'background_color'				=> '#ffffff',
@@ -123,9 +126,7 @@ if ( ! function_exists( 'pgntn_settings' ) ) {
 			'border_width'					=> 1,
 			'border_radius'					=> 0,
 			'margin_left'					=> 0,
-			'margin_right'					=> 0,
-			'display_settings_notice'		=> 1,
-			'suggest_feature_banner'		=> 1
+			'margin_right'					=> 0			
 		);
 	
 		if ( ! get_option( 'pgntn_options' ) )
@@ -183,6 +184,7 @@ if ( ! function_exists( 'pgntn_settings_page' ) ) {
 				$pgntn_options['margin_left']					= isset( $_REQUEST['pgntn_margin_left'] ) ? intval( $_REQUEST['pgntn_margin_left'] ) : $pgntn_options['margin_left'];
 				$pgntn_options['margin_right']					= isset( $_REQUEST['pgntn_margin_right'] ) ? intval( $_REQUEST['pgntn_margin_right'] ) : $pgntn_options['margin_right'];
 			} else {
+				$pgntn_options['add_appearance']				= isset( $_REQUEST['pgntn_add_appearance'] ) ? 1 : 0;				
 				$pgntn_options['width']							= isset( $_REQUEST['pgntn_width'] ) ? intval( $_REQUEST['pgntn_width'] ) : $pgntn_options['width'];
 				$pgntn_options['align']							= isset( $_REQUEST['pgntn_align'] ) ? $_REQUEST['pgntn_align'] : $pgntn_options['align'];
 				$pgntn_options['margin_left']					= isset( $_REQUEST['pgntn_margin_left'] ) ? intval( $_REQUEST['pgntn_margin_left'] ) : $pgntn_options['margin_left'];
@@ -236,11 +238,13 @@ if ( ! function_exists( 'pgntn_settings_page' ) ) {
 								<tr>
 									<th scope="row"><?php _e( 'Display pagination', 'pagination' ); ?></th>
 									<td>
-										<input type="checkbox" id="pgntn_everywhere" value="everywhere" name="pgntn_where_display[]"<?php if ( in_array( 'everywhere', $pgntn_options['where_display'] ) ) { echo ' checked="checked"'; } ?> /><label for="pgntn_everywhere"><strong><?php _e( 'everywhere', 'pagination' ); ?></strong></label><br />
-										<input type="checkbox" id="pgntn_on_home" class="pgntn_where_display" value="home" name="pgntn_where_display[]"<?php if ( in_array( 'everywhere', $pgntn_options['where_display'] ) || in_array( 'home', $pgntn_options['where_display'] ) ) { echo ' checked="checked"'; } ?> /><label for="pgntn_on_home"><?php _e( 'on home page', 'pagination' ); ?></label><br />
-										<input type="checkbox" id="pgntn_on_blog" class="pgntn_where_display" value="blog" name="pgntn_where_display[]"<?php if ( in_array( 'everywhere', $pgntn_options['where_display'] ) || in_array( 'blog', $pgntn_options['where_display'] ) ) { echo ' checked="checked"'; } ?> /><label for="pgntn_on_blog"><?php _e( 'on blog page', 'pagination' ); ?></label><br />
-										<input type="checkbox" id="pgntn_on_archives" class="pgntn_where_display" value="archives" name="pgntn_where_display[]"<?php if ( in_array( 'everywhere', $pgntn_options['where_display'] ) || in_array( 'archives', $pgntn_options['where_display'] ) ) { echo ' checked="checked"'; } ?> /><label for="pgntn_on_archives"><?php _e( 'on archive pages ( by categories, date, tags etc. )', 'pagination' ); ?></label><br />
-										<input type="checkbox" id="pgntn_on_search" class="pgntn_where_display" value="search" name="pgntn_where_display[]"<?php if ( in_array( 'everywhere', $pgntn_options['where_display'] ) || in_array( 'search', $pgntn_options['where_display'] ) ) { echo ' checked="checked"'; } ?> /><label for="pgntn_on_search"><?php _e( 'on search results page', 'pagination' ); ?></label><br />
+										<fieldset>
+											<input type="checkbox" id="pgntn_everywhere" value="everywhere" name="pgntn_where_display[]"<?php if ( in_array( 'everywhere', $pgntn_options['where_display'] ) ) { echo ' checked="checked"'; } ?> /><label for="pgntn_everywhere"><strong><?php _e( 'everywhere', 'pagination' ); ?></strong></label><br />
+											<input type="checkbox" id="pgntn_on_home" class="pgntn_where_display" value="home" name="pgntn_where_display[]"<?php if ( in_array( 'everywhere', $pgntn_options['where_display'] ) || in_array( 'home', $pgntn_options['where_display'] ) ) { echo ' checked="checked"'; } ?> /><label for="pgntn_on_home"><?php _e( 'on home page', 'pagination' ); ?></label><br />
+											<input type="checkbox" id="pgntn_on_blog" class="pgntn_where_display" value="blog" name="pgntn_where_display[]"<?php if ( in_array( 'everywhere', $pgntn_options['where_display'] ) || in_array( 'blog', $pgntn_options['where_display'] ) ) { echo ' checked="checked"'; } ?> /><label for="pgntn_on_blog"><?php _e( 'on blog page', 'pagination' ); ?></label><br />
+											<input type="checkbox" id="pgntn_on_archives" class="pgntn_where_display" value="archives" name="pgntn_where_display[]"<?php if ( in_array( 'everywhere', $pgntn_options['where_display'] ) || in_array( 'archives', $pgntn_options['where_display'] ) ) { echo ' checked="checked"'; } ?> /><label for="pgntn_on_archives"><?php _e( 'on archive pages ( by categories, date, tags etc. )', 'pagination' ); ?></label><br />
+											<input type="checkbox" id="pgntn_on_search" class="pgntn_where_display" value="search" name="pgntn_where_display[]"<?php if ( in_array( 'everywhere', $pgntn_options['where_display'] ) || in_array( 'search', $pgntn_options['where_display'] ) ) { echo ' checked="checked"'; } ?> /><label for="pgntn_on_search"><?php _e( 'on search results page', 'pagination' ); ?></label>
+										</fieldset>
 									</td>
 								</tr>
 								<tr valign="top">
@@ -283,11 +287,11 @@ if ( ! function_exists( 'pgntn_settings_page' ) ) {
 								<tr>
 									<th scope="row"><div><?php _e( 'Hide standard pagination', 'pagination' ); ?></div></th>
 									<td>
-										<div class="pgntn_input">
+										<fieldset class="pgntn_input">
 											<input id="pgntn_display_posts_pagination" name='pgntn_display_standard_pagination[]' type='checkbox' value='posts' <?php if ( ( ! empty( $pgntn_options['display_standard_pagination'] ) ) && in_array( 'posts', $pgntn_options['display_standard_pagination'] ) ) echo 'checked="checked"'; ?> /> <label for="pgntn_display_posts_pagination"><?php _e( 'posts pagination', 'pagination' ); ?></label><br />
 											<input id="pgntn_display_multipage_pagination" name='pgntn_display_standard_pagination[]' type='checkbox' value='multipage' <?php if ( ( ! empty( $pgntn_options['display_standard_pagination'] ) ) && in_array( 'multipage', $pgntn_options['display_standard_pagination'] ) ) echo 'checked="checked"'; ?> /> <label for="pgntn_display_multipage_pagination"><?php _e( 'on paginated posts or pages', 'pagination' ); ?></label><br />
 											<input id="pgntn_display_comments_pagination" name='pgntn_display_standard_pagination[]' type='checkbox' value='comments' <?php if ( ( ! empty( $pgntn_options['display_standard_pagination'] ) ) && in_array( 'comments', $pgntn_options['display_standard_pagination'] ) ) echo 'checked="checked"'; ?> /> <label for="pgntn_display_comments_pagination"><?php _e( 'comments pagination', 'pagination' ); ?></label><br />
-										</div><!-- .pgntn_input -->
+										</fieldset><!-- .pgntn_input -->
 										<div class="bws_help_box dashicons dashicons-editor-help">
 											<div class="bws_hidden_help_text" style="min-width: 200px;"><?php _e( 'Used for standard WordPress themes or themes, which use standard CSS-classes for displaying pagination blocks', 'pagination' ); ?></div>
 										</div><!-- .pgntn_help_box -->
@@ -317,12 +321,18 @@ if ( ! function_exists( 'pgntn_settings_page' ) ) {
 						<?php } else { ?>
 							<table class="form-table"><!-- additional settings -->
 								<tr>
+									<th scope="row"><?php _e( 'Add styles', 'pagination' ); ?></th>
+									<td>
+										<input type="checkbox" value="1" <?php if ( 1 == $pgntn_options['add_appearance'] ) echo 'checked="checked"'; ?> name="pgntn_add_appearance" />
+									</td>
+								</tr>
+								<tr class="pgntn_add_appearance"<?php if ( 0 == $pgntn_options['add_appearance'] ) echo ' style="display: none;"'; ?>>
 									<th scope="row"><?php _e( 'Page pagination block width', 'pagination' ); ?></th>
 									<td>
 										<input type="number" step="1" min="0" max="100" value="<?php echo $pgntn_options['width']; ?>" id="pgntn_width" name="pgntn_width" />&nbsp;<span class="bws_info">%</span>
 									</td>
 								</tr>
-								<tr>
+								<tr class="pgntn_add_appearance"<?php if ( 0 == $pgntn_options['add_appearance'] ) echo ' style="display: none;"'; ?>>
 									<th scope="row"><?php _e( 'Pagination align', 'pagination' ); ?> </th>
 									<td><fieldset>
 										<input type="radio" value="left" <?php echo $pgntn_options['align'] == "left" ? 'checked="checked"': ""; ?> id="pgntn_align_left" name="pgntn_align" /> <label for="pgntn_align_left"><?php _e( 'Left', 'pagination' ); ?></label><br />
@@ -330,60 +340,55 @@ if ( ! function_exists( 'pgntn_settings_page' ) ) {
 										<input type="radio" value="right" <?php echo $pgntn_options['align'] == "right" ? 'checked="checked"': ""; ?> id="pgntn_align_right" name="pgntn_align" /> <label for="pgntn_align_right"><?php _e( 'Right', 'pagination' ); ?></label>
 									</fieldset></td>
 								</tr>
-								<tr>
+								<tr class="pgntn_add_appearance"<?php if ( 0 == $pgntn_options['add_appearance'] ) echo ' style="display: none;"'; ?>>
 									<th scope="row"><?php _e( 'Left margin', 'pagination' ); ?> </th>
 									<td>
 										<input type="number" step="1" min="0" max="10000" value="<?php echo ! empty( $pgntn_options['margin_left'] ) ? $pgntn_options['margin_left'] : '0'; ?>" id="pgntn_margin_left" class="pgntn_margin" name="pgntn_margin_left"<?php echo $pgntn_options['align'] == "center" ? ' disabled="disabled"': ''; ?> />&nbsp;<span class="bws_info">px</span>
 									</td>
 								</tr>
-								<tr>
+								<tr class="pgntn_add_appearance"<?php if ( 0 == $pgntn_options['add_appearance'] ) echo ' style="display: none;"'; ?>>
 									<th scope="row"><?php _e( 'Right margin', 'pagination' ); ?> </th>
 									<td>
 										<input type="number" step="1" min="0" max="10000" value="<?php echo ! empty( $pgntn_options['margin_right'] ) ? $pgntn_options['margin_right'] : '0'; ?>" id="pgntn_margin_right" class="pgntn_margin" name="pgntn_margin_right"<?php echo $pgntn_options['align'] == "center" ? ' disabled="disabled"': ''; ?> />&nbsp;<span class="bws_info">px</span>
 									</td>
 								</tr>
-								<tr>
+								<tr class="pgntn_add_appearance"<?php if ( 0 == $pgntn_options['add_appearance'] ) echo ' style="display: none;"'; ?>>
 									<th scope="row"><?php _e( 'Background color', 'pagination' ); ?> </th>
 									<td>
-										<input type="text" maxlength='7' value="<?php echo $pgntn_options['background_color']; ?>" id="pgntn_background_color" name="pgntn_background_color" />
-										<div class="pgntn_color_picker"></div>
+										<input type="text" value="<?php echo $pgntn_options['background_color']; ?>" name="pgntn_background_color" class="pgntn_color_picker" data-default-color="<?php echo $pgntn_option_defaults['background_color']; ?>" />
 									</td>
 								</tr>
-								<tr>
+								<tr class="pgntn_add_appearance"<?php if ( 0 == $pgntn_options['add_appearance'] ) echo ' style="display: none;"'; ?>>
 									<th scope="row"><?php _e( 'Background color for current page', 'pagination' ); ?> </th>
 									<td>
-										<input type="text" maxlength='7' value="<?php echo $pgntn_options['current_background_color']; ?>" id="pgntn_current_background_color" name="pgntn_current_background_color" />
-										<div class="pgntn_color_picker"></div>
+										<input type="text" value="<?php echo $pgntn_options['current_background_color']; ?>" name="pgntn_current_background_color" class="pgntn_color_picker" data-default-color="<?php echo $pgntn_option_defaults['current_background_color']; ?>" />
 									</td>
 								</tr>
-								<tr>
+								<tr class="pgntn_add_appearance"<?php if ( 0 == $pgntn_options['add_appearance'] ) echo ' style="display: none;"'; ?>>
 									<th scope="row"><?php _e( 'Text color for page', 'pagination' ); ?> </th>
 									<td>
-										<input type="text" maxlength='7' value="<?php echo $pgntn_options['text_color']; ?>" id="pgntn_text_color" name="pgntn_text_color" />
-										<div class="pgntn_color_picker"></div>
+										<input type="text" value="<?php echo $pgntn_options['text_color']; ?>" name="pgntn_text_color" class="pgntn_color_picker" data-default-color="<?php echo $pgntn_option_defaults['text_color']; ?>" />
 									</td>
 								</tr>
-								<tr>
+								<tr class="pgntn_add_appearance"<?php if ( 0 == $pgntn_options['add_appearance'] ) echo ' style="display: none;"'; ?>>
 									<th scope="row"><?php _e( 'Text color for current page', 'pagination' ); ?> </th>
 									<td>
-										<input type="text" maxlength='7' value="<?php echo $pgntn_options['current_text_color']; ?>" id="pgntn_current_text_color" name="pgntn_current_text_color" />
-										<div class="pgntn_color_picker"></div>
+										<input type="text" value="<?php echo $pgntn_options['current_text_color']; ?>" name="pgntn_current_text_color" class="pgntn_color_picker" data-default-color="<?php echo $pgntn_option_defaults['current_text_color']; ?>" />
 									</td>
 								</tr>
-								<tr>
+								<tr class="pgntn_add_appearance"<?php if ( 0 == $pgntn_options['add_appearance'] ) echo ' style="display: none;"'; ?>>
 									<th scope="row"><?php _e( 'Border color', 'pagination' ); ?> </th>
 									<td>
-										<input type="text" maxlength='7' value="<?php echo $pgntn_options['border_color']; ?>" id="pgntn_border_color" name="pgntn_border_color" />
-										<div class="pgntn_color_picker"></div>
+										<input type="text" value="<?php echo $pgntn_options['border_color']; ?>" name="pgntn_border_color" class="pgntn_color_picker" data-default-color="<?php echo $pgntn_option_defaults['border_color']; ?>" />
 									</td>
 								</tr>
-								<tr>
+								<tr class="pgntn_add_appearance"<?php if ( 0 == $pgntn_options['add_appearance'] ) echo ' style="display: none;"'; ?>>
 									<th scope="row"><?php _e( 'Border width', 'pagination' ); ?> </th>
 									<td>
 										<input type="number" step="1" min="0" max="1000" value="<?php echo ! empty( $pgntn_options['border_width'] ) ? $pgntn_options['border_width'] : '0'; ?>" id="pgntn_border_width" name="pgntn_border_width" />&nbsp;<span class="bws_info">px</span>
 									</td>
 								</tr>
-								<tr>
+								<tr class="pgntn_add_appearance"<?php if ( 0 == $pgntn_options['add_appearance'] ) echo ' style="display: none;"'; ?>>
 									<th scope="row"><?php _e( 'Border radius', 'pagination' ); ?> </th>
 									<td>
 										<input type="number" step="1" min="0" max="1000" value="<?php echo ! empty( $pgntn_options['border_radius'] ) ? $pgntn_options['border_radius'] : '0'; ?>" id="pgntn_border_radius" name="pgntn_border_radius" />&nbsp;<span class="bws_info">px</span>
@@ -414,10 +419,8 @@ if ( ! function_exists( 'pgntn_settings_page' ) ) {
 if ( ! function_exists( 'pgntn_admin_head' ) ) {
 	function pgntn_admin_head() {
 		if ( isset( $_REQUEST['page'] ) && 'pagination.php' == $_REQUEST['page'] ) {
-			wp_enqueue_style( 'pgntn_stylesheet', plugins_url( 'css/style.css', __FILE__ ) );
-			wp_enqueue_script( 'farbtastic' );
-			wp_enqueue_style( 'farbtastic' );
-			wp_enqueue_script( 'pgntn_script', plugins_url( 'js/script.js', __FILE__ ), array( 'jquery' ), false, true );
+			wp_enqueue_style( 'pgntn_stylesheet', plugins_url( 'css/style.css', __FILE__ ), array( 'wp-color-picker' ) );
+			wp_enqueue_script( 'pgntn_script', plugins_url( 'js/script.js', __FILE__ ), array( 'jquery', 'wp-color-picker' ), false, true );
 			if ( isset( $_GET['action'] ) && 'custom_code' == $_GET['action'] )
 				bws_plugins_include_codemirror();
 		}
@@ -443,46 +446,48 @@ if ( ! function_exists ( 'pgntn_print_style' ) ) {
 	function pgntn_print_style() { 
 		global $pgntn_options; ?>
 		<style type="text/css">
-			.pgntn-page-pagination {
-				text-align: <?php echo $pgntn_options['align']; ?> !important;
-			}
-			.pgntn-page-pagination-block {
-				<?php if ( $pgntn_options['align'] == 'center' ) { ?>
-					margin: 0 auto;
-				<?php } elseif ( $pgntn_options['align'] != 'center' ) { ?>
-					margin: 0 <?php echo $pgntn_options['margin_right'] != 0 ? $pgntn_options['margin_right'] . 'px' : '0'; ?> 0 <?php echo $pgntn_options['margin_left'] != 0 ? $pgntn_options['margin_left'] . 'px' : '0'; ?>;
-				<? }
-				if ( $pgntn_options['align'] == 'right' ) { ?>
-					float: right;
-				<?php } ?>
-				width: <?php echo $pgntn_options['width']; ?>% !important;
-			}
-			.pgntn-page-pagination a {
-				color: <?php echo $pgntn_options['text_color']; ?> !important;
-				background-color: <?php echo $pgntn_options['background_color']; ?> !important;
-				text-decoration: none !important;
-				border: <?php echo 0 < intval( $pgntn_options['border_width'] ) ? $pgntn_options['border_width'] . "px solid " . $pgntn_options['border_color'] : 'none'; ?> !important;
-				<?php if ( ! empty( $pgntn_options['border_radius'] ) ) { ?>
-					-webkit-border-radius: <?php echo $pgntn_options['border_radius']; ?>px;
-					-moz-border-radius: <?php echo $pgntn_options['border_radius']; ?>px;
-					border-radius: <?php echo $pgntn_options['border_radius']; ?>px;
-				<?php } ?>
-			}
-			.pgntn-page-pagination a:hover {
-				color: <?php echo $pgntn_options['current_text_color']; ?> !important;
-			}
-			.pgntn-page-pagination-intro,
-			.pgntn-page-pagination .current {			
-				background-color: <?php echo $pgntn_options['current_background_color']; ?> !important;
-				color: <?php echo $pgntn_options['current_text_color']; ?> !important;
-				border: <?php echo 0 < intval( $pgntn_options['border_width'] ) ? $pgntn_options['border_width'] . "px solid " . $pgntn_options['border_color'] : 'none'; ?> !important;
-				<?php if ( ! empty( $pgntn_options['border_radius'] ) ) { ?>
-					-webkit-border-radius: <?php echo $pgntn_options['border_radius']; ?>px;
-					-moz-border-radius: <?php echo $pgntn_options['border_radius']; ?>px;
-					border-radius: <?php echo $pgntn_options['border_radius']; ?>px;
-				<?php } ?>
-			}
-			<?php $classes = ''; 
+			<?php if ( 1 == $pgntn_options['add_appearance'] ) { ?>
+				.pgntn-page-pagination {
+					text-align: <?php echo $pgntn_options['align']; ?> !important;
+				}
+				.pgntn-page-pagination-block {
+					<?php if ( $pgntn_options['align'] == 'center' ) { ?>
+						margin: 0 auto;
+					<?php } elseif ( $pgntn_options['align'] != 'center' ) { ?>
+						margin: 0 <?php echo $pgntn_options['margin_right'] != 0 ? $pgntn_options['margin_right'] . 'px' : '0'; ?> 0 <?php echo $pgntn_options['margin_left'] != 0 ? $pgntn_options['margin_left'] . 'px' : '0'; ?>;
+					<? }
+					if ( $pgntn_options['align'] == 'right' ) { ?>
+						float: right;
+					<?php } ?>
+					width: <?php echo $pgntn_options['width']; ?>% !important;
+				}
+				.pgntn-page-pagination a {
+					color: <?php echo $pgntn_options['text_color']; ?> !important;
+					background-color: <?php echo $pgntn_options['background_color']; ?> !important;
+					text-decoration: none !important;
+					border: <?php echo 0 < intval( $pgntn_options['border_width'] ) ? $pgntn_options['border_width'] . "px solid " . $pgntn_options['border_color'] : 'none'; ?> !important;
+					<?php if ( ! empty( $pgntn_options['border_radius'] ) ) { ?>
+						-webkit-border-radius: <?php echo $pgntn_options['border_radius']; ?>px;
+						-moz-border-radius: <?php echo $pgntn_options['border_radius']; ?>px;
+						border-radius: <?php echo $pgntn_options['border_radius']; ?>px;
+					<?php } ?>
+				}
+				.pgntn-page-pagination a:hover {
+					color: <?php echo $pgntn_options['current_text_color']; ?> !important;
+				}
+				.pgntn-page-pagination-intro,
+				.pgntn-page-pagination .current {			
+					background-color: <?php echo $pgntn_options['current_background_color']; ?> !important;
+					color: <?php echo $pgntn_options['current_text_color']; ?> !important;
+					border: <?php echo 0 < intval( $pgntn_options['border_width'] ) ? $pgntn_options['border_width'] . "px solid " . $pgntn_options['border_color'] : 'none'; ?> !important;
+					<?php if ( ! empty( $pgntn_options['border_radius'] ) ) { ?>
+						-webkit-border-radius: <?php echo $pgntn_options['border_radius']; ?>px;
+						-moz-border-radius: <?php echo $pgntn_options['border_radius']; ?>px;
+						border-radius: <?php echo $pgntn_options['border_radius']; ?>px;
+					<?php } ?>
+				}
+			<?php }
+			$classes = ''; 
 			if ( ! empty( $pgntn_options['display_standard_pagination'] ) ) {
 				$hide_comments  = ( in_array( 'comments', $pgntn_options['display_standard_pagination'] ) ) ? true : false ;
 				$hide_multipage = ( in_array( 'multipage', $pgntn_options['display_standard_pagination'] ) ) ? true : false ;

@@ -9,34 +9,7 @@
 			});
 
 		/*  Color Picker */
-		$( '.pgntn_color_picker' ).each( function() {
-			var id = $( '#' + $( this ).prev().attr( 'id' ) ); /* get ID of <input type="text"/> */
- 			$( this ).farbtastic( id );                        /* initialize color picker for necessary input type="text"/> */       
- 			id.bind( "change click focus", function() { 
- 				$( this ).next().show();
- 			}).focusout( function() {
- 				$( this ).next().hide( 'fast');
-				if ( ! /^#[0-9a-f]{3}(?:[0-9a-f]{3})?$/i.test( $( this ).val() ) ) { /* check for correct entered hexa color  */
-					/* convert rgb to hex */
-					var background_color = $( this ).css( 'background-color' );
-					if ( background_color.substr( 0, 1 ) !== '#' ) {
-						var digits = /(.*?)rgb\((\d+), (\d+), (\d+)\)/.exec( background_color ),
-							red    = parseInt( digits[2] ),
-							green  = parseInt( digits[3] ),
-							blue   = parseInt( digits[4] ),
-							rgb    = blue | ( green << 8 ) | (  red << 16 );
-				    	background_color = digits[1] + '#' + rgb.toString( 16 );
-					}
-					$( this ).val( background_color ).css({ 
-						background: background_color,
-						color: $( this ).css( 'color' )
-					});
-				}
-				if ( typeof bws_show_settings_notice == 'function' ) {
-					bws_show_settings_notice();
-				}
- 			});
-		});
+		$( '.pgntn_color_picker' ).wpColorPicker();
 		
 		/* select or deselect all checkboxes with page types on setting page */
 		$( '#pgntn_everywhere' ).click( function() {
@@ -46,6 +19,14 @@
 			} else {
 				$( '.pgntn_where_display' ).attr( 'checked', false );
 				$( '#pgntn_empty_page_type' ).show();
+			}
+		});
+
+		$( 'input[name="pgntn_add_appearance"]' ).click( function() {
+			if ( $( this ).is( ':checked' ) ) {
+				$( '.pgntn_add_appearance' ).show();
+			} else {				
+				$( '.pgntn_add_appearance' ).hide();
 			}
 		});
 
