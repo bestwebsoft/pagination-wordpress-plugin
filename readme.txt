@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: http://bestwebsoft.com/donate/
 Tags: pagination, pagination block, custom pagination block, multiple navigation, multiple pages, navigation, next page, post pagination, pagination buttons, pagination plugin, improve pages navigation, paginate plugin
 Requires at least: 3.8
-Tested up to: 4.5.3
-Stable tag: 1.0.5
+Tested up to: 4.6.1
+Stable tag: 1.0.6
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -36,7 +36,7 @@ If you have a feature, suggestion or idea you'd like to see in the plugin, we'd 
 The author of the Pagination also recommends the following plugins:
 
 * <a href="http://wordpress.org/plugins/updater/">Updater</a> - This plugin updates WordPress core and the plugins to the recent versions. You can also use the auto mode or manual mode for updating and set email notifications.
-There is also a premium version of the plugin <a href="http://bestwebsoft.com/products/updater/">Updater Pro</a> with more useful features available. It can make backup of all your files and database before updating. Also it can forbid some plugins or WordPress Core update.
+There is also a premium version of the plugin <a href="http://bestwebsoft.com/products/wordpress/plugins/updater/">Updater Pro</a> with more useful features available. It can make backup of all your files and database before updating. Also it can forbid some plugins or WordPress Core update.
 
 = Translation =
 
@@ -79,7 +79,7 @@ In order to hide it, type a block class or block id into the text field in the H
 
 = I filled up all necessary settings, save the changes, but the custom pagination block did not appeared on some (or all) necessary pages. How can I fix it? =
 
-Most likely that your theme was created uncorrectly and it does not provide the needed functionality to display custom pagination block. Please, contact your support service (<a href="http://support.bestwebsoft.com" target="_blank">http://support.bestwebsoft.com</a>) and we will help you to solve this issue.
+Most likely that your theme was created incorrectly and it does not provide the needed functionality to display custom pagination block. Please, contact your support service (<a href="http://support.bestwebsoft.com" target="_blank">http://support.bestwebsoft.com</a>) and we will help you to solve this issue.
 
 = I have custom post types where I output the information via custom query to the database. How can I add the pagination block to this custom post type? =
 
@@ -92,7 +92,7 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 1. the link to the page where the problem occurs
 2. the name of the plugin and its version. If you are using a pro version - your order number.
 3. the version of your WordPress installation
-4. copy and paste into the message your system status report. Please read more here: <a href="https://docs.google.com/document/d/1Wi2X8RdRGXk9kMszQy1xItJrpN0ncXgioH935MaBKtc/edit?pli=1" target="_blank">Instruction on System Status</a>
+4. copy and paste into the message your system status report. Please read more here: <a href="https://docs.google.com/document/d/1Wi2X8RdRGXk9kMszQy1xItJrpN0ncXgioH935MaBKtc/edit" target="_blank">Instruction on System Status</a>
 
 == Screenshots ==
 
@@ -102,6 +102,11 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 4. Appearance settings in WordPress admin panel.
 
 == Changelog ==
+
+= V1.0.6 - 11.10.2016 =
+* NEW : Ability to display pagination block automatically on paginated posts/pages has been added.
+* Pro : "Load More" button pagination type.
+* Pro : Infinite scroll pagination type.
 
 = V1.0.5 - 20.07.2016 =
 * NEW : Ability to disable plugin styles.
@@ -130,6 +135,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 * Update : We updated all functionality for wordpress 4.2.2.
 
 == Upgrade Notice ==
+
+= V1.0.6 =
+* New features added
 
 = V1.0.5 =
 * Functionality expanded.
