@@ -1,10 +1,10 @@
 === Pagination by BestWebSoft ===
 Contributors: bestwebsoft
-Donate link: http://bestwebsoft.com/donate/
+Donate link: https://bestwebsoft.com/donate/
 Tags: pagination, pagination block, custom pagination block, multiple navigation, multiple pages, navigation, next page, post pagination, pagination buttons, pagination plugin, improve pages navigation, paginate plugin
 Requires at least: 3.8
-Tested up to: 4.6.1
-Stable tag: 1.0.6
+Tested up to: 4.7.3
+Stable tag: 1.0.7
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -12,46 +12,98 @@ Add customizable pagination to WordPress website. Split long content to multiple
 
 == Description ==
 
-The Pagination plugin allows you to add a custom pagination block to your webpages. The block is added automatically on the following pages: blog, search, archive, category, tags, author. All you have to do is to choose the position of the pagination block and configure its appearance on the plugin settings page.
+Simple plugin which automatically adds custom pagination to your WordPress website blog, search results, archive, category, tags, and author pages. Choose pagination type, position, and customize its appearance.
+
+Improve navigation through your website content today!
 
 http://www.youtube.com/watch?v=TwAd3DWLGr8
 
-<a href="http://www.youtube.com/watch?v=Xh0LjOSgxzs" target="_blank">Pagination by BestWebSoft Video instruction on Installation</a>
+= Free Features =
 
-<a href="http://wordpress.org/plugins/pagination/faq/" target="_blank">Pagination by BestWebSoft FAQ</a>
+* Automatically add pagination to:
+	* Home
+	* Blog 
+	* Archive 
+	* Search results
+	* Paginated posts/pages
+* Compatible with:
+	* [Gallery](https://bestwebsoft.com/products/wordpress/plugins/gallery/?k=8a6c514916efe4264d0732b86b82487f)
+	* [Portfolio](https://bestwebsoft.com/products/wordpress/plugins/portfolio/?k=982e34e0a05371dc2dcca2a5fc535c1a)
+* Add pagination via function to:
+	* Comments PHP template
+	* PHP files
+* Choose pagination position:
+	* Above the main content
+	* Below the main content
+	* Above and below the main content
+	* Via function
+* Display and customize Next/Previous arrows
+* Display “Page X of Y” information
+* Set numeric pagination display type:
+	* Full (1,2,3,4,5,6)
+	* Short (1,2…5,6)
+* Hide pagination for:
+	* Default
+		* Posts (for standard WP themes)
+		* On paginated post or pages
+		* Comments
+	* Custom pages
+* Set pagination block width
+* Set pagination align:
+	* Left
+	* Center
+	* Right
+* Set margins for left and right align
+* Customize pagination styles:
+	* Background color
+	* Current page background color
+	* Text color
+	* Current page text color
+	* Border color
+	* Border width and radius
+* Add custom code via plugin settings page
+* Compatible with latest WordPress version
+* Incredibly simple settings for fast setup without modifying code
+* Detailed step-by-step documentation and videos
 
-<a href="http://support.bestwebsoft.com" target="_blank">Pagination by BestWebSoft Support</a>
+> **Pro Features**
+>
+> All features from Free version included plus:
+>
+> * Choose pagination type:
+> 	* Numeric (default)
+> 	* Load More button
+> 	* Infinite scroll
+> * Get answer to your support question within one business day ([Support Policy](https://bestwebsoft.com/support-policy/))
+>
+> [Upgrade to Pro Now](https://bestwebsoft.com/products/wordpress/plugins/pagination/?k=beef8d83cadcb70a8565e009a280f80c)
 
-= Features =
+If you have a feature suggestion or idea you'd like to see in the plugin, we'd love to hear about it! [Suggest a Feature](https://support.bestwebsoft.com/hc/en-us/requests/new)
 
-* Add pagination to templates where it is absent or replace the standard pagination.
-* Configure custom pagination block to fit your theme.
-* Choose block position on the page.
-* Display custom pagination block for chosen post types only.
+= Documentation & Videos =
 
-If you have a feature, suggestion or idea you'd like to see in the plugin, we'd love to hear about it! <a href="http://support.bestwebsoft.com/hc/en-us/requests/new" target="_blank">Suggest a Feature</a>
+* [[Doc] Installation](https://docs.google.com/document/d/1-hvn6WRvWnOqj5v5pLUk7Awyu87lq5B_dO-Tv-MC9JQ/)
+* [[Doc] Purchase](https://docs.google.com/document/d/1EUdBVvnm7IHZ6y0DNyldZypUQKpB8UVPToSc_LdOYQI/)
+* [[Video] Installation Instruction](http://www.youtube.com/watch?v=Xh0LjOSgxzs)
 
-= Recommended Plugins =
+= Help & Support =
 
-The author of the Pagination also recommends the following plugins:
-
-* <a href="http://wordpress.org/plugins/updater/">Updater</a> - This plugin updates WordPress core and the plugins to the recent versions. You can also use the auto mode or manual mode for updating and set email notifications.
-There is also a premium version of the plugin <a href="http://bestwebsoft.com/products/wordpress/plugins/updater/">Updater Pro</a> with more useful features available. It can make backup of all your files and database before updating. Also it can forbid some plugins or WordPress Core update.
+Visit our Help Center if you have any questions, our friendly Support Team is happy to help — <https://support.bestwebsoft.com/>
 
 = Translation =
 
+* French (fr_FR) (thanks to [Jean-Louis Cordonnier](mailto:jlcord2@wanadoo.fr) www.labosdebabel.org)
+* Portuguese (pt_PT) (thanks to [Antonio Carreira](mailto:antoniocarreira@streetdog.pt) www.streetdog.pt)
 * Russian (ru_RU)
 * Ukrainian (uk)
 
-If you create your own language pack or update the existing one, you can send <a href="http://codex.wordpress.org/Translating_WordPress" target="_blank">the text in PO and MO files</a> for <a href="http://support.bestwebsoft.com/hc/en-us/requests/new" target="_blank">BestWebSoft</a> and we'll add it to the plugin. You can download the latest version of the program for work with PO and MO files <a href="http://www.poedit.net/download.php" target="_blank">Poedit</a>.
+Some of these translations are not complete. We are constantly adding new features which should be translated. If you would like to create your own language pack or update the existing one, you can send [the text of PO and MO files](http://codex.wordpress.org/Translating_WordPress) to [BestWebSoft](https://support.bestwebsoft.com/hc/en-us/requests/new) and we'll add it to the plugin. You can download the latest version of the program for work with PO and MO [files Poedit](http://www.poedit.net/download.php).
 
-= Technical support =
+= Recommended Plugins =
 
-Dear users, our plugins are available for free download. If you have any questions or recommendations regarding the functionality of our plugins (existing options, new options, current issues), please feel free to contact us. Please note that we accept requests in English only. All messages in other languages won't be accepted.
-
-If you notice any bugs in the plugins, you can notify us about it and we'll investigate and fix the issue then. Your request should contain URL of the website, issues description and WordPress admin panel credentials.
-Moreover we can customize the plugin according to your requirements. It's a paid service (as a rule it costs $40, but the price can vary depending on the amount of the necessary changes and their complexity). Please note that we could also include this or that feature (developed for you) in the next release and share with the other users then. 
-We can fix some things for free for the users who provide translation of our plugin into their native language (this should be a new translation of a certain plugin, you can check available translations on the official plugin page).
+* [Updater](https://bestwebsoft.com/products/wordpress/plugins/updater/?k=f471af6c58ecd7f550f0601416e4331f) - Automatically check and update WordPress core with all installed plugins to the latest versions. Manual mode, email notifications and backups of all your files and database before updating.
+* [Gallery](https://bestwebsoft.com/products/wordpress/plugins/gallery/?k=8a6c514916efe4264d0732b86b82487f) - Add beautiful galleries, albums & images to your Wordpress website in few clicks.
+* [Portfolio](https://bestwebsoft.com/products/wordpress/plugins/portfolio/?k=982e34e0a05371dc2dcca2a5fc535c1a) - Add customizable pagination to WordPress website. Split long content to multiple pages for better navigation.
 
 == Installation ==
 
@@ -59,7 +111,7 @@ We can fix some things for free for the users who provide translation of our plu
 2. Activate the plugin using the 'Plugins' menu in your WordPress admin panel.
 3. You can adjust the necessary settings using your WordPress admin panel in "BWS Panel" > "Pagination".
 
-<a href="https://docs.google.com/document/d/1FIQaZEt0xVZkCXKh2DxVkjcHdrVDGlGSUjQE-qxzbKk/edit" target="_blank">View a Step-by-step Instruction on Pagination Installation</a>.
+[View a Step-by-step Instruction on Pagination Installation](https://docs.google.com/document/d/1-hvn6WRvWnOqj5v5pLUk7Awyu87lq5B_dO-Tv-MC9JQ/)
 
 http://www.youtube.com/watch?v=Xh0LjOSgxzs
 
@@ -79,7 +131,7 @@ In order to hide it, type a block class or block id into the text field in the H
 
 = I filled up all necessary settings, save the changes, but the custom pagination block did not appeared on some (or all) necessary pages. How can I fix it? =
 
-Most likely that your theme was created incorrectly and it does not provide the needed functionality to display custom pagination block. Please, contact your support service (<a href="http://support.bestwebsoft.com" target="_blank">http://support.bestwebsoft.com</a>) and we will help you to solve this issue.
+Most likely that your theme was created incorrectly and it does not provide the needed functionality to display custom pagination block. Please, contact your support service (<https://support.bestwebsoft.com>) and we will help you to solve this issue.
 
 = I have custom post types where I output the information via custom query to the database. How can I add the pagination block to this custom post type? =
 
@@ -87,12 +139,12 @@ It is necessary to add function <?php if ( function_exists( 'pgntn_display_pagin
 
 = I have some problems with the plugin's work. What Information should I provide to receive proper support? =
 
-Please make sure that the problem hasn't been discussed yet on our forum (<a href="http://support.bestwebsoft.com" target="_blank">http://support.bestwebsoft.com</a>). If no, please provide the following data along with your problem's description:
+Please make sure that the problem hasn't been discussed yet on our forum (<https://support.bestwebsoft.com>). If no, please provide the following data along with your problem's description:
 
 1. the link to the page where the problem occurs
 2. the name of the plugin and its version. If you are using a pro version - your order number.
 3. the version of your WordPress installation
-4. copy and paste into the message your system status report. Please read more here: <a href="https://docs.google.com/document/d/1Wi2X8RdRGXk9kMszQy1xItJrpN0ncXgioH935MaBKtc/edit" target="_blank">Instruction on System Status</a>
+4. copy and paste into the message your system status report. Please read more here: [Instruction on System Status](https://docs.google.com/document/d/1Wi2X8RdRGXk9kMszQy1xItJrpN0ncXgioH935MaBKtc/edit)
 
 == Screenshots ==
 
@@ -102,6 +154,11 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 4. Appearance settings in WordPress admin panel.
 
 == Changelog ==
+
+= V1.0.7 - 14.04.2017 =
+* NEW : The French language file is added.
+* NEW : The Portuguese language file is added.
+* Bugfix : Multiple Cross-Site Scripting (XSS) vulnerability was fixed.
 
 = V1.0.6 - 11.10.2016 =
 * NEW : Ability to display pagination block automatically on paginated posts/pages has been added.
@@ -135,6 +192,10 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 * Update : We updated all functionality for wordpress 4.2.2.
 
 == Upgrade Notice ==
+
+= V1.0.7 =
+* New languages added.
+* Bugs fixed.
 
 = V1.0.6 =
 * New features added

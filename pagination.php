@@ -1,17 +1,17 @@
 <?php
 /*
 Plugin Name: Pagination by BestWebSoft
-Plugin URI: http://bestwebsoft.com/products/wordpress/plugins/pagination/
+Plugin URI: https://bestwebsoft.com/products/wordpress/plugins/pagination/
 Description: Add customizable pagination to WordPress website. Split long content to multiple pages for better navigation.
 Author: BestWebSoft
 Text Domain: pagination
 Domain Path: /languages
-Version: 1.0.6
-Author URI: http://bestwebsoft.com/
+Version: 1.0.7
+Author URI: https://bestwebsoft.com/
 License: GPLv3 or later
 */
 
-/*  © Copyright 2016  BestWebSoft  ( http://support.bestwebsoft.com )
+/*  © Copyright 2017  BestWebSoft  ( https://support.bestwebsoft.com )
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License, version 2, as 
@@ -303,10 +303,7 @@ if ( ! function_exists( 'pgntn_settings_page' ) ) {
 										</table>	
 									</div>
 									<div class="bws_pro_version_tooltip">
-										<div class="bws_info">
-											<?php _e( 'Unlock premium options by upgrading to Pro version', 'pagination' ); ?> 
-										</div>
-										<a class="bws_button" href="http://bestwebsoft.com/products/wordpress/plugins/pagination/?k=5f3235c93ef4bd001abe4efd16530be0&pn=212&v=<?php echo $pgntn_plugin_info["Version"]; ?>&wp_v=<?php echo $wp_version; ?>" target="_blank" title="Pagination Pro"><?php _e( 'Learn More', 'pagination' ); ?></a>
+										<a class="bws_button" href="https://bestwebsoft.com/products/wordpress/plugins/pagination/?k=5f3235c93ef4bd001abe4efd16530be0&pn=212&v=<?php echo $pgntn_plugin_info["Version"]; ?>&wp_v=<?php echo $wp_version; ?>" target="_blank" title="Pagination Pro"><?php _e( 'Learn More', 'pagination' ); ?></a>
 										<div class="clear"></div>					
 									</div>
 								</div>
@@ -919,8 +916,8 @@ if ( ! function_exists( 'pgntn_register_plugin_links' ) ) {
 		if ( $file == $base ) {
 			if ( ! is_network_admin() )
 				$links[] = '<a href="admin.php?page=pagination.php">' . __( 'Settings', 'pagination' ) . '</a>';
-			$links[] = '<a href="http://wordpress.org/plugins/pagination/faq/" target="_blank">' . __( 'FAQ', 'pagination' ) . '</a>';
-			$links[] = '<a href="http://support.bestwebsoft.com">' . __( 'Support', 'pagination' ) . '</a>';
+			$links[] = '<a href="https://support.bestwebsoft.com/hc/en-us/sections/200995139" target="_blank">' . __( 'FAQ', 'pagination' ) . '</a>';
+			$links[] = '<a href="https://support.bestwebsoft.com">' . __( 'Support', 'pagination' ) . '</a>';
 		}
 		return $links;
 	}
