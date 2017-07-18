@@ -2,9 +2,9 @@
 Contributors: bestwebsoft
 Donate link: https://bestwebsoft.com/donate/
 Tags: pagination, pagination block, custom pagination block, multiple navigation, multiple pages, navigation, next page, post pagination, pagination buttons, pagination plugin, improve pages navigation, paginate plugin
-Requires at least: 3.8
-Tested up to: 4.7.3
-Stable tag: 1.0.7
+Requires at least: 3.9
+Tested up to: 4.8
+Stable tag: 1.0.8
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -101,9 +101,9 @@ Some of these translations are not complete. We are constantly adding new featur
 
 = Recommended Plugins =
 
-* [Updater](https://bestwebsoft.com/products/wordpress/plugins/updater/?k=f471af6c58ecd7f550f0601416e4331f) - Automatically check and update WordPress core with all installed plugins to the latest versions. Manual mode, email notifications and backups of all your files and database before updating.
+* [Updater](https://bestwebsoft.com/products/wordpress/plugins/updater/?k=f471af6c58ecd7f550f0601416e4331f) - Automatically check and update WordPress website core with all installed plugins and themes to the latest versions.
 * [Gallery](https://bestwebsoft.com/products/wordpress/plugins/gallery/?k=8a6c514916efe4264d0732b86b82487f) - Add beautiful galleries, albums & images to your Wordpress website in few clicks.
-* [Portfolio](https://bestwebsoft.com/products/wordpress/plugins/portfolio/?k=982e34e0a05371dc2dcca2a5fc535c1a) - Add customizable pagination to WordPress website. Split long content to multiple pages for better navigation.
+* [Portfolio](https://bestwebsoft.com/products/wordpress/plugins/portfolio/?k=982e34e0a05371dc2dcca2a5fc535c1a) - Create and add personal portfolio to your WordPress website. Manage and showcase past projects to get more clients.
 
 == Installation ==
 
@@ -144,7 +144,7 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 1. the link to the page where the problem occurs
 2. the name of the plugin and its version. If you are using a pro version - your order number.
 3. the version of your WordPress installation
-4. copy and paste into the message your system status report. Please read more here: [Instruction on System Status](https://docs.google.com/document/d/1Wi2X8RdRGXk9kMszQy1xItJrpN0ncXgioH935MaBKtc/edit)
+4. copy and paste into the message your system status report. Please read more here: [Instruction on System Status](https://docs.google.com/document/d/1Wi2X8RdRGXk9kMszQy1xItJrpN0ncXgioH935MaBKtc/)
 
 == Screenshots ==
 
@@ -154,6 +154,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 4. Appearance settings in WordPress admin panel.
 
 == Changelog ==
+
+= V1.0.8 - 18.07.2017 =
+* Update : All functionality for WordPress 4.8 was updated.
 
 = V1.0.7 - 14.04.2017 =
 * NEW : The French language file is added.
@@ -192,6 +195,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 * Update : We updated all functionality for wordpress 4.2.2.
 
 == Upgrade Notice ==
+
+= V1.0.8 =
+* The compatibility with new WordPress version updated.
 
 = V1.0.7 =
 * New languages added.

@@ -6,7 +6,7 @@ Description: Add customizable pagination to WordPress website. Split long conten
 Author: BestWebSoft
 Text Domain: pagination
 Domain Path: /languages
-Version: 1.0.7
+Version: 1.0.8
 Author URI: https://bestwebsoft.com/
 License: GPLv3 or later
 */
@@ -69,7 +69,7 @@ if ( ! function_exists ( 'pgntn_init' ) ) {
 		}
 
 		/* Function check if plugin is compatible with current WP version */
-		bws_wp_min_version_check( plugin_basename( __FILE__ ), $pgntn_plugin_info, '3.8' );
+		bws_wp_min_version_check( plugin_basename( __FILE__ ), $pgntn_plugin_info, '3.9' );
 
 		pgntn_settings();
 		pgntn_display();
@@ -294,11 +294,6 @@ if ( ! function_exists( 'pgntn_settings_page' ) ) {
 														</label>
 													</fieldset>
 												</td>
-											</tr>
-											<tr valign="top">
-												<th scope="row" colspan="2">
-													* <?php _e( 'If you upgrade to Pro version all your settings will be saved.', 'pagination' ); ?>
-												</th>
 											</tr>				
 										</table>	
 									</div>
@@ -354,9 +349,9 @@ if ( ! function_exists( 'pgntn_settings_page' ) ) {
 											<input id="pgntn_display_multipage_pagination" name='pgntn_display_standard_pagination[]' type='checkbox' value='multipage' <?php if ( ( ! empty( $pgntn_options['display_standard_pagination'] ) ) && in_array( 'multipage', $pgntn_options['display_standard_pagination'] ) ) echo 'checked="checked"'; ?> /> <label for="pgntn_display_multipage_pagination"><?php _e( 'on paginated posts or pages', 'pagination' ); ?></label><br />
 											<input id="pgntn_display_comments_pagination" name='pgntn_display_standard_pagination[]' type='checkbox' value='comments' <?php if ( ( ! empty( $pgntn_options['display_standard_pagination'] ) ) && in_array( 'comments', $pgntn_options['display_standard_pagination'] ) ) echo 'checked="checked"'; ?> /> <label for="pgntn_display_comments_pagination"><?php _e( 'comments pagination', 'pagination' ); ?></label><br />
 										</fieldset><!-- .pgntn_input -->
-										<div class="bws_help_box dashicons dashicons-editor-help">
-											<div class="bws_hidden_help_text" style="min-width: 200px;"><?php _e( 'Used for standard WordPress themes or themes, which use standard CSS-classes for displaying pagination blocks', 'pagination' ); ?></div>
-										</div><!-- .pgntn_help_box -->
+										<?php echo bws_add_help_box( 
+											__( 'Used for standard WordPress themes or themes, which use standard CSS-classes for displaying pagination blocks', 'pagination' )
+										); ?>
 									</td>
 								</tr>
 								<tr>
@@ -366,17 +361,15 @@ if ( ! function_exists( 'pgntn_settings_page' ) ) {
 											<input id="pgntn_display_custom_pagination" name='pgntn_display_custom_pagination' type='checkbox' value='1' <?php if ( 1 == $pgntn_options['display_custom_pagination'] ) echo 'checked="checked"'; ?> />
 											<input type="text" maxlength='250' value="<?php echo $pgntn_options['additional_pagination_style']; ?>" id="pgntn_additional_pagination_style" name="pgntn_additional_pagination_style"<?php echo 0 == $pgntn_options['display_custom_pagination'] ? ' disabled="disabled"' : ''; ?> />
 										</div><!-- .pgntn_input -->
-										<div class="bws_help_box dashicons dashicons-editor-help">
-											<div class="bws_hidden_help_text" style="min-width: 200px;">
-												<?php _e( 'Enter one (or more comma-separated) CSS-classes or ID of blocks which you would like to hide.', 'pagination' );?><br />
-												<?php _e( 'Example', 'pagination' ) ?>:<br />
-												<code>#nav_block</code><br />
-												<?php _e( "or", 'pagination' ); ?><br />
-												<code>.pagination</code><br />
-												<?php _e( "or", 'pagination' ); ?><br />
-												<code>#nav_block, .pagination</code>
-											</div>
-										</div><!-- .pgntn_help_box -->
+										<?php echo bws_add_help_box( 
+											__( 'Enter one (or more comma-separated) CSS-classes or ID of blocks which you would like to hide.', 'pagination' ) . '<br />' .
+											__( 'Example', 'pagination' ) . ':<br />
+											<code>#nav_block</code><br />' .
+											__( "or", 'pagination' ) . '<br />
+											<code>.pagination</code><br />' .
+											__( "or", 'pagination' ) . '<br />
+											<code>#nav_block, .pagination</code>'
+										); ?>
 									</td>
 								</tr>
 							</table><!-- end of main settings -->
@@ -485,6 +478,8 @@ if ( ! function_exists( 'pgntn_admin_head' ) ) {
 		if ( isset( $_REQUEST['page'] ) && 'pagination.php' == $_REQUEST['page'] ) {
 			wp_enqueue_style( 'pgntn_stylesheet', plugins_url( 'css/style.css', __FILE__ ), array( 'wp-color-picker' ) );
 			wp_enqueue_script( 'pgntn_script', plugins_url( 'js/script.js', __FILE__ ), array( 'jquery', 'wp-color-picker' ), false, true );
+			
+			bws_enqueue_settings_scripts();
 			if ( isset( $_GET['action'] ) && 'custom_code' == $_GET['action'] )
 				bws_plugins_include_codemirror();
 		}
