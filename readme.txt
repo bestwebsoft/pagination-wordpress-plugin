@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://bestwebsoft.com/donate/
 Tags: pagination, pagination block, custom pagination block, multiple navigation, multiple pages, navigation, next page, post pagination, pagination buttons, pagination plugin, improve pages navigation, paginate plugin
 Requires at least: 3.9
-Tested up to: 4.8
-Stable tag: 1.0.8
+Tested up to: 4.9
+Stable tag: 1.0.9
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -22,8 +22,8 @@ http://www.youtube.com/watch?v=TwAd3DWLGr8
 
 * Automatically add pagination to:
 	* Home
-	* Blog 
-	* Archive 
+	* Blog
+	* Archive
 	* Search results
 	* Paginated posts/pages
 * Compatible with:
@@ -38,10 +38,10 @@ http://www.youtube.com/watch?v=TwAd3DWLGr8
 	* Above and below the main content
 	* Via function
 * Display and customize Next/Previous arrows
-* Display “Page X of Y” information
+* Display "Page X of Y" information
 * Set numeric pagination display type:
 	* Full (1,2,3,4,5,6)
-	* Short (1,2…5,6)
+	* Short (1,2...5,6)
 * Hide pagination for:
 	* Default
 		* Posts (for standard WP themes)
@@ -88,7 +88,7 @@ If you have a feature suggestion or idea you'd like to see in the plugin, we'd l
 
 = Help & Support =
 
-Visit our Help Center if you have any questions, our friendly Support Team is happy to help — <https://support.bestwebsoft.com/>
+Visit our Help Center if you have any questions, our friendly Support Team is happy to help - <https://support.bestwebsoft.com/>
 
 = Translation =
 
@@ -123,7 +123,7 @@ In the 'Plugin' menu you can find a link to the settings page.
 
 = Can I replace the standard pagination in my theme? =
 
-Yes, in the HIde pagination block you can choose any pagination to be displayed as well as to hide your theme`s standard pagination.
+Yes, in the Hide pagination block you can choose any pagination to be displayed as well as to hide your theme`s standard pagination.
 
 = How can I remove the custom pagination? =
 
@@ -154,6 +154,10 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 4. Appearance settings in WordPress admin panel.
 
 == Changelog ==
+
+= V1.0.9 - 20.11.2017 =
+* Bugfix : Settings Page displaying has been fixed.
+* Bugfix : Pagination displaying has been fixed.
 
 = V1.0.8 - 18.07.2017 =
 * Update : All functionality for WordPress 4.8 was updated.
@@ -195,6 +199,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 * Update : We updated all functionality for wordpress 4.2.2.
 
 == Upgrade Notice ==
+
+= V1.0.9 =
+* Bugs fixed.
 
 = V1.0.8 =
 * The compatibility with new WordPress version updated.

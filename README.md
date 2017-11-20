@@ -9,8 +9,8 @@
 <li>Automatically add pagination to:
 <ul>
 <li>Home</li>
-<li>Blog </li>
-<li>Archive </li>
+<li>Blog</li>
+<li>Archive</li>
 <li>Search results</li>
 <li>Paginated posts/pages</li>
 </ul>
@@ -36,11 +36,11 @@
 </ul>
 </li>
 <li>Display and customize Next/Previous arrows</li>
-<li>Display “Page X of Y” information</li>
+<li>Display &#8220;Page X of Y&#8221; information</li>
 <li>Set numeric pagination display type:
 <ul>
 <li>Full (1,2,3,4,5,6)</li>
-<li>Short (1,2…5,6)</li>
+<li>Short (1,2&#8230;5,6)</li>
 </ul>
 </li>
 <li>Hide pagination for:
@@ -102,7 +102,7 @@
 <li><a href="http://www.youtube.com/watch?v=Xh0LjOSgxzs" rel="nofollow">[Video] Installation Instruction</a></li>
 </ul>
 <h4>Help &amp; Support</h4>
-<p>Visit our Help Center if you have any questions, our friendly Support Team is happy to help — <a href="https://support.bestwebsoft.com/" rel="nofollow">https://support.bestwebsoft.com/</a></p>
+<p>Visit our Help Center if you have any questions, our friendly Support Team is happy to help &#8211; <a href="https://support.bestwebsoft.com/" rel="nofollow">https://support.bestwebsoft.com/</a></p>
 <h4>Translation</h4>
 <ul>
 <li>French (fr_FR) (thanks to <a href="mailto:&#x6a;&#108;&#099;&#x6f;&#x72;&#100;&#050;&#x40;&#x77;a&#110;&#x61;&#x64;o&#111;&#046;&#x66;&#x72;" rel="nofollow">Jean-Louis Cordonnier</a> www.labosdebabel.org)</li>
