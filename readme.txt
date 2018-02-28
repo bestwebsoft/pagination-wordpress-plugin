@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://bestwebsoft.com/donate/
 Tags: pagination, pagination block, custom pagination block, multiple navigation, multiple pages, navigation, next page, post pagination, pagination buttons, pagination plugin, improve pages navigation, paginate plugin
 Requires at least: 3.9
-Tested up to: 4.9
-Stable tag: 1.0.9
+Tested up to: 4.9.4
+Stable tag: 1.1.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -49,6 +49,7 @@ http://www.youtube.com/watch?v=TwAd3DWLGr8
 		* Comments
 	* Custom pages
 * Set pagination block width
+* Add rel="nofollow" attribute [NEW]
 * Set pagination align:
 	* Left
 	* Center
@@ -155,6 +156,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 
 == Changelog ==
 
+= V1.1.0 - 28.02.2018 =
+* NEW : Ability to add "nofollow" attribute has been added.
+
 = V1.0.9 - 20.11.2017 =
 * Bugfix : Settings Page displaying has been fixed.
 * Bugfix : Pagination displaying has been fixed.
@@ -200,6 +204,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 
 == Upgrade Notice ==
 
+= V1.1.0 =
+* New features added.
+
 = V1.0.9 =
 * Bugs fixed.
 
@@ -211,7 +218,7 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 * Bugs fixed.
 
 = V1.0.6 =
-* New features added
+* New features added.
 
 = V1.0.5 =
 * Functionality expanded.

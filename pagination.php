@@ -6,7 +6,7 @@ Description: Add customizable pagination to WordPress website. Split long conten
 Author: BestWebSoft
 Text Domain: pagination
 Domain Path: /languages
-Version: 1.0.9
+Version: 1.1.0
 Author URI: https://bestwebsoft.com/
 License: GPLv3 or later
 */
@@ -106,7 +106,7 @@ if ( ! function_exists( 'pgntn_settings' ) ) {
 			'plugin_option_version'			=> $pgntn_plugin_info["Version"],
 			'display_settings_notice'		=> 1,
 			'suggest_feature_banner'		=> 1,
-			'first_install'            		=> strtotime( "now" ),
+			'first_install'					=> strtotime( "now" ),
 			'where_display'					=> array( 'everywhere' ),
 			'loop_position'					=> 'bottom',
 			'display_info'					=> 1,
@@ -129,7 +129,8 @@ if ( ! function_exists( 'pgntn_settings' ) ) {
 			'border_width'					=> 1,
 			'border_radius'					=> 0,
 			'padding_left'					=> 0,
-			'padding_right'					=> 0
+			'padding_right'					=> 0,
+			'nofollow_link'					=> 0
 		);
 
 		if ( ! get_option( 'pgntn_options' ) )
@@ -141,9 +142,9 @@ if ( ! function_exists( 'pgntn_settings' ) ) {
 			pgntn_plugin_activate();
 			$pgntn_option_defaults['display_settings_notice'] = 0;
 			/**
-			 * @deprecated since 1.0.9
-			 * @todo remove after 31.10.2018
-			 */
+			* @deprecated since 1.0.9
+			* @todo remove after 31.10.2018
+			*/
 			if ( version_compare( str_replace( 'pro-', '', $pgntn_options['plugin_option_version'] ), '1.0.9', '<' ) && function_exists( 'pgntn_update_options' ) ) {
 				pgntn_update_options();
 			}
@@ -181,8 +182,8 @@ if ( ! function_exists( 'pgntn_plugin_activate' ) ) {
 if ( ! function_exists( 'pgntn_settings_page' ) ) {
 	function pgntn_settings_page() {
 		global $pgntn_options, $pgntn_plugin_info, $title, $pgntn_option_defaults, $wp_version;
-		$message = $error  = "";
-		$array_classes     = array();
+		$message = $error = "";
+		$array_classes = array();
 		$plugin_basename = plugin_basename( __FILE__ );
 
 		if ( isset( $_REQUEST['pgntn_form_submit'] ) && check_admin_referer( $plugin_basename, 'pgntn_nonce_name' ) ) {
@@ -215,10 +216,11 @@ if ( ! function_exists( 'pgntn_settings_page' ) ) {
 				$pgntn_options['prev_text']						= isset( $_REQUEST['pgntn_prev_text'] ) ? stripslashes( esc_html( $_REQUEST['pgntn_prev_text'] ) ) : $pgntn_options['prev_text'];
 				$pgntn_options['next_text']						= isset( $_REQUEST['pgntn_next_text'] ) ? stripslashes( esc_html( $_REQUEST['pgntn_next_text'] ) ) : $pgntn_options['next_text'];
 				$pgntn_options['show_all']						= isset( $_REQUEST['pgntn_show_all'] ) ? intval( $_REQUEST['pgntn_show_all'] ) : 0;
-				$pgntn_options['additional_pagination_style']	= isset( $_REQUEST['pgntn_additional_pagination_style'] ) ? stripslashes( esc_html($_REQUEST ['pgntn_additional_pagination_style'] ) ) : $pgntn_options['additional_pagination_style'];
+				$pgntn_options['additional_pagination_style']	= isset( $_REQUEST['pgntn_additional_pagination_style'] ) ? stripslashes( esc_html( $_REQUEST ['pgntn_additional_pagination_style'] ) ) : $pgntn_options['additional_pagination_style'];
 				$pgntn_options['display_custom_pagination']		= isset( $_REQUEST['pgntn_display_custom_pagination'] ) ? 1 : 0;
 				$pgntn_options['padding_left']					= isset( $_REQUEST['pgntn_padding_left'] ) ? intval( $_REQUEST['pgntn_padding_left'] ) : $pgntn_options['padding_left'];
 				$pgntn_options['padding_right']					= isset( $_REQUEST['pgntn_padding_right'] ) ? intval( $_REQUEST['pgntn_padding_right'] ) : $pgntn_options['padding_right'];
+				$pgntn_options['nofollow_link']					= isset( $_REQUEST['pgntn_nofollow_attribute'] ) ? 1 : 0;
 			} else {
 				$pgntn_options['add_appearance']				= isset( $_REQUEST['pgntn_add_appearance'] ) ? 1 : 0;
 				$pgntn_options['width']							= isset( $_REQUEST['pgntn_width'] ) ? intval( $_REQUEST['pgntn_width'] ) : $pgntn_options['width'];
@@ -271,7 +273,7 @@ if ( ! function_exists( 'pgntn_settings_page' ) ) {
 					<p><strong><?php _e( "Notice:", 'pagination' ); ?></strong> <?php _e( 'Choose some page types to display plugin`s pagination in frontend of your site.', 'pagination' ); ?></p>
 				</div>
 				<div class="error below-h2"<?php if ( empty( $error ) ) echo " style=\"display:none\""; ?>><p><strong><?php echo $error; ?></strong></p></div>
-				<?php if ( ! isset( $_GET['action'] ) || $_GET['action'] == 'appearance' ) { ?>
+				<?php if ( ! isset( $_GET['action'] ) || 'appearance' == $_GET['action'] ) { ?>
 					<form class="bws_form" method="post" action="">
 						<?php if ( ! isset( $_GET['action'] ) ) { ?>
 							<div>
@@ -285,7 +287,7 @@ if ( ! function_exists( 'pgntn_settings_page' ) ) {
 							</div>
 							<table class="form-table"><!-- main settings -->
 								<tr>
-									<th scope="row"><?php _e( 'Display pagination on', 'pagination' ); ?></th>
+									<th scope="row"><?php _e( 'Pagination Position', 'pagination' ); ?></th>
 									<td>
 										<fieldset>
 											<input type="checkbox" id="pgntn_everywhere" value="everywhere" name="pgntn_where_display[]"<?php if ( in_array( 'everywhere', $pgntn_options['where_display'] ) ) echo ' checked="checked"'; ?> /><label for="pgntn_everywhere"><strong><?php _e( 'all pages', 'pagination' ); ?></strong></label><br />
@@ -305,7 +307,7 @@ if ( ! function_exists( 'pgntn_settings_page' ) ) {
 										<div class="bws_table_bg"></div>
 										<table class="form-table bws_pro_version">
 											<tr valign="top">
-												<th scope="row"><?php _e( 'Pagination type', 'pagination' ); ?></th>
+												<th scope="row"><?php _e( 'Pagination Type', 'pagination' ); ?></th>
 												<td>
 													<fieldset>
 														<label>
@@ -313,11 +315,11 @@ if ( ! function_exists( 'pgntn_settings_page' ) ) {
 														</label><br />
 														<label>
 															<input disabled="disabled" type="radio" value="load-more" name="pgntn_type" /> <?php _e( '"Load More" button', 'pagination' ); ?>
-															<span class="bws_info"> (<?php _e( 'display a single button at the bottom of the posts/pages that when clicked loads new posts/pages via ajax', 'pagination' ); ?>)</span>
+															<span class="bws_info"> ( <?php _e( 'display a single button at the bottom of the posts/pages that when clicked loads new posts/pages via ajax', 'pagination' ); ?> )</span>
 														</label><br />
 														<label>
 															<input disabled="disabled" type="radio" value="infinite-scroll" name="pgntn_type" /> <?php _e( 'Infinite scroll', 'pagination' ); ?>
-															<span class="bws_info"> (<?php _e( 'automatically loads new posts/pages as the user scrolls to the bottom of the screen', 'pagination' ); ?>)</span>
+															<span class="bws_info"> ( <?php _e( 'automatically loads new posts/pages as the user scrolls to the bottom of the screen', 'pagination' ); ?> )</span>
 														</label>
 													</fieldset>
 												</td>
@@ -332,7 +334,7 @@ if ( ! function_exists( 'pgntn_settings_page' ) ) {
 							<?php } ?>
 							<table class="form-table">
 								<tr valign="top">
-									<th scope="row"><?php _e( 'Pagination position', 'pagination' ); ?></th>
+									<th scope="row"><?php _e( 'Pagination Position', 'pagination' ); ?></th>
 									<td>
 										<select name="pgntn_loop_position">
 											<option value="top"<?php echo "top" == $pgntn_options['loop_position'] ? ' selected="selected"' : "";?>><?php _e( 'above the main content', 'pagination' ); ?></option>
@@ -343,13 +345,13 @@ if ( ! function_exists( 'pgntn_settings_page' ) ) {
 									</td>
 								</tr><!-- .pgntn_nav_position -->
 								<tr>
-									<th scope="row"><label for ="pgntn_display_info"><?php _e( "Display 'Page __ of __' block", 'pagination' ); ?></label></th>
+									<th scope="row"><label for ="pgntn_display_info"><?php _e( "Display 'Page __ of __' Block", 'pagination' ); ?></label></th>
 									<td>
 										<input type="checkbox" value="1" id="pgntn_display_info" name="pgntn_display_info"<?php echo 1 == $pgntn_options ['display_info'] ? ' checked="checked"' : ''; ?> />
 									</td>
 								</tr>
 								<tr>
-									<th scope="row"><label for ="pgntn_display_next_prev"><?php _e( 'Display Next/Previous arrows', 'pagination' ); ?></label></th>
+									<th scope="row"><label for ="pgntn_display_next_prev"><?php _e( 'Display Next/Previous Arrows', 'pagination' ); ?></label></th>
 									<td>
 										<input type="checkbox" value="1" id="pgntn_display_next_prev" name="pgntn_display_next_prev"<?php echo 1 == $pgntn_options ['display_next_prev'] ? ' checked="checked"' : ''; ?> />
 										<div class="pgntn_links_text">
@@ -359,7 +361,7 @@ if ( ! function_exists( 'pgntn_settings_page' ) ) {
 									</td>
 								</tr>
 								<tr>
-									<th scope="row"><?php _e( 'Type of output', 'pagination' ); ?></th>
+									<th scope="row"><?php _e( 'Type of Output', 'pagination' ); ?></th>
 									<td>
 										<fieldset>
 											<label><input type="radio" value="1" id="pgntn_show_all" name="pgntn_show_all"<?php echo 1 == $pgntn_options['show_all'] ? ' checked="checked"' : ''; ?> /> <?php _e( 'all numbers of pages', 'pagination' ); ?></label><br />
@@ -369,7 +371,7 @@ if ( ! function_exists( 'pgntn_settings_page' ) ) {
 									</td>
 								</tr>
 								<tr>
-									<th scope="row"><div><?php _e( 'Hide standard pagination', 'pagination' ); ?></div></th>
+									<th scope="row"><div><?php _e( 'Hide Standard Pagination', 'pagination' ); ?></div></th>
 									<td>
 										<fieldset class="pgntn_input">
 											<input id="pgntn_display_posts_pagination" name='pgntn_display_standard_pagination[]' type='checkbox' value='posts' <?php if ( ( ! empty( $pgntn_options['display_standard_pagination'] ) ) && in_array( 'posts', $pgntn_options['display_standard_pagination'] ) ) echo 'checked="checked"'; ?> /> <label for="pgntn_display_posts_pagination"><?php _e( 'posts pagination', 'pagination' ); ?></label><br />
@@ -382,7 +384,7 @@ if ( ! function_exists( 'pgntn_settings_page' ) ) {
 									</td>
 								</tr>
 								<tr>
-									<th scope="row"><?php _e( 'Hide custom pagination', 'pagination' ); ?></th>
+									<th scope="row"><?php _e( 'Hide Custom Pagination', 'pagination' ); ?></th>
 									<td>
 										<fieldset>
 											<label>
@@ -403,81 +405,90 @@ if ( ! function_exists( 'pgntn_settings_page' ) ) {
 										</fieldset>
 									</td>
 								</tr>
+								<tr>
+									<th scope="row"><?php _e( 'Nofollow Link', 'pagination' ); ?></th>
+									<td>
+										<fieldset>
+											<input type="checkbox" name="pgntn_nofollow_attribute" id="pgntn_nofollow_attribute" <?php checked( $pgntn_options['nofollow_link'] ); ?> />
+											<label for="pgntn_nofollow_attribute"><?php _e( 'Enable to add rel="nofollow" attribute.', 'pagination' ); ?></label>
+										</fieldset>
+									</td>
+								</tr>
 							</table><!-- end of main settings -->
 						<?php } else { ?>
 							<table class="form-table"><!-- additional settings -->
 								<tr>
-									<th scope="row"><?php _e( 'Add styles', 'pagination' ); ?></th>
+									<th scope="row"><?php _e( 'Add Styles', 'pagination' ); ?></th>
 									<td>
 										<input type="checkbox" value="1" <?php if ( 1 == $pgntn_options['add_appearance'] ) echo 'checked="checked"'; ?> name="pgntn_add_appearance" />
 									</td>
 								</tr>
 								<tr class="pgntn_add_appearance"<?php if ( 0 == $pgntn_options['add_appearance'] ) echo ' style="display: none;"'; ?>>
-									<th scope="row"><?php _e( 'Page pagination block width', 'pagination' ); ?></th>
+									<th scope="row"><?php _e( 'Page Pagination Block width', 'pagination' ); ?></th>
 									<td>
 										<input type="number" step="1" min="0" max="100" value="<?php echo $pgntn_options['width']; ?>" id="pgntn_width" name="pgntn_width" />&nbsp;<span class="bws_info">%</span>
 									</td>
 								</tr>
 								<tr class="pgntn_add_appearance"<?php if ( 0 == $pgntn_options['add_appearance'] ) echo ' style="display: none;"'; ?>>
-									<th scope="row"><?php _e( 'Pagination align', 'pagination' ); ?> </th>
+									<th scope="row"><?php _e( 'Pagination Align', 'pagination' ); ?> </th>
 									<td><fieldset>
-										<input type="radio" value="left" <?php echo $pgntn_options['align'] == "left" ? 'checked="checked"': ""; ?> id="pgntn_align_left" name="pgntn_align" /> <label for="pgntn_align_left"><?php _e( 'Left', 'pagination' ); ?></label><br />
-										<input type="radio" value="center" <?php echo $pgntn_options['align'] == "center" ? 'checked="checked"': ""; ?> id="pgntn_align_center" name="pgntn_align" /> <label for="pgntn_align_center"><?php _e( 'Center', 'pagination' ); ?></label><br />
-										<input type="radio" value="right" <?php echo $pgntn_options['align'] == "right" ? 'checked="checked"': ""; ?> id="pgntn_align_right" name="pgntn_align" /> <label for="pgntn_align_right"><?php _e( 'Right', 'pagination' ); ?></label>
+										<input type="radio" value="left" <?php echo "left" == $pgntn_options['align'] ? 'checked="checked"': ""; ?> id="pgntn_align_left" name="pgntn_align" /> <label for="pgntn_align_left"><?php _e( 'Left', 'pagination' ); ?></label><br />
+										<input type="radio" value="center" <?php echo "center" == $pgntn_options['align'] ? 'checked="checked"': ""; ?> id="pgntn_align_center" name="pgntn_align" /> <label for="pgntn_align_center"><?php _e( 'Center', 'pagination' ); ?></label><br />
+										<input type="radio" value="right" <?php echo "right" == $pgntn_options['align'] ? 'checked="checked"': ""; ?> id="pgntn_align_right" name="pgntn_align" /> <label for="pgntn_align_right"><?php _e( 'Right', 'pagination' ); ?></label>
 									</fieldset></td>
 								</tr>
 								<tr class="pgntn_add_appearance"<?php if ( 0 == $pgntn_options['add_appearance'] ) echo ' style="display: none;"'; ?>>
-									<th scope="row"><?php _e( 'Left padding', 'pagination' ); ?> </th>
+									<th scope="row"><?php _e( 'Left Padding', 'pagination' ); ?> </th>
 									<td>
-										<input type="number" step="1" min="0" max="10000" value="<?php echo ! empty( $pgntn_options['padding_left'] ) ? $pgntn_options['padding_left'] : '0'; ?>" id="pgntn_padding_left" class="pgntn_padding" name="pgntn_padding_left"<?php echo $pgntn_options['align'] == "center" ? ' disabled="disabled"': ''; ?> />&nbsp;<span class="bws_info">px</span>
+										<input type="number" step="1" min="0" max="10000" value="<?php echo ! empty( $pgntn_options['padding_left'] ) ? $pgntn_options['padding_left'] : '0'; ?>" id="pgntn_padding_left" class="pgntn_padding" name="pgntn_padding_left"<?php echo "center" == $pgntn_options['align'] ? ' disabled="disabled"': ''; ?> />&nbsp;<span class="bws_info">px</span>
 									</td>
 								</tr>
 								<tr class="pgntn_add_appearance"<?php if ( 0 == $pgntn_options['add_appearance'] ) echo ' style="display: none;"'; ?>>
-									<th scope="row"><?php _e( 'Right padding', 'pagination' ); ?> </th>
+									<th scope="row"><?php _e( 'Right Padding', 'pagination' ); ?> </th>
 									<td>
-										<input type="number" step="1" min="0" max="10000" value="<?php echo ! empty( $pgntn_options['padding_right'] ) ? $pgntn_options['padding_right'] : '0'; ?>" id="pgntn_padding_right" class="pgntn_padding" name="pgntn_padding_right"<?php echo $pgntn_options['align'] == "center" ? ' disabled="disabled"': ''; ?> />&nbsp;<span class="bws_info">px</span>
+										<input type="number" step="1" min="0" max="10000" value="<?php echo ! empty( $pgntn_options['padding_right'] ) ? $pgntn_options['padding_right'] : '0'; ?>" id="pgntn_padding_right" class="pgntn_padding" name="pgntn_padding_right"<?php echo "center" == $pgntn_options['align'] ? ' disabled="disabled"': ''; ?> />&nbsp;<span class="bws_info">px</span>
 									</td>
 								</tr>
 								<tr class="pgntn_add_appearance"<?php if ( 0 == $pgntn_options['add_appearance'] ) echo ' style="display: none;"'; ?>>
-									<th scope="row"><?php _e( 'Background color', 'pagination' ); ?> </th>
+									<th scope="row"><?php _e( 'Background Color', 'pagination' ); ?> </th>
 									<td>
 										<input type="text" value="<?php echo $pgntn_options['background_color']; ?>" name="pgntn_background_color" class="pgntn_color_picker" data-default-color="<?php echo $pgntn_option_defaults['background_color']; ?>" />
 									</td>
 								</tr>
 								<tr class="pgntn_add_appearance"<?php if ( 0 == $pgntn_options['add_appearance'] ) echo ' style="display: none;"'; ?>>
-									<th scope="row"><?php _e( 'Background color for current page', 'pagination' ); ?> </th>
+									<th scope="row"><?php _e( 'Background Color for Current Page', 'pagination' ); ?> </th>
 									<td>
 										<input type="text" value="<?php echo $pgntn_options['current_background_color']; ?>" name="pgntn_current_background_color" class="pgntn_color_picker" data-default-color="<?php echo $pgntn_option_defaults['current_background_color']; ?>" />
 									</td>
 								</tr>
 								<tr class="pgntn_add_appearance"<?php if ( 0 == $pgntn_options['add_appearance'] ) echo ' style="display: none;"'; ?>>
-									<th scope="row"><?php _e( 'Text color for page', 'pagination' ); ?> </th>
+									<th scope="row"><?php _e( 'Text Color for Page', 'pagination' ); ?> </th>
 									<td>
 										<input type="text" value="<?php echo $pgntn_options['text_color']; ?>" name="pgntn_text_color" class="pgntn_color_picker" data-default-color="<?php echo $pgntn_option_defaults['text_color']; ?>" />
 									</td>
 								</tr>
 								<tr class="pgntn_add_appearance"<?php if ( 0 == $pgntn_options['add_appearance'] ) echo ' style="display: none;"'; ?>>
-									<th scope="row"><?php _e( 'Text color for current page', 'pagination' ); ?> </th>
+									<th scope="row"><?php _e( 'Text Color for Current Page', 'pagination' ); ?> </th>
 									<td>
 										<input type="text" value="<?php echo $pgntn_options['current_text_color']; ?>" name="pgntn_current_text_color" class="pgntn_color_picker" data-default-color="<?php echo $pgntn_option_defaults['current_text_color']; ?>" />
 									</td>
 								</tr>
 								<tr class="pgntn_add_appearance"<?php if ( 0 == $pgntn_options['add_appearance'] ) echo ' style="display: none;"'; ?>>
-									<th scope="row"><?php _e( 'Border color', 'pagination' ); ?> </th>
+									<th scope="row"><?php _e( 'Border Color', 'pagination' ); ?> </th>
 									<td>
 										<input type="text" value="<?php echo $pgntn_options['border_color']; ?>" name="pgntn_border_color" class="pgntn_color_picker" data-default-color="<?php echo $pgntn_option_defaults['border_color']; ?>" />
 									</td>
 								</tr>
 								<tr class="pgntn_add_appearance"<?php if ( 0 == $pgntn_options['add_appearance'] ) echo ' style="display: none;"'; ?>>
-									<th scope="row"><?php _e( 'Border width', 'pagination' ); ?> </th>
+									<th scope="row"><?php _e( 'Border Width', 'pagination' ); ?> </th>
 									<td>
-										<input type="number" step="1" min="0" max="1000" value="<?php echo ! empty( $pgntn_options['border_width'] ) ? $pgntn_options['border_width'] : '0'; ?>" id="pgntn_border_width" name="pgntn_border_width" />&nbsp;<span class="bws_info">px</span>
+										<input type="number" step="1" min="0" max="100" value="<?php echo ! empty( $pgntn_options['border_width'] ) ? $pgntn_options['border_width'] : '0'; ?>" id="pgntn_border_width" name="pgntn_border_width" />&nbsp;<span class="bws_info">px</span>
 									</td>
 								</tr>
 								<tr class="pgntn_add_appearance"<?php if ( 0 == $pgntn_options['add_appearance'] ) echo ' style="display: none;"'; ?>>
-									<th scope="row"><?php _e( 'Border radius', 'pagination' ); ?> </th>
+									<th scope="row"><?php _e( 'Border Radius', 'pagination' ); ?> </th>
 									<td>
-										<input type="number" step="1" min="0" max="1000" value="<?php echo ! empty( $pgntn_options['border_radius'] ) ? $pgntn_options['border_radius'] : '0'; ?>" id="pgntn_border_radius" name="pgntn_border_radius" />&nbsp;<span class="bws_info">px</span>
+										<input type="number" step="1" min="0" max="100" value="<?php echo ! empty( $pgntn_options['border_radius'] ) ? $pgntn_options['border_radius'] : '0'; ?>" id="pgntn_border_radius" name="pgntn_border_radius" />&nbsp;<span class="bws_info">px</span>
 									</td>
 								</tr>
 							</table><!-- end of additional settings -->
@@ -543,9 +554,9 @@ if ( ! function_exists ( 'pgntn_print_style' ) ) {
 				.pgntn-page-pagination-block {
 					width: <?php echo $pgntn_options['width']; ?>% !important;
 					padding: 0 <?php echo $pgntn_options['padding_right'] != 0 ? $pgntn_options['padding_right'] . 'px' : '0'; ?> 0 <?php echo $pgntn_options['padding_left'] != 0 ? $pgntn_options['padding_left'] . 'px' : '0'; ?>;
-					<?php if ( $pgntn_options['align'] == 'center' ) { ?>
+					<?php if ( 'center' == $pgntn_options['align'] ) { ?>
 							margin: 0 auto;
-					<? } elseif ( $pgntn_options['align'] == 'right' ) { ?>
+					<? } elseif ( 'right' == $pgntn_options['align'] ) { ?>
 							float: right;
 					<?php } ?>
 				}
@@ -577,9 +588,9 @@ if ( ! function_exists ( 'pgntn_print_style' ) ) {
 			<?php }
 			$classes = '';
 			if ( ! empty( $pgntn_options['display_standard_pagination'] ) ) {
-				$hide_comments  = ( in_array( 'comments', $pgntn_options['display_standard_pagination'] ) ) ? true : false ;
-				$hide_multipage = ( in_array( 'multipage', $pgntn_options['display_standard_pagination'] ) ) ? true : false ;
-				$classes       .= ( in_array( 'posts', $pgntn_options['display_standard_pagination'] ) ) ?
+				$hide_comments	= ( in_array( 'comments', $pgntn_options['display_standard_pagination'] ) ) ? true : false ;
+				$hide_multipage	= ( in_array( 'multipage', $pgntn_options['display_standard_pagination'] ) ) ? true : false ;
+				$classes		.= ( in_array( 'posts', $pgntn_options['display_standard_pagination'] ) ) ?
 					'.archive #nav-above,
 					.archive #nav-below,
 					.search #nav-above,
@@ -649,8 +660,8 @@ if ( ! function_exists( 'pgntn_display' ) ) {
 
 /**
  * Display pagination block in frontend above WordPress Loop
- * @param  array       $content         list with data of posts, which needs to displating in the loop
- * @return void
+ * @param	array	$content	list with data of posts, which needs to displating in the loop
+ * @return	void
  */
 if ( ! function_exists( 'pgntn_display_with_loop' ) ) {
 	function pgntn_display_with_loop( $content ) {
@@ -666,8 +677,8 @@ if ( ! function_exists( 'pgntn_display_with_loop' ) ) {
 
 /**
  * Display pagination block in frontend below WordPress Loop
- * @param  array       $content         list with data of posts, which needs to displating in the loop
- * @return void
+ * @param	array	$content	list with data of posts, which needs to displating in the loop
+ * @return	void
  */
 if ( ! function_exists( 'pgntn_display_with_loop_bottom' ) ) {
 	function pgntn_display_with_loop_bottom( $content ) {
@@ -683,9 +694,9 @@ if ( ! function_exists( 'pgntn_display_with_loop_bottom' ) ) {
 
 /**
  * Display pagination block on paginated posts or pages
- * @param string $output HTML output of paginated posts' page links.
- * @param array  $args   An array of arguments.
- * @return string $output
+ * @param	string	$output	HTML output of paginated posts' page links.
+ * @param	array	$args	An array of arguments.
+ * @return	string	$output
  */
 if ( ! function_exists( 'pgntn_wp_link_pages' ) ) {
 	function pgntn_wp_link_pages( $output, $args ) {
@@ -698,7 +709,7 @@ if ( ! function_exists( 'pgntn_wp_link_pages' ) ) {
 
 /**
  * Display pagination block in the function call
- * @param    string   $what      type of pagination ( posts, multipage, comments, custom )
+ * @param	string	$what	type of pagination ( posts, multipage, comments, custom )
  * @return void
  */
 if ( ! function_exists( 'pgntn_display_pagination' ) ) {
@@ -709,8 +720,8 @@ if ( ! function_exists( 'pgntn_display_pagination' ) ) {
 
 /**
  * Display block of pagination with the Wordpress Loop
- * @param    string   $what      type of pagination ( posts, multipage, comments )
- * @return   void
+ * @param	string	$what	type of pagination ( posts, multipage, comments )
+ * @return	void
  */
 if ( ! function_exists( 'pgntn_nav_display' ) ) {
 	function pgntn_nav_display( $what, $position = false, $custom_query = '' ) {
@@ -719,11 +730,11 @@ if ( ! function_exists( 'pgntn_nav_display' ) ) {
 			$pgntn_options = get_option( 'pgntn_options' );
 		$display_info = 1 == $pgntn_options['display_info'] ? true : false;
 		$nav_settings = array(
-			'show_all'  => '1' == $pgntn_options['show_all'] ? true : false,
-			'mid_size'  => $pgntn_options['display_count_page'],
-			'prev_next' => '1' == $pgntn_options['display_next_prev'] ? true : false,
-			'prev_text' => $pgntn_options['prev_text'],
-			'next_text' => $pgntn_options['next_text'],
+			'show_all'	=> '1' == $pgntn_options['show_all'] ? true : false,
+			'mid_size'	=> $pgntn_options['display_count_page'],
+			'prev_next'	=> '1' == $pgntn_options['display_next_prev'] ? true : false,
+			'prev_text'	=> $pgntn_options['prev_text'],
+			'next_text'	=> $pgntn_options['next_text'],
 		);
 		$show_block = false;
 		switch ( $what ) {
@@ -741,10 +752,10 @@ if ( ! function_exists( 'pgntn_nav_display' ) ) {
 					$show_block = true;
 
 				if ( $show_block ) {
-					$nav_settings['base']      = str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) );
-					$nav_settings['format']    = '?paged=%#%';
-					$nav_settings['current']   = max( 1, get_query_var('paged') );
-					$nav_settings['total']     = $wp_query->max_num_pages;
+					$nav_settings['base']		= str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) );
+					$nav_settings['format']		= '?paged=%#%';
+					$nav_settings['current']	= max( 1, get_query_var( 'paged' ) );
+					$nav_settings['total']		= $wp_query->max_num_pages;
 					if ( 1 < intval( $nav_settings['total'] ) ) { ?>
 						<div class='pgntn-page-pagination<?php if ( $position ) echo ' pgntn-' . $position; ?>'>
 							<div class="pgntn-page-pagination-block">
@@ -752,7 +763,7 @@ if ( ! function_exists( 'pgntn_nav_display' ) ) {
 									/* display block "Page __ of __" */ ?>
 									<div class='pgntn-page-pagination-intro'><?php echo __( 'Page', 'pagination' ) . ' ' . $nav_settings['current'] . ' ' . __( 'of', 'pagination' ) . ' ' . $nav_settings['total']; ?></div>
 								<?php }
-								echo paginate_links( $nav_settings ); ?>
+								echo pgntn_nofollow_link( paginate_links( $nav_settings ) ); ?>
 							</div>
 							<div class="clear"></div>
 						</div>
@@ -761,10 +772,10 @@ if ( ! function_exists( 'pgntn_nav_display' ) ) {
 				break;
 			case 'custom':
 				if ( is_object( $custom_query ) && isset( $custom_query->max_num_pages ) ) {
-					$nav_settings['base']      = str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) );
-					$nav_settings['format']    = '?paged=%#%';
-					$nav_settings['current']   = max( 1, get_query_var('paged') );
-					$nav_settings['total']     = $custom_query->max_num_pages;
+					$nav_settings['base']		= str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) );
+					$nav_settings['format']		= '?paged=%#%';
+					$nav_settings['current']	= max( 1, get_query_var( 'paged' ) );
+					$nav_settings['total']		= $custom_query->max_num_pages;
 					if ( 1 < intval( $nav_settings['total'] ) ) { ?>
 						<div class='pgntn-page-pagination<?php if ( $position ) echo ' pgntn-' . $position; ?>'>
 							<div class="pgntn-page-pagination-block">
@@ -772,7 +783,7 @@ if ( ! function_exists( 'pgntn_nav_display' ) ) {
 									/* display block "Page __ of __" */ ?>
 									<div class='pgntn-page-pagination-intro'><?php echo __( 'Page', 'pagination' ) . ' ' . $nav_settings['current'] . ' ' . __( 'of', 'pagination' ) . ' ' . $nav_settings['total']; ?></div>
 								<?php }
-								echo paginate_links( $nav_settings ); ?>
+								echo pgntn_nofollow_link( paginate_links( $nav_settings ) ); ?>
 							</div>
 							<div class="clear"></div>
 						</div>
@@ -787,8 +798,8 @@ if ( ! function_exists( 'pgntn_nav_display' ) ) {
 					$current_page = intval( $page );
 					if ( empty( $current_page ) || $current_page == 0 )
 						$current_page = 1;
-					$nav_settings['current']   = $current_page;
-					$nav_settings['total']     = $numpages;
+					$nav_settings['current']	= $current_page;
+					$nav_settings['total']		= $numpages;
 					if ( 1 < intval( $nav_settings['total'] ) ) { ?>
 						<div class="pgntn-page-pagination pgntn-multipage">
 							<div class="pgntn-page-pagination-block">
@@ -799,7 +810,7 @@ if ( ! function_exists( 'pgntn_nav_display' ) ) {
 								/* display "previous" link */
 								if ( $nav_settings['current'] != 1 && '1' == $pgntn_options ['display_next_prev'] ) {
 									$prev_link = $nav_settings['current'] - 1;
-									echo _wp_link_page( $prev_link ) . $nav_settings['prev_text'] . '</a>';
+									echo pgntn_nofollow_link( _wp_link_page( $prev_link ) . $nav_settings['prev_text'] . '</a>' );
 								}
 
 								if ( $nav_settings['show_all'] ) {
@@ -807,7 +818,7 @@ if ( ! function_exists( 'pgntn_nav_display' ) ) {
 										if ( $i == $nav_settings['current'] ) { ?>
 											<span class="page-numbers current"><?php echo $nav_settings['current']; ?></span>
 										<?php } else {
-											echo _wp_link_page( $i ) . $i . '</a>';
+											echo pgntn_nofollow_link( _wp_link_page( $i ) . $i . '</a>' );
 										}
 									}
 								} else {
@@ -819,33 +830,37 @@ if ( ! function_exists( 'pgntn_nav_display' ) ) {
 										$end_number = $nav_settings['total'];
 
 									/* display first link */
-									if ( $start_number >= 2 )
-										echo _wp_link_page( 1 ) . 1 . '</a>';
+									if ( $start_number >= 2 ) {
+										echo pgntn_nofollow_link( _wp_link_page( 1 ) . 1 . '</a>' );
+									}
 									/* display ... */
 									if ( $start_number >= 3 ) { ?>
 										<span class="pgntn-elipses">...</span>
 									<?php }
 									/* display precurrent links */
-									for ( $i = $start_number; $i < $nav_settings['current'] ; $i++ )
-										echo _wp_link_page( $i ) . $i . '</a>';
+									for ( $i = $start_number; $i < $nav_settings['current'] ; $i++ ) {
+										echo pgntn_nofollow_link( _wp_link_page( $i ) . $i . '</a>' );
+									}
 									/* display current link */ ?>
 									<span class="page-numbers current"><?php echo $nav_settings['current']; ?></span>
 									<?php /* display aftercurrent links */
-									for ( $i = $nav_settings['current'] + 1; $i <= $end_number; $i++ )
-										echo _wp_link_page( $i ) . $i . '</a>';
+									for ( $i = $nav_settings['current'] + 1; $i <= $end_number; $i++ ) {
+										echo pgntn_nofollow_link( _wp_link_page( $i ) . $i . '</a>' );
+									}
 									/* display ... */
 									if ( $end_number < $nav_settings['total'] - 1 ) { ?>
 										<span class="pgntn-elipses">...</span>
 									<?php }
 									/* display last link */
-									if ( $end_number < $nav_settings['total'] )
-										echo _wp_link_page( $nav_settings['total'] ) . $nav_settings['total'] . '</a>';
+									if ( $end_number < $nav_settings['total'] ) {
+										echo  pgntn_nofollow_link( _wp_link_page( $nav_settings['total'] ) . $nav_settings['total'] . '</a>' );
+									}
 								}
 
 								/* display "next" link */
 								if ( $nav_settings['current'] < $nav_settings['total'] && '1' == $pgntn_options ['display_next_prev'] ) {
 									$next_link = $nav_settings['current'] + 1;
-									echo _wp_link_page( $next_link ) . $nav_settings['next_text'] . '</a>';
+									echo pgntn_nofollow_link( _wp_link_page( $next_link ) . $nav_settings['next_text'] . '</a>' );
 								} ?>
 							</div><!-- .pgntn-page-pagination-block -->
 							<div class="clear"></div>
@@ -857,16 +872,16 @@ if ( ! function_exists( 'pgntn_nav_display' ) ) {
 			case 'comments':
 				global $wp_rewrite;
 				$page_comments = get_comment_pages_count();
-				if ( ( is_singular() || get_option('page_comments') ) && ! empty( $page_comments )	)
+				if ( ( is_singular() || get_option( 'page_comments' ) ) && ! empty( $page_comments )	)
 					$show_block = true;
 				if ( $show_block ) {
-					$current_page = get_query_var('cpage');
+					$current_page = get_query_var( 'cpage' );
 					if ( ! $current_page )
 						$current_page = 1;
-					$nav_settings['base']         = $wp_rewrite->using_permalinks() ? user_trailingslashit( trailingslashit( get_permalink() ) . 'comment-page-%#%', 'commentpaged' ) : add_query_arg( 'cpage', '%#%' );
-					$nav_settings['format']       = '';
-					$nav_settings['current']      = $current_page;
-					$nav_settings['total']        = $page_comments;
+					$nav_settings['base']		= $wp_rewrite->using_permalinks() ? user_trailingslashit( trailingslashit( get_permalink() ) . 'comment-page-%#%', 'commentpaged' ) : add_query_arg( 'cpage', '%#%' );
+					$nav_settings['format']		= '';
+					$nav_settings['current']	= $current_page;
+					$nav_settings['total']		= $page_comments;
 					$nav_settings['add_fragment'] = '#comments';
 					if ( 1 < intval( $nav_settings['total'] ) ) { ?>
 						<div class='pgntn-page-pagination pgntn-comments'>
@@ -875,7 +890,7 @@ if ( ! function_exists( 'pgntn_nav_display' ) ) {
 									/* display block "Page __ of __" */ ?>
 									<div class='pgntn-page-pagination-intro'><?php echo __( 'Comments Page', 'pagination' ) . ' ' . $nav_settings['current'] . ' ' . __( 'of', 'pagination' ) . ' ' . $nav_settings['total']; ?></div>
 								<?php }
-								echo paginate_links( $nav_settings ); ?>
+								echo pgntn_nofollow_link( paginate_links( $nav_settings ) ); ?>
 							</div>
 							<div class="clear"></div>
 						</div><!-- .pgntn-page-pagination .pgntn-comments -->
@@ -908,9 +923,9 @@ if ( ! function_exists( 'pgntn_is_blog' ) ) {
 
 /**
  * Add link to plugin`s settings page on page with list of all installed plugins ( on table cell with plugin title )
- * @param   $links  array    links bellow plugin title
- * @param   $file   array    relative path to the plugin`s main file
- * @return  $links  array    links bellow plugin title
+ * @param	$links	array	links bellow plugin title
+ * @param	$file	array	relative path to the plugin`s main file
+ * @return	$links	array	links bellow plugin title
  */
 if ( ! function_exists( 'pgntn_plugin_action_links' ) ) {
 	function pgntn_plugin_action_links( $links, $file ) {
@@ -930,9 +945,9 @@ if ( ! function_exists( 'pgntn_plugin_action_links' ) ) {
 
 /**
  * Add necessary links on page with list of all installed plugins ( on table cell with plugin description )
- * @param   $links  array    links bellow plugins description
- * @param   $file   array    relative path to the plugin`s main file
- * @return  $links  array    links bellow plugins description
+ * @param	$links	array	links bellow plugins description
+ * @param	$file	array	relative path to the plugin`s main file
+ * @return	$links	array	links bellow plugins description
  */
 if ( ! function_exists( 'pgntn_register_plugin_links' ) ) {
 	function pgntn_register_plugin_links( $links, $file ) {
@@ -947,13 +962,13 @@ if ( ! function_exists( 'pgntn_register_plugin_links' ) ) {
 	}
 }
 
-/* add help tab  */
+/* add help tab */
 if ( ! function_exists( 'pgntn_add_tabs' ) ) {
 	function pgntn_add_tabs() {
 		$screen = get_current_screen();
 		$args = array(
-			'id' 			=> 'pgntn',
-			'section' 		=> '200995139'
+			'id'			=> 'pgntn',
+			'section'		=> '200995139'
 		);
 		bws_help_tab( $screen, $args );
 	}
@@ -1004,6 +1019,16 @@ if ( ! function_exists ( 'pgntn_delete_options' ) ) {
 		require_once( dirname( __FILE__ ) . '/bws_menu/bws_include.php' );
 		bws_include_init( plugin_basename( __FILE__ ) );
 		bws_delete_plugin( plugin_basename( __FILE__ ) );
+	}
+}
+
+if ( ! function_exists ( 'pgntn_nofollow_link' ) ) {
+	function pgntn_nofollow_link( $link ) {
+		global $pgntn_options;
+		if ( 1 == $pgntn_options["nofollow_link"] ) {
+			 $link = str_replace( '<a ', '<a rel="nofollow" ',  $link );
+		}
+		return $link;
 	}
 }
 

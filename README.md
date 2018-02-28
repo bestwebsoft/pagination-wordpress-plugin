@@ -56,6 +56,7 @@
 </ul>
 </li>
 <li>Set pagination block width</li>
+<li>Add rel=&#8221;nofollow&#8221; attribute [NEW]</li>
 <li>Set pagination align:
 <ul>
 <li>Left</li>

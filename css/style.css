@@ -7,7 +7,7 @@
 .pgntn-empty-position {
 	clear: left;
 }
-@media screen and (max-width: 714px) {
+@media screen and ( max-width: 714px ) {
 	a.nav-tab {
 		margin: 10px 10px 0 0;
 		border-bottom: 1px solid #ccc;
