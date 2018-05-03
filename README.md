@@ -56,7 +56,7 @@
 </ul>
 </li>
 <li>Set pagination block width</li>
-<li>Add rel=&#8221;nofollow&#8221; attribute [NEW]</li>
+<li>Add rel=&#8221;nofollow&#8221; attribute</li>
 <li>Set pagination align:
 <ul>
 <li>Left</li>
@@ -67,6 +67,7 @@
 <li>Set margins for left and right align</li>
 <li>Customize pagination styles:
 <ul>
+<li>Hover color [NEW]</li>
 <li>Background color</li>
 <li>Current page background color</li>
 <li>Text color</li>
@@ -108,6 +109,7 @@
 <ul>
 <li>French (fr_FR) (thanks to <a href="mailto:&#x6a;&#108;&#099;&#x6f;&#x72;&#100;&#050;&#x40;&#x77;a&#110;&#x61;&#x64;o&#111;&#046;&#x66;&#x72;" rel="nofollow">Jean-Louis Cordonnier</a> www.labosdebabel.org)</li>
 <li>Portuguese (pt_PT) (thanks to <a href="mailto:&#x61;&#110;&#116;&#111;&#110;&#105;&#111;&#099;&#097;&#114;&#114;e&#x69;&#x72;&#x61;&#x40;&#x73;&#x74;&#x72;&#x65;&#x65;&#116;&#100;&#111;&#103;&#046;&#112;&#116;" rel="nofollow">Antonio Carreira</a> www.streetdog.pt)</li>
+<li>Hebrew (he_IL) (thanks to <a href="mailto:&#x68;&#x61;&#x6e;&#x61;&#110;&#064;&#109;&#115;&#116;&#117;&#100;&#105;&#111;&#046;&#099;o.&#x69;&#x6c;" rel="nofollow">Rubb</a>)</li>
 <li>Russian (ru_RU)</li>
 <li>Ukrainian (uk)</li>
 </ul>

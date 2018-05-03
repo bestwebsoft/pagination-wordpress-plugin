@@ -9,6 +9,15 @@
 			} );
 		/*  Color Picker */
 		$( '.pgntn_color_picker' ).wpColorPicker();
+		if( ! $( 'input[name="pgntn_add_appearance"]' ).is( ':checked' ) ){
+			$( '.wp-color-result' ).attr( "disabled", true );
+		}
+		if( 350 >= window_width ) {
+			$( '.iris-square' ).css( {'margin-right': '2%', 'width': '163px'} );
+			$( '.iris-picker-inner' ).css( 'width', '196px' );
+			$( '.iris-picker' ).css( 'width', '209px' );
+			$( '.iris-palette' ).css( 'width', '17px' );
+		}
 		/* select or deselect all checkboxes with page types on setting page */
 		$( '#pgntn_everywhere' ).click( function() {
 			if ( $( this ).is( ':checked' ) ) {
@@ -21,9 +30,9 @@
 		} );
 		$( 'input[name="pgntn_add_appearance"]' ).click( function() {
 			if ( $( this ).is( ':checked' ) ) {
-				$( '.pgntn_add_appearance' ).show();
+				$( '.pgntn_add_appearance input, .wp-color-result' ).attr( "disabled", false );
 			} else {
-				$( '.pgntn_add_appearance' ).hide();
+				$( '.pgntn_add_appearance input, .wp-color-result' ).attr( "disabled", true );
 			}
 		} );
 		$( '.pgntn_where_display' ).click( function() {
@@ -39,16 +48,6 @@
 				$( '#pgntn_everywhere' ).attr( 'checked', false );
 			}
 			pgntn_check = 0;
-			$( '.pgntn_where_display' ).each( function() {
-				if ( $( this ).is( ':checked' ) )
-					pgntn_flag = true;
-			} );
-			if ( pgntn_flag ) {
-				$( '#pgntn_empty_page_type' ).hide();
-				pgntn_flag = false;
-			} else {
-				$( '#pgntn_empty_page_type' ).show();
-			}
 		} );
 		$( '#pgntn_display_next_prev' ).change( function() {
 			if ( $( this ).is( ':checked' ) ) {
@@ -64,7 +63,7 @@
 			$( 'input[name="pgntn_display_count_page"]' ).attr( 'disabled', true );
 		} );
 		$( 'input[name="pgntn_align"]' ).change( function() {
-			if ( $( this ).val() == "center" && $( this ).is( ':checked' ) ) {
+			if ( 'center' == $( this ).val() && $( this ).is( ':checked' ) ) {
 				$( '.pgntn_padding' ).attr( 'disabled', true );
 			} else {
 				$( '.pgntn_padding' ).attr( 'disabled', false );

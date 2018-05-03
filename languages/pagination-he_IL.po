@@ -6,7 +6,7 @@ msgstr ""
 "PO-Revision-Date: \n"
 "Last-Translator: plugin@bestwebsoft.com <plugin@bestwebsoft.com>\n"
 "Language-Team: BestWebSoft team <wp@bestwebsoft.com>\n"
-"Language: pt_PT\n"
+"Language: he_IL\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -19,11 +19,11 @@ msgstr ""
 
 #: includes/class-pgntn-settings.php:24 pagination.php:41 pagination.php:636
 msgid "Settings"
-msgstr "Definições"
+msgstr "הגדרות"
 
 #: includes/class-pgntn-settings.php:25
 msgid "Appearance"
-msgstr "Aspeto"
+msgstr "עיצוב"
 
 #: includes/class-pgntn-settings.php:26
 msgid "Misc"
@@ -39,20 +39,18 @@ msgstr ""
 
 #: includes/class-pgntn-settings.php:107
 msgid "Settings saved."
-msgstr "As definições foram salvas."
+msgstr "ההגדרות נשמרו."
 
 #: includes/class-pgntn-settings.php:109
 msgid ""
 "Choose some page types to display plugin`s pagination in frontend of your "
 "site."
-msgstr ""
-"Escolha alguns tipos de página para exibir a paginação do plugin no frontend "
-"do seu site."
+msgstr "לבחור כמה סוגים דף להצגת לעמודים של תוסף הקדמי של האתר שלך."
 
 #: includes/class-pgntn-settings.php:124 pagination.php:40 pagination.php:41
 #: pagination.php:110
 msgid "Pagination Settings"
-msgstr "Configurações de paginação"
+msgstr "הגדרות דפדוף"
 
 #: includes/class-pgntn-settings.php:129
 msgid "Display Pagination on"
@@ -60,31 +58,31 @@ msgstr ""
 
 #: includes/class-pgntn-settings.php:133
 msgid "all pages"
-msgstr ""
+msgstr "כל העמודים"
 
 #: includes/class-pgntn-settings.php:135
 msgid "home page"
-msgstr ""
+msgstr "עמוד הבית"
 
 #: includes/class-pgntn-settings.php:137
 msgid "blog page"
-msgstr ""
+msgstr "עמוד הבלוג"
 
 #: includes/class-pgntn-settings.php:139
 msgid "archive pages ( by categories, date, tags etc. )"
-msgstr ""
+msgstr "דפי ארכיון (לפי קטגוריות, תאריך, תגים וכו ')"
 
 #: includes/class-pgntn-settings.php:140
 msgid "search results page"
-msgstr ""
+msgstr "דף תוצאות חיפוש"
 
 #: includes/class-pgntn-settings.php:142
 msgid "paginated posts/pages"
-msgstr ""
+msgstr "עימוד עמודים/פוסטים"
 
 #: includes/class-pgntn-settings.php:150
 msgid "Close"
-msgstr ""
+msgstr "סגור"
 
 #: includes/class-pgntn-settings.php:154
 msgid "Pagination Type"
@@ -92,31 +90,33 @@ msgstr ""
 
 #: includes/class-pgntn-settings.php:158
 msgid "Numeric pagination"
-msgstr ""
+msgstr "מספור עמודים"
 
 #: includes/class-pgntn-settings.php:161
 msgid "\"Load More\" button"
-msgstr ""
+msgstr "כפתור \"טען  עוד\"."
 
 #: includes/class-pgntn-settings.php:162
 msgid ""
 "display a single button at the bottom of the posts/pages that when clicked "
 "loads new posts/pages via ajax"
 msgstr ""
+"להציג כפתור אחד בחלק התחתון של ההודעות / דפים, כי בעת לחיצה נטען הודעות "
+"חדשות / דפים באמצעות ajax"
 
 #: includes/class-pgntn-settings.php:165
 msgid "Infinite scroll"
-msgstr ""
+msgstr "גלילה אינסופית"
 
 #: includes/class-pgntn-settings.php:166
 msgid ""
 "automatically loads new posts/pages as the user scrolls to the bottom of the "
 "screen"
-msgstr ""
+msgstr "טוען באופן אוטומטי פוסטים / דפים חדשים כאשר המשתמש גולל לתחתית המסך"
 
 #: includes/class-pgntn-settings.php:174
 msgid "Learn More"
-msgstr ""
+msgstr "מידע נוסף"
 
 #: includes/class-pgntn-settings.php:181
 msgid "Pagination Position"
@@ -124,19 +124,19 @@ msgstr ""
 
 #: includes/class-pgntn-settings.php:184
 msgid "above the main content"
-msgstr "acima do conteúdo principal"
+msgstr "מעל תוכן ראשי"
 
 #: includes/class-pgntn-settings.php:185
 msgid "below the main content"
-msgstr "abaixo o conteúdo principal"
+msgstr "מתחת לתוכן ראשי"
 
 #: includes/class-pgntn-settings.php:186
 msgid "above and below the main content"
-msgstr "acima e abaixo do conteúdo principal"
+msgstr "מעל ומתחת לתוכן ראשי"
 
 #: includes/class-pgntn-settings.php:187
 msgid "via function only"
-msgstr "apenas através da função"
+msgstr "דרך פונקציה בלבד"
 
 #: includes/class-pgntn-settings.php:192
 msgid "Display 'Page __ of __' Block"
@@ -148,11 +148,11 @@ msgstr ""
 
 #: includes/class-pgntn-settings.php:203
 msgid "text for previous page link"
-msgstr "texto para o link da página anterior"
+msgstr "טקטס לקישור לעמוד הקודם"
 
 #: includes/class-pgntn-settings.php:205
 msgid "text for next page link"
-msgstr "texto para o link da página seguinte"
+msgstr "טקסט לקישור לעמוד הבא"
 
 #: includes/class-pgntn-settings.php:210
 msgid "Type of Output"
@@ -160,16 +160,15 @@ msgstr ""
 
 #: includes/class-pgntn-settings.php:214
 msgid "all numbers of pages"
-msgstr "todos os números de páginas"
+msgstr "כל מספרי העמודים"
 
 #: includes/class-pgntn-settings.php:217
 msgid "shorthand output"
-msgstr "saída abreviada"
+msgstr "פלט קצרנות"
 
 #: includes/class-pgntn-settings.php:220
 msgid "numbers to either side of current page, but not including current page."
-msgstr ""
-"números para ambos os lados da página atual, mas não incluindo página atual."
+msgstr "מספרים משני צידי הדף הנוכחי, אך לא כולל את הדף הנוכחי."
 
 #: includes/class-pgntn-settings.php:227
 msgid "Hide Standard Pagination"
@@ -180,20 +179,18 @@ msgid ""
 "Used for standard WordPress themes or themes, which use standard CSS-classes "
 "to display pagination blocks"
 msgstr ""
-"Usado para padrão WordPress temas ou temas, que usam CSS-classes padrão para "
-"a exibição de blocos de paginação"
 
 #: includes/class-pgntn-settings.php:236
 msgid "posts pagination"
-msgstr "paginação de artigos"
+msgstr "עימוד פוסטים"
 
 #: includes/class-pgntn-settings.php:238
 msgid "on paginated posts or pages"
-msgstr "nos artigos ou páginas paginados"
+msgstr "בעמודים ובפוסטים"
 
 #: includes/class-pgntn-settings.php:240
 msgid "comments pagination"
-msgstr "paginação de comentários"
+msgstr "עימוד לתגובות"
 
 #: includes/class-pgntn-settings.php:246
 msgid "Hide Custom Pagination"
@@ -204,16 +201,15 @@ msgid ""
 "Enter one (or more comma-separated) CSS-classes or ID of blocks which you "
 "would like to hide."
 msgstr ""
-"Insira um (ou mais separados por vírgula) CSS-classes ou ID de blocos que "
-"você gostaria de esconder."
+"הכנס אחד (או יותר מופרדים בפסיק) קלאסים או מזהים של CSS שאתה רוצה להסתיר"
 
 #: includes/class-pgntn-settings.php:249
 msgid "Example"
-msgstr "Exemplo"
+msgstr "דוגמה"
 
 #: includes/class-pgntn-settings.php:251 includes/class-pgntn-settings.php:253
 msgid "or"
-msgstr "ou"
+msgstr "או"
 
 #: includes/class-pgntn-settings.php:269
 msgid "Nofollow Link"
@@ -241,15 +237,15 @@ msgstr ""
 
 #: includes/class-pgntn-settings.php:302
 msgid "Left"
-msgstr "Esquerda"
+msgstr "שמאל"
 
 #: includes/class-pgntn-settings.php:303
 msgid "Center"
-msgstr "Centro"
+msgstr "מרכז"
 
 #: includes/class-pgntn-settings.php:305
 msgid "Right"
-msgstr "Direita"
+msgstr "ימין"
 
 #: includes/class-pgntn-settings.php:310
 msgid "Left Padding"
@@ -300,12 +296,11 @@ msgid ""
 "If you would like to display pagination block in a different place on your "
 "site, add the following strings into the file"
 msgstr ""
-"Se você gostaria de exibir o bloco de paginação em um lugar diferente em seu "
-"site, adicione as seguintes seqüências de caracteres para o arquivo."
+"אם ברצונך להציג בלוק של דפים במקום אחר באתר שלך, הוסף את המחרוזות הבאות לקובץ"
 
 #: includes/class-pgntn-settings.php:384
 msgid "of your theme"
-msgstr "do seu tema"
+msgstr "של ערכת הנושא שלך"
 
 #: includes/class-pgntn-settings.php:388
 msgid ""
@@ -318,8 +313,7 @@ msgstr ""
 msgid ""
 "Paste this into the comments template if you want to display pagination for "
 "comments"
-msgstr ""
-"Cole isto no modelo de comentários se deseja exibir paginação nos comentários"
+msgstr "הדבק זאת בתבנית ההערות אם ברצונך להציג את העמודים להערות"
 
 #: pagination.php:46
 msgid "Upgrade to Pro"
@@ -331,135 +325,135 @@ msgstr ""
 
 #: pagination.php:133
 msgid "« Previous"
-msgstr "« Anterior"
+msgstr "« הקודם"
 
 #: pagination.php:134
 msgid "Next »"
-msgstr "Seguinte »"
+msgstr "הבא »"
 
 #: pagination.php:465 pagination.php:485
 msgid "Page"
-msgstr "Página"
+msgstr "עמוד"
 
 #: pagination.php:465 pagination.php:485 pagination.php:509 pagination.php:592
 msgid "of"
-msgstr "de"
+msgstr "מתוך"
 
 #: pagination.php:509
 msgid "Pages"
-msgstr "Páginas"
+msgstr "עמודים"
 
 #: pagination.php:592
 msgid "Comments Page"
-msgstr "Página de comentários"
+msgstr "עמוד תגובות"
 
 #: pagination.php:637
 msgid "FAQ"
-msgstr "FAQ"
+msgstr "שאלות נפוצות"
 
 #: pagination.php:638
 msgid "Support"
-msgstr "Suporte Técnico"
+msgstr "תמיכה"
 
 #~ msgid "Notice:"
-#~ msgstr "Aviso:"
+#~ msgstr "התראה:"
 
 #~ msgid "All plugin settings were restored."
-#~ msgstr "Todas as configurações do plugin foram restauradas."
+#~ msgstr "כל ההגדרות שוחזרו"
 
 #~ msgid "Custom code"
-#~ msgstr "Código personalizado"
+#~ msgstr "קוד מותאם אישית"
 
-#~ msgid "Save Changes"
-#~ msgstr "Gravar Alterações"
+#~ msgid "Go PRO"
+#~ msgstr "לעדכן לגרסת PRO"
+
+#~ msgid ""
+#~ "If you would like to display pagination block for paginated posts or "
+#~ "pages in a different place on your site, add the following strings into "
+#~ "to the appropriate templates source code of your theme"
+#~ msgstr ""
+#~ "אם ברצונך להציג לעמודים לחסום הודעות המחולקים לעמודים או עמודים במקום אחר "
+#~ "באתר שלך, להוסיף במחרוזות הבאות לתוך קוד המקור של תבניות המתאימות של "
+#~ "הנושא שלך"
+
+#~ msgid "Display pagination on"
+#~ msgstr "להציג עמודים ב"
+
+#~ msgid "Pagination type"
+#~ msgstr "סוג חלוקה לעמודים"
+
+#~ msgid "If you upgrade to Pro version all your settings will be saved."
+#~ msgstr "אם תשדרג לגרסת Pro כל ההגדרות יישמרו."
+
+#~ msgid "Unlock premium options by upgrading to Pro version"
+#~ msgstr "נעילת אפשרויות  פרימיום על ידי שדרוג לגרסה Pro"
 
 #~ msgid "Pagination position"
-#~ msgstr "Posição da paginação"
+#~ msgstr "מיקום עימוד"
 
 #~ msgid "Display 'Page __ of __' block"
-#~ msgstr "Exibir bloco 'Página _ de _'"
+#~ msgstr "הצגת 'עמוד _ מתוך _'."
 
 #~ msgid "Display Next/Previous arrows"
-#~ msgstr "Exibir as setas anterior/seguinte"
+#~ msgstr "הצגת חצים הבא/הקודם"
 
 #~ msgid "Type of output"
-#~ msgstr "Tipo de saída"
+#~ msgstr "סוגי פלט"
 
 #~ msgid "Hide standard pagination"
-#~ msgstr "Esconder a paginação padrão"
-
-#~ msgid "Hide custom pagination"
-#~ msgstr "Esconder a paginação personalizada"
-
-#~ msgid "Add styles"
-#~ msgstr "Adicionar estilos"
-
-#~ msgid "Page pagination block width"
-#~ msgstr "Largura do bloco de paginação"
-
-#~ msgid "Pagination align"
-#~ msgstr "Alinhamento da paginação"
-
-#~ msgid "Left padding"
-#~ msgstr "Margem esquerda"
-
-#~ msgid "Right padding"
-#~ msgstr "Margem direita"
-
-#~ msgid "Background color"
-#~ msgstr "Cor de Fundo"
-
-#~ msgid "Background color for current page"
-#~ msgstr "Cor de fundo para a página atual"
-
-#~ msgid "Text color for page"
-#~ msgstr "cor do texto para a página"
-
-#~ msgid "Text color for current page"
-#~ msgstr "Cor do texto para a página atual"
-
-#~ msgid "Border color"
-#~ msgstr "Cor da borda"
-
-#~ msgid "Border width"
-#~ msgstr "Espessura da borda"
-
-#~ msgid "Border radius"
-#~ msgstr "Raio da Borda"
+#~ msgstr "הסתר עימוד סטנדרטי"
 
 #~ msgid ""
 #~ "Used for standard WordPress themes or themes, which use standard CSS-"
 #~ "classes for displaying pagination blocks"
 #~ msgstr ""
-#~ "Usado para padrão WordPress temas ou temas, que usam CSS-classes padrão "
-#~ "para a exibição de blocos de paginação"
+#~ "משמש עבור ערכות נושא סטנדרטיות של WordPress או ערכות נושא אשר משתמשות "
+#~ "בקלאסים סטנדרטים של CSS להצגת עימוד"
 
-#~ msgid ""
-#~ "Also you can display pagination block for paginated posts or pages. Add "
-#~ "the following strings into to the appropriate templates source code of "
-#~ "your theme"
-#~ msgstr ""
-#~ "Também é possível exibir bloco de paginação para paginado posts ou "
-#~ "páginas. Adicionar as seguintes seqüências para o código-fonte modelos "
-#~ "apropriado do seu tema"
+#~ msgid "Hide custom pagination"
+#~ msgstr "הסרת עימוד מותאם אישית"
 
-#~ msgid "Display pagination"
-#~ msgstr "Exibir paginação."
+#~ msgid "Add styles"
+#~ msgstr "הוספת סגנונות"
+
+#~ msgid "Page pagination block width"
+#~ msgstr "רוחב בלוק עימוד"
+
+#~ msgid "Pagination align"
+#~ msgstr "יישור העימוד"
+
+#~ msgid "Left margin"
+#~ msgstr "ריווח משמאל"
+
+#~ msgid "Right margin"
+#~ msgstr "ריווח מימין"
+
+#~ msgid "Background color"
+#~ msgstr "צבע רקע"
+
+#~ msgid "Background color for current page"
+#~ msgstr "צבע רקע לעמוד נוכחי"
+
+#~ msgid "Text color for page"
+#~ msgstr "צבע טקטס"
+
+#~ msgid "Text color for current page"
+#~ msgstr "צבע טקסט לעמוד נוכחי"
+
+#~ msgid "Border color"
+#~ msgstr "צבע מסגרת"
+
+#~ msgid "Border width"
+#~ msgstr "רוחב גבול"
+
+#~ msgid "Border radius"
+#~ msgstr "גבול רדיוס"
+
+#~ msgid "Save Changes"
+#~ msgstr "שמירת שינויים"
 
 #~ msgid "everywhere"
-#~ msgstr "em todo o lado"
-
-#~ msgid "on home page"
-#~ msgstr "na home page"
-
-#~ msgid "on blog page"
-#~ msgstr "na página do blog"
-
-#~ msgid "on archive pages ( by categories, date, tags etc. )"
-#~ msgstr "nas páginas de arquivo (por categorias, data, tags etc.)"
-
-#~ msgid "on search results page"
-#~ msgstr "na página de resultados de pesquisa"
+#~ msgstr "Скрізь"
 
 #~ msgid ""
 #~ "The plugin's settings have been changed. In order to save them, please "

@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://bestwebsoft.com/donate/
 Tags: pagination, pagination block, custom pagination block, multiple navigation, multiple pages, navigation, next page, post pagination, pagination buttons, pagination plugin, improve pages navigation, paginate plugin
 Requires at least: 3.9
-Tested up to: 4.9.4
-Stable tag: 1.1.0
+Tested up to: 4.9.5
+Stable tag: 1.1.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -49,13 +49,14 @@ http://www.youtube.com/watch?v=TwAd3DWLGr8
 		* Comments
 	* Custom pages
 * Set pagination block width
-* Add rel="nofollow" attribute [NEW]
+* Add rel="nofollow" attribute
 * Set pagination align:
 	* Left
 	* Center
 	* Right
 * Set margins for left and right align
 * Customize pagination styles:
+	* Hover color [NEW]
 	* Background color
 	* Current page background color
 	* Text color
@@ -95,6 +96,7 @@ Visit our Help Center if you have any questions, our friendly Support Team is ha
 
 * French (fr_FR) (thanks to [Jean-Louis Cordonnier](mailto:jlcord2@wanadoo.fr) www.labosdebabel.org)
 * Portuguese (pt_PT) (thanks to [Antonio Carreira](mailto:antoniocarreira@streetdog.pt) www.streetdog.pt)
+* Hebrew (he_IL) (thanks to [Rubb](mailto:hanan@mstudio.co.il))
 * Russian (ru_RU)
 * Ukrainian (uk)
 
@@ -110,7 +112,7 @@ Some of these translations are not complete. We are constantly adding new featur
 
 1. Upload the `pagination` folder to the `/wp-content/plugins/` directory.
 2. Activate the plugin using the 'Plugins' menu in your WordPress admin panel.
-3. You can adjust the necessary settings using your WordPress admin panel in "BWS Panel" > "Pagination".
+3. You can adjust the necessary settings using your WordPress admin panel in "Pagination".
 
 [View a Step-by-step Instruction on Pagination Installation](https://docs.google.com/document/d/1-hvn6WRvWnOqj5v5pLUk7Awyu87lq5B_dO-Tv-MC9JQ/)
 
@@ -142,10 +144,10 @@ It is necessary to add function <?php if ( function_exists( 'pgntn_display_pagin
 
 Please make sure that the problem hasn't been discussed yet on our forum (<https://support.bestwebsoft.com>). If no, please provide the following data along with your problem's description:
 
-1. the link to the page where the problem occurs
-2. the name of the plugin and its version. If you are using a pro version - your order number.
-3. the version of your WordPress installation
-4. copy and paste into the message your system status report. Please read more here: [Instruction on System Status](https://docs.google.com/document/d/1Wi2X8RdRGXk9kMszQy1xItJrpN0ncXgioH935MaBKtc/)
+1. The link to the page where the problem occurs
+2. The name of the plugin and its version. If you are using a pro version - your order number.
+3. The version of your WordPress installation
+4. Copy and paste into the message your system status report. Please read more here: [Instruction on System Status](https://docs.google.com/document/d/1Wi2X8RdRGXk9kMszQy1xItJrpN0ncXgioH935MaBKtc/)
 
 == Screenshots ==
 
@@ -156,8 +158,14 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 
 == Changelog ==
 
+= V1.1.1 - 03.05.2018 =
+* NEW : Ability to choose pagination hover color has been added.
+* Update : The plugin settings page has been updated.
+* Update : Hebrew language file has been added.
+
 = V1.1.0 - 28.02.2018 =
 * NEW : Ability to add "nofollow" attribute has been added.
+* Pro : Ability to display "Load More" button after page loading has been added.
 
 = V1.0.9 - 20.11.2017 =
 * Bugfix : Settings Page displaying has been fixed.
@@ -203,6 +211,11 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 * Update : We updated all functionality for wordpress 4.2.2.
 
 == Upgrade Notice ==
+
+= V1.1.1 =
+* New features added.
+* Usability improved.
+* New language added.
 
 = V1.1.0 =
 * New features added.
