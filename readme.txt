@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://bestwebsoft.com/donate/
 Tags: pagination, pagination block, custom pagination block, multiple navigation, multiple pages, navigation, next page, post pagination, pagination buttons, pagination plugin, improve pages navigation, paginate plugin
 Requires at least: 3.9
-Tested up to: 4.9.8
-Stable tag: 1.1.2
+Tested up to: 5.0.3
+Stable tag: 1.1.3
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -56,7 +56,7 @@ http://www.youtube.com/watch?v=TwAd3DWLGr8
 	* Right
 * Set margins for left and right align
 * Customize pagination styles:
-	* Hover color [NEW]
+	* Hover color 
 	* Background color
 	* Current page background color
 	* Text color
@@ -76,6 +76,7 @@ http://www.youtube.com/watch?v=TwAd3DWLGr8
 > 	* Numeric (default)
 > 	* Load More button
 > 	* Infinite scroll
+>	* Next/Previous buttons [NEW]
 > * Get answer to your support question within one business day ([Support Policy](https://bestwebsoft.com/support-policy/))
 >
 > [Upgrade to Pro Now](https://bestwebsoft.com/products/wordpress/plugins/pagination/?k=beef8d83cadcb70a8565e009a280f80c)
@@ -158,6 +159,11 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 
 == Changelog ==
 
+= V1.1.3 - 29.01.2019
+* Update : All functionality for WordPress 5.0.3 was updated.
+* Bugfix : Fixed small bugs. 
+* PRO : Buttons for non numeric pagination was added. 
+
 = V1.1.2 - 18.09.2018 =
 * Update : All functionality for WordPress 4.9.8 was updated.
 * Pro : The bug with the infinite scroll has been fixed.
@@ -215,6 +221,11 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 * Update : We updated all functionality for wordpress 4.2.2.
 
 == Upgrade Notice ==
+
+= V1.1.3 =
+* The compatibility with new WordPress version updated.
+* New features added.
+* Bugs fixed.
 
 = V1.1.2 =
 * Bugs fixed.

@@ -8,3 +8,6 @@
 #bws_settings_tabs .bws-tab-appearance a:before{
 	content: "\f100";
 }
+.form-table {
+	margin-left: 13px;
+}

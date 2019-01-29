@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Pagination\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-02 16:01+0300\n"
+"POT-Creation-Date: 2019-01-08 18:39+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: plugin@bestwebsoft.com <plugin@bestwebsoft.com>\n"
 "Language-Team: BestWebSoft team <wp@bestwebsoft.com>\n"
@@ -15,10 +15,10 @@ msgstr ""
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=4; plural=(n==1) ? 0 : (n%10==1 && n%100!=11) ? 3 : "
 "((n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20)) ? 1 : 2);\n"
-"X-Generator: Poedit 1.8.7.1\n"
+"X-Generator: Poedit 2.2\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: includes/class-pgntn-settings.php:24 pagination.php:41 pagination.php:636
+#: includes/class-pgntn-settings.php:24 pagination.php:41 pagination.php:635
 msgid "Settings"
 msgstr "Настройки"
 
@@ -81,7 +81,7 @@ msgstr "странице вывода результатов поиска"
 msgid "paginated posts/pages"
 msgstr "многостраничных записях"
 
-#: includes/class-pgntn-settings.php:150
+#: includes/class-pgntn-settings.php:150 includes/class-pgntn-settings.php:289
 msgid "Close"
 msgstr "Закрыть"
 
@@ -117,69 +117,73 @@ msgstr ""
 "автоматически загружать новые записи/страницы, когда пользователь "
 "прокручивает до нижней части экрана"
 
-#: includes/class-pgntn-settings.php:174
+#: includes/class-pgntn-settings.php:169
+msgid "Next/Previous buttons"
+msgstr "Кнопки Далее/назад"
+
+#: includes/class-pgntn-settings.php:177 includes/class-pgntn-settings.php:312
 msgid "Learn More"
 msgstr "Подробнее"
 
-#: includes/class-pgntn-settings.php:181
+#: includes/class-pgntn-settings.php:184
 msgid "Pagination Position"
 msgstr "Отображать навигацию на"
 
-#: includes/class-pgntn-settings.php:184
+#: includes/class-pgntn-settings.php:187
 msgid "above the main content"
 msgstr "перед основным контентом"
 
-#: includes/class-pgntn-settings.php:185
+#: includes/class-pgntn-settings.php:188
 msgid "below the main content"
 msgstr "после основного контента"
 
-#: includes/class-pgntn-settings.php:186
+#: includes/class-pgntn-settings.php:189
 msgid "above and below the main content"
 msgstr "перед и после основного контента"
 
-#: includes/class-pgntn-settings.php:187
+#: includes/class-pgntn-settings.php:190
 msgid "via function only"
 msgstr "только с помощью функции"
 
-#: includes/class-pgntn-settings.php:192
+#: includes/class-pgntn-settings.php:195
 msgid "Display 'Page __ of __' Block"
 msgstr "Отобразить блок 'Страница __ из __'"
 
-#: includes/class-pgntn-settings.php:198
+#: includes/class-pgntn-settings.php:201
 msgid "Display Next/Previous Arrows"
 msgstr "Отображать стрелки Предыдущая/Следующая"
 
-#: includes/class-pgntn-settings.php:203
+#: includes/class-pgntn-settings.php:206
 msgid "text for previous page link"
 msgstr "текст для ссылки на предыдущую страницу"
 
-#: includes/class-pgntn-settings.php:205
+#: includes/class-pgntn-settings.php:208
 msgid "text for next page link"
 msgstr "текст для ссылки на следующую страницу"
 
-#: includes/class-pgntn-settings.php:210
+#: includes/class-pgntn-settings.php:213
 msgid "Type of Output"
 msgstr "Тип вывода"
 
-#: includes/class-pgntn-settings.php:214
+#: includes/class-pgntn-settings.php:217
 msgid "all numbers of pages"
 msgstr "номера всех страниц"
 
-#: includes/class-pgntn-settings.php:217
+#: includes/class-pgntn-settings.php:220
 msgid "shorthand output"
 msgstr "сокращённый вывод"
 
-#: includes/class-pgntn-settings.php:220
+#: includes/class-pgntn-settings.php:223
 msgid "numbers to either side of current page, but not including current page."
 msgstr ""
 "количество номеров страниц по обеим сторонам от текущей страницы, исключая "
 "её."
 
-#: includes/class-pgntn-settings.php:227
+#: includes/class-pgntn-settings.php:230
 msgid "Hide Standard Pagination"
 msgstr "Скрыть стандартную навигацию"
 
-#: includes/class-pgntn-settings.php:229
+#: includes/class-pgntn-settings.php:232
 msgid ""
 "Used for standard WordPress themes or themes, which use standard CSS-classes "
 "to display pagination blocks"
@@ -187,121 +191,144 @@ msgstr ""
 "Применимо для стандартных тем WordPress или тем, которые используют "
 "стандартные CSS-классы для отображения блока навигации"
 
-#: includes/class-pgntn-settings.php:236
+#: includes/class-pgntn-settings.php:239
 msgid "posts pagination"
 msgstr "навигация по записям"
 
-#: includes/class-pgntn-settings.php:238
+#: includes/class-pgntn-settings.php:241
 msgid "on paginated posts or pages"
 msgstr "на многостраничных записях или страницах"
 
-#: includes/class-pgntn-settings.php:240
+#: includes/class-pgntn-settings.php:243
 msgid "comments pagination"
 msgstr "навигация по комментариям"
 
-#: includes/class-pgntn-settings.php:246
+#: includes/class-pgntn-settings.php:249
 msgid "Hide Custom Pagination"
 msgstr "Скрыть дополнительную навигацию"
 
-#: includes/class-pgntn-settings.php:248
+#: includes/class-pgntn-settings.php:251
+#, fuzzy
+#| msgid ""
+#| "Enter one (or more comma-separated) CSS-classes or ID of blocks which you "
+#| "would like to hide."
 msgid ""
-"Enter one (or more comma-separated) CSS-classes or ID of blocks which you "
+"Enter one ( or more comma-separated ) CSS-classes or ID of blocks which you "
 "would like to hide."
 msgstr ""
 "Введите один (или несколько разделенных запятыми) CSS классов или ID блоков, "
 "которые необходимо скрыть."
 
-#: includes/class-pgntn-settings.php:249
+#: includes/class-pgntn-settings.php:252
 msgid "Example"
 msgstr "Например"
 
-#: includes/class-pgntn-settings.php:251 includes/class-pgntn-settings.php:253
+#: includes/class-pgntn-settings.php:254 includes/class-pgntn-settings.php:256
 msgid "or"
 msgstr "или"
 
-#: includes/class-pgntn-settings.php:269
+#: includes/class-pgntn-settings.php:272
 msgid "Nofollow Link"
 msgstr "Атрибут rel=\"nofollow\""
 
-#: includes/class-pgntn-settings.php:273
+#: includes/class-pgntn-settings.php:276
 msgid "Enable to add rel=\"nofollow\" attribute."
 msgstr ""
 "Включите, чтобы добавить атрибут \n"
 "rel=\"nofollow\"."
 
-#: includes/class-pgntn-settings.php:281
+#: includes/class-pgntn-settings.php:283
 msgid "Display Settings"
 msgstr "Настройка отображения"
 
-#: includes/class-pgntn-settings.php:286
+#: includes/class-pgntn-settings.php:294
+msgid "Loader Image"
+msgstr "Изображение загрузчика"
+
+#: includes/class-pgntn-settings.php:297
+#, php-format
+msgid "Max image height: %s; image types: %s."
+msgstr "Максимальная высота изображения: %s; типы изображения: %s."
+
+#: includes/class-pgntn-settings.php:299
+msgid "Current image"
+msgstr "Текущее изображение"
+
+#: includes/class-pgntn-settings.php:303
+#, fuzzy
+#| msgid "\"Load More\" button"
+msgid "Text for \"Load more\" Button"
+msgstr "Кнопка \"Загрузить еще\""
+
+#: includes/class-pgntn-settings.php:319
 msgid "Add Styles"
 msgstr "Добавить стили"
 
-#: includes/class-pgntn-settings.php:292
+#: includes/class-pgntn-settings.php:325
 msgid "Page Pagination Block width"
 msgstr "Ширина блока навигации"
 
-#: includes/class-pgntn-settings.php:298
+#: includes/class-pgntn-settings.php:331
 msgid "Pagination Align"
 msgstr "Расположение навигации"
 
-#: includes/class-pgntn-settings.php:302
+#: includes/class-pgntn-settings.php:335
 msgid "Left"
 msgstr "Слева"
 
-#: includes/class-pgntn-settings.php:303
+#: includes/class-pgntn-settings.php:336
 msgid "Center"
 msgstr "По центру"
 
-#: includes/class-pgntn-settings.php:305
+#: includes/class-pgntn-settings.php:338
 msgid "Right"
 msgstr "Справа"
 
-#: includes/class-pgntn-settings.php:310
+#: includes/class-pgntn-settings.php:343
 msgid "Left Padding"
 msgstr "Отступ слева"
 
-#: includes/class-pgntn-settings.php:316
+#: includes/class-pgntn-settings.php:349
 msgid "Right Padding"
 msgstr "Отступ справа"
 
-#: includes/class-pgntn-settings.php:322
+#: includes/class-pgntn-settings.php:355
 msgid "Background Color"
 msgstr "Цвет фона"
 
-#: includes/class-pgntn-settings.php:328
+#: includes/class-pgntn-settings.php:361
 msgid "Background Color for Current Page"
 msgstr "Цвет фона текущей страницы"
 
-#: includes/class-pgntn-settings.php:334
+#: includes/class-pgntn-settings.php:367
 msgid "Text Color for Page"
 msgstr "Цвет текста"
 
-#: includes/class-pgntn-settings.php:340
+#: includes/class-pgntn-settings.php:373
 msgid "Text Color for Current Page"
 msgstr "Цвет текста текущей страницы"
 
-#: includes/class-pgntn-settings.php:346
+#: includes/class-pgntn-settings.php:379
 msgid "Hover Color"
 msgstr "Цвет при наведении"
 
-#: includes/class-pgntn-settings.php:352
+#: includes/class-pgntn-settings.php:385
 msgid "Border Color"
 msgstr "Цвет границы"
 
-#: includes/class-pgntn-settings.php:358
+#: includes/class-pgntn-settings.php:391
 msgid "Border Width"
 msgstr "Ширина границы"
 
-#: includes/class-pgntn-settings.php:364
+#: includes/class-pgntn-settings.php:397
 msgid "Border Radius"
 msgstr "Закругление границ"
 
-#: includes/class-pgntn-settings.php:381
+#: includes/class-pgntn-settings.php:414
 msgid "Pagination"
 msgstr "Pagination"
 
-#: includes/class-pgntn-settings.php:384
+#: includes/class-pgntn-settings.php:417
 msgid ""
 "If you would like to display pagination block in a different place on your "
 "site, add the following strings into the file"
@@ -309,11 +336,11 @@ msgstr ""
 "Если Вы хотите отобразить блок навигации в другом месте сайта, добавьте "
 "следующие строки в файл"
 
-#: includes/class-pgntn-settings.php:384
+#: includes/class-pgntn-settings.php:417
 msgid "of your theme"
 msgstr "вашей темы"
 
-#: includes/class-pgntn-settings.php:388
+#: includes/class-pgntn-settings.php:421
 msgid ""
 "If you would like to display pagination block for paginated posts or pages "
 "in a different place on your site, add the following strings into the "
@@ -323,7 +350,7 @@ msgstr ""
 "страниц в другом месте, добавьте следующие строки в соответствующие шаблоны "
 "Вашей темы"
 
-#: includes/class-pgntn-settings.php:392
+#: includes/class-pgntn-settings.php:425
 msgid ""
 "Paste this into the comments template if you want to display pagination for "
 "comments"
@@ -347,27 +374,27 @@ msgstr "« Предыдущая"
 msgid "Next »"
 msgstr "Следующая »"
 
-#: pagination.php:465 pagination.php:485
+#: pagination.php:464 pagination.php:484
 msgid "Page"
 msgstr "Страница"
 
-#: pagination.php:465 pagination.php:485 pagination.php:509 pagination.php:592
+#: pagination.php:464 pagination.php:484 pagination.php:508 pagination.php:591
 msgid "of"
 msgstr "из"
 
-#: pagination.php:509
+#: pagination.php:508
 msgid "Pages"
 msgstr "Страницы"
 
-#: pagination.php:592
+#: pagination.php:591
 msgid "Comments Page"
 msgstr "Страница комментариев"
 
-#: pagination.php:637
+#: pagination.php:636
 msgid "FAQ"
 msgstr "FAQ"
 
-#: pagination.php:638
+#: pagination.php:637
 msgid "Support"
 msgstr "Техподдержка"
 

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Pagination\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-02 15:59+0300\n"
+"POT-Creation-Date: 2019-01-08 18:38+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: BestWebSoft team <wp@bestwebsoft.com>\n"
@@ -14,10 +14,10 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 1.8.7.1\n"
+"X-Generator: Poedit 2.2\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: includes/class-pgntn-settings.php:24 pagination.php:41 pagination.php:636
+#: includes/class-pgntn-settings.php:24 pagination.php:41 pagination.php:635
 msgid "Settings"
 msgstr "Préférences"
 
@@ -81,7 +81,7 @@ msgstr "la page des résultats de la recherche"
 msgid "paginated posts/pages"
 msgstr "les pages et les posts paginés"
 
-#: includes/class-pgntn-settings.php:150
+#: includes/class-pgntn-settings.php:150 includes/class-pgntn-settings.php:289
 msgid "Close"
 msgstr "Fermer"
 
@@ -117,186 +117,215 @@ msgstr ""
 "charger automatiquement de nouvelle page si l'utilisateur défile en bas de "
 "l'écran"
 
-#: includes/class-pgntn-settings.php:174
+#: includes/class-pgntn-settings.php:169
+#, fuzzy
+#| msgid "Display Next/Previous arrows"
+msgid "Next/Previous buttons"
+msgstr "Afficher les flèches Précédent/Suivant"
+
+#: includes/class-pgntn-settings.php:177 includes/class-pgntn-settings.php:312
 msgid "Learn More"
 msgstr "En savoir plus"
 
-#: includes/class-pgntn-settings.php:181
+#: includes/class-pgntn-settings.php:184
 msgid "Pagination Position"
 msgstr ""
 
-#: includes/class-pgntn-settings.php:184
+#: includes/class-pgntn-settings.php:187
 msgid "above the main content"
 msgstr "au dessus du contenu principal"
 
-#: includes/class-pgntn-settings.php:185
+#: includes/class-pgntn-settings.php:188
 msgid "below the main content"
 msgstr "en dessous du contenu principal"
 
-#: includes/class-pgntn-settings.php:186
+#: includes/class-pgntn-settings.php:189
 msgid "above and below the main content"
 msgstr "au dessus et en dessous du contenu principal. "
 
-#: includes/class-pgntn-settings.php:187
+#: includes/class-pgntn-settings.php:190
 msgid "via function only"
 msgstr "uniquement par une fonction"
 
-#: includes/class-pgntn-settings.php:192
+#: includes/class-pgntn-settings.php:195
 msgid "Display 'Page __ of __' Block"
 msgstr ""
 
-#: includes/class-pgntn-settings.php:198
+#: includes/class-pgntn-settings.php:201
 msgid "Display Next/Previous Arrows"
 msgstr ""
 
-#: includes/class-pgntn-settings.php:203
+#: includes/class-pgntn-settings.php:206
 msgid "text for previous page link"
 msgstr "Texte pour le lien 'page précédente'"
 
-#: includes/class-pgntn-settings.php:205
+#: includes/class-pgntn-settings.php:208
 msgid "text for next page link"
 msgstr "texte pour le lien 'page suivante'"
 
-#: includes/class-pgntn-settings.php:210
+#: includes/class-pgntn-settings.php:213
 msgid "Type of Output"
 msgstr ""
 
-#: includes/class-pgntn-settings.php:214
+#: includes/class-pgntn-settings.php:217
 msgid "all numbers of pages"
 msgstr "tous les numéros des pages"
 
-#: includes/class-pgntn-settings.php:217
+#: includes/class-pgntn-settings.php:220
 msgid "shorthand output"
 msgstr "abréviation pour la sortie"
 
-#: includes/class-pgntn-settings.php:220
+#: includes/class-pgntn-settings.php:223
 msgid "numbers to either side of current page, but not including current page."
 msgstr ""
 "numéros des pages précédentes et suivantes mais pas de la page courante. "
 
-#: includes/class-pgntn-settings.php:227
+#: includes/class-pgntn-settings.php:230
 msgid "Hide Standard Pagination"
 msgstr ""
 
-#: includes/class-pgntn-settings.php:229
+#: includes/class-pgntn-settings.php:232
 msgid ""
 "Used for standard WordPress themes or themes, which use standard CSS-classes "
 "to display pagination blocks"
 msgstr "Utilisé pour les thèmes WordPress, comprenant des classes CSS"
 
-#: includes/class-pgntn-settings.php:236
+#: includes/class-pgntn-settings.php:239
 msgid "posts pagination"
 msgstr "pagination des posts"
 
-#: includes/class-pgntn-settings.php:238
+#: includes/class-pgntn-settings.php:241
 msgid "on paginated posts or pages"
 msgstr "sur les pages et les posts paginés."
 
-#: includes/class-pgntn-settings.php:240
+#: includes/class-pgntn-settings.php:243
 msgid "comments pagination"
 msgstr "pagination des commentaires"
 
-#: includes/class-pgntn-settings.php:246
+#: includes/class-pgntn-settings.php:249
 msgid "Hide Custom Pagination"
 msgstr ""
 
-#: includes/class-pgntn-settings.php:248
+#: includes/class-pgntn-settings.php:251
+#, fuzzy
+#| msgid ""
+#| "Enter one (or more comma-separated) CSS-classes or ID of blocks which you "
+#| "would like to hide."
 msgid ""
-"Enter one (or more comma-separated) CSS-classes or ID of blocks which you "
+"Enter one ( or more comma-separated ) CSS-classes or ID of blocks which you "
 "would like to hide."
 msgstr ""
 "Entrer une ou plusieurs classes CSS (séparées par des virgules) que vous "
 "souhaitez cacher."
 
-#: includes/class-pgntn-settings.php:249
+#: includes/class-pgntn-settings.php:252
 msgid "Example"
 msgstr "Exemple "
 
-#: includes/class-pgntn-settings.php:251 includes/class-pgntn-settings.php:253
+#: includes/class-pgntn-settings.php:254 includes/class-pgntn-settings.php:256
 msgid "or"
 msgstr "ou"
 
-#: includes/class-pgntn-settings.php:269
+#: includes/class-pgntn-settings.php:272
 msgid "Nofollow Link"
 msgstr ""
 
-#: includes/class-pgntn-settings.php:273
+#: includes/class-pgntn-settings.php:276
 msgid "Enable to add rel=\"nofollow\" attribute."
 msgstr ""
 
-#: includes/class-pgntn-settings.php:281
+#: includes/class-pgntn-settings.php:283
 msgid "Display Settings"
 msgstr ""
 
-#: includes/class-pgntn-settings.php:286
+#: includes/class-pgntn-settings.php:294
+msgid "Loader Image"
+msgstr ""
+
+#: includes/class-pgntn-settings.php:297
+#, php-format
+msgid "Max image height: %s; image types: %s."
+msgstr ""
+
+#: includes/class-pgntn-settings.php:299
+msgid "Current image"
+msgstr ""
+
+#: includes/class-pgntn-settings.php:303
+#, fuzzy
+#| msgid "\"Load More\" button"
+msgid "Text for \"Load more\" Button"
+msgstr "Bouton \"Charger d'avantage\""
+
+#: includes/class-pgntn-settings.php:319
 msgid "Add Styles"
 msgstr ""
 
-#: includes/class-pgntn-settings.php:292
+#: includes/class-pgntn-settings.php:325
 msgid "Page Pagination Block width"
 msgstr ""
 
-#: includes/class-pgntn-settings.php:298
+#: includes/class-pgntn-settings.php:331
 msgid "Pagination Align"
 msgstr ""
 
-#: includes/class-pgntn-settings.php:302
+#: includes/class-pgntn-settings.php:335
 msgid "Left"
 msgstr "Gauche"
 
-#: includes/class-pgntn-settings.php:303
+#: includes/class-pgntn-settings.php:336
 msgid "Center"
 msgstr "Centré"
 
-#: includes/class-pgntn-settings.php:305
+#: includes/class-pgntn-settings.php:338
 msgid "Right"
 msgstr "Droit"
 
-#: includes/class-pgntn-settings.php:310
+#: includes/class-pgntn-settings.php:343
 msgid "Left Padding"
 msgstr ""
 
-#: includes/class-pgntn-settings.php:316
+#: includes/class-pgntn-settings.php:349
 msgid "Right Padding"
 msgstr ""
 
-#: includes/class-pgntn-settings.php:322
+#: includes/class-pgntn-settings.php:355
 msgid "Background Color"
 msgstr ""
 
-#: includes/class-pgntn-settings.php:328
+#: includes/class-pgntn-settings.php:361
 msgid "Background Color for Current Page"
 msgstr ""
 
-#: includes/class-pgntn-settings.php:334
+#: includes/class-pgntn-settings.php:367
 msgid "Text Color for Page"
 msgstr ""
 
-#: includes/class-pgntn-settings.php:340
+#: includes/class-pgntn-settings.php:373
 msgid "Text Color for Current Page"
 msgstr ""
 
-#: includes/class-pgntn-settings.php:346
+#: includes/class-pgntn-settings.php:379
 msgid "Hover Color"
 msgstr ""
 
-#: includes/class-pgntn-settings.php:352
+#: includes/class-pgntn-settings.php:385
 msgid "Border Color"
 msgstr ""
 
-#: includes/class-pgntn-settings.php:358
+#: includes/class-pgntn-settings.php:391
 msgid "Border Width"
 msgstr ""
 
-#: includes/class-pgntn-settings.php:364
+#: includes/class-pgntn-settings.php:397
 msgid "Border Radius"
 msgstr ""
 
-#: includes/class-pgntn-settings.php:381
+#: includes/class-pgntn-settings.php:414
 msgid "Pagination"
 msgstr ""
 
-#: includes/class-pgntn-settings.php:384
+#: includes/class-pgntn-settings.php:417
 msgid ""
 "If you would like to display pagination block in a different place on your "
 "site, add the following strings into the file"
@@ -304,18 +333,18 @@ msgstr ""
 "Si vous voulez mettre le bloc de pagination ailleurs sur votre site, ajoutez "
 "la chaîne suivante dans le fichier "
 
-#: includes/class-pgntn-settings.php:384
+#: includes/class-pgntn-settings.php:417
 msgid "of your theme"
 msgstr "de votre thème"
 
-#: includes/class-pgntn-settings.php:388
+#: includes/class-pgntn-settings.php:421
 msgid ""
 "If you would like to display pagination block for paginated posts or pages "
 "in a different place on your site, add the following strings into the "
 "appropriate templates source code of your theme"
 msgstr ""
 
-#: includes/class-pgntn-settings.php:392
+#: includes/class-pgntn-settings.php:425
 msgid ""
 "Paste this into the comments template if you want to display pagination for "
 "comments"
@@ -338,27 +367,27 @@ msgstr "« Précédent"
 msgid "Next »"
 msgstr "Suivant »"
 
-#: pagination.php:465 pagination.php:485
+#: pagination.php:464 pagination.php:484
 msgid "Page"
 msgstr "Page"
 
-#: pagination.php:465 pagination.php:485 pagination.php:509 pagination.php:592
+#: pagination.php:464 pagination.php:484 pagination.php:508 pagination.php:591
 msgid "of"
 msgstr "sur"
 
-#: pagination.php:509
+#: pagination.php:508
 msgid "Pages"
 msgstr "Pages"
 
-#: pagination.php:592
+#: pagination.php:591
 msgid "Comments Page"
 msgstr "Page de commentaire"
 
-#: pagination.php:637
+#: pagination.php:636
 msgid "FAQ"
 msgstr "FAQ"
 
-#: pagination.php:638
+#: pagination.php:637
 msgid "Support"
 msgstr "Support"
 
@@ -397,9 +426,6 @@ msgstr "Support"
 
 #~ msgid "Display 'Page __ of __' block"
 #~ msgstr "Afficher le bloc \"Page __sur__ \""
-
-#~ msgid "Display Next/Previous arrows"
-#~ msgstr "Afficher les flèches Précédent/Suivant"
 
 #~ msgid "Type of output"
 #~ msgstr "Type de sortie"

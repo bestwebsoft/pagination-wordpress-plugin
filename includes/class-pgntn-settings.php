@@ -164,8 +164,11 @@ if ( ! class_exists( 'Pgntn_Settings_Tabs' ) ) {
 										<label>
 											<input disabled="disabled" type="radio" value="infinite-scroll" name="pgntn_type" /><?php _e( 'Infinite scroll', 'pagination' ); ?>
 											<span class="bws_info"> ( <?php _e( 'automatically loads new posts/pages as the user scrolls to the bottom of the screen', 'pagination' ); ?> )</span>
-										</label>
-									</fieldset>
+                                        </label><br />
+                                        <label>
+                                            <input disabled="disabled" type="radio" value="continue" name="pgntn_type" /> <?php _e( 'Next/Previous buttons', 'pagination' ); ?>
+                                        </label>
+                                    </fieldset>
 								</td>
 							</tr>
 						</table>
@@ -245,7 +248,7 @@ if ( ! class_exists( 'Pgntn_Settings_Tabs' ) ) {
 					<th scope="row">
 						<?php _e( 'Hide Custom Pagination', 'pagination' ); ?>
 						<?php echo bws_add_help_box(
-							__( 'Enter one (or more comma-separated) CSS-classes or ID of blocks which you would like to hide.', 'pagination' ) . '<br />' .
+							__( 'Enter one ( or more comma-separated ) CSS-classes or ID of blocks which you would like to hide.', 'pagination' ) . '<br />' .
 							__( 'Example', 'pagination' ) . ':<br />
 							<code>#nav_block</code><br />' .
 							__( "or", 'pagination' ) . '<br />
@@ -276,11 +279,41 @@ if ( ! class_exists( 'Pgntn_Settings_Tabs' ) ) {
 				</tr>
 			</table>
 		<?php }
-
 		public function tab_appearance() { ?>
 			<h3 class="bws_tab_label"><?php _e( 'Display Settings', 'pagination' ); ?></h3>
 			<?php $this->help_phrase(); ?>
 			<hr>
+			<?php if ( ! $this->hide_pro_tabs ) { ?>
+				<div class="bws_pro_version_bloc">
+					<div class="bws_pro_version_table_bloc">
+						<button type="submit" name="bws_hide_premium_options" class="notice-dismiss bws_hide_premium_options" title="<?php _e( 'Close', 'pagination' ); ?>"></button>
+						    <div class="bws_table_bg"></div>
+							    <table class="form-table bws_pro_version">
+								    <table class="form-table">
+									    <tr valign="top">
+										    <th scope="row"><?php _e( 'Loader Image', 'pagination' ); ?></th>
+                                            <td>
+                                                <input disabled="disabled" name="pgntn_uploadfile" type="file" /><br />
+                                                <span class="bws_info"><?php printf( __( 'Max image height: %s; image types: %s.', 'pagination' ), '300px', '"gif", "jpg", "jpeg", "png"' ); ?></span>
+                                                <br /><br />
+                                                <?php _e( 'Current image', 'pagination' ); ?>:
+                                            </td>
+								        </tr>
+								        <tr>
+									        <th scope="row"><?php _e( 'Text for "Load more" Button', 'pagination' ); ?></th>
+									        <td>
+									        <input disabled="disabled" type="text" maxlength='50' value="<?php echo "Learn More"   ?>"  />
+									        </td>
+								        </tr>
+						            </table>
+                            </table>
+                        </div>
+					<div class="bws_pro_version_tooltip">
+						<a class="bws_button" href="https://bestwebsoft.com/products/wordpress/plugins/pagination/?k=5f3235c93ef4bd001abe4efd16530be0&pn=212&v=<?php echo $this->plugins_info["Version"]; ?>" target="_blank" title="Pagination Pro"><?php _e( 'Learn More', 'pagination' ); ?></a>
+						<div class="clear"></div>
+					</div>
+				</div>
+			<?php } ?>
 			<table class="form-table">
 				<tr>
 					<th scope="row"><?php _e( 'Add Styles', 'pagination' ); ?></th>

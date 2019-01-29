@@ -6,12 +6,12 @@ Description: Add customizable pagination to WordPress website. Split long conten
 Author: BestWebSoft
 Text Domain: pagination
 Domain Path: /languages
-Version: 1.1.2
+Version: 1.1.3
 Author URI: https://bestwebsoft.com/
 License: GPLv3 or later
 */
 
-/*  © Copyright 2018  BestWebSoft  ( https://support.bestwebsoft.com )
+/*  © Copyright 2019  BestWebSoft  ( https://support.bestwebsoft.com )
 
 	This program is free software; you can redistribute it and/or modify
 	it under the terms of the GNU General Public License, version 2, as
@@ -26,8 +26,6 @@ License: GPLv3 or later
 	along with this program; if not, write to the Free Software
 	Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
-
-require_once( dirname( __FILE__ ) . '/includes/deprecated.php' );
 
 /**
  * Add Wordpress page 'bws_panel' and sub-page of this plugin to admin-panel.
@@ -178,14 +176,6 @@ if ( ! function_exists( 'pgntn_settings' ) ) {
 		if ( ! isset( $pgntn_options['plugin_option_version'] ) || $pgntn_options['plugin_option_version'] != $pgntn_plugin_info["Version"] ) {
 			pgntn_plugin_activate();
 			$pgntn_option_defaults['display_settings_notice'] = 0;
-			/**
-			* @deprecated since 1.0.9
-			* @todo remove after 31.10.2018
-			*/
-			if ( version_compare( str_replace( 'pro-', '', $pgntn_options['plugin_option_version'] ), '1.0.9', '<' ) && function_exists( 'pgntn_update_options' ) ) {
-				pgntn_update_options();
-			}
-			/* deprecated (end) */
 			$pgntn_options = array_merge( $pgntn_option_defaults, $pgntn_options );
 			/* show pro features */
 			$pgntn_options['hide_premium_options'] = array();

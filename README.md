@@ -67,7 +67,7 @@
 <li>Set margins for left and right align</li>
 <li>Customize pagination styles:
 <ul>
-<li>Hover color [NEW]</li>
+<li>Hover color </li>
 <li>Background color</li>
 <li>Current page background color</li>
 <li>Text color</li>
@@ -90,6 +90,7 @@
 <li>Numeric (default)</li>
 <li>Load More button</li>
 <li>Infinite scroll</li>
+<li>Next/Previous buttons [NEW]</li>
 </ul>
 </li>
 <li>Get answer to your support question within one business day (<a href="https://bestwebsoft.com/support-policy/" rel="nofollow">Support Policy</a>)</li>
