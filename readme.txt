@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://bestwebsoft.com/donate/
 Tags: pagination, pagination block, custom pagination block, multiple navigation, multiple pages, navigation, next page, post pagination, pagination buttons, pagination plugin, improve pages navigation, paginate plugin
 Requires at least: 3.9
-Tested up to: 5.0.3
-Stable tag: 1.1.3
+Tested up to: 5.1.1
+Stable tag: 1.1.4
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -76,7 +76,7 @@ http://www.youtube.com/watch?v=TwAd3DWLGr8
 > 	* Numeric (default)
 > 	* Load More button
 > 	* Infinite scroll
->	* Next/Previous buttons [NEW]
+>	* Next/Previous buttons
 > * Get answer to your support question within one business day ([Support Policy](https://bestwebsoft.com/support-policy/))
 >
 > [Upgrade to Pro Now](https://bestwebsoft.com/products/wordpress/plugins/pagination/?k=beef8d83cadcb70a8565e009a280f80c)
@@ -141,6 +141,16 @@ Most likely that your theme was created incorrectly and it does not provide the 
 
 It is necessary to add function <?php if ( function_exists( 'pgntn_display_pagination' ) ) pgntn_display_pagination( 'custom', $second_query ); ?> to the necessary place. In this function, specify the name of your custom query to the database instead of $second_query.
 
+= How to display Pagination (Next/Previous buttons, Infinite scroll, "Load More" button) for posts in the Divi theme? =
+
+1. Go to the Pagination Settings page;
+2. Find "Posts selector" and set it to "#content-area div".
+
+= How to display Pagination (Next/Previous buttons, Infinite scroll, "Load More" button) for posts in the Avada theme? =
+
+1. Go to the Pagination Settings page;
+2. Find "Posts selector" and set it to ".fusion-posts-container".
+
 = I have some problems with the plugin's work. What Information should I provide to receive proper support? =
 
 Please make sure that the problem hasn't been discussed yet on our forum (<https://support.bestwebsoft.com>). If no, please provide the following data along with your problem's description:
@@ -158,6 +168,10 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 4. Appearance settings in WordPress admin panel.
 
 == Changelog ==
+
+= V1.1.4 - 19.03.2019 =
+* Update : All functionality was updated for WordPress 5.1.1.
+* PRO : The bug with the infinite scroll and "Load More" button has been fixed.
 
 = V1.1.3 - 29.01.2019
 * Update : All functionality for WordPress 5.0.3 was updated.
@@ -221,6 +235,10 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 * Update : We updated all functionality for wordpress 4.2.2.
 
 == Upgrade Notice ==
+
+= V1.1.4 =
+* Bugs fixed.
+* The compatibility with new WordPress version updated.
 
 = V1.1.3 =
 * The compatibility with new WordPress version updated.

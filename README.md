@@ -90,7 +90,7 @@
 <li>Numeric (default)</li>
 <li>Load More button</li>
 <li>Infinite scroll</li>
-<li>Next/Previous buttons [NEW]</li>
+<li>Next/Previous buttons</li>
 </ul>
 </li>
 <li>Get answer to your support question within one business day (<a href="https://bestwebsoft.com/support-policy/" rel="nofollow">Support Policy</a>)</li>
