@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://bestwebsoft.com/donate/
 Tags: pagination, pagination block, custom pagination block, multiple navigation, multiple pages, navigation, next page, post pagination, pagination buttons, pagination plugin, improve pages navigation, paginate plugin
 Requires at least: 3.9
-Tested up to: 5.1.1
-Stable tag: 1.1.4
+Tested up to: 5.2
+Stable tag: 1.1.5
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -169,6 +169,10 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 
 == Changelog ==
 
+= V1.1.5 - 15.05.2019 =
+* Update : BWS menu has been updated.
+* PRO : The bug  with the infinite scroll and "Load More" button on paginated posts/pages has been fixed.
+
 = V1.1.4 - 19.03.2019 =
 * Update : All functionality was updated for WordPress 5.1.1.
 * PRO : The bug with the infinite scroll and "Load More" button has been fixed.
@@ -235,6 +239,10 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 * Update : We updated all functionality for wordpress 4.2.2.
 
 == Upgrade Notice ==
+
+= V1.1.5 =
+* Functionality  improved.
+* Bugs fixed.
 
 = V1.1.4 =
 * Bugs fixed.

@@ -6,7 +6,7 @@ Description: Add customizable pagination to WordPress website. Split long conten
 Author: BestWebSoft
 Text Domain: pagination
 Domain Path: /languages
-Version: 1.1.4
+Version: 1.1.5
 Author URI: https://bestwebsoft.com/
 License: GPLv3 or later
 */

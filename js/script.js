@@ -7,7 +7,7 @@
 			$( window ).resize( function() {
 				window_width = $( window ).width();
 			} );
-		/*  Color Picker */
+		/* Color Picker */
 		$( '.pgntn_color_picker' ).wpColorPicker();
 		if( ! $( 'input[name="pgntn_add_appearance"]' ).is( ':checked' ) ){
 			$( '.wp-color-result' ).attr( "disabled", true );
