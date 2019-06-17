@@ -100,6 +100,7 @@
 <p>If you have a feature suggestion or idea you&#8217;d like to see in the plugin, we&#8217;d love to hear about it! <a href="https://support.bestwebsoft.com/hc/en-us/requests/new" rel="nofollow">Suggest a Feature</a></p>
 <h4>Documentation &amp; Videos</h4>
 <ul>
+<li><a href="https://docs.google.com/document/d/1r02_D7mbbTxmXPSKmoHGh87Y5QBzrv9_ga7boWM_PN4/" rel="nofollow">[Doc]  How to Use</a></li>
 <li><a href="https://docs.google.com/document/d/1-hvn6WRvWnOqj5v5pLUk7Awyu87lq5B_dO-Tv-MC9JQ/" rel="nofollow">[Doc] Installation</a></li>
 <li><a href="https://docs.google.com/document/d/1EUdBVvnm7IHZ6y0DNyldZypUQKpB8UVPToSc_LdOYQI/" rel="nofollow">[Doc] Purchase</a></li>
 <li><a href="http://www.youtube.com/watch?v=Xh0LjOSgxzs" rel="nofollow">[Video] Installation Instruction</a></li>
@@ -109,6 +110,7 @@
 <h4>Translation</h4>
 <ul>
 <li>French (fr_FR) (thanks to <a href="mailto:&#x6a;&#108;&#099;&#x6f;&#x72;&#100;&#050;&#x40;&#x77;a&#110;&#x61;&#x64;o&#111;&#046;&#x66;&#x72;" rel="nofollow">Jean-Louis Cordonnier</a> www.labosdebabel.org)</li>
+<li>German (de_DE) [NEW]</li>
 <li>Portuguese (pt_PT) (thanks to <a href="mailto:&#x61;&#110;&#116;&#111;&#110;&#105;&#111;&#099;&#097;&#114;&#114;e&#x69;&#x72;&#x61;&#x40;&#x73;&#x74;&#x72;&#x65;&#x65;&#116;&#100;&#111;&#103;&#046;&#112;&#116;" rel="nofollow">Antonio Carreira</a> www.streetdog.pt)</li>
 <li>Hebrew (he_IL) (thanks to <a href="mailto:&#x68;&#x61;&#x6e;&#x61;&#110;&#064;&#109;&#115;&#116;&#117;&#100;&#105;&#111;&#046;&#099;o.&#x69;&#x6c;" rel="nofollow">Rubb</a>)</li>
 <li>Russian (ru_RU)</li>

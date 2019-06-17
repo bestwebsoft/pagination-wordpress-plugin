@@ -6,7 +6,7 @@ Description: Add customizable pagination to WordPress website. Split long conten
 Author: BestWebSoft
 Text Domain: pagination
 Domain Path: /languages
-Version: 1.1.5
+Version: 1.1.6
 Author URI: https://bestwebsoft.com/
 License: GPLv3 or later
 */
@@ -482,10 +482,16 @@ if ( ! function_exists( 'pgntn_nav_display' ) ) {
 				break;
 			case 'multipage':
 				global $page, $numpages;
+
+				/* Compatibility with Gallery plugin */
+				if ( is_object( $custom_query ) && isset( $custom_query->max_num_pages ) && isset( $custom_query->case ) && 'bws-gallery' == $custom_query->case ) {
+					$numpages = $custom_query->max_num_pages;
+				}
+
 				if ( $numpages > 1 )
 					$show_block = true;
 				if ( $show_block ) {
-					$current_page = intval( $page );
+					$current_page = isset( $custom_query->current_page ) ? $custom_query->current_page : intval( $page );
 					if ( empty( $current_page ) || $current_page == 0 )
 						$current_page = 1;
 					$nav_settings['current']	= $current_page;

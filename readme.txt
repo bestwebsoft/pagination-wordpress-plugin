@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://bestwebsoft.com/donate/
 Tags: pagination, pagination block, custom pagination block, multiple navigation, multiple pages, navigation, next page, post pagination, pagination buttons, pagination plugin, improve pages navigation, paginate plugin
 Requires at least: 3.9
-Tested up to: 5.2
-Stable tag: 1.1.5
+Tested up to: 5.2.1
+Stable tag: 1.1.6
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -85,6 +85,7 @@ If you have a feature suggestion or idea you'd like to see in the plugin, we'd l
 
 = Documentation & Videos =
 
+* [[Doc]  How to Use](https://docs.google.com/document/d/1r02_D7mbbTxmXPSKmoHGh87Y5QBzrv9_ga7boWM_PN4/)
 * [[Doc] Installation](https://docs.google.com/document/d/1-hvn6WRvWnOqj5v5pLUk7Awyu87lq5B_dO-Tv-MC9JQ/)
 * [[Doc] Purchase](https://docs.google.com/document/d/1EUdBVvnm7IHZ6y0DNyldZypUQKpB8UVPToSc_LdOYQI/)
 * [[Video] Installation Instruction](http://www.youtube.com/watch?v=Xh0LjOSgxzs)
@@ -96,6 +97,7 @@ Visit our Help Center if you have any questions, our friendly Support Team is ha
 = Translation =
 
 * French (fr_FR) (thanks to [Jean-Louis Cordonnier](mailto:jlcord2@wanadoo.fr) www.labosdebabel.org)
+* German (de_DE) [NEW]
 * Portuguese (pt_PT) (thanks to [Antonio Carreira](mailto:antoniocarreira@streetdog.pt) www.streetdog.pt)
 * Hebrew (he_IL) (thanks to [Rubb](mailto:hanan@mstudio.co.il))
 * Russian (ru_RU)
@@ -169,6 +171,10 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 
 == Changelog ==
 
+= V1.1.6 - 17.06.2019 =
+* Bugfix : Compatibility with Gallery by BestWebSoft has been fixed.
+* NEW : The German language file has been added.
+
 = V1.1.5 - 15.05.2019 =
 * Update : BWS menu has been updated.
 * PRO : The bug  with the infinite scroll and "Load More" button on paginated posts/pages has been fixed.
@@ -239,6 +245,10 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 * Update : We updated all functionality for wordpress 4.2.2.
 
 == Upgrade Notice ==
+
+= V1.1.6 =
+* Bugs fixed.
+* New language added.
 
 = V1.1.5 =
 * Functionality  improved.
