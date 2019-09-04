@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://bestwebsoft.com/donate/
 Tags: pagination, pagination block, custom pagination block, multiple navigation, multiple pages, navigation, next page, post pagination, pagination buttons, pagination plugin, improve pages navigation, paginate plugin
 Requires at least: 3.9
-Tested up to: 5.2.1
-Stable tag: 1.1.6
+Tested up to: 5.2.2
+Stable tag: 1.1.7
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -97,7 +97,7 @@ Visit our Help Center if you have any questions, our friendly Support Team is ha
 = Translation =
 
 * French (fr_FR) (thanks to [Jean-Louis Cordonnier](mailto:jlcord2@wanadoo.fr) www.labosdebabel.org)
-* German (de_DE) [NEW]
+* German (de_DE)
 * Portuguese (pt_PT) (thanks to [Antonio Carreira](mailto:antoniocarreira@streetdog.pt) www.streetdog.pt)
 * Hebrew (he_IL) (thanks to [Rubb](mailto:hanan@mstudio.co.il))
 * Russian (ru_RU)
@@ -170,6 +170,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 4. Appearance settings in WordPress admin panel.
 
 == Changelog ==
+
+= V1.1.7 - 04.09.2019 =
+* Update: The deactivation feedback has been changed. Misleading buttons have been removed.
 
 = V1.1.6 - 17.06.2019 =
 * Bugfix : Compatibility with Gallery by BestWebSoft has been fixed.
@@ -245,6 +248,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 * Update : We updated all functionality for wordpress 4.2.2.
 
 == Upgrade Notice ==
+
+= V1.1.7 =
+* Usability improved
 
 = V1.1.6 =
 * Bugs fixed.
