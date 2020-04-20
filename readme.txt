@@ -2,9 +2,9 @@
 Contributors: bestwebsoft
 Donate link: https://bestwebsoft.com/donate/
 Tags: pagination, pagination block, custom pagination block, multiple navigation, multiple pages, navigation, next page, post pagination, pagination buttons, pagination plugin, improve pages navigation, paginate plugin
-Requires at least: 3.9
-Tested up to: 5.2.2
-Stable tag: 1.1.7
+Requires at least: 4.5
+Tested up to: 5.4
+Stable tag: 1.1.8
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -167,9 +167,12 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 1. Custom pagination block in the front-end - shorthand output.
 2. Custom pagination block in the front-end with all page numbers.
 3. Plugin settings in WordPress admin panel.
-4. Appearance settings in WordPress admin panel.
 
 == Changelog ==
+
+= V1.1.8 - 20.04.2020 =
+* Update : All functionality was updated for WordPress 5.4.
+* Update : BWS menu has been updated.
 
 = V1.1.7 - 04.09.2019 =
 * Update: The deactivation feedback has been changed. Misleading buttons have been removed.
@@ -248,6 +251,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 * Update : We updated all functionality for wordpress 4.2.2.
 
 == Upgrade Notice ==
+
+= V1.1.8 =
+* The compatibility with new WordPress version updated.
 
 = V1.1.7 =
 * Usability improved

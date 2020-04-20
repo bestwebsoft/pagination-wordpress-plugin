@@ -62,11 +62,16 @@
 		$( '#pgntn_show_all' ).click( function() {
 			$( 'input[name="pgntn_display_count_page"]' ).attr( 'disabled', true );
 		} );
+		if ( "center" == $( 'input[name="pgntn_align"]:checked' ).val() ) {
+			$( '.pgntn_center_padding_hide' ).hide();
+		}
 		$( 'input[name="pgntn_align"]' ).change( function() {
 			if ( 'center' == $( this ).val() && $( this ).is( ':checked' ) ) {
 				$( '.pgntn_padding' ).attr( 'disabled', true );
+				$( '.pgntn_center_padding_hide' ).hide();
 			} else {
 				$( '.pgntn_padding' ).attr( 'disabled', false );
+				$( '.pgntn_center_padding_hide' ).show();
 			}
 		} );
 		$( 'input[name="pgntn_display_custom_pagination"]' ).change( function() {

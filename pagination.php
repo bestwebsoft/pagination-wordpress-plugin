@@ -6,12 +6,12 @@ Description: Add customizable pagination to WordPress website. Split long conten
 Author: BestWebSoft
 Text Domain: pagination
 Domain Path: /languages
-Version: 1.1.7
+Version: 1.1.8
 Author URI: https://bestwebsoft.com/
 License: GPLv3 or later
 */
 
-/*  © Copyright 2019  BestWebSoft  ( https://support.bestwebsoft.com )
+/*  © Copyright 2020  BestWebSoft  ( https://support.bestwebsoft.com )
 
 	This program is free software; you can redistribute it and/or modify
 	it under the terms of the GNU General Public License, version 2, as
@@ -78,7 +78,7 @@ if ( ! function_exists ( 'pgntn_init' ) ) {
 		}
 
 		/* Function check if plugin is compatible with current WP version */
-		bws_wp_min_version_check( plugin_basename( __FILE__ ), $pgntn_plugin_info, '3.9' );
+		bws_wp_min_version_check( plugin_basename( __FILE__ ), $pgntn_plugin_info, '4.5' );
 
 		pgntn_settings();
 		pgntn_display();
@@ -91,16 +91,27 @@ if ( ! function_exists ( 'pgntn_init' ) ) {
  */
 if ( ! function_exists ( 'pgntn_admin_init' ) ) {
 	function pgntn_admin_init() {
-		global $bws_plugin_info, $pgntn_plugin_info, $pagenow;
+		global $bws_plugin_info, $pgntn_plugin_info, $pagenow, $pgntn_options;
 
 		if ( empty( $bws_plugin_info ) )
 			$bws_plugin_info = array( 'id' => '212', 'version' => $pgntn_plugin_info["Version"] );
-	}
+
+        if ( 'plugins.php' == $pagenow ) {
+            /* show banner go settings pls*/
+            if ( function_exists( 'bws_plugin_banner_go_pro' ) ) {
+                pgntn_settings();
+            bws_plugin_banner_go_pro( $pgntn_options, $pgntn_plugin_info, 'pgntn', 'pagination', 'de97a6f81981229376108a33685eb703', '212', '//ps.w.org/pagination/assets/icon-128x128.png' );
+            }
+        }
+
+    }
 }
 
 /* Add settings page in admin area */
 if ( ! function_exists( 'pgntn_settings_page' ) ) {
 	function pgntn_settings_page() {
+        if ( ! class_exists( 'Bws_Settings_Tabs' ) )
+            require_once( dirname( __FILE__ ) . '/bws_menu/class-bws-settings.php' );
 		require_once( dirname( __FILE__ ) . '/includes/class-pgntn-settings.php' );
 		$page = new Pgntn_Settings_Tabs( plugin_basename( __FILE__ ) ); ?>
 		<!-- general -->
@@ -208,7 +219,7 @@ if ( ! function_exists( 'pgntn_plugin_activate' ) ) {
  */
 if ( ! function_exists( 'pgntn_admin_head' ) ) {
 	function pgntn_admin_head() {
-		wp_enqueue_style( 'pgntn_stylesheet', plugins_url( 'css/icon.css', __FILE__ ), array( 'wp-color-picker' ) );
+		wp_enqueue_style( 'pgntn_icon', plugins_url( 'css/icon.css', __FILE__ ), array( 'wp-color-picker' ) );
 		if ( isset( $_REQUEST['page'] ) && 'pagination.php' == $_REQUEST['page'] ) {
 			wp_enqueue_style( 'pgntn_stylesheet', plugins_url( 'css/style.css', __FILE__ ), array( 'wp-color-picker' ) );
 			wp_enqueue_script( 'pgntn_script', plugins_url( 'js/script.js', __FILE__ ), array( 'jquery', 'wp-color-picker' ), false, true );
@@ -651,14 +662,9 @@ if ( ! function_exists( 'pgntn_add_tabs' ) ) {
 /* add admin notices */
 if ( ! function_exists ( 'pgntn_admin_notices' ) ) {
 	function pgntn_admin_notices() {
-		global $hook_suffix, $pgntn_plugin_info, $pgntn_options;
+		global $hook_suffix, $pgntn_plugin_info;
 		if ( 'plugins.php' == $hook_suffix && ! is_network_admin() ) {
 			bws_plugin_banner_to_settings( $pgntn_plugin_info, 'pgntn_options', 'pagination', 'admin.php?page=pagination.php' );
-
-			if ( ! $pgntn_options )
-				$pgntn_options = get_option( 'pgntn_options' );
-			if ( isset( $pgntn_options['first_install'] ) && strtotime( '-1 week' ) > $pgntn_options['first_install'] )
-				bws_plugin_banner( $pgntn_plugin_info, 'pgntn', 'pagination', 'de97a6f81981229376108a33685eb703', '212', '//ps.w.org/pagination/assets/icon-128x128.png' );
 		}
 		if ( isset( $_REQUEST['page'] ) && 'pagination.php' == $_REQUEST['page'] ) {
 			bws_plugin_suggest_feature_banner( $pgntn_plugin_info, 'pgntn_options', 'pagination' );

@@ -17,8 +17,8 @@
 </li>
 <li>Compatible with:
 <ul>
-<li><a href="https://bestwebsoft.com/products/wordpress/plugins/gallery/?k=8a6c514916efe4264d0732b86b82487f" rel="nofollow">Gallery</a></li>
-<li><a href="https://bestwebsoft.com/products/wordpress/plugins/portfolio/?k=982e34e0a05371dc2dcca2a5fc535c1a" rel="nofollow">Portfolio</a></li>
+<li><a href="https://bestwebsoft.com/products/wordpress/plugins/gallery/?k=8a6c514916efe4264d0732b86b82487f" rel="nofollow ugc">Gallery</a></li>
+<li><a href="https://bestwebsoft.com/products/wordpress/plugins/portfolio/?k=982e34e0a05371dc2dcca2a5fc535c1a" rel="nofollow ugc">Portfolio</a></li>
 </ul>
 </li>
 <li>Add pagination via function to:
@@ -93,33 +93,33 @@
 <li>Next/Previous buttons</li>
 </ul>
 </li>
-<li>Get answer to your support question within one business day (<a href="https://bestwebsoft.com/support-policy/" rel="nofollow">Support Policy</a>)</li>
+<li>Get answer to your support question within one business day (<a href="https://bestwebsoft.com/support-policy/" rel="nofollow ugc">Support Policy</a>)</li>
 </ul>
-<p><a href="https://bestwebsoft.com/products/wordpress/plugins/pagination/?k=beef8d83cadcb70a8565e009a280f80c" rel="nofollow">Upgrade to Pro Now</a></p>
+<p><a href="https://bestwebsoft.com/products/wordpress/plugins/pagination/?k=beef8d83cadcb70a8565e009a280f80c" rel="nofollow ugc">Upgrade to Pro Now</a></p>
 </blockquote>
-<p>If you have a feature suggestion or idea you&#8217;d like to see in the plugin, we&#8217;d love to hear about it! <a href="https://support.bestwebsoft.com/hc/en-us/requests/new" rel="nofollow">Suggest a Feature</a></p>
+<p>If you have a feature suggestion or idea you&#8217;d like to see in the plugin, we&#8217;d love to hear about it! <a href="https://support.bestwebsoft.com/hc/en-us/requests/new" rel="nofollow ugc">Suggest a Feature</a></p>
 <h4>Documentation &amp; Videos</h4>
 <ul>
-<li><a href="https://docs.google.com/document/d/1r02_D7mbbTxmXPSKmoHGh87Y5QBzrv9_ga7boWM_PN4/" rel="nofollow">[Doc]  How to Use</a></li>
-<li><a href="https://docs.google.com/document/d/1-hvn6WRvWnOqj5v5pLUk7Awyu87lq5B_dO-Tv-MC9JQ/" rel="nofollow">[Doc] Installation</a></li>
-<li><a href="https://docs.google.com/document/d/1EUdBVvnm7IHZ6y0DNyldZypUQKpB8UVPToSc_LdOYQI/" rel="nofollow">[Doc] Purchase</a></li>
-<li><a href="http://www.youtube.com/watch?v=Xh0LjOSgxzs" rel="nofollow">[Video] Installation Instruction</a></li>
+<li><a href="https://docs.google.com/document/d/1r02_D7mbbTxmXPSKmoHGh87Y5QBzrv9_ga7boWM_PN4/" rel="nofollow ugc">[Doc]  How to Use</a></li>
+<li><a href="https://docs.google.com/document/d/1-hvn6WRvWnOqj5v5pLUk7Awyu87lq5B_dO-Tv-MC9JQ/" rel="nofollow ugc">[Doc] Installation</a></li>
+<li><a href="https://docs.google.com/document/d/1EUdBVvnm7IHZ6y0DNyldZypUQKpB8UVPToSc_LdOYQI/" rel="nofollow ugc">[Doc] Purchase</a></li>
+<li><a href="http://www.youtube.com/watch?v=Xh0LjOSgxzs" rel="nofollow ugc">[Video] Installation Instruction</a></li>
 </ul>
 <h4>Help &amp; Support</h4>
-<p>Visit our Help Center if you have any questions, our friendly Support Team is happy to help &#8211; <a href="https://support.bestwebsoft.com/" rel="nofollow">https://support.bestwebsoft.com/</a></p>
+<p>Visit our Help Center if you have any questions, our friendly Support Team is happy to help &#8211; <a href="https://support.bestwebsoft.com/" rel="nofollow ugc">https://support.bestwebsoft.com/</a></p>
 <h4>Translation</h4>
 <ul>
-<li>French (fr_FR) (thanks to <a href="mailto:&#x6a;&#108;&#099;&#x6f;&#x72;&#100;&#050;&#x40;&#x77;a&#110;&#x61;&#x64;o&#111;&#046;&#x66;&#x72;" rel="nofollow">Jean-Louis Cordonnier</a> www.labosdebabel.org)</li>
+<li>French (fr_FR) (thanks to <a href="mailto:&#x6a;&#108;&#099;&#x6f;&#x72;&#100;&#050;&#x40;&#x77;a&#110;&#x61;&#x64;o&#111;&#046;&#x66;&#x72;" rel="nofollow ugc">Jean-Louis Cordonnier</a> www.labosdebabel.org)</li>
 <li>German (de_DE)</li>
-<li>Portuguese (pt_PT) (thanks to <a href="mailto:&#x61;&#110;&#116;&#111;&#110;&#105;&#111;&#099;&#097;&#114;&#114;e&#x69;&#x72;&#x61;&#x40;&#x73;&#x74;&#x72;&#x65;&#x65;&#116;&#100;&#111;&#103;&#046;&#112;&#116;" rel="nofollow">Antonio Carreira</a> www.streetdog.pt)</li>
-<li>Hebrew (he_IL) (thanks to <a href="mailto:&#x68;&#x61;&#x6e;&#x61;&#110;&#064;&#109;&#115;&#116;&#117;&#100;&#105;&#111;&#046;&#099;o.&#x69;&#x6c;" rel="nofollow">Rubb</a>)</li>
+<li>Portuguese (pt_PT) (thanks to <a href="mailto:&#x61;&#110;&#116;&#111;&#110;&#105;&#111;&#099;&#097;&#114;&#114;e&#x69;&#x72;&#x61;&#x40;&#x73;&#x74;&#x72;&#x65;&#x65;&#116;&#100;&#111;&#103;&#046;&#112;&#116;" rel="nofollow ugc">Antonio Carreira</a> www.streetdog.pt)</li>
+<li>Hebrew (he_IL) (thanks to <a href="mailto:&#x68;&#x61;&#x6e;&#x61;&#110;&#064;&#109;&#115;&#116;&#117;&#100;&#105;&#111;&#046;&#099;o.&#x69;&#x6c;" rel="nofollow ugc">Rubb</a>)</li>
 <li>Russian (ru_RU)</li>
 <li>Ukrainian (uk)</li>
 </ul>
-<p>Some of these translations are not complete. We are constantly adding new features which should be translated. If you would like to create your own language pack or update the existing one, you can send <a href="https://codex.wordpress.org/Translating_WordPress" rel="nofollow">the text of PO and MO files</a> to <a href="https://support.bestwebsoft.com/hc/en-us/requests/new" rel="nofollow">BestWebSoft</a> and we&#8217;ll add it to the plugin. You can download the latest version of the program for work with PO and MO <a href="http://www.poedit.net/download.php" rel="nofollow">files Poedit</a>.</p>
+<p>Some of these translations are not complete. We are constantly adding new features which should be translated. If you would like to create your own language pack or update the existing one, you can send <a href="https://codex.wordpress.org/Translating_WordPress" rel="nofollow ugc">the text of PO and MO files</a> to <a href="https://support.bestwebsoft.com/hc/en-us/requests/new" rel="nofollow ugc">BestWebSoft</a> and we&#8217;ll add it to the plugin. You can download the latest version of the program for work with PO and MO <a href="http://www.poedit.net/download.php" rel="nofollow ugc">files Poedit</a>.</p>
 <h4>Recommended Plugins</h4>
 <ul>
-<li><a href="https://bestwebsoft.com/products/wordpress/plugins/updater/?k=f471af6c58ecd7f550f0601416e4331f" rel="nofollow">Updater</a> &#8211; Automatically check and update WordPress website core with all installed plugins and themes to the latest versions.</li>
-<li><a href="https://bestwebsoft.com/products/wordpress/plugins/gallery/?k=8a6c514916efe4264d0732b86b82487f" rel="nofollow">Gallery</a> &#8211; Add beautiful galleries, albums &amp; images to your WordPress website in few clicks.</li>
-<li><a href="https://bestwebsoft.com/products/wordpress/plugins/portfolio/?k=982e34e0a05371dc2dcca2a5fc535c1a" rel="nofollow">Portfolio</a> &#8211; Create and add personal portfolio to your WordPress website. Manage and showcase past projects to get more clients.</li>
+<li><a href="https://bestwebsoft.com/products/wordpress/plugins/updater/?k=f471af6c58ecd7f550f0601416e4331f" rel="nofollow ugc">Updater</a> &#8211; Automatically check and update WordPress website core with all installed plugins and themes to the latest versions.</li>
+<li><a href="https://bestwebsoft.com/products/wordpress/plugins/gallery/?k=8a6c514916efe4264d0732b86b82487f" rel="nofollow ugc">Gallery</a> &#8211; Add beautiful galleries, albums &amp; images to your WordPress website in few clicks.</li>
+<li><a href="https://bestwebsoft.com/products/wordpress/plugins/portfolio/?k=982e34e0a05371dc2dcca2a5fc535c1a" rel="nofollow ugc">Portfolio</a> &#8211; Create and add personal portfolio to your WordPress website. Manage and showcase past projects to get more clients.</li>
 </ul>

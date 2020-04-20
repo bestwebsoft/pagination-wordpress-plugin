@@ -1,6 +1,7 @@
 /**
  * styles settings page
  */
+.pgntn_links_text,
 .pgntn_input {
 	display: inline-block;
 }
