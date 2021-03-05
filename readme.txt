@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://bestwebsoft.com/donate/
 Tags: pagination, pagination block, custom pagination block, multiple navigation, multiple pages, navigation, next page, post pagination, pagination buttons, pagination plugin, improve pages navigation, paginate plugin
 Requires at least: 4.5
-Tested up to: 5.4
-Stable tag: 1.1.8
+Tested up to: 5.6.2
+Stable tag: 1.1.9
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -15,6 +15,8 @@ Add customizable pagination to WordPress website. Split long content to multiple
 Simple plugin which automatically adds custom pagination to your WordPress website blog, search results, archive, category, tags, and author pages. Choose pagination type, position, and customize its appearance.
 
 Improve navigation through your website content today!
+
+[View Demo](https://bestwebsoft.com/demo-pagination-plugin/?ref=readme)
 
 http://www.youtube.com/watch?v=TwAd3DWLGr8
 
@@ -85,7 +87,7 @@ If you have a feature suggestion or idea you'd like to see in the plugin, we'd l
 
 = Documentation & Videos =
 
-* [[Doc]  How to Use](https://docs.google.com/document/d/1r02_D7mbbTxmXPSKmoHGh87Y5QBzrv9_ga7boWM_PN4/)
+* [[Doc] User Guide](https://docs.google.com/document/d/1r02_D7mbbTxmXPSKmoHGh87Y5QBzrv9_ga7boWM_PN4/)
 * [[Doc] Installation](https://docs.google.com/document/d/1-hvn6WRvWnOqj5v5pLUk7Awyu87lq5B_dO-Tv-MC9JQ/)
 * [[Doc] Purchase](https://docs.google.com/document/d/1EUdBVvnm7IHZ6y0DNyldZypUQKpB8UVPToSc_LdOYQI/)
 * [[Video] Installation Instruction](http://www.youtube.com/watch?v=Xh0LjOSgxzs)
@@ -170,6 +172,12 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 
 == Changelog ==
 
+= V1.1.9 - 03.03.2021 =
+* Update : BWS Panel section was updated.
+* Update : All functionality was updated for WordPress 5.6.2
+* Bugfix : Compatibility with Gallery by BestWebSoft updated.
+* Bugfix : Compatibility with Portfolio by BestWebSoft updated.
+
 = V1.1.8 - 20.04.2020 =
 * Update : All functionality was updated for WordPress 5.4.
 * Update : BWS menu has been updated.
@@ -251,6 +259,12 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 * Update : We updated all functionality for wordpress 4.2.2.
 
 == Upgrade Notice ==
+
+= V1.1.9 =
+* The compatibility with new WordPress version updated.
+* The compatibility with new Gallery version updated.
+* The compatibility with new Portfolio version updated.
+* Bugs fixed.
 
 = V1.1.8 =
 * The compatibility with new WordPress version updated.

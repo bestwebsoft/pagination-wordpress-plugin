@@ -6,12 +6,12 @@ Description: Add customizable pagination to WordPress website. Split long conten
 Author: BestWebSoft
 Text Domain: pagination
 Domain Path: /languages
-Version: 1.1.8
+Version: 1.1.9
 Author URI: https://bestwebsoft.com/
 License: GPLv3 or later
 */
 
-/*  © Copyright 2020  BestWebSoft  ( https://support.bestwebsoft.com )
+/*  © Copyright 2021  BestWebSoft  ( https://support.bestwebsoft.com )
 
 	This program is free software; you can redistribute it and/or modify
 	it under the terms of the GNU General Public License, version 2, as
@@ -113,7 +113,9 @@ if ( ! function_exists( 'pgntn_settings_page' ) ) {
         if ( ! class_exists( 'Bws_Settings_Tabs' ) )
             require_once( dirname( __FILE__ ) . '/bws_menu/class-bws-settings.php' );
 		require_once( dirname( __FILE__ ) . '/includes/class-pgntn-settings.php' );
-		$page = new Pgntn_Settings_Tabs( plugin_basename( __FILE__ ) ); ?>
+		$page = new Pgntn_Settings_Tabs( plugin_basename( __FILE__ ) ); 
+		if ( method_exists( $page, 'add_request_feature' ) )
+            $page->add_request_feature(); ?>
 		<!-- general -->
 		<div id="pgntn_settings_form" class="wrap">
 			<h1><?php _e( 'Pagination Settings', 'pagination' ); ?></h1>
@@ -312,6 +314,7 @@ if ( ! function_exists ( 'pgntn_print_style' ) ) {
 				$classes .= ( ! empty( $classes ) ) && ( $hide_multipage ) ? ',' : '';
 				$classes .= $hide_multipage ?
 					'.page-link,
+					.post-nav-links,
 					.page-links' : '';
 				$classes .= ( ! empty( $classes ) ) && $hide_comments ? ',' : '';
 				$classes .= $hide_comments ?
@@ -491,22 +494,30 @@ if ( ! function_exists( 'pgntn_nav_display' ) ) {
 					<?php }
 				}
 				break;
-			case 'multipage':
-				global $page, $numpages;
+			case 'multipage':	
+				global $page, $numpages, $pgntn_custom_num_pages;
+				$classes = get_body_class();
 
 				/* Compatibility with Gallery plugin */
-				if ( is_object( $custom_query ) && isset( $custom_query->max_num_pages ) && isset( $custom_query->case ) && 'bws-gallery' == $custom_query->case ) {
-					$numpages = $custom_query->max_num_pages;
-				}
+				if ( is_object( $custom_query ) && isset( $custom_query->max_num_pages ) && isset( $custom_query->post_id ) && isset( $custom_query->case ) && 'bws-gallery' == $custom_query->case ) {
+					$pgntn_query['type'] = 'gallery';
+					$pgntn_query['post_id'] = $custom_query->post_id;
 
-				if ( $numpages > 1 )
-					$show_block = true;
-				if ( $show_block ) {
+					if ( isset( $custom_query->gllr_id ) ) {
+						/* For Gallery shortocode */
+						$pgntn_query['gllr_id'] = $custom_query->gllr_id;
+					}
+					$pgntn_custom_num_pages = $numpages = $custom_query->max_num_pages;
+					$current_page = isset( $custom_query->current_page ) ? $custom_query->current_page : 1;
+				}
+				if ( $numpages > 1 && is_array( $classes ) && ! in_array( 'home', $classes ) && is_singular() ) {
 					$current_page = isset( $custom_query->current_page ) ? $custom_query->current_page : intval( $page );
-					if ( empty( $current_page ) || $current_page == 0 )
+					if ( empty( $current_page ) )
 						$current_page = 1;
+
 					$nav_settings['current']	= $current_page;
 					$nav_settings['total']		= $numpages;
+
 					if ( 1 < intval( $nav_settings['total'] ) ) { ?>
 						<div class="pgntn-page-pagination pgntn-multipage">
 							<div class="pgntn-page-pagination-block">
@@ -515,9 +526,10 @@ if ( ! function_exists( 'pgntn_nav_display' ) ) {
 									<span class='pgntn-page-pagination-intro'><?php echo __( 'Pages', 'pagination' ) . ' ( ' . $nav_settings['current'] . ' ' . __( 'of', 'pagination' ) . ' ' . $nav_settings['total'] . ' ): '; ?></span>
 								<?php }
 								/* display "previous" link */
-								if ( $nav_settings['current'] != 1 && '1' == $pgntn_options ['display_next_prev'] ) {
+								if ( 1 != $nav_settings['current'] && '1' == $pgntn_options ['display_next_prev'] ) {
 									$prev_link = $nav_settings['current'] - 1;
-									echo pgntn_nofollow_link( _wp_link_page( $prev_link ) . $nav_settings['prev_text'] . '</a>' );
+									$pgntn_query['i'] = $prev_link;
+									echo pgntn_nofollow_link( pgntn_link_page( $pgntn_query ) . $nav_settings['prev_text'] . '</a>' );
 								}
 
 								if ( $nav_settings['show_all'] ) {
@@ -525,7 +537,8 @@ if ( ! function_exists( 'pgntn_nav_display' ) ) {
 										if ( $i == $nav_settings['current'] ) { ?>
 											<span class="page-numbers current"><?php echo $nav_settings['current']; ?></span>
 										<?php } else {
-											echo pgntn_nofollow_link( _wp_link_page( $i ) . $i . '</a>' );
+											$pgntn_query['i'] = $i;
+											echo pgntn_nofollow_link( pgntn_link_page( $pgntn_query ) . $i . '</a>' );
 										}
 									}
 								} else {
@@ -538,7 +551,8 @@ if ( ! function_exists( 'pgntn_nav_display' ) ) {
 
 									/* display first link */
 									if ( $start_number >= 2 ) {
-										echo pgntn_nofollow_link( _wp_link_page( 1 ) . 1 . '</a>' );
+										$pgntn_query['i'] = 1;
+										echo pgntn_nofollow_link( pgntn_link_page( $pgntn_query ) . 1 . '</a>' );
 									}
 									/* display ... */
 									if ( $start_number >= 3 ) { ?>
@@ -546,13 +560,15 @@ if ( ! function_exists( 'pgntn_nav_display' ) ) {
 									<?php }
 									/* display precurrent links */
 									for ( $i = $start_number; $i < $nav_settings['current'] ; $i++ ) {
-										echo pgntn_nofollow_link( _wp_link_page( $i ) . $i . '</a>' );
+										$pgntn_query['i'] = $i;
+										echo pgntn_nofollow_link( pgntn_link_page( $pgntn_query ) . $i . '</a>' );
 									}
 									/* display current link */ ?>
 									<span class="page-numbers current"><?php echo $nav_settings['current']; ?></span>
 									<?php /* display aftercurrent links */
 									for ( $i = $nav_settings['current'] + 1; $i <= $end_number; $i++ ) {
-										echo pgntn_nofollow_link( _wp_link_page( $i ) . $i . '</a>' );
+										$pgntn_query['i'] = $i;
+										echo pgntn_nofollow_link( pgntn_link_page( $pgntn_query ) . $i . '</a>' );
 									}
 									/* display ... */
 									if ( $end_number < $nav_settings['total'] - 1 ) { ?>
@@ -560,22 +576,23 @@ if ( ! function_exists( 'pgntn_nav_display' ) ) {
 									<?php }
 									/* display last link */
 									if ( $end_number < $nav_settings['total'] ) {
-										echo pgntn_nofollow_link( _wp_link_page( $nav_settings['total'] ) . $nav_settings['total'] . '</a>' );
+										$pgntn_query['i'] = $nav_settings['total'];
+										echo pgntn_nofollow_link( pgntn_link_page( $pgntn_query ) . $nav_settings['total'] . '</a>' );
 									}
 								}
 
-								/* display "next" link */
-								if ( $nav_settings['current'] < $nav_settings['total'] && '1' == $pgntn_options ['display_next_prev'] ) {
-									$next_link = $nav_settings['current'] + 1;
-									echo pgntn_nofollow_link( _wp_link_page( $next_link ) . $nav_settings['next_text'] . '</a>' );
-								} ?>
-							</div><!-- .pgntn-page-pagination-block -->
-							<div class="clear"></div>
-						</div><!-- .pgntn-page-pagination -->
-					<?php }
-				}
+							/* display "next" link */
+							if ( $nav_settings['current'] < $nav_settings['total'] && '1' == $pgntn_options ['display_next_prev'] ) {
+								$next_link = $nav_settings['current'] + 1;
+								$pgntn_query['i'] = $next_link;
+								echo pgntn_nofollow_link( pgntn_link_page( $pgntn_query ) . $nav_settings['next_text'] . '</a>' );
+							} ?>
+						</div><!-- .pgntn-page-pagination-block -->
+						<div class="clear"></div>
+					</div><!-- .pgntn-page-pagination -->
+				<?php } 	
+				}			
 				break;
-
 			case 'comments':
 				global $wp_rewrite;
 				$page_comments = get_comment_pages_count();
@@ -627,7 +644,27 @@ if ( ! function_exists( 'pgntn_is_blog' ) ) {
 		}
 	}
 }
+/**
+ * Add link to plugin`s settings page on page with list of all installed plugins ( on table cell with plugin title )
+ * @param	$links	array	links bellow plugin title
+ * @param	$file	array	relative path to the plugin`s main file
+ * @return	$links	array	links bellow plugin title
+ */
+if ( ! function_exists( 'pgntn_plugin_action_links' ) ) {
+	function pgntn_plugin_action_links( $links, $file ) {
+		if ( ! is_network_admin() ) {
+			/* Static so we don't call plugin_basename on every plugin row. */
+			static $this_plugin;
+			if ( ! $this_plugin ) $this_plugin = plugin_basename( __FILE__ );
 
+			if ( $file == $this_plugin ) {
+				$settings_link = '<a href="admin.php?page=pagination.php">' . __( 'Settings', 'pagination' ) . '</a>';
+				array_unshift( $links, $settings_link );
+			}
+		}
+		return $links;
+	}
+}
 /**
  * Add necessary links on page with list of all installed plugins ( on table cell with plugin description )
  * @param	$links	array	links bellow plugins description
@@ -711,7 +748,43 @@ if ( ! function_exists ( 'pgntn_nofollow_link' ) ) {
 		return $link;
 	}
 }
+if ( ! function_exists ( 'pgntn_link_page' ) ) {
+	function pgntn_link_page( $query ) {
+		if ( $query['type'] == 'gallery' ) {
+			$i = $query['i'];
+			$permalink_post = get_permalink( intval( $query['post_id'] ) );
+			$post = get_post( intval( $query['post_id'] ) );
+			$query_args = array();
 
+			if ( $i == 1 ) {
+				$url = $permalink_post;
+			} else {
+				 if ( ! get_option( 'permalink_structure' ) || in_array( $post->post_status, array( 'draft', 'pending' ), true ) ) {
+					$url = add_query_arg( 'gllr_paged', $i, $permalink_post );
+				} elseif ( 'page' == get_option( 'show_on_front' ) && get_option( 'page_on_front' ) == $post->ID ) {
+					$url = trailingslashit( $permalink_post ) . user_trailingslashit( "$wp_rewrite->pagination_base/" . $i, 'single_paged' );
+				} else {
+					$url = trailingslashit( $permalink_post ) . 'page/' . user_trailingslashit( $i, 'single_paged' );
+				}
+			}
+
+			if ( is_preview() ) {
+				if ( ( 'draft' != $post->post_status ) && isset( $_GET['preview_id'], $_GET['preview_nonce'] ) ) {
+					$query_args['preview_id']    = wp_unslash( $_GET['preview_id'] );
+					$query_args['preview_nonce'] = wp_unslash( $_GET['preview_nonce'] );
+				}
+		 
+				$url = get_preview_post_link( $post, $query_args, $url );
+			}
+			if ( isset( $query['gllr_id'] ) ) {
+				$url = add_query_arg( 'gllr_id', $query['gllr_id'], $url );
+			}
+
+			return '<a href="' . esc_url( $url ) . '" class="post-page-numbers">';	
+		} 	
+	 	return _wp_link_page( $query['i'] );
+	}
+}
 /**
  * Add all hooks
  */
@@ -722,6 +795,7 @@ add_action( 'init', 'pgntn_init' );
 add_action( 'admin_init', 'pgntn_admin_init' );
 add_action( 'plugins_loaded', 'pgntn_plugins_loaded' );
 /* Additional links on the plugin page */
+add_filter( 'plugin_action_links', 'pgntn_plugin_action_links', 10, 2 );
 add_filter( 'plugin_row_meta', 'pgntn_register_plugin_links', 10, 2 );
 /* Include necessary css- and js-files */
 add_action( 'admin_enqueue_scripts', 'pgntn_admin_head' );

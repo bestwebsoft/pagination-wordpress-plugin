@@ -34,8 +34,6 @@ if ( ! class_exists( 'Pgntn_Settings_Tabs' ) ) {
 				'tabs'				=> $tabs,
 				'wp_slug'			=> 'pagination',
 				'doc_link'			=> 'https://docs.google.com/document/d/1r02_D7mbbTxmXPSKmoHGh87Y5QBzrv9_ga7boWM_PN4/edit',
-				'pro_page'			=> 'admin.php?page=pagination-pro.php',
-				'bws_license_plugin'=> 'pagination-pro/pagination-pro.php',
 				'link_key'			=> '5f3235c93ef4bd001abe4efd16530be0',
 				'link_pn'			=> '212'
 			) );
