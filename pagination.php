@@ -6,7 +6,7 @@ Description: Add customizable pagination to WordPress website. Split long conten
 Author: BestWebSoft
 Text Domain: pagination
 Domain Path: /languages
-Version: 1.1.9
+Version: 1.2.0
 Author URI: https://bestwebsoft.com/
 License: GPLv3 or later
 */
@@ -750,7 +750,7 @@ if ( ! function_exists ( 'pgntn_nofollow_link' ) ) {
 }
 if ( ! function_exists ( 'pgntn_link_page' ) ) {
 	function pgntn_link_page( $query ) {
-		if ( $query['type'] == 'gallery' ) {
+        if ( isset( $query['type'] ) && $query['type'] == 'gallery' ) {
 			$i = $query['i'];
 			$permalink_post = get_permalink( intval( $query['post_id'] ) );
 			$post = get_post( intval( $query['post_id'] ) );

@@ -33,7 +33,7 @@ if ( ! class_exists( 'Pgntn_Settings_Tabs' ) ) {
 				'is_network_options'=> is_network_admin(),
 				'tabs'				=> $tabs,
 				'wp_slug'			=> 'pagination',
-				'doc_link'			=> 'https://docs.google.com/document/d/1r02_D7mbbTxmXPSKmoHGh87Y5QBzrv9_ga7boWM_PN4/edit',
+                'doc_link'			=> 'https://bestwebsoft.com/documentation/pagination/pagination-user-guide/',
 				'link_key'			=> '5f3235c93ef4bd001abe4efd16530be0',
 				'link_pn'			=> '212'
 			) );
@@ -140,7 +140,24 @@ if ( ! class_exists( 'Pgntn_Settings_Tabs' ) ) {
 							<input type="checkbox" id="pgntn_on_search" class="pgntn_where_display" value="search" name="pgntn_where_display[]"<?php if ( in_array( 'everywhere', $this->options['where_display'] ) || in_array( 'search', $this->options['where_display'] ) ) echo ' checked="checked"'; ?> />
                             <label for="pgntn_on_search"><?php _e( 'Search results', 'pagination' ); ?></label><br />
 							<input type="checkbox" id="pgntn_on_paginated_post" class="pgntn_where_display" value="paginated_post" name="pgntn_where_display[]"<?php if ( in_array( 'everywhere', $this->options['where_display'] ) || in_array( 'paginated_post', $this->options['where_display'] ) ) echo ' checked="checked"'; ?> />
-							<label for="pgntn_on_paginated_post"><?php _e( 'Paginated posts/pages', 'pagination' ); ?></label>
+							<label for="pgntn_on_paginated_post"><?php _e( 'Paginated posts/pages', 'pagination' ); ?></label><br />
+                            <?php if ( ! $this->hide_pro_tabs ) { ?>
+                                <div class="bws_pro_version_bloc">
+                                    <div class="bws_pro_version_table_bloc">
+                                        <button type="submit" name="bws_hide_premium_options" class="notice-dismiss bws_hide_premium_options" title="<?php _e( 'Close', 'pagination' ); ?>"></button>
+                                        <div class="bws_table_bg"></div>
+                                        <table class="form-table bws_pro_version">
+                                            <tr valign="top">
+                                            	<label>
+		                                            <input disabled="disabled" type="checkbox" value="paginated_divi" name="pgntn_where_display[]" />
+		                                            <?php _e( 'Paginated Divi modules', 'pagination' ); ?>
+		                                        </label>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <?php $this->bws_pro_block_links(); ?>
+                                </div>
+                            <?php } ?>
 						</fieldset>
 					</td>
 				</tr>

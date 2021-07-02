@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://bestwebsoft.com/donate/
 Tags: pagination, pagination block, custom pagination block, multiple navigation, multiple pages, navigation, next page, post pagination, pagination buttons, pagination plugin, improve pages navigation, paginate plugin
 Requires at least: 4.5
-Tested up to: 5.6.2
-Stable tag: 1.1.9
+Tested up to: 5.7.2
+Stable tag: 1.2.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -79,6 +79,8 @@ http://www.youtube.com/watch?v=TwAd3DWLGr8
 > 	* Load More button
 > 	* Infinite scroll
 >	* Next/Previous buttons
+> * Display "Load More" button after page loading
+> * Compatibility with Divi [NEW]
 > * Get answer to your support question within one business day ([Support Policy](https://bestwebsoft.com/support-policy/))
 >
 > [Upgrade to Pro Now](https://bestwebsoft.com/products/wordpress/plugins/pagination/?k=beef8d83cadcb70a8565e009a280f80c)
@@ -87,9 +89,9 @@ If you have a feature suggestion or idea you'd like to see in the plugin, we'd l
 
 = Documentation & Videos =
 
-* [[Doc] User Guide](https://docs.google.com/document/d/1r02_D7mbbTxmXPSKmoHGh87Y5QBzrv9_ga7boWM_PN4/)
-* [[Doc] Installation](https://docs.google.com/document/d/1-hvn6WRvWnOqj5v5pLUk7Awyu87lq5B_dO-Tv-MC9JQ/)
-* [[Doc] Purchase](https://docs.google.com/document/d/1EUdBVvnm7IHZ6y0DNyldZypUQKpB8UVPToSc_LdOYQI/)
+* [[Doc] User Guide](https://bestwebsoft.com/documentation/pagination/pagination-user-guide/)
+* [[Doc] Installation](https://bestwebsoft.com/documentation/how-to-install-a-wordpress-product/how-to-install-a-wordpress-plugin/)
+* [[Doc] Purchase](https://bestwebsoft.com/documentation/how-to-purchase-a-wordpress-plugin/how-to-purchase-wordpress-plugin-from-bestwebsoft/)
 * [[Video] Installation Instruction](http://www.youtube.com/watch?v=Xh0LjOSgxzs)
 
 = Help & Support =
@@ -119,7 +121,7 @@ Some of these translations are not complete. We are constantly adding new featur
 2. Activate the plugin using the 'Plugins' menu in your WordPress admin panel.
 3. You can adjust the necessary settings using your WordPress admin panel in "Pagination".
 
-[View a Step-by-step Instruction on Pagination Installation](https://docs.google.com/document/d/1-hvn6WRvWnOqj5v5pLUk7Awyu87lq5B_dO-Tv-MC9JQ/)
+[View a Step-by-step Instruction on Pagination Installation](https://bestwebsoft.com/documentation/how-to-install-a-wordpress-product/how-to-install-a-wordpress-plugin/)
 
 http://www.youtube.com/watch?v=Xh0LjOSgxzs
 
@@ -162,7 +164,7 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 1. The link to the page where the problem occurs
 2. The name of the plugin and its version. If you are using a pro version - your order number.
 3. The version of your WordPress installation
-4. Copy and paste into the message your system status report. Please read more here: [Instruction on System Status](https://docs.google.com/document/d/1Wi2X8RdRGXk9kMszQy1xItJrpN0ncXgioH935MaBKtc/)
+4. Copy and paste into the message your system status report. Please read more here: [Instruction on System Status](https://bestwebsoft.com/documentation/admin-panel-issues/system-status/)
 
 == Screenshots ==
 
@@ -171,6 +173,11 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 3. Plugin settings in WordPress admin panel.
 
 == Changelog ==
+
+= V1.2.0 - 02.07.2021 =
+* Update : BWS Panel section was updated.
+* Update : All functionality was updated for WordPress 5.7.2
+* PRO : Compatibility with Divi theme added.
 
 = V1.1.9 - 03.03.2021 =
 * Update : BWS Panel section was updated.
@@ -259,6 +266,11 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 * Update : We updated all functionality for wordpress 4.2.2.
 
 == Upgrade Notice ==
+
+= V1.2.0 =
+* The compatibility with new WordPress version updated.
+* New features added.
+* Bugs fixed.
 
 = V1.1.9 =
 * The compatibility with new WordPress version updated.
