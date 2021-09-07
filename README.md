@@ -109,6 +109,8 @@
 </ul>
 <h4>Help &amp; Support</h4>
 <p>Visit our Help Center if you have any questions, our friendly Support Team is happy to help &#8211; <a href="https://support.bestwebsoft.com/" rel="nofollow ugc">https://support.bestwebsoft.com/</a></p>
+<h4>Affiliate Program</h4>
+<p>Earn 20% commission by selling the premium WordPress plugins and themes by BestWebSoft — <a href="https://bestwebsoft.com/affiliate/" rel="nofollow">https://bestwebsoft.com/affiliate/</a></p>
 <h4>Translation</h4>
 <ul>
 <li>French (fr_FR) (thanks to <a href="mailto:&#x6a;&#108;&#099;&#x6f;&#x72;&#100;&#050;&#x40;&#x77;a&#110;&#x61;&#x64;o&#111;&#046;&#x66;&#x72;" rel="nofollow ugc">Jean-Louis Cordonnier</a> www.labosdebabel.org)</li>
