@@ -3,6 +3,7 @@
 
 <p>Simple plugin which automatically adds custom pagination to your WordPress website blog, search results, archive, category, tags, and author pages. Choose pagination type, position, and customize its appearance.</p>
 <p>Improve navigation through your website content today!</p>
+<p><a href="https://bestwebsoft.com/demo-pagination-plugin/?ref=readme" rel="nofollow ugc">View Demo</a></p>
 <p><span class="embed-youtube" style="text-align:center; display: block;"></span></p>
 <h4>Free Features</h4>
 <ul>
@@ -91,10 +92,10 @@
 <li>Load More button</li>
 <li>Infinite scroll</li>
 <li>Next/Previous buttons</li>
-<li>Display “Load More” button after page loadings</li>  
 </ul>
 </li>
-<li>Compatibility with Divi [NEW]</li>    
+<li>Display &#8220;Load More&#8221; button after page loading</li>
+<li>Compatibility with Divi [NEW]</li>
 <li>Get answer to your support question within one business day (<a href="https://bestwebsoft.com/support-policy/" rel="nofollow ugc">Support Policy</a>)</li>
 </ul>
 <p><a href="https://bestwebsoft.com/products/wordpress/plugins/pagination/?k=beef8d83cadcb70a8565e009a280f80c" rel="nofollow ugc">Upgrade to Pro Now</a></p>
@@ -102,15 +103,13 @@
 <p>If you have a feature suggestion or idea you&#8217;d like to see in the plugin, we&#8217;d love to hear about it! <a href="https://support.bestwebsoft.com/hc/en-us/requests/new" rel="nofollow ugc">Suggest a Feature</a></p>
 <h4>Documentation &amp; Videos</h4>
 <ul>
-<li><a href="https://bestwebsoft.com/documentation/pagination/pagination-user-guide/">[Doc]  How to Use</a></li>
+<li><a href="https://bestwebsoft.com/documentation/pagination/pagination-user-guide/" rel="nofollow ugc">[Doc] User Guide</a></li>
 <li><a href="https://bestwebsoft.com/documentation/how-to-install-a-wordpress-product/how-to-install-a-wordpress-plugin/" rel="nofollow ugc">[Doc] Installation</a></li>
 <li><a href="https://bestwebsoft.com/documentation/how-to-purchase-a-wordpress-plugin/how-to-purchase-wordpress-plugin-from-bestwebsoft/" rel="nofollow ugc">[Doc] Purchase</a></li>
-<li><a href="https://www.youtube.com/watch?v=Xh0LjOSgxzss" rel="nofollow ugc">[Video] Installation Instruction</a></li>
+<li><a href="http://www.youtube.com/watch?v=Xh0LjOSgxzs" rel="nofollow ugc">[Video] Installation Instruction</a></li>
 </ul>
 <h4>Help &amp; Support</h4>
 <p>Visit our Help Center if you have any questions, our friendly Support Team is happy to help &#8211; <a href="https://support.bestwebsoft.com/" rel="nofollow ugc">https://support.bestwebsoft.com/</a></p>
-<h4>Affiliate Program</h4>
-<p>Earn 20% commission by selling the premium WordPress plugins and themes by BestWebSoft — <a href="https://bestwebsoft.com/affiliate/" rel="nofollow">https://bestwebsoft.com/affiliate/</a></p>
 <h4>Translation</h4>
 <ul>
 <li>French (fr_FR) (thanks to <a href="mailto:&#x6a;&#108;&#099;&#x6f;&#x72;&#100;&#050;&#x40;&#x77;a&#110;&#x61;&#x64;o&#111;&#046;&#x66;&#x72;" rel="nofollow ugc">Jean-Louis Cordonnier</a> www.labosdebabel.org)</li>

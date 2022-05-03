@@ -1,10 +1,10 @@
-=== Pagination by BestWebSoft ===
+=== Pagination by BestWebSoft - Customizable WordPress Content Splitter and Navigation Plugin ===
 Contributors: bestwebsoft
 Donate link: https://bestwebsoft.com/donate/
 Tags: pagination, pagination block, custom pagination block, multiple navigation, multiple pages, navigation, next page, post pagination, pagination buttons, pagination plugin, improve pages navigation, paginate plugin
 Requires at least: 4.5
-Tested up to: 5.7.2
-Stable tag: 1.2.0
+Tested up to: 5.9
+Stable tag: 1.2.2
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -174,6 +174,13 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 
 == Changelog ==
 
+= V1.2.2 - 26.04.2022 =
+* Bugfix : Deactivation Feedback fix.
+
+= V1.2.1 - 22.03.2022 =
+* Update : BWS Panel section was updated.
+* Update : All functionality was updated for WordPress 5.9.
+
 = V1.2.0 - 02.07.2021 =
 * Update : BWS Panel section was updated.
 * Update : All functionality was updated for WordPress 5.7.2
@@ -266,6 +273,12 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 * Update : We updated all functionality for wordpress 4.2.2.
 
 == Upgrade Notice ==
+
+= V1.2.2 =
+* Bug fixed.
+
+= V1.2.1 =
+* Usability improved.
 
 = V1.2.0 =
 * The compatibility with new WordPress version updated.
