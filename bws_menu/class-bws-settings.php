@@ -178,7 +178,7 @@ if ( ! class_exists( 'Bws_Settings_Tabs' ) ) {
 													<div id="misc-publishing-actions">
 														<?php
 														/**
-														 * Action - Display additional content for #misc-publishing-Actions
+														 * Action - Display additional content for #misc-publishing-actions
 														 */
 														do_action( __CLASS__ . '_information_postbox_top' );
 														?>
@@ -222,15 +222,15 @@ if ( ! class_exists( 'Bws_Settings_Tabs' ) ) {
 														</div><!-- .misc-pub-section -->
 														<?php
 														/**
-														 * Action - Display additional content for #misc-publishing-Actions
+														 * Action - Display additional content for #misc-publishing-actions
 														 */
 														do_action( __CLASS__ . '_information_postbox_bottom' );
 														?>
 													</div>
 													<div class="clear"></div>
 												</div>
-												<div id="major-publishing-Actions">
-													<div id="publishing-Action">
+												<div id="major-publishing-actions">
+													<div id="publishing-action">
 														<input type="hidden" name="<?php echo esc_attr( $this->prefix ); ?>_form_submit" value="submit" />
 														<input id="bws-submit-button" type="submit" class="button button-primary button-large" value="<?php esc_html_e( 'Save Changes', 'bestwebsoft' ); ?>" />
 														<?php wp_nonce_field( $this->plugin_basename, 'bws_nonce_name' ); ?>
@@ -437,19 +437,19 @@ if ( ! class_exists( 'Bws_Settings_Tabs' ) ) {
 			if ( empty( $save_results['message'] ) ) {
 				echo 'style="display:none"';}
 			?>
-			><p><strong><?php echo esc_html( $save_results['message'] ); ?></strong></p></div>
+			><p><strong><?php echo wp_kses_post( $save_results['message'] ); ?></strong></p></div>
 			<div class="updated bws-notice inline" 
 			<?php
 			if ( empty( $save_results['notice'] ) ) {
 				echo 'style="display:none"';}
 			?>
-			><p><strong><?php echo esc_html( $save_results['notice'] ); ?></strong></p></div>
+			><p><strong><?php echo wp_kses_post( $save_results['notice'] ); ?></strong></p></div>
 			<div class="error inline" 
 			<?php
 			if ( empty( $save_results['error'] ) ) {
 				echo 'style="display:none"';}
 			?>
-			><p><strong><?php echo esc_html( $save_results['error'] ); ?></strong></p></div>
+			><p><strong><?php echo wp_kses_post( $save_results['error'] ); ?></strong></p></div>
 			<?php
 		}
 
