@@ -1,10 +1,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Pagination by BestWebSoft\n"
-"PO-Revision-Date: 2023-03-24 16:28+0200\n"
+"PO-Revision-Date: 2023-04-11 17:58+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
-"Language: de\n"
+"Language: it_IT\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -14,175 +14,171 @@ msgstr ""
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: pagination.php\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: "
-"__;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;esc_attr_e;esc_attr_x:1,"
-"2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;_nx_noop:3c,1,2;__"
-"ngettext_noop:1,2\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"POT-Creation-Date: \n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
 # automatic translation
 #: bws_menu/bws_functions.php:85 bws_menu/bws_functions.php:283
 msgid "requires"
-msgstr "erfordert"
+msgstr "richiede"
 
 # automatic translation
 #: bws_menu/bws_functions.php:87
 msgid ""
-"or higher, that is why it has been deactivated! Please upgrade WordPress "
-"and try again."
-msgstr ""
-"oder höher, deshalb wurde es deaktiviert! Bitte aktualisieren Sie WordPress "
-"und versuchen Sie es erneut."
+"or higher, that is why it has been deactivated! Please upgrade WordPress and try "
+"again."
+msgstr "o superiore, ecco perché è stato disattivato! Aggiorna WordPress e riprova."
 
 # automatic translation
 #: bws_menu/bws_functions.php:88
 msgid "Back to the WordPress"
-msgstr "Zurück zu WordPress"
+msgstr "Torniamo a WordPress"
 
 # automatic translation
 #: bws_menu/bws_functions.php:90
 msgid "Plugins page"
-msgstr "Plugins-Seite"
+msgstr "Pagina dei plugin"
 
 # automatic translation
 #: bws_menu/bws_functions.php:112
 msgid "Like the plugin?"
-msgstr "Wie das Plugin?"
+msgstr "Ti piace il plug-in?"
 
 # automatic translation
 #: bws_menu/bws_functions.php:113
 #, php-format
 msgid "%s reviews"
-msgstr "%s Bewertungen"
+msgstr "%s recensioni"
 
 # automatic translation
 #: bws_menu/bws_functions.php:114
 msgid "Rate it"
-msgstr "Bewerte es"
+msgstr "Valutarlo"
 
 # automatic translation
 #: bws_menu/bws_functions.php:123
 msgid "Need help?"
-msgstr "Brauchen Sie Hilfe?"
+msgstr "Ho bisogno di aiuto?"
 
 # automatic translation
 #: bws_menu/bws_functions.php:124 bws_menu/bws_functions.php:1189
 #: bws_menu/class-bws-settings.php:1193
 msgid "Visit Help Center"
-msgstr "Besuchen Sie das Hilfecenter"
+msgstr "Visita il Centro assistenza"
 
 # automatic translation
 #: bws_menu/bws_functions.php:127
 msgid "Want to support the plugin?"
-msgstr "Möchten Sie das Plugin unterstützen?"
+msgstr "Vuoi supportare il plugin?"
 
 # automatic translation
 #: bws_menu/bws_functions.php:128 bws_menu/bws_menu.php:659
 msgid "Donate"
-msgstr "Spenden"
+msgstr "Donare"
 
 # automatic translation
 #: bws_menu/bws_functions.php:155
 msgid "WARNING: Illegal use notification"
-msgstr "WARNUNG: Benachrichtigung über illegale Verwendung"
+msgstr "ATTENZIONE: Notifica di uso illegale"
 
 # automatic translation
 #: bws_menu/bws_functions.php:155
 msgid ""
-"You can use one license of the Pro plugin for one domain only. Please check "
-"and edit your license or domain if necessary using your personal Client "
-"Area. We strongly recommend you to solve the problem within 24 hours, "
-"otherwise the Pro plugin will be deactivated."
+"You can use one license of the Pro plugin for one domain only. Please check and "
+"edit your license or domain if necessary using your personal Client Area. We "
+"strongly recommend you to solve the problem within 24 hours, otherwise the Pro "
+"plugin will be deactivated."
 msgstr ""
-"Sie können eine Lizenz des Pro-Plugins nur für eine Domain verwenden. Bitte "
-"prüfen und bearbeiten Sie ggf. Ihre Lizenz oder Domain in Ihrem "
-"persönlichen Kundenbereich. Wir empfehlen Ihnen dringend, das Problem "
-"innerhalb von 24 Stunden zu lösen, da sonst das Pro-Plugin deaktiviert wird."
+"Puoi utilizzare una licenza del plug-in Pro per un solo dominio. Controlla e "
+"modifica la tua licenza o il tuo dominio se necessario utilizzando la tua Area "
+"Cliente personale. Ti consigliamo vivamente di risolvere il problema entro 24 "
+"ore, altrimenti il plugin Pro verrà disattivato."
 
 # automatic translation
 #: bws_menu/bws_functions.php:155 bws_menu/bws_functions.php:247
 #: bws_menu/bws_menu.php:754 bws_menu/class-bws-settings.php:189
 msgid "Learn More"
-msgstr "Erfahren Sie mehr"
+msgstr "Saperne di più"
 
 # automatic translation
 #: bws_menu/bws_functions.php:174
 msgid ""
-"Notice: Your Pro Trial license has expired. To continue using the plugin, "
-"you should buy a Pro license"
+"Notice: Your Pro Trial license has expired. To continue using the plugin, you "
+"should buy a Pro license"
 msgstr ""
-"Hinweis: Ihre Pro Trial-Lizenz ist abgelaufen. Um das Plugin weiterhin "
-"nutzen zu können, sollten Sie eine Pro-Lizenz erwerben"
+"Avviso: la tua licenza Pro Trial è scaduta. Per continuare a utilizzare il plug-"
+"in, è necessario acquistare una licenza Pro"
 
 # automatic translation
 #: bws_menu/bws_functions.php:176
 msgid ""
-"Your license has expired. To continue getting top-priority support and "
-"plugin updates, you should extend it."
+"Your license has expired. To continue getting top-priority support and plugin "
+"updates, you should extend it."
 msgstr ""
-"Deine Lizenz ist abgelaufen. Um weiterhin erstklassigen Support und "
-"Plugin-Updates zu erhalten, sollten Sie es verlängern."
+"La tua licenza è scaduta. Per continuare a ricevere supporto prioritario e "
+"aggiornamenti dei plug-in, dovresti estenderlo."
 
 # automatic translation
 #: bws_menu/bws_functions.php:176 bws_menu/bws_functions.php:267
 msgid "Learn more"
-msgstr "Erfahren Sie mehr"
+msgstr "Saperne di più"
 
 # automatic translation
 #: bws_menu/bws_functions.php:196
 #, php-format
 msgid "Notice: You are using the Pro Trial license of %s plugin."
-msgstr "Hinweis: Sie verwenden die Pro Trial-Lizenz des %s-Plugins."
+msgstr "Avviso: stai utilizzando la licenza Pro Trial del plugin %s."
 
 # automatic translation
 #: bws_menu/bws_functions.php:198
 msgid "Notice: You are using the Pro Trial license of plugin."
-msgstr "Hinweis: Sie verwenden die Pro Trial-Lizenz des Plugins."
+msgstr "Avviso: stai utilizzando la licenza Pro Trial del plug-in."
 
 # automatic translation
 #: bws_menu/bws_functions.php:201
 msgid "The Pro Trial license will expire on"
-msgstr "Die Pro Trial-Lizenz läuft am ab"
+msgstr "La licenza Pro Trial scadrà il"
 
 # automatic translation
 #: bws_menu/bws_functions.php:238 bws_menu/bws_functions.php:263
 #: bws_menu/bws_functions.php:313 bws_menu/bws_functions.php:323
 #: bws_menu/bws_functions.php:560 bws_menu/bws_functions.php:593
 msgid "Close notice"
-msgstr "Hinweis schließen"
+msgstr "Chiudi avviso"
 
 # automatic translation
 #: bws_menu/bws_functions.php:243
 msgid "It’s time to upgrade your"
-msgstr "Es ist Zeit, Ihr zu aktualisieren"
+msgstr "È ora di aggiornare il tuo"
 
 # automatic translation
 #: bws_menu/bws_functions.php:243
 msgid "to"
-msgstr "Zu"
+msgstr "A"
 
 # automatic translation
 #: bws_menu/bws_functions.php:243
 msgid "version!"
-msgstr "Ausführung!"
+msgstr "versione!"
 
 # automatic translation
 #: bws_menu/bws_functions.php:244
 msgid "Extend standard plugin functionality with new great options."
-msgstr ""
-"Erweitern Sie die Standard-Plugin-Funktionalität mit neuen großartigen "
-"Optionen."
+msgstr "Estendi la funzionalità standard del plug-in con nuove fantastiche opzioni."
 
 # automatic translation
 #: bws_menu/bws_functions.php:267
 #, php-format
 msgid ""
-"Your license key for %1$s expires on %2$s and you won't be granted "
-"TOP-PRIORITY SUPPORT or UPDATES."
+"Your license key for %1$s expires on %2$s and you won't be granted TOP-PRIORITY "
+"SUPPORT or UPDATES."
 msgstr ""
-"Ihr Lizenzschlüssel für %1$s läuft am %2$s ab und Sie erhalten keinen "
-"ERSTKLASSIGEN SUPPORT oder UPDATES."
+"La tua chiave di licenza per %1$s scade il %2$s e non ti verrà concesso SUPPORTO "
+"PRIORITARIO o AGGIORNAMENTI."
 
 # automatic translation
 #: bws_menu/bws_functions.php:285
@@ -190,19 +186,19 @@ msgid ""
 "or higher! We do not guarantee that our plugin will work correctly. Please "
 "upgrade to WordPress latest version."
 msgstr ""
-"oder höher! Wir garantieren nicht, dass unser Plugin korrekt funktioniert. "
-"Bitte aktualisieren Sie auf die neueste Version von WordPress."
+"o più alto! Non garantiamo che il nostro plugin funzioni correttamente. Si prega "
+"di aggiornare all'ultima versione di WordPress."
 
 # automatic translation
 #: bws_menu/bws_functions.php:303
 #, php-format
 msgid "Thank you for installing %s plugin!"
-msgstr "Vielen Dank für die Installation des %s-Plugins!"
+msgstr "Grazie per aver installato il plugin %s!"
 
 # automatic translation
 #: bws_menu/bws_functions.php:305
 msgid "Let's get started"
-msgstr "Lass uns anfangen"
+msgstr "Iniziamo"
 
 # automatic translation
 #: bws_menu/bws_functions.php:306 bws_menu/bws_functions.php:339
@@ -210,7 +206,7 @@ msgstr "Lass uns anfangen"
 #: includes/class-pgntn-settings.php:21 pagination.php:41 pagination.php:753
 #: pagination.php:772
 msgid "Settings"
-msgstr "Einstellungen"
+msgstr "Impostazioni"
 
 # automatic translation
 #: bws_menu/bws_functions.php:308 bws_menu/bws_menu.php:377
@@ -218,180 +214,178 @@ msgstr "Einstellungen"
 #: bws_menu/class-bws-settings.php:1209 bws_menu/deprecated.php:260
 #: includes/class-pgntn-settings.php:207 includes/class-pgntn-settings.php:209
 msgid "or"
-msgstr "oder"
+msgstr "O"
 
 # automatic translation
 #: bws_menu/bws_functions.php:309 bws_menu/bws_functions.php:341
 msgid "Add New"
-msgstr "Neue hinzufügen"
+msgstr "Aggiungere nuova"
 
 # automatic translation
 #: bws_menu/bws_functions.php:328
 msgid "Thank you for installing plugins by BestWebSoft!"
-msgstr "Vielen Dank für die Installation von Plugins von BestWebSoft!"
+msgstr "Grazie per aver installato i plugin di BestWebSoft!"
 
 # automatic translation
 #: bws_menu/bws_functions.php:330
 msgid "More Details"
-msgstr "Mehr Details"
+msgstr "Più dettagli"
 
 # automatic translation
 #: bws_menu/bws_functions.php:331
 msgid "Less Details"
-msgstr "Weniger Details"
+msgstr "Meno dettagli"
 
 # automatic translation
 #: bws_menu/bws_functions.php:362
 msgid "Deprecated function(-s) is used on the site here:"
-msgstr "Veraltete Funktion(en) wird/werden auf der Website hier verwendet:"
+msgstr "Le funzioni deprecate sono utilizzate sul sito qui:"
 
 # automatic translation
 #: bws_menu/bws_functions.php:380
 msgid "This function(-s) will be removed over time. Please update the product(-s)."
 msgstr ""
-"Diese Funktion(en) werden im Laufe der Zeit entfernt. Bitte aktualisieren "
-"Sie das/die Produkt(e)."
+"Queste funzioni verranno rimosse nel tempo. Si prega di aggiornare il/i prodotto/"
+"i."
 
 # automatic translation
 #: bws_menu/bws_functions.php:555
 #, php-format
 msgid "Thank you for choosing %s plugin!"
-msgstr "Vielen Dank, dass Sie sich für das %s-Plugin entschieden haben!"
+msgstr "Grazie per aver scelto il plugin %s!"
 
 # automatic translation
 #: bws_menu/bws_functions.php:556
 msgid ""
-"If you have a feature, suggestion or idea you'd like to see in the plugin, "
-"we'd love to hear about it!"
+"If you have a feature, suggestion or idea you'd like to see in the plugin, we'd "
+"love to hear about it!"
 msgstr ""
-"Wenn Sie eine Funktion, einen Vorschlag oder eine Idee haben, die Sie im "
-"Plugin sehen möchten, würden wir uns freuen, davon zu hören!"
+"Se hai una funzione, un suggerimento o un'idea che vorresti vedere nel plugin, ci "
+"piacerebbe saperlo!"
 
 # automatic translation
 #: bws_menu/bws_functions.php:557
 msgid "Suggest a Feature"
-msgstr "Schlagen Sie eine Funktion vor"
+msgstr "Suggerisci una funzione"
 
 # automatic translation
 #: bws_menu/bws_functions.php:598
 msgid "Affiliate Program"
-msgstr "Partnerprogramm"
+msgstr "programma affiliato"
 
 # automatic translation
 #: bws_menu/bws_functions.php:599
 #, php-format
 msgid "Get %s"
-msgstr "Holen Sie sich %s"
+msgstr "Prende %s"
 
 # automatic translation
 #: bws_menu/bws_functions.php:600
 msgid "from each BestWebSoft plugin and theme sale you refer"
-msgstr "von jedem BestWebSoft-Plugin und Theme-Verkauf, den Sie empfehlen"
+msgstr "da ogni plug-in BestWebSoft e vendita di temi a cui fai riferimento"
 
 # automatic translation
 #: bws_menu/bws_functions.php:604
 msgid "Join affiliate program"
-msgstr "Nehmen Sie am Partnerprogramm teil"
+msgstr "Partecipa al programma di affiliazione"
 
 # automatic translation
 #: bws_menu/bws_functions.php:608
 msgid "Promote and sell products"
-msgstr "Produkte bewerben und verkaufen"
+msgstr "Promuovi e vendi prodotti"
 
 # automatic translation
 #: bws_menu/bws_functions.php:612
 msgid "Get commission!"
-msgstr "Provision erhalten!"
+msgstr "Ottieni commissioni!"
 
 # automatic translation
 #: bws_menu/bws_functions.php:617
 msgid "Start Now"
-msgstr "Jetzt anfangen"
+msgstr "Parti ora"
 
 # automatic translation
 #: bws_menu/bws_functions.php:634 bws_menu/class-bws-settings.php:640
 #: bws_menu/class-bws-settings.php:645 bws_menu/class-bws-settings.php:714
 #: bws_menu/class-bws-settings.php:719
 msgid "Notice"
-msgstr "Notiz"
+msgstr "Avviso"
 
 # automatic translation
 #: bws_menu/bws_functions.php:634
 msgid "The plugin's settings have been changed."
-msgstr "Die Einstellungen des Plugins wurden geändert."
+msgstr "Le impostazioni del plugin sono state modificate."
 
 # automatic translation
 #: bws_menu/bws_functions.php:635 bws_menu/class-bws-settings.php:235
 #: bws_menu/class-bws-settings.php:263
 msgid "Save Changes"
-msgstr "Änderungen speichern"
+msgstr "Salvare le modifiche"
 
 # automatic translation
 #: bws_menu/bws_functions.php:656
 msgid ""
-"You can always look at premium options by checking the \"Pro Options\" in "
-"the \"Misc\" tab."
+"You can always look at premium options by checking the \"Pro Options\" in the "
+"\"Misc\" tab."
 msgstr ""
-"Sie können sich die Premium-Optionen jederzeit ansehen, indem Sie die "
-"„Pro-Optionen“ auf der Registerkarte „Verschiedenes“ aktivieren."
+"Puoi sempre guardare le opzioni premium controllando le \"Opzioni Pro\" nella "
+"scheda \"Varie\"."
 
 # automatic translation
 #: bws_menu/bws_functions.php:838
 msgid "Add BWS Shortcode"
-msgstr "BWS-Shortcode hinzufügen"
+msgstr "Aggiungi codice breve BWS"
 
 # automatic translation
 #: bws_menu/bws_functions.php:839
 msgid "Add BWS Plugins Shortcode"
-msgstr "Fügen Sie den Shortcode für BWS-Plugins hinzu"
+msgstr "Aggiungi lo shortcode dei plug-in BWS"
 
 # automatic translation
 #: bws_menu/bws_functions.php:861
 msgid "Add shortcode"
-msgstr "Shortcode hinzufügen"
+msgstr "Aggiungi shortcode"
 
 # automatic translation
 #: bws_menu/bws_functions.php:861
 msgid "Add BestWebSoft plugins' shortcodes using this button."
-msgstr ""
-"Fügen Sie die Shortcodes der BestWebSoft-Plugins mit dieser Schaltfläche "
-"hinzu."
+msgstr "Aggiungi gli shortcode dei plugin BestWebSoft utilizzando questo pulsante."
 
 # automatic translation
 #: bws_menu/bws_functions.php:970 includes/class-pgntn-settings.php:156
 #: includes/class-pgntn-settings.php:230
 msgid "Close"
-msgstr "Schließen"
+msgstr "Vicino"
 
 # automatic translation
 #: bws_menu/bws_functions.php:1062
 msgid "Are you sure you want to restore default settings?"
-msgstr "Möchten Sie die Standardeinstellungen wirklich wiederherstellen?"
+msgstr "Sei sicuro di voler ripristinare le impostazioni predefinite?"
 
 # automatic translation
 #: bws_menu/bws_functions.php:1065
 msgid "Yes, restore all settings"
-msgstr "Ja, alle Einstellungen wiederherstellen"
+msgstr "Sì, ripristina tutte le impostazioni"
 
 # automatic translation
 #: bws_menu/bws_functions.php:1066
 msgid "No, go back to the settings page"
-msgstr "Nein, gehen Sie zurück zur Einstellungsseite"
+msgstr "No, torna alla pagina delle impostazioni"
 
 # automatic translation
 #: bws_menu/bws_functions.php:1128
 msgid "Plugin"
-msgstr "Plugin"
+msgstr "Collegare"
 
 # automatic translation
 #: bws_menu/bws_functions.php:1137
 msgid "Shortcode settings"
-msgstr "Shortcode-Einstellungen"
+msgstr "Impostazioni codice breve"
 
 # automatic translation
 #: bws_menu/bws_functions.php:1142
 msgid "The shortcode will be inserted"
-msgstr "Der Shortcode wird eingefügt"
+msgstr "Lo shortcode verrà inserito"
 
 # automatic translation
 #: bws_menu/bws_functions.php:1194 pagination.php:774
@@ -401,142 +395,136 @@ msgstr "FAQ"
 # automatic translation
 #: bws_menu/bws_functions.php:1200
 msgid "For more information:"
-msgstr "Für mehr Informationen:"
+msgstr "Per maggiori informazioni:"
 
 # automatic translation
 #: bws_menu/bws_functions.php:1201 bws_menu/bws_menu.php:475
 #: bws_menu/class-bws-settings.php:870
 msgid "Documentation"
-msgstr "Dokumentation"
+msgstr "Documentazione"
 
 # automatic translation
 #: bws_menu/bws_functions.php:1202 bws_menu/bws_menu.php:477
 #: bws_menu/class-bws-settings.php:872
 msgid "Video Instructions"
-msgstr "Videoanleitung"
+msgstr "Video istruzioni"
 
 # automatic translation
 #: bws_menu/bws_functions.php:1203
 msgid "Submit a Request"
-msgstr "Einen Antrag stellen"
+msgstr "Invia una richiesta"
 
 # automatic translation
 #: bws_menu/bws_menu.php:105 bws_menu/class-bws-settings.php:971
 msgid "Wrong license key"
-msgstr "Falscher Lizenzschlüssel"
+msgstr "Chiave di licenza errata"
 
 # automatic translation
 #: bws_menu/bws_menu.php:127 bws_menu/class-bws-settings.php:997
 #: bws_menu/class-bws-settings.php:1074 bws_menu/class-bws-settings.php:1112
 msgid ""
-"Something went wrong. Please try again later. If the error appears again, "
-"please contact us"
+"Something went wrong. Please try again later. If the error appears again, please "
+"contact us"
 msgstr ""
-"Etwas ist schief gelaufen. Bitte versuchen Sie es später erneut. Tritt der "
-"Fehler erneut auf, kontaktieren Sie uns bitte"
+"Qualcosa è andato storto. Per favore riprova più tardi. Se l'errore si "
+"ripresenta, contattaci"
 
 # automatic translation
 #: bws_menu/bws_menu.php:127 bws_menu/class-bws-settings.php:997
 #: bws_menu/class-bws-settings.php:1074 bws_menu/class-bws-settings.php:1112
 msgid "We are sorry for inconvenience."
-msgstr "Wir entschuldigen uns für die Unannehmlichkeiten."
+msgstr "Siamo spiacenti per l'inconveniente."
 
 # automatic translation
 #: bws_menu/bws_menu.php:134 bws_menu/class-bws-settings.php:1003
 #: bws_menu/class-bws-settings.php:1118
 msgid "Wrong license key."
-msgstr "Falscher Lizenzschlüssel."
+msgstr "Chiave di licenza errata."
 
 # automatic translation
 #: bws_menu/bws_menu.php:136
 msgid ""
-"This license key is bound to another site. Change it via personal Client "
-"Area."
+"This license key is bound to another site. Change it via personal Client Area."
 msgstr ""
-"Dieser Lizenzschlüssel ist an eine andere Site gebunden. Ändern Sie es über "
-"den persönlichen Kundenbereich."
+"Questa chiave di licenza è legata a un altro sito. Modificalo tramite Area "
+"Clienti personale."
 
 # automatic translation
 #: bws_menu/bws_menu.php:136
 msgid "Log in"
-msgstr "Anmeldung"
+msgstr "Login"
 
 # automatic translation
-#: bws_menu/bws_menu.php:138 bws_menu/bws_menu.php:385
-#: bws_menu/deprecated.php:172
+#: bws_menu/bws_menu.php:138 bws_menu/bws_menu.php:385 bws_menu/deprecated.php:172
 msgid "Unfortunately, you have exceeded the number of available tries per day."
-msgstr "Leider haben Sie die Anzahl der verfügbaren Versuche pro Tag überschritten."
+msgstr "Purtroppo hai superato il numero di tentativi disponibili al giorno."
 
 # automatic translation
 #: bws_menu/bws_menu.php:140
 #, php-format
 msgid ""
-"Unfortunately, Your license has expired. To continue getting top-priority "
-"support and plugin updates, you should extend it in your %s"
+"Unfortunately, Your license has expired. To continue getting top-priority support "
+"and plugin updates, you should extend it in your %s"
 msgstr ""
-"Leider ist Ihre Lizenz abgelaufen. Um weiterhin erstklassigen Support und "
-"Plugin-Updates zu erhalten, sollten Sie es in Ihrem %s erweitern"
+"Sfortunatamente, la tua licenza è scaduta. Per continuare a ricevere il supporto "
+"prioritario e gli aggiornamenti dei plug-in, dovresti estenderlo nel tuo %s"
 
 # automatic translation
 #: bws_menu/bws_menu.php:142 bws_menu/class-bws-settings.php:1126
 msgid ""
-"Unfortunately, the Pro licence was already installed to this domain. The "
-"Pro Trial license can be installed only once."
+"Unfortunately, the Pro licence was already installed to this domain. The Pro "
+"Trial license can be installed only once."
 msgstr ""
-"Leider war die Pro-Lizenz auf dieser Domain bereits installiert. Die Pro "
-"Trial-Lizenz kann nur einmal installiert werden."
+"Sfortunatamente, la licenza Pro era già installata su questo dominio. La licenza "
+"Pro Trial può essere installata solo una volta."
 
 # automatic translation
 #: bws_menu/bws_menu.php:148 bws_menu/class-bws-settings.php:1018
 msgid "The license key is valid."
-msgstr "Der Lizenzschlüssel ist gültig."
+msgstr "La chiave di licenza è valida."
 
 # automatic translation
 #: bws_menu/bws_menu.php:150 bws_menu/class-bws-settings.php:1022
 msgid "Your license will expire on"
-msgstr "Ihre Lizenz läuft am ab"
+msgstr "La tua licenza scadrà il"
 
 # automatic translation
 #: bws_menu/bws_menu.php:153
 msgid "Congratulations! Pro Membership license is activated successfully."
-msgstr ""
-"Glückwunsch! Die Lizenz für die Pro-Mitgliedschaft wurde erfolgreich "
-"aktiviert."
+msgstr "Congratulazioni! La licenza Pro Membership è stata attivata correttamente."
 
 # automatic translation
 #: bws_menu/bws_menu.php:160 bws_menu/class-bws-settings.php:1136
 msgid ""
-"Something went wrong. Try again later or upload the plugin manually. We are "
-"sorry for inconvenience."
+"Something went wrong. Try again later or upload the plugin manually. We are sorry "
+"for inconvenience."
 msgstr ""
-"Etwas ist schief gelaufen. Versuchen Sie es später noch einmal oder laden "
-"Sie das Plugin manuell hoch. Wir entschuldigen uns für die "
-"Unannehmlichkeiten."
+"Qualcosa è andato storto. Riprova più tardi o carica il plug-in manualmente. "
+"Siamo spiacenti per l'inconveniente."
 
 # automatic translation
 #: bws_menu/bws_menu.php:171
 msgid "Please enter your license key."
-msgstr "Bitte geben Sie ihren Lizenzschlüssel ein."
+msgstr "Inserisci la tua chiave di licenza."
 
 # automatic translation
 #: bws_menu/bws_menu.php:183
 msgid "Not set"
-msgstr "Nicht eingestellt"
+msgstr "Non impostato"
 
 # automatic translation
 #: bws_menu/bws_menu.php:186
 msgid "On"
-msgstr "An"
+msgstr "SU"
 
 # automatic translation
 #: bws_menu/bws_menu.php:186
 msgid "Off"
-msgstr "Aus"
+msgstr "Spento"
 
 # automatic translation
-#: bws_menu/bws_menu.php:187 bws_menu/bws_menu.php:188
-#: bws_menu/bws_menu.php:189 bws_menu/bws_menu.php:190
-#: bws_menu/bws_menu.php:191 bws_menu/bws_menu.php:192
+#: bws_menu/bws_menu.php:187 bws_menu/bws_menu.php:188 bws_menu/bws_menu.php:189
+#: bws_menu/bws_menu.php:190 bws_menu/bws_menu.php:191 bws_menu/bws_menu.php:192
 #: bws_menu/bws_menu.php:201
 msgid "N/A"
 msgstr "N / A"
@@ -544,486 +532,481 @@ msgstr "N / A"
 # automatic translation
 #: bws_menu/bws_menu.php:192
 msgid "Mb"
-msgstr "Mb"
+msgstr "MB"
 
 # automatic translation
-#: bws_menu/bws_menu.php:193 bws_menu/bws_menu.php:194
-#: bws_menu/bws_menu.php:195 bws_menu/bws_menu.php:199
+#: bws_menu/bws_menu.php:193 bws_menu/bws_menu.php:194 bws_menu/bws_menu.php:195
+#: bws_menu/bws_menu.php:199
 msgid "Yes"
-msgstr "Ja"
+msgstr "SÌ"
 
 # automatic translation
-#: bws_menu/bws_menu.php:193 bws_menu/bws_menu.php:194
-#: bws_menu/bws_menu.php:195 bws_menu/bws_menu.php:199
+#: bws_menu/bws_menu.php:193 bws_menu/bws_menu.php:194 bws_menu/bws_menu.php:195
+#: bws_menu/bws_menu.php:199
 msgid "No"
-msgstr "NEIN"
+msgstr "NO"
 
 # automatic translation
 #: bws_menu/bws_menu.php:206
 msgid "WordPress Environment"
-msgstr "WordPress-Umgebung"
+msgstr "Ambiente WordPress"
 
 # automatic translation
 #: bws_menu/bws_menu.php:208
 msgid "Home URL"
-msgstr "Home-URL"
+msgstr "URL della casa"
 
 # automatic translation
 #: bws_menu/bws_menu.php:209
 msgid "Website URL"
-msgstr "Webadresse"
+msgstr "URL del sito"
 
 # automatic translation
 #: bws_menu/bws_menu.php:210
 msgid "WP Version"
-msgstr "WP-Version"
+msgstr "Versione WP"
 
 # automatic translation
 #: bws_menu/bws_menu.php:211
 msgid "WP Multisite"
-msgstr "WP-Multisite"
+msgstr "WP multisito"
 
 # automatic translation
 #: bws_menu/bws_menu.php:212
 msgid "WP Memory Limit"
-msgstr "WP-Speicherlimit"
+msgstr "Limite di memoria WP"
 
 # automatic translation
 #: bws_menu/bws_menu.php:213
 msgid "Active Theme"
-msgstr "Aktives Thema"
+msgstr "Tema attivo"
 
 # automatic translation
-#: bws_menu/bws_menu.php:213 bws_menu/bws_menu.php:258
-#: bws_menu/bws_menu.php:261
+#: bws_menu/bws_menu.php:213 bws_menu/bws_menu.php:258 bws_menu/bws_menu.php:261
 #, php-format
 msgid "by %s"
-msgstr "von %s"
+msgstr "di %s"
 
 # automatic translation
 #: bws_menu/bws_menu.php:217
 msgid "Server Environment"
-msgstr "Serverumgebung"
+msgstr "Ambiente server"
 
 # automatic translation
 #: bws_menu/bws_menu.php:219
 msgid "Operating System"
-msgstr "Betriebssystem"
+msgstr "Sistema operativo"
 
 # automatic translation
 #: bws_menu/bws_menu.php:220
 msgid "Server"
-msgstr "Server"
+msgstr "server"
 
 # automatic translation
 #: bws_menu/bws_menu.php:221
 msgid "PHP Version"
-msgstr "PHP-Version"
+msgstr "Versione PHP"
 
 # automatic translation
 #: bws_menu/bws_menu.php:222
 msgid "PHP Allow URL fopen"
-msgstr "PHP Allow URL fopen"
+msgstr "PHP Consenti URL fopen"
 
 # automatic translation
 #: bws_menu/bws_menu.php:223
 msgid "PHP Memory Limit"
-msgstr "PHP-Speicherlimit"
+msgstr "Limite di memoria PHP"
 
 # automatic translation
 #: bws_menu/bws_menu.php:224
 msgid "Memory Usage"
-msgstr "Speichernutzung"
+msgstr "Utilizzo della memoria"
 
 # automatic translation
 #: bws_menu/bws_menu.php:225
 msgid "PHP Max Upload Size"
-msgstr "Maximale PHP-Upload-Größe"
+msgstr "Dimensione massima caricamento PHP"
 
 # automatic translation
 #: bws_menu/bws_menu.php:226
 msgid "PHP Max Post Size"
-msgstr "Maximale PHP-Beitragsgröße"
+msgstr "Dimensione massima post PHP"
 
 # automatic translation
 #: bws_menu/bws_menu.php:227
 msgid "PHP Max Script Execute Time"
-msgstr "PHP Max Skriptausführungszeit"
+msgstr "Tempo di esecuzione dello script PHP Max"
 
 # automatic translation
 #: bws_menu/bws_menu.php:228
 msgid "PHP Exif support"
-msgstr "PHP-Exif-Unterstützung"
+msgstr "Supporto PHP Exif"
 
 # automatic translation
 #: bws_menu/bws_menu.php:229
 msgid "PHP IPTC support"
-msgstr "PHP-IPTC-Unterstützung"
+msgstr "Supporto PHP IPTC"
 
 # automatic translation
 #: bws_menu/bws_menu.php:230
 msgid "PHP XML support"
-msgstr "PHP-XML-Unterstützung"
+msgstr "Supporto PHP XML"
 
 # automatic translation
 #: bws_menu/bws_menu.php:236
 msgid "Database"
-msgstr "Datenbank"
+msgstr "Banca dati"
 
 # automatic translation
 #: bws_menu/bws_menu.php:238
 msgid "WP DB version"
-msgstr "WP DB-Version"
+msgstr "Versione DB WP"
 
 # automatic translation
 #: bws_menu/bws_menu.php:239
 msgid "MySQL version"
-msgstr "MySQL-Version"
+msgstr "Versione di MySQL"
 
 # automatic translation
 #: bws_menu/bws_menu.php:240
 msgid "SQL Mode"
-msgstr "SQL-Modus"
+msgstr "Modalità SQL"
 
 # automatic translation
 #: bws_menu/bws_menu.php:244
 msgid "Active Plugins"
-msgstr "Aktive Plugins"
+msgstr "Plugin attivi"
 
 # automatic translation
 #: bws_menu/bws_menu.php:249
 msgid "Inactive Plugins"
-msgstr "Inaktive Plugins"
+msgstr "Plugin inattivi"
 
 # automatic translation
 #: bws_menu/bws_menu.php:270
 msgid "Please enter a valid email address."
-msgstr "Bitte geben Sie eine gültige E-Mail-Adresse ein."
+msgstr "Si prega di inserire un indirizzo email valido."
 
 # automatic translation
 #: bws_menu/bws_menu.php:272
 #, php-format
 msgid "Email with system info is sent to %s."
-msgstr "E-Mail mit Systeminformationen wird an %s gesendet."
+msgstr "L'e-mail con le informazioni di sistema viene inviata a %s."
 
 # automatic translation
 #: bws_menu/bws_menu.php:276
 msgid "Thank you for contacting us."
-msgstr "Danke, dass Sie uns kontaktiert haben."
+msgstr "Grazie per averci contattato."
 
 # automatic translation
 #: bws_menu/bws_menu.php:300
 msgid "Sorry, email message could not be delivered."
-msgstr "Entschuldigung, die E-Mail-Nachricht konnte nicht zugestellt werden."
+msgstr "Spiacenti, non è stato possibile recapitare il messaggio e-mail."
 
 # automatic translation
-#: bws_menu/bws_menu.php:321 bws_menu/bws_menu.php:342
-#: bws_menu/bws_menu.php:427 bws_menu/deprecated.php:27
+#: bws_menu/bws_menu.php:321 bws_menu/bws_menu.php:342 bws_menu/bws_menu.php:427
+#: bws_menu/deprecated.php:27
 msgid "Plugins"
-msgstr "Plugins"
+msgstr "Plugin"
 
 # automatic translation
-#: bws_menu/bws_menu.php:329 bws_menu/bws_menu.php:350
-#: bws_menu/bws_menu.php:739 bws_menu/deprecated.php:28
+#: bws_menu/bws_menu.php:329 bws_menu/bws_menu.php:350 bws_menu/bws_menu.php:739
+#: bws_menu/deprecated.php:28
 msgid "Themes"
-msgstr "Themen"
+msgstr "Temi"
 
 # automatic translation
-#: bws_menu/bws_menu.php:334 bws_menu/bws_menu.php:358
-#: bws_menu/bws_menu.php:775
+#: bws_menu/bws_menu.php:334 bws_menu/bws_menu.php:358 bws_menu/bws_menu.php:775
 msgid "System status"
-msgstr "Systemstatus"
+msgstr "Stato del sistema"
 
 # automatic translation
 #: bws_menu/bws_menu.php:365 pagination.php:775
 msgid "Support"
-msgstr "Unterstützung"
+msgstr "Supporto"
 
 # automatic translation
 #: bws_menu/bws_menu.php:366
 msgid "Manage purchased licenses & subscriptions"
-msgstr "Gekaufte Lizenzen und Abonnements verwalten"
+msgstr "Gestisci le licenze e gli abbonamenti acquistati"
 
 # automatic translation
 #: bws_menu/bws_menu.php:375
 #, php-format
 msgid "Get Access to %s+ Premium Plugins"
-msgstr "Erhalten Sie Zugriff auf %s+ Premium-Plugins"
+msgstr "Ottieni l'accesso a %s+ Premium Plugin"
 
 # automatic translation
 #: bws_menu/bws_menu.php:377
 msgid "Subscribe to Pro Membership"
-msgstr "Abonnieren Sie die Pro-Mitgliedschaft"
+msgstr "Iscriviti all'abbonamento Pro"
 
 # automatic translation
 #: bws_menu/bws_menu.php:387 bws_menu/bws_menu.php:408
 #: bws_menu/class-bws-settings.php:925 bws_menu/deprecated.php:133
 msgid "Check license key"
-msgstr "Lizenzschlüssel prüfen"
+msgstr "Controlla la chiave di licenza"
 
 # automatic translation
 #: bws_menu/bws_menu.php:395
 msgid "Enter your license key"
-msgstr "Gib deinen Lizenz-Schlüssel ein"
+msgstr "Inserisci la tua chiave di licenza"
 
 # automatic translation
-#: bws_menu/bws_menu.php:406 bws_menu/bws_menu.php:673
-#: bws_menu/bws_menu.php:682 bws_menu/class-bws-settings.php:898
-#: bws_menu/deprecated.php:170 bws_menu/deprecated.php:178
-#: bws_menu/deprecated.php:268 bws_menu/deprecated.php:281
+#: bws_menu/bws_menu.php:406 bws_menu/bws_menu.php:673 bws_menu/bws_menu.php:682
+#: bws_menu/class-bws-settings.php:898 bws_menu/deprecated.php:170
+#: bws_menu/deprecated.php:178 bws_menu/deprecated.php:268
+#: bws_menu/deprecated.php:281
 msgid "Activate"
-msgstr "aktivieren Sie"
+msgstr "Attivare"
 
 # automatic translation
 #: bws_menu/bws_menu.php:428
 msgid "Upload Plugin"
-msgstr "Plugin hochladen"
+msgstr "Carica plug-in"
 
 # automatic translation
 #: bws_menu/bws_menu.php:433
 #, php-format
 msgid ""
-"The plugin generated %d characters of <strong>unexpected output</strong> "
-"during activation. If you notice &#8220;headers already sent&#8221; "
-"messages, problems with syndication feeds or other issues, try deactivating "
-"or removing this plugin."
+"The plugin generated %d characters of <strong>unexpected output</strong> during "
+"activation. If you notice &#8220;headers already sent&#8221; messages, problems "
+"with syndication feeds or other issues, try deactivating or removing this plugin."
 msgstr ""
-"Das Plugin hat während der Aktivierung %d Zeichen einer "
-"<strong>unerwarteten Ausgabe</strong> generiert. Wenn Sie „Header bereits "
-"gesendet“-Nachrichten, Probleme mit Syndication-Feeds oder andere Probleme "
-"bemerken, versuchen Sie, dieses Plugin zu deaktivieren oder zu entfernen."
+"Il plugin ha generato %d caratteri di <strong>output imprevisto</strong> durante "
+"l&#39;attivazione. Se noti messaggi di &quot;intestazioni già inviate&quot;, "
+"problemi con i feed di syndication o altri problemi, prova a disattivare o "
+"rimuovere questo plug-in."
 
 # automatic translation
 #: bws_menu/bws_menu.php:435
 msgid ""
-"Plugin could not be activated because it triggered a <strong>fatal "
-"error</strong>."
+"Plugin could not be activated because it triggered a <strong>fatal error</strong>."
 msgstr ""
-"Plugin konnte nicht aktiviert werden, da es einen <strong>schwerwiegenden "
-"Fehler</strong> ausgelöst hat."
+"Non è stato possibile attivare il plug-in perché ha generato un <strong>errore "
+"irreversibile</strong> ."
 
 # automatic translation
 #: bws_menu/bws_menu.php:440
 msgid "Plugin <strong>activated</strong>."
-msgstr "Plugin <strong>aktiviert</strong> ."
+msgstr "Plug-in <strong>attivato</strong> ."
 
 # automatic translation
 #: bws_menu/bws_menu.php:457
 msgid "Download Pro Plugin"
-msgstr "Laden Sie das Pro-Plugin herunter"
+msgstr "Scarica il plug-in Pro"
 
 # automatic translation
 #: bws_menu/bws_menu.php:459 bws_menu/class-bws-settings.php:853
 msgid "Your Pro plugin is ready"
-msgstr "Ihr Pro-Plugin ist fertig"
+msgstr "Il tuo plug-in Pro è pronto"
 
 # automatic translation
 #: bws_menu/bws_menu.php:461 bws_menu/class-bws-settings.php:855
 msgid "Your plugin has been zipped, and now is ready to download."
-msgstr "Ihr Plugin wurde gezippt und kann jetzt heruntergeladen werden."
+msgstr "Il tuo plug-in è stato zippato e ora è pronto per il download."
 
 # automatic translation
 #: bws_menu/bws_menu.php:464 bws_menu/class-bws-settings.php:858
 msgid "Download Now"
-msgstr "Jetzt downloaden"
+msgstr "Scarica ora"
 
 # automatic translation
 #: bws_menu/bws_menu.php:468 bws_menu/class-bws-settings.php:862
 msgid "Need help installing the plugin?"
-msgstr "Benötigen Sie Hilfe bei der Installation des Plugins?"
+msgstr "Hai bisogno di aiuto per installare il plugin?"
 
 # automatic translation
 #: bws_menu/bws_menu.php:470 bws_menu/class-bws-settings.php:864
 msgid "How to install WordPress plugin from your admin Dashboard (ZIP archive)"
 msgstr ""
-"So installieren Sie das WordPress-Plugin von Ihrem Admin-Dashboard "
-"(ZIP-Archiv)"
+"Come installare il plug-in di WordPress dalla dashboard dell'amministratore "
+"(archivio ZIP)"
 
 # automatic translation
 #: bws_menu/bws_menu.php:473 bws_menu/class-bws-settings.php:868
 msgid "Get Started"
-msgstr "Loslegen"
+msgstr "Iniziare"
 
 # automatic translation
 #: bws_menu/bws_menu.php:479 bws_menu/class-bws-settings.php:874
 msgid "Knowledge Base"
-msgstr "Wissensbasis"
+msgstr "base di conoscenza"
 
 # automatic translation
 #: bws_menu/bws_menu.php:482
 msgid "Licenses & Domains"
-msgstr "Lizenzen & Domains"
+msgstr "Licenze e domini"
 
 # automatic translation
 #: bws_menu/bws_menu.php:487
 msgid "Client Area"
-msgstr "Kundenbereich"
+msgstr "Area clienti"
 
 # automatic translation
 #: bws_menu/bws_menu.php:491
 msgid "Return to BestWebSoft Panel"
-msgstr "Kehren Sie zum BestWebSoft-Panel zurück"
+msgstr "Ritorna al pannello BestWebSoft"
 
 # automatic translation
-#: bws_menu/bws_menu.php:506 bws_menu/bws_menu.php:541
-#: bws_menu/bws_menu.php:714
+#: bws_menu/bws_menu.php:506 bws_menu/bws_menu.php:541 bws_menu/bws_menu.php:714
 msgid "All"
-msgstr "Alle"
+msgstr "Tutto"
 
 # automatic translation
 #: bws_menu/bws_menu.php:514 bws_menu/bws_menu.php:762
 msgid "Installed"
-msgstr "Eingerichtet"
+msgstr "Installato"
 
 # automatic translation
 #: bws_menu/bws_menu.php:522
 msgid "Not Installed"
-msgstr "Nicht installiert"
+msgstr "Non installato"
 
 # automatic translation
 #: bws_menu/bws_menu.php:529
 msgid "Filter results"
-msgstr "Filter Ergebnisse"
+msgstr "Filtra i risultati"
 
 # automatic translation
 #: bws_menu/bws_menu.php:532 bws_menu/bws_menu.php:705
 msgid "Category"
-msgstr "Kategorie"
+msgstr "Categoria"
 
 # automatic translation
 #: bws_menu/bws_menu.php:625
 msgid "Not installed"
-msgstr "Nicht installiert"
+msgstr "Non installato"
 
 # automatic translation
 #: bws_menu/bws_menu.php:629
 msgid "Renew to get updates"
-msgstr "Erneuern, um Updates zu erhalten"
+msgstr "Rinnova per ricevere gli aggiornamenti"
 
 # automatic translation
 #: bws_menu/bws_menu.php:632
 #, php-format
 msgid "Update to v %s"
-msgstr "Aktualisieren Sie auf v %s"
+msgstr "Aggiorna a v %s"
 
 # automatic translation
 #: bws_menu/bws_menu.php:647 bws_menu/bws_menu.php:676
 msgid "Get Pro"
-msgstr "Werde professoinell"
+msgstr "Diventa professionista"
 
 # automatic translation
 #: bws_menu/bws_menu.php:653 bws_menu/class-bws-settings.php:202
 #: bws_menu/class-bws-settings.php:1206 pagination.php:46
 msgid "Upgrade to Pro"
-msgstr "Auf Pro upgraden"
+msgstr "Aggiornamento a Pro"
 
 # automatic translation
 #: bws_menu/bws_menu.php:673 bws_menu/bws_menu.php:682
 msgid "Activate this plugin"
-msgstr "Aktivieren Sie dieses Plugin"
+msgstr "Attiva questo plug-in"
 
 # automatic translation
 #: bws_menu/bws_menu.php:687
 msgid "Install this plugin"
-msgstr "Installieren Sie dieses Plugin"
+msgstr "Installa questo plugin"
 
 # automatic translation
 #: bws_menu/bws_menu.php:687
 msgid "Install Now"
-msgstr "Jetzt installieren"
+msgstr "Installa ora"
 
 # automatic translation
 #: bws_menu/bws_menu.php:700
 msgid "Nothing found. Try another criteria."
-msgstr "Nichts gefunden. Versuchen Sie es mit einem anderen Kriterium."
+msgstr "Non abbiamo trovato nulla. Prova un altro criterio."
 
 # automatic translation
 #: bws_menu/bws_menu.php:751
 #, php-format
 msgid "By %s"
-msgstr "Von %s"
+msgstr "Di %s"
 
 # automatic translation
 #: bws_menu/bws_menu.php:760
 msgid "Already Installed"
-msgstr "Bereits installiert"
+msgstr "Già installato"
 
 # automatic translation
 #: bws_menu/bws_menu.php:772
 msgid "Browse More WordPress Themes"
-msgstr "Durchsuchen Sie weitere WordPress-Themes"
+msgstr "Sfoglia altri temi WordPress"
 
 # automatic translation
 #: bws_menu/bws_menu.php:791
 msgid "Send to support"
-msgstr "An den Support senden"
+msgstr "Invia al supporto"
 
 # automatic translation
 #: bws_menu/bws_menu.php:798
 msgid "Send to custom email &#187;"
-msgstr "An benutzerdefinierte E-Mail-Adresse senden &#187;"
+msgstr "Invia a email personalizzata &#187;"
 
 # automatic translation
 #: bws_menu/class-bws-settings.php:174
 msgid "Information"
-msgstr "Information"
+msgstr "Informazione"
 
 # automatic translation
 #: bws_menu/class-bws-settings.php:189
 msgid "Inactive"
-msgstr "Inaktiv"
+msgstr "Inattivo"
 
 # automatic translation
 #: bws_menu/class-bws-settings.php:197
 msgid "Expired"
-msgstr "Abgelaufen"
+msgstr "Scaduto"
 
 # automatic translation
 #: bws_menu/class-bws-settings.php:200
 #, php-format
 msgid "%s day(-s) left"
-msgstr "%s Tag(e) übrig"
+msgstr "%s giorno/i rimanenti"
 
 # automatic translation
 #: bws_menu/class-bws-settings.php:206
 #, php-format
 msgid "Expired on %s"
-msgstr "Abgelaufen am %s"
+msgstr "Scaduto il %s"
 
 # automatic translation
 #: bws_menu/class-bws-settings.php:206
 msgid "Renew Now"
-msgstr "Jetzt erneuern"
+msgstr "Rinnova adesso"
 
 # automatic translation
 #: bws_menu/class-bws-settings.php:208
 msgid "Active"
-msgstr "Aktiv"
+msgstr "Attivo"
 
 # automatic translation
 #: bws_menu/class-bws-settings.php:214
 msgid "License"
-msgstr "Lizenz"
+msgstr "Licenza"
 
 # automatic translation
 #: bws_menu/class-bws-settings.php:217
 msgid "Status"
-msgstr "Status"
+msgstr "Stato"
 
 # automatic translation
 #: bws_menu/class-bws-settings.php:221
 msgid "Version"
-msgstr "Ausführung"
+msgstr "Versione"
 
 # automatic translation
 #: bws_menu/class-bws-settings.php:368
 msgid "All plugin settings were restored."
-msgstr "Alle Plugin-Einstellungen wurden wiederhergestellt."
+msgstr "Tutte le impostazioni del plugin sono state ripristinate."
 
 # automatic translation
 #: bws_menu/class-bws-settings.php:531 includes/class-pgntn-settings.php:23
 msgid "Custom Code"
-msgstr "Benutzerdefinierter Code"
+msgstr "Codice personalizzato"
 
 # automatic translation
 #: bws_menu/class-bws-settings.php:537
@@ -1031,56 +1014,59 @@ msgid ""
 "The ability to add custom code is available in the Pro version. If the Pro "
 "version is not available please contact us via Help Center"
 msgstr ""
-"Die Möglichkeit, benutzerdefinierten Code hinzuzufügen, ist in der "
-"Pro-Version verfügbar. Wenn die Pro-Version nicht verfügbar ist, "
-"kontaktieren Sie uns bitte über das Help Center"
+"La possibilità di aggiungere codice personalizzato è disponibile nella versione "
+"Pro. Se la versione Pro non è disponibile, contattaci tramite il Centro assistenza"
 
 # automatic translation
 #: bws_menu/class-bws-settings.php:548
 msgid "You do not have sufficient permissions to edit plugins for this site."
-msgstr "Sie sind nicht berechtigt, Plugins für diese Website zu bearbeiten."
+msgstr ""
+"Non disponi di autorizzazioni sufficienti per modificare i plug-in per questo "
+"sito."
 
 # automatic translation
 #: bws_menu/class-bws-settings.php:554
 msgid "These styles will be added to the header on all pages of your site."
-msgstr "Diese Stile werden der Kopfzeile auf allen Seiten Ihrer Website hinzugefügt."
+msgstr ""
+"Questi stili verranno aggiunti all'intestazione di tutte le pagine del tuo sito."
 
 # automatic translation
 #: bws_menu/class-bws-settings.php:558
 #, php-format
 msgid ""
-"This PHP code will be hooked to the %s Action and will be printed on front "
-"end only."
+"This PHP code will be hooked to the %s Action and will be printed on front end "
+"only."
 msgstr ""
-"Dieser PHP-Code wird an die %s-Aktion gekoppelt und nur am Frontend "
-"ausgegeben."
+"Questo codice PHP verrà agganciato all'azione %s e verrà stampato solo sul front-"
+"end."
 
 # automatic translation
 #: bws_menu/class-bws-settings.php:562
 msgid "These code will be added to the header on all pages of your site."
-msgstr "Dieser Code wird der Kopfzeile auf allen Seiten Ihrer Website hinzugefügt."
+msgstr ""
+"Questi codici verranno aggiunti all'intestazione di tutte le pagine del tuo sito."
 
 # automatic translation
 #: bws_menu/class-bws-settings.php:574
 msgid "Browsing"
-msgstr "Surfen"
+msgstr "Navigazione"
 
 # automatic translation
 #: bws_menu/class-bws-settings.php:586
 #, php-format
 msgid "Activate custom %s code."
-msgstr "Benutzerdefinierten %s-Code aktivieren."
+msgstr "Attiva il codice %s personalizzato."
 
 # automatic translation
 #: bws_menu/class-bws-settings.php:597
 #, php-format
 msgid "Learn more about %s"
-msgstr "Erfahren Sie mehr über %s"
+msgstr "Ulteriori informazioni su %s"
 
 # automatic translation
 #: bws_menu/class-bws-settings.php:629
 msgid "Miscellaneous Settings"
-msgstr "Verschiedene Einstellungen"
+msgstr "Impostazioni varie"
 
 # automatic translation
 #: bws_menu/class-bws-settings.php:640 bws_menu/class-bws-settings.php:714
@@ -1089,420 +1075,411 @@ msgid ""
 "It is prohibited to change %1$s settings on this site in the %2$s network "
 "settings."
 msgstr ""
-"Es ist verboten, die Einstellungen von %1$s auf dieser Website in den "
-"Netzwerkeinstellungen von %2$s zu ändern."
+"È proibito modificare le impostazioni di %1$s su questo sito nelle impostazioni "
+"di rete di %2$s."
 
 # automatic translation
 #: bws_menu/class-bws-settings.php:645 bws_menu/class-bws-settings.php:719
 #, php-format
 msgid ""
-"It is prohibited to view %1$s settings on this site in the %2$s network "
-"settings."
+"It is prohibited to view %1$s settings on this site in the %2$s network settings."
 msgstr ""
-"Es ist verboten, die Einstellungen von %1$s auf dieser Website in den "
-"Netzwerkeinstellungen von %2$s anzuzeigen."
+"È proibito visualizzare le impostazioni di %1$s su questo sito nelle impostazioni "
+"di rete di %2$s."
 
 # automatic translation
 #: bws_menu/class-bws-settings.php:656
 msgid "Pro Options"
-msgstr "Pro-Optionen"
+msgstr "Opzioni professionali"
 
 # automatic translation
 #: bws_menu/class-bws-settings.php:665
 msgid "Enable to display plugin Pro options."
-msgstr "Aktivieren, um Plug-in-Pro-Optionen anzuzeigen."
+msgstr "Abilita per visualizzare le opzioni del plugin Pro."
 
 # automatic translation
 #: bws_menu/class-bws-settings.php:671
 msgid "Track Usage"
-msgstr "Nutzung verfolgen"
+msgstr "Traccia l'utilizzo"
 
 # automatic translation
 #: bws_menu/class-bws-settings.php:680
 msgid ""
-"Enable to allow tracking plugin usage anonymously in order to make it "
-"better."
+"Enable to allow tracking plugin usage anonymously in order to make it better."
 msgstr ""
-"Aktivieren Sie diese Option, um die Verwendung des Tracking-Plug-ins anonym "
-"zuzulassen, um es zu verbessern."
+"Abilita per consentire l'utilizzo del plug-in di tracciamento in modo anonimo per "
+"renderlo migliore."
 
 # automatic translation
 #: bws_menu/class-bws-settings.php:685
 msgid "Default Settings"
-msgstr "Standardeinstellungen"
+msgstr "Impostazioni predefinite"
 
 # automatic translation
 #: bws_menu/class-bws-settings.php:687
 msgid "Restore Settings"
-msgstr "Einstellungen zurücksetzen"
+msgstr "Ripristina impostazioni"
 
 # automatic translation
 #: bws_menu/class-bws-settings.php:688
 msgid "This will restore plugin settings to defaults."
-msgstr ""
-"Dadurch werden die Plugin-Einstellungen auf die Standardeinstellungen "
-"zurückgesetzt."
+msgstr "Questo ripristinerà le impostazioni del plugin ai valori predefiniti."
 
 # automatic translation
 #: bws_menu/class-bws-settings.php:703
 msgid "Import / Export"
-msgstr "Import Export"
+msgstr "Importa / Esporta"
 
 # automatic translation
 #: bws_menu/class-bws-settings.php:837 includes/class-pgntn-settings.php:24
 msgid "License Key"
-msgstr "Lizenzschlüssel"
+msgstr "Chiave di licenza"
 
 # automatic translation
 #: bws_menu/class-bws-settings.php:901
 #, php-format
 msgid "Enter your license key to activate %s and get premium plugin features."
 msgstr ""
-"Geben Sie Ihren Lizenzschlüssel ein, um %s zu aktivieren und "
-"Premium-Plugin-Funktionen zu erhalten."
+"Inserisci la tua chiave di licenza per attivare %s e ottenere le funzionalità del "
+"plug-in premium."
 
 # automatic translation
 #: bws_menu/class-bws-settings.php:904 bws_menu/class-bws-settings.php:1122
 #: bws_menu/deprecated.php:275
 msgid ""
-"Unfortunately, you have exceeded the number of available tries per day. "
-"Please, upload the plugin manually."
+"Unfortunately, you have exceeded the number of available tries per day. Please, "
+"upload the plugin manually."
 msgstr ""
-"Leider haben Sie die Anzahl der verfügbaren Versuche pro Tag überschritten. "
-"Bitte laden Sie das Plugin manuell hoch."
+"Purtroppo hai superato il numero di tentativi disponibili al giorno. Per favore, "
+"carica il plugin manualmente."
 
 # automatic translation
 #: bws_menu/class-bws-settings.php:908 bws_menu/deprecated.php:260
 #, php-format
 msgid "Start Your Free %s-Day Trial Now"
-msgstr "Starten Sie jetzt Ihre kostenlose %s-Day-Testversion"
+msgstr "Inizia ora la tua prova gratuita di %s giorni"
 
 # automatic translation
 #: bws_menu/class-bws-settings.php:927
 msgid ""
-"If necessary, you can check if the license key is correct or reenter it in "
-"the field below."
+"If necessary, you can check if the license key is correct or reenter it in the "
+"field below."
 msgstr ""
-"Bei Bedarf können Sie überprüfen, ob der Lizenzschlüssel korrekt ist, oder "
-"ihn im Feld darunter erneut eingeben."
+"Se necessario, puoi verificare se la chiave di licenza è corretta o reinserirla "
+"nel campo sottostante."
 
 # automatic translation
 #: bws_menu/class-bws-settings.php:938
 msgid "Manage License Settings"
-msgstr "Lizenzeinstellungen verwalten"
+msgstr "Gestisci le impostazioni della licenza"
 
 # automatic translation
 #: bws_menu/class-bws-settings.php:940
 msgid "Login to Client Area"
-msgstr "Melden Sie sich im Kundenbereich an"
+msgstr "Accedi all'Area Clienti"
 
 # automatic translation
 #: bws_menu/class-bws-settings.php:942
 msgid ""
-"Manage active licenses, download BWS products, and view your payment "
-"history using BestWebSoft Client Area."
+"Manage active licenses, download BWS products, and view your payment history "
+"using BestWebSoft Client Area."
 msgstr ""
-"Verwalten Sie aktive Lizenzen, laden Sie BWS-Produkte herunter und sehen "
-"Sie sich Ihren Zahlungsverlauf im BestWebSoft-Kundenbereich an."
+"Gestisci le licenze attive, scarica i prodotti BWS e visualizza la cronologia dei "
+"pagamenti utilizzando l'area clienti di BestWebSoft."
 
 # automatic translation
 #: bws_menu/class-bws-settings.php:964
 msgid "Security check"
-msgstr "Sicherheitskontrolle"
+msgstr "Controllo di sicurezza"
 
 # automatic translation
 #: bws_menu/class-bws-settings.php:1005 bws_menu/class-bws-settings.php:1120
 msgid "This license key is bound to another site."
-msgstr "Dieser Lizenzschlüssel ist an eine andere Site gebunden."
+msgstr "Questa chiave di licenza è legata a un altro sito."
 
 # automatic translation
 #: bws_menu/class-bws-settings.php:1007
 msgid ""
-"This license key is valid, but Your license has expired. If you want to "
-"update our plugin in future, you should extend the license."
+"This license key is valid, but Your license has expired. If you want to update "
+"our plugin in future, you should extend the license."
 msgstr ""
-"Dieser Lizenzschlüssel ist gültig, aber Ihre Lizenz ist abgelaufen. Wenn "
-"Sie unser Plugin in Zukunft aktualisieren möchten, sollten Sie die Lizenz "
-"verlängern."
+"Questa chiave di licenza è valida, ma la tua licenza è scaduta. Se desideri "
+"aggiornare il nostro plug-in in futuro, dovresti estendere la licenza."
 
 # automatic translation
 #: bws_menu/class-bws-settings.php:1009
 msgid "Unfortunately, you have exceeded the number of available tries."
-msgstr "Leider haben Sie die Anzahl der verfügbaren Versuche überschritten."
+msgstr "Sfortunatamente, hai superato il numero di tentativi disponibili."
 
 # automatic translation
 #: bws_menu/class-bws-settings.php:1011
 msgid ""
-"Unfortunately, the Pro Trial licence was already installed to this domain. "
-"The Pro Trial license can be installed only once."
+"Unfortunately, the Pro Trial licence was already installed to this domain. The "
+"Pro Trial license can be installed only once."
 msgstr ""
-"Leider war die Pro Trial-Lizenz bereits auf dieser Domain installiert. Die "
-"Pro Trial-Lizenz kann nur einmal installiert werden."
+"Sfortunatamente, la licenza Pro Trial era già installata su questo dominio. La "
+"licenza Pro Trial può essere installata solo una volta."
 
 # automatic translation
 #: bws_menu/class-bws-settings.php:1016
 msgid "The Pro Trial license key is valid."
-msgstr "Der Pro Trial-Lizenzschlüssel ist gültig."
+msgstr "La chiave di licenza Pro Trial è valida."
 
 # automatic translation
 #: bws_menu/class-bws-settings.php:1029 bws_menu/deprecated.php:155
 #, php-format
 msgid "In order to continue using the plugin it is necessary to buy a %s license."
 msgstr ""
-"Um das Plugin weiterhin verwenden zu können, muss eine %s-Lizenz erworben "
-"werden."
+"Per continuare ad utilizzare il plugin è necessario acquistare una licenza %s."
 
 # automatic translation
 #: bws_menu/class-bws-settings.php:1124
 #, php-format
 msgid ""
-"Unfortunately, Your license has expired. To continue getting top-priority "
-"support and plugin updates, you should extend it in your %s."
+"Unfortunately, Your license has expired. To continue getting top-priority support "
+"and plugin updates, you should extend it in your %s."
 msgstr ""
-"Leider ist Ihre Lizenz abgelaufen. Um weiterhin erstklassigen Support und "
-"Plugin-Updates zu erhalten, sollten Sie es in Ihrem %s erweitern."
+"Sfortunatamente, la tua licenza è scaduta. Per continuare a ricevere il supporto "
+"prioritario e gli aggiornamenti dei plug-in, dovresti estenderlo nel tuo %s."
 
 # automatic translation
 #: bws_menu/class-bws-settings.php:1173
 msgid "Please, enter Your license key"
-msgstr "Bitte geben Sie ihren Lizenzschlüssel ein"
+msgstr "Per favore, inserisci la tua chiave di licenza"
 
 # automatic translation
 #: bws_menu/class-bws-settings.php:1189
 msgid "Need Help?"
-msgstr "Brauchen Sie Hilfe?"
+msgstr "Ho bisogno di aiuto?"
 
 # automatic translation
 #: bws_menu/class-bws-settings.php:1191
 msgid "Read the Instruction"
-msgstr "Lies die Anleitung"
+msgstr "Leggi l'istruzione"
 
 # automatic translation
 #: bws_menu/class-bws-settings.php:1196
 msgid "Watch the Video"
-msgstr "Schau das Video"
+msgstr "Guarda il video"
 
 # automatic translation
 #: bws_menu/class-bws-settings.php:1210
 msgid "Start Your Free Trial"
-msgstr "Starten Sie Ihre kostenlose Testversion"
+msgstr "Inizia la tua prova gratuita"
 
 # automatic translation
 #: bws_menu/class-bws-settings.php:1248
 msgid "Request a Feature"
-msgstr "Fordern Sie eine Funktion an"
+msgstr "Richiedi una funzionalità"
 
 # automatic translation
 #: bws_menu/class-bws-settings.php:1254
 #, php-format
 msgid "How can we improve %s?"
-msgstr "Wie können wir %s verbessern?"
+msgstr "Come possiamo migliorare %s?"
 
 # automatic translation
 #: bws_menu/class-bws-settings.php:1256
 msgid "We look forward to hear your ideas."
-msgstr "Wir freuen uns auf Ihre Ideen."
+msgstr "Non vediamo l'ora di ascoltare le vostre idee."
 
 # automatic translation
 #: bws_menu/class-bws-settings.php:1258
 msgid "Describe your idea"
-msgstr "Beschreiben Sie Ihre Idee"
+msgstr "Descrivi la tua idea"
 
 # automatic translation
 #: bws_menu/class-bws-settings.php:1261 bws_menu/deactivation-form.php:123
 msgid "Send website data and allow to contact me back"
-msgstr "Senden Sie Website-Daten und erlauben Sie, mich zurück zu kontaktieren"
+msgstr "Invia i dati del sito web e consenti di ricontattarmi"
 
 # automatic translation
 #: bws_menu/class-bws-settings.php:1266
 msgid "Submit"
-msgstr "Einreichen"
+msgstr "Invia"
 
 # automatic translation
 #: bws_menu/class-bws-settings.php:1267 bws_menu/deactivation-form.php:130
 msgid "Processing"
-msgstr "wird bearbeitet"
+msgstr "in lavorazione"
 
 # automatic translation
 #: bws_menu/class-bws-settings.php:1268
 msgid "Thank you!"
-msgstr "Danke schön!"
+msgstr "Grazie!"
 
 # automatic translation
 #: bws_menu/deactivation-form.php:25
 msgid "Need help? We are ready to answer your questions."
-msgstr "Brauchen Sie Hilfe? Wir sind bereit, Ihre Fragen zu beantworten."
+msgstr "Ho bisogno di aiuto? Siamo pronti a rispondere alle tue domande."
 
 # automatic translation
 #: bws_menu/deactivation-form.php:25
 msgid "Contact Support"
-msgstr "Kontaktieren Sie Support"
+msgstr "Contatta il supporto"
 
 # automatic translation
 #: bws_menu/deactivation-form.php:30
 msgid "The plugin is not working"
-msgstr "Das Plugin funktioniert nicht"
+msgstr "Il plugin non funziona"
 
 # automatic translation
 #: bws_menu/deactivation-form.php:32
 msgid "Kindly share what didn't work so we can fix it in future updates..."
 msgstr ""
-"Teilen Sie bitte mit, was nicht funktioniert hat, damit wir es in "
-"zukünftigen Updates beheben können ..."
+"Si prega di condividere ciò che non ha funzionato in modo che possiamo risolverlo "
+"in futuri aggiornamenti..."
 
 # automatic translation
 #: bws_menu/deactivation-form.php:36
 msgid "The plugin didn't work as expected"
-msgstr "Das Plugin funktionierte nicht wie erwartet"
+msgstr "Il plugin non ha funzionato come previsto"
 
 # automatic translation
 #: bws_menu/deactivation-form.php:38
 msgid "What did you expect?"
-msgstr "Was hast du erwartet?"
+msgstr "Cosa ti aspettavi?"
 
 # automatic translation
 #: bws_menu/deactivation-form.php:42
 msgid "The plugin suddenly stopped working"
-msgstr "Das Plugin funktionierte plötzlich nicht mehr"
+msgstr "Il plugin ha improvvisamente smesso di funzionare"
 
 # automatic translation
 #: bws_menu/deactivation-form.php:49
 msgid "The plugin broke my site"
-msgstr "Das Plugin hat meine Seite kaputt gemacht"
+msgstr "Il plugin ha rotto il mio sito"
 
 # automatic translation
 #: bws_menu/deactivation-form.php:56
 msgid "I couldn't understand how to get it work"
-msgstr "Ich konnte nicht verstehen, wie es funktioniert"
+msgstr "Non riuscivo a capire come farlo funzionare"
 
 # automatic translation
 #: bws_menu/deactivation-form.php:63
 msgid "I found a better plugin"
-msgstr "Ich habe ein besseres Plugin gefunden"
+msgstr "Ho trovato un plugin migliore"
 
 # automatic translation
 #: bws_menu/deactivation-form.php:65
 msgid "What's the plugin name?"
-msgstr "Wie heißt das Plugin?"
+msgstr "Qual è il nome del plugin?"
 
 # automatic translation
 #: bws_menu/deactivation-form.php:69
 msgid "The plugin is great, but I need specific feature that you don't support"
 msgstr ""
-"Das Plugin ist großartig, aber ich brauche eine bestimmte Funktion, die Sie "
-"nicht unterstützen"
+"Il plug-in è fantastico, ma ho bisogno di funzionalità specifiche che non supporti"
 
 # automatic translation
 #: bws_menu/deactivation-form.php:71
 msgid "What feature?"
-msgstr "Welche Funktion?"
+msgstr "Quale caratteristica?"
 
 # automatic translation
 #: bws_menu/deactivation-form.php:75
 msgid "I no longer need the plugin"
-msgstr "Ich brauche das Plugin nicht mehr"
+msgstr "Non ho più bisogno del plugin"
 
 # automatic translation
 #: bws_menu/deactivation-form.php:81
 msgid "It's a temporary deactivation, I'm just debugging an issue"
-msgstr "Es ist eine vorübergehende Deaktivierung, ich debugge nur ein Problem"
+msgstr "È una disattivazione temporanea, sto solo eseguendo il debug di un problema"
 
 # automatic translation
 #: bws_menu/deactivation-form.php:87
 msgid "Other"
-msgstr "Andere"
+msgstr "Altro"
 
 # automatic translation
 #: bws_menu/deactivation-form.php:96
 msgid "Quick Feedback"
-msgstr "Schnelles Feedback"
+msgstr "Risposte rapide"
 
 # automatic translation
 #: bws_menu/deactivation-form.php:98
 msgid "If you have a moment, please let us know why you are deactivating"
-msgstr ""
-"Wenn Sie einen Moment Zeit haben, teilen Sie uns bitte mit, warum Sie "
-"deaktivieren"
+msgstr "Se hai un momento, facci sapere perché stai disattivando"
 
 # automatic translation
 #: bws_menu/deactivation-form.php:128
 msgid "Submit and Deactivate"
-msgstr "Senden und deaktivieren"
+msgstr "Invia e Disattiva"
 
 # automatic translation
 #: bws_menu/deactivation-form.php:129
 msgid "Skip and Deactivate"
-msgstr "Überspringen und deaktivieren"
+msgstr "Salta e disattiva"
 
 # automatic translation
 #: bws_menu/deactivation-form.php:275
 msgid "Please tell us the reason so we can improve it."
-msgstr "Bitte teilen Sie uns den Grund mit, damit wir es verbessern können."
+msgstr "Per favore dicci il motivo in modo che possiamo migliorarlo."
 
 # automatic translation
 #: bws_menu/deprecated.php:29
 msgid "System Status"
-msgstr "Systemstatus"
+msgstr "Stato del sistema"
 
 # automatic translation
 #: bws_menu/deprecated.php:129
 msgid ""
-"If necessary, you can check if the license key is correct or reenter it in "
-"the field below. You can find your license key on your personal page - "
-"Client Area - on our website"
+"If necessary, you can check if the license key is correct or reenter it in the "
+"field below. You can find your license key on your personal page - Client Area - "
+"on our website"
 msgstr ""
-"Bei Bedarf können Sie überprüfen, ob der Lizenzschlüssel korrekt ist, oder "
-"ihn im Feld darunter erneut eingeben. Sie finden Ihren Lizenzschlüssel auf "
-"Ihrer persönlichen Seite – Kundenbereich – auf unserer Website"
+"Se necessario, puoi verificare se la chiave di licenza è corretta o reinserirla "
+"nel campo sottostante. Puoi trovare la chiave di licenza nella tua pagina "
+"personale - Area Clienti - sul nostro sito web"
 
 # automatic translation
 #: bws_menu/deprecated.php:129
 msgid ""
-"(your username is the email address specified during the purchase). If "
-"necessary, please submit \"Lost your password?\" request."
+"(your username is the email address specified during the purchase). If necessary, "
+"please submit \"Lost your password?\" request."
 msgstr ""
-"(Ihr Benutzername ist die beim Kauf angegebene E-Mail-Adresse). Geben Sie "
-"ggf. \"Passwort vergessen?\" Anfrage."
+"(il tuo nome utente è l'indirizzo email specificato durante l'acquisto). Se "
+"necessario, inviare \"Hai perso la password?\" richiesta."
 
 # automatic translation
 #: bws_menu/deprecated.php:155
 msgid "After that, you can activate it by entering your license key."
-msgstr "Danach können Sie es aktivieren, indem Sie Ihren Lizenzschlüssel eingeben."
+msgstr "Successivamente, puoi attivarlo inserendo la tua chiave di licenza."
 
 # automatic translation
 #: bws_menu/deprecated.php:158 bws_menu/deprecated.php:253
 msgid "License key can be found in the"
-msgstr "Lizenzschlüssel finden Sie in der"
+msgstr "La chiave di licenza si trova nel file"
 
 # automatic translation
 #: bws_menu/deprecated.php:160 bws_menu/deprecated.php:255
 msgid "(your username is the email address specified during the purchase)."
-msgstr "(Ihr Benutzername ist die beim Kauf angegebene E-Mail-Adresse)."
+msgstr "(il tuo nome utente è l'indirizzo email specificato durante l'acquisto)."
 
 # automatic translation
 #: bws_menu/deprecated.php:187
 msgid "Congratulations! The Pro license of the plugin is activated successfully."
-msgstr "Glückwunsch! Die Pro-Lizenz des Plugins wurde erfolgreich aktiviert."
+msgstr "Congratulazioni! La licenza Pro del plugin è stata attivata correttamente."
 
 # automatic translation
 #: bws_menu/deprecated.php:189 bws_menu/deprecated.php:233
 msgid "Please, go to"
-msgstr "Bitte gehe zu"
+msgstr "Per favore vai a"
 
 # automatic translation
 #: bws_menu/deprecated.php:189 bws_menu/deprecated.php:233
 msgid "the setting page"
-msgstr "die Einstellungsseite"
+msgstr "la pagina delle impostazioni"
 
 # automatic translation
 #: bws_menu/deprecated.php:207
 msgid "Restore all plugin settings to defaults"
-msgstr "Setzen Sie alle Plugin-Einstellungen auf die Standardeinstellungen zurück"
+msgstr "Ripristina tutte le impostazioni predefinite del plug-in"
 
 # automatic translation
 #: bws_menu/deprecated.php:209
 msgid "Restore settings"
-msgstr "Einstellungen zurücksetzen"
+msgstr "Ripristina impostazioni"
 
 # automatic translation
 #: bws_menu/deprecated.php:231
@@ -1510,40 +1487,37 @@ msgid ""
 "Congratulations! Pro version of the plugin is  installed and activated "
 "successfully."
 msgstr ""
-"Glückwunsch! Die Pro-Version des Plugins wurde erfolgreich installiert und "
-"aktiviert."
+"Congratulazioni! La versione Pro del plugin è installata e attivata correttamente."
 
 # automatic translation
 #: bws_menu/deprecated.php:242
 msgid "Show Pro features"
-msgstr "Pro-Funktionen anzeigen"
+msgstr "Mostra funzionalità Pro"
 
 # automatic translation
 #: bws_menu/deprecated.php:249
 msgid "Enter your license key to install and activate"
-msgstr ""
-"Geben Sie Ihren Lizenzschlüssel ein, um ihn zu installieren und zu "
-"aktivieren"
+msgstr "Inserisci la tua chiave di licenza per l'installazione e l'attivazione"
 
 # automatic translation
 #: bws_menu/deprecated.php:251
 msgid "version of the plugin."
-msgstr "Version des Plugins."
+msgstr "versione del plug-in."
 
 # automatic translation
 #: bws_menu/product_list.php:9
 msgid "Admin Tools"
-msgstr "Verwaltungstools"
+msgstr "Strumenti di amministrazione"
 
 # automatic translation
 #: bws_menu/product_list.php:10
 msgid "Content"
-msgstr "Inhalt"
+msgstr "Contenuto"
 
 # automatic translation
 #: bws_menu/product_list.php:11
 msgid "eCommerce"
-msgstr "E-Commerce"
+msgstr "eCommerce"
 
 # automatic translation
 #: bws_menu/product_list.php:12
@@ -1553,22 +1527,22 @@ msgstr "Marketing"
 # automatic translation
 #: bws_menu/product_list.php:13
 msgid "Navigation"
-msgstr "Navigation"
+msgstr "Navigazione"
 
 # automatic translation
 #: bws_menu/product_list.php:14
 msgid "Recommended"
-msgstr "Empfohlen"
+msgstr "Consigliato"
 
 # automatic translation
 #: bws_menu/product_list.php:15
 msgid "Security"
-msgstr "Sicherheit"
+msgstr "Sicurezza"
 
 # automatic translation
 #: bws_menu/product_list.php:16
 msgid "SEO"
-msgstr "DAS"
+msgstr "QUESTO"
 
 # automatic translation
 #: bws_menu/product_list.php:17
@@ -1579,80 +1553,76 @@ msgstr "SMM"
 #: bws_menu/product_list.php:24
 msgid "Give a birth for your bike rental and booking WordPress website."
 msgstr ""
-"Geben Sie eine Geburt für Ihre Fahrradverleih- und "
-"Buchungs-WordPress-Website."
+"Dai vita al tuo sito WordPress per il noleggio e la prenotazione di biciclette."
 
 # automatic translation
 #: bws_menu/product_list.php:36
 msgid "Best secure captcha plugin to protect your WordPress forms."
-msgstr "Bestes sicheres Captcha-Plugin zum Schutz Ihrer WordPress-Formulare."
+msgstr "Il miglior plug-in captcha sicuro per proteggere i tuoi moduli WordPress."
 
 # automatic translation
 #: bws_menu/product_list.php:46
 msgid "Create your own rental website for car renting and booking."
-msgstr "Erstellen Sie Ihre eigene Mietwebsite für Mietwagen und Buchung."
+msgstr "Crea il tuo sito Web di noleggio per il noleggio e la prenotazione di auto."
 
 # automatic translation
 #: bws_menu/product_list.php:58
 msgid ""
-"Add columns with custom content to WordPress website pages, posts, widgets, "
-"etc."
+"Add columns with custom content to WordPress website pages, posts, widgets, etc."
 msgstr ""
-"Fügen Sie Spalten mit benutzerdefinierten Inhalten zu "
-"WordPress-Websiteseiten, Beiträgen, Widgets usw. hinzu."
+"Aggiungi colonne con contenuto personalizzato alle pagine del sito Web di "
+"WordPress, ai post, ai widget, ecc."
 
 # automatic translation
 #: bws_menu/product_list.php:65
 msgid ""
-"Allow customers to reach you using secure contact form plugin any website "
-"must have."
+"Allow customers to reach you using secure contact form plugin any website must "
+"have."
 msgstr ""
-"Ermöglichen Sie Kunden, Sie mit einem sicheren Kontaktformular-Plugin zu "
-"erreichen, das jede Website haben muss."
+"Consenti ai clienti di raggiungerti utilizzando il plug-in del modulo di contatto "
+"sicuro che qualsiasi sito Web deve avere."
 
 # automatic translation
 #: bws_menu/product_list.php:75
 msgid "Add unlimited number of contact forms to WordPress website."
-msgstr ""
-"Fügen Sie der WordPress-Website eine unbegrenzte Anzahl von "
-"Kontaktformularen hinzu."
+msgstr "Aggiungi un numero illimitato di moduli di contatto al sito Web WordPress."
 
 # automatic translation
 #: bws_menu/product_list.php:85
 msgid "Save and manage Contact Form messages. Never lose important data."
 msgstr ""
-"Speichern und verwalten Sie Kontaktformularnachrichten. Verlieren Sie "
-"niemals wichtige Daten."
+"Salva e gestisci i messaggi del modulo di contatto. Non perdere mai dati "
+"importanti."
 
 # automatic translation
 #: bws_menu/product_list.php:95
 msgid "Add unlimited custom pages to WordPress admin dashboard."
 msgstr ""
-"Fügen Sie dem WordPress-Admin-Dashboard unbegrenzt benutzerdefinierte "
-"Seiten hinzu."
+"Aggiungi pagine personalizzate illimitate alla dashboard di amministrazione di "
+"WordPress."
 
 # automatic translation
 #: bws_menu/product_list.php:105
 msgid "Add custom post types and taxonomies to WordPress website search results."
 msgstr ""
-"Fügen Sie benutzerdefinierte Beitragstypen und Taxonomien zu den "
-"Suchergebnissen der WordPress-Website hinzu."
+"Aggiungi tipi di post personalizzati e tassonomie ai risultati di ricerca del "
+"sito web di WordPress."
 
 # automatic translation
 #: bws_menu/product_list.php:115
 msgid "Add PayPal and 2CO donate buttons to receive charity payments."
 msgstr ""
-"Fügen Sie PayPal- und 2CO-Spendenschaltflächen hinzu, um Spendenzahlungen "
-"zu erhalten."
+"Aggiungi i pulsanti di donazione PayPal e 2CO per ricevere pagamenti di "
+"beneficenza."
 
 # automatic translation
 #: bws_menu/product_list.php:122
 msgid ""
-"Get latest error log messages to diagnose website problems. Define and fix "
-"issues faster."
+"Get latest error log messages to diagnose website problems. Define and fix issues "
+"faster."
 msgstr ""
-"Erhalten Sie die neuesten Fehlerprotokollmeldungen, um Probleme mit der "
-"Website zu diagnostizieren. Definieren und beheben Sie Probleme schneller."
+"Ottieni gli ultimi messaggi di log degli errori per diagnosticare i problemi del "
+"sito web. Definisci e risolvi i problemi più velocemente."
 
 # automatic translation
 #: bws_menu/product_list.php:129
@@ -1660,8 +1630,8 @@ msgid ""
 "Add Facebook Follow, Like, and Share buttons to WordPress posts, pages, and "
 "widgets."
 msgstr ""
-"Fügen Sie Facebook-Schaltflächen „Folgen“, „Gefällt mir“ und „Teilen“ zu "
-"WordPress-Beiträgen, -Seiten und -Widgets hinzu."
+"Aggiungi i pulsanti Segui, Mi piace e Condividi di Facebook ai post, alle pagine "
+"e ai widget di WordPress."
 
 # automatic translation
 #: bws_menu/product_list.php:139
@@ -1669,64 +1639,61 @@ msgid ""
 "Add beautiful galleries, albums & images to your WordPress website in a few "
 "clicks."
 msgstr ""
-"Fügen Sie Ihrer WordPress-Website mit wenigen Klicks wunderschöne Galerien, "
-"Alben und Bilder hinzu."
+"Aggiungi bellissime gallerie, album e immagini al tuo sito Web WordPress in pochi "
+"clic."
 
 # automatic translation
 #: bws_menu/product_list.php:149
 msgid ""
-"Stronger security solution which protects your WordPress website from hacks "
-"and unauthorized login attempts."
+"Stronger security solution which protects your WordPress website from hacks and "
+"unauthorized login attempts."
 msgstr ""
-"Stärkere Sicherheitslösung, die Ihre WordPress-Website vor Hacks und "
-"unbefugten Anmeldeversuchen schützt."
+"Soluzione di sicurezza più forte che protegge il tuo sito Web WordPress da hack e "
+"tentativi di accesso non autorizzati."
 
 # automatic translation
 #: bws_menu/product_list.php:159
 msgid ""
-"Add Adsense ads to WordPress website pages, posts, custom posts, search "
-"results, categories, tags, and widgets."
+"Add Adsense ads to WordPress website pages, posts, custom posts, search results, "
+"categories, tags, and widgets."
 msgstr ""
-"Fügen Sie Adsense-Anzeigen zu Seiten, Beiträgen, benutzerdefinierten "
-"Beiträgen, Suchergebnissen, Kategorien, Tags und Widgets von "
-"WordPress-Websites hinzu."
+"Aggiungi annunci Adsense a pagine Web, post, post personalizzati, risultati di "
+"ricerca, categorie, tag e widget di WordPress."
 
 # automatic translation
 #: bws_menu/product_list.php:169
 msgid "Add Google Analytics code to WordPress website and track basic stats."
 msgstr ""
-"Fügen Sie der WordPress-Website Google Analytics-Code hinzu und verfolgen "
-"Sie grundlegende Statistiken."
+"Aggiungi il codice di Google Analytics al sito web di WordPress e monitora le "
+"statistiche di base."
 
 # automatic translation
 #: bws_menu/product_list.php:179
 msgid "Protect WordPress website forms from spam entries with reCaptcha."
-msgstr "Schützen Sie WordPress-Website-Formulare mit reCaptcha vor Spam-Einträgen."
+msgstr "Proteggi i moduli del sito Web WordPress dalle voci di spam con reCaptcha."
 
 # automatic translation
 #: bws_menu/product_list.php:189
 msgid "Add customized Google maps to WordPress posts, pages and widgets."
-msgstr ""
-"Fügen Sie benutzerdefinierte Google Maps zu WordPress-Beiträgen, -Seiten "
-"und -Widgets hinzu."
+msgstr "Aggiungi mappe Google personalizzate a post, pagine e widget di WordPress."
 
 # automatic translation
 #: bws_menu/product_list.php:199
 msgid ""
-"Generate and add XML sitemap to WordPress website. Help search engines "
-"index your blog."
+"Generate and add XML sitemap to WordPress website. Help search engines index your "
+"blog."
 msgstr ""
-"Generieren Sie eine XML-Sitemap und fügen Sie sie der WordPress-Website "
-"hinzu. Helfen Sie Suchmaschinen, Ihren Blog zu indizieren."
+"Genera e aggiungi la mappa del sito XML al sito Web di WordPress. Aiuta i motori "
+"di ricerca a indicizzare il tuo blog."
 
 # automatic translation
 #: bws_menu/product_list.php:209
 msgid ""
-"Replace external WordPress website links with Google shortlinks and track "
-"click stats."
+"Replace external WordPress website links with Google shortlinks and track click "
+"stats."
 msgstr ""
-"Ersetzen Sie externe WordPress-Website-Links durch Google-Shortlinks und "
-"verfolgen Sie Klickstatistiken."
+"Sostituisci i collegamenti a siti Web WordPress esterni con collegamenti brevi di "
+"Google e tieni traccia delle statistiche sui clic."
 
 # automatic translation
 #: bws_menu/product_list.php:216
@@ -1734,17 +1701,17 @@ msgid ""
 "Protect WordPress website – allow and deny access for certain IP addresses, "
 "hostnames, etc."
 msgstr ""
-"Schützen Sie die WordPress-Website – erlauben und verweigern Sie den "
-"Zugriff für bestimmte IP-Adressen, Hostnamen usw."
+"Proteggi il sito Web WordPress: consenti e nega l'accesso a determinati indirizzi "
+"IP, nomi host, ecc."
 
 # automatic translation
 #: bws_menu/product_list.php:226
 msgid ""
-"Create your personal job board and listing WordPress website. Search jobs, "
-"submit CV/resumes, choose candidates."
+"Create your personal job board and listing WordPress website. Search jobs, submit "
+"CV/resumes, choose candidates."
 msgstr ""
-"Erstellen Sie Ihre persönliche Jobbörse und WordPress-Website. Jobs suchen, "
-"Lebensläufe einreichen, Kandidaten auswählen."
+"Crea la tua bacheca di lavoro personale e elenca il sito Web WordPress. Cerca "
+"lavoro, invia CV/curriculum, scegli i candidati."
 
 # automatic translation
 #: bws_menu/product_list.php:233
@@ -1752,18 +1719,17 @@ msgid ""
 "Protect WordPress website against brute force attacks. Limit rate of login "
 "attempts."
 msgstr ""
-"Schützen Sie die WordPress-Website vor Brute-Force-Angriffen. Rate der "
-"Anmeldeversuche begrenzen."
+"Proteggi il sito Web WordPress dagli attacchi di forza bruta. Limita il numero di "
+"tentativi di accesso."
 
 # automatic translation
 #: bws_menu/product_list.php:243
 msgid ""
-"Add LinkedIn Share and Follow buttons to WordPress posts, pages and "
-"widgets. 5 plugins included – profile, insider, etc."
+"Add LinkedIn Share and Follow buttons to WordPress posts, pages and widgets. 5 "
+"plugins included – profile, insider, etc."
 msgstr ""
-"Fügen Sie LinkedIn-Schaltflächen „Teilen“ und „Folgen“ zu "
-"WordPress-Beiträgen, -Seiten und -Widgets hinzu. 5 Plugins enthalten – "
-"Profil, Insider usw."
+"Aggiungi i pulsanti Condividi e Segui di LinkedIn ai post, alle pagine e ai "
+"widget di WordPress. 5 plugin inclusi: profilo, insider, ecc."
 
 # automatic translation
 #: bws_menu/product_list.php:253
@@ -1771,36 +1737,36 @@ msgid ""
 "Translate WordPress website content to other languages manually. Create "
 "multilingual pages, posts, widgets, menus, etc."
 msgstr ""
-"Übersetzen Sie WordPress-Website-Inhalte manuell in andere Sprachen. "
-"Erstellen Sie mehrsprachige Seiten, Beiträge, Widgets, Menüs usw."
+"Traduci manualmente il contenuto del sito Web WordPress in altre lingue. Crea "
+"pagine multilingue, post, widget, menu, ecc."
 
 # automatic translation
-#: bws_menu/product_list.php:263
 #. Description of the plugin/theme
+#: bws_menu/product_list.php:263
 msgid ""
-"Add customizable pagination to WordPress website. Split long content to "
-"multiple pages for better navigation."
+"Add customizable pagination to WordPress website. Split long content to multiple "
+"pages for better navigation."
 msgstr ""
-"Fügen Sie der WordPress-Website eine anpassbare Paginierung hinzu. Teilen "
-"Sie lange Inhalte zur besseren Navigation auf mehrere Seiten auf."
+"Aggiungi un'impaginazione personalizzabile al sito web di WordPress. Suddividi i "
+"contenuti lunghi su più pagine per una migliore navigazione."
 
 # automatic translation
 #: bws_menu/product_list.php:273
 msgid ""
-"Generate PDF files and print WordPress posts/pages. Customize document "
-"header/footer styles and appearance."
+"Generate PDF files and print WordPress posts/pages. Customize document header/"
+"footer styles and appearance."
 msgstr ""
-"Generieren Sie PDF-Dateien und drucken Sie WordPress-Beiträge/-Seiten. "
-"Passen Sie Kopf-/Fußzeilenstile und Erscheinungsbild von Dokumenten an."
+"Genera file PDF e stampa post/pagine WordPress. Personalizza gli stili e "
+"l'aspetto dell'intestazione/piè di pagina del documento."
 
 # automatic translation
 #: bws_menu/product_list.php:283
 msgid ""
-"Add Pinterest Follow, Pin It buttons and profile widgets (Pin, Board, "
-"Profile) to WordPress posts, pages and widgets."
+"Add Pinterest Follow, Pin It buttons and profile widgets (Pin, Board, Profile) to "
+"WordPress posts, pages and widgets."
 msgstr ""
-"Fügen Sie Pinterest Folgen, Pin It-Schaltflächen und Profil-Widgets (Pin, "
-"Pinnwand, Profil) zu WordPress-Beiträgen, -Seiten und -Widgets hinzu."
+"Aggiungi i pulsanti Pinterest Follow, Pin It e i widget del profilo (Pin, Board, "
+"Profile) ai post, alle pagine e ai widget di WordPress."
 
 # automatic translation
 #: bws_menu/product_list.php:293
@@ -1808,43 +1774,41 @@ msgid ""
 "Create your personal portfolio WordPress website. Manage and showcase past "
 "projects to get more clients."
 msgstr ""
-"Erstellen Sie Ihre persönliche WordPress-Portfolio-Website. Verwalten und "
-"präsentieren Sie frühere Projekte, um mehr Kunden zu gewinnen."
+"Crea il tuo sito Web WordPress portfolio personale. Gestisci e mostra i progetti "
+"passati per ottenere più clienti."
 
 # automatic translation
 #: bws_menu/product_list.php:303
 msgid "Export WordPress posts to CSV file format easily. Configure data order."
 msgstr ""
-"Exportieren Sie WordPress-Beiträge einfach in das CSV-Dateiformat. "
-"Konfigurieren Sie die Datenreihenfolge."
+"Esporta facilmente i post di WordPress nel formato di file CSV. Configura "
+"l'ordine dei dati."
 
 # automatic translation
 #: bws_menu/product_list.php:313
 msgid ""
-"Add extra fields to default WordPress user profile. The easiest way to "
-"create and manage additional custom values."
+"Add extra fields to default WordPress user profile. The easiest way to create and "
+"manage additional custom values."
 msgstr ""
-"Fügen Sie dem Standard-WordPress-Benutzerprofil zusätzliche Felder hinzu. "
-"Die einfachste Möglichkeit, zusätzliche benutzerdefinierte Werte zu "
-"erstellen und zu verwalten."
+"Aggiungi campi extra al profilo utente WordPress predefinito. Il modo più "
+"semplice per creare e gestire valori personalizzati aggiuntivi."
 
 # automatic translation
 #: bws_menu/product_list.php:323
 msgid ""
-"Add and display HTML advertisement banner on WordPress website. Customize "
-"bar styles and appearance."
+"Add and display HTML advertisement banner on WordPress website. Customize bar "
+"styles and appearance."
 msgstr ""
-"Hinzufügen und Anzeigen von HTML-Werbebannern auf der WordPress-Website. "
-"Passen Sie die Stile und das Erscheinungsbild der Balken an."
+"Aggiungi e visualizza banner pubblicitario HTML sul sito Web WordPress. "
+"Personalizza gli stili e l'aspetto della barra."
 
 # automatic translation
 #: bws_menu/product_list.php:333
 msgid ""
-"Add customizable quotes and tips blocks to WordPress posts, pages and "
-"widgets."
+"Add customizable quotes and tips blocks to WordPress posts, pages and widgets."
 msgstr ""
-"Fügen Sie WordPress-Beiträgen, -Seiten und -Widgets anpassbare Zitate- und "
-"Tippblöcke hinzu."
+"Aggiungi citazioni personalizzabili e blocchi di suggerimenti a post, pagine e "
+"widget di WordPress."
 
 # automatic translation
 #: bws_menu/product_list.php:340
@@ -1852,8 +1816,8 @@ msgid ""
 "Add rating plugin to your WordPress website to receive feedback from your "
 "customers."
 msgstr ""
-"Fügen Sie Ihrer WordPress-Website ein Bewertungs-Plugin hinzu, um Feedback "
-"von Ihren Kunden zu erhalten."
+"Aggiungi il plug-in di valutazione al tuo sito Web WordPress per ricevere "
+"feedback dai tuoi clienti."
 
 # automatic translation
 #: bws_menu/product_list.php:350
@@ -1861,9 +1825,8 @@ msgid ""
 "Create your personal real estate WordPress website. Sell, rent and buy "
 "properties. Add, search and browse listings easily."
 msgstr ""
-"Erstellen Sie Ihre persönliche Immobilien-WordPress-Website. Immobilien "
-"verkaufen, vermieten und kaufen. Einträge einfach hinzufügen, suchen und "
-"durchsuchen."
+"Crea il tuo sito Web WordPress immobiliare personale. Vendere, affittare e "
+"acquistare immobili. Aggiungi, cerca e sfoglia facilmente gli elenchi."
 
 # automatic translation
 #: bws_menu/product_list.php:360
@@ -1871,522 +1834,508 @@ msgid ""
 "Add related, featured, latest, and popular posts to your WordPress website. "
 "Connect your blog readers with a relevant content."
 msgstr ""
-"Fügen Sie Ihrer WordPress-Website verwandte, empfohlene, neueste und "
-"beliebte Beiträge hinzu. Verbinden Sie Ihre Blog-Leser mit relevanten "
-"Inhalten."
+"Aggiungi post correlati, in primo piano, più recenti e popolari al tuo sito Web "
+"WordPress. Connetti i lettori del tuo blog con un contenuto pertinente."
 
 # automatic translation
 #: bws_menu/product_list.php:367
 msgid ""
-"Send bulk email messages to WordPress users. Custom templates, advanced "
-"settings and detailed reports."
+"Send bulk email messages to WordPress users. Custom templates, advanced settings "
+"and detailed reports."
 msgstr ""
-"Senden Sie Massen-E-Mail-Nachrichten an WordPress-Benutzer. "
-"Benutzerdefinierte Vorlagen, erweiterte Einstellungen und detaillierte "
-"Berichte."
+"Invia messaggi di posta elettronica in blocco agli utenti di WordPress. Modelli "
+"personalizzati, impostazioni avanzate e report dettagliati."
 
 # automatic translation
 #: bws_menu/product_list.php:377
 msgid ""
-"The best responsive slider plugin for your WordPress website. Create "
-"beautifully animated slides just in a few clicks."
+"The best responsive slider plugin for your WordPress website. Create beautifully "
+"animated slides just in a few clicks."
 msgstr ""
-"Das beste Responsive Slider-Plugin für Ihre WordPress-Website. Erstellen "
-"Sie mit nur wenigen Klicks wunderschön animierte Folien."
+"Il miglior plug-in slider reattivo per il tuo sito Web WordPress. Crea splendide "
+"diapositive animate in pochi clic."
 
 # automatic translation
 #: bws_menu/product_list.php:384
 msgid ""
-"Configure SMTP server to receive email messages from WordPress to Gmail, "
-"Yahoo, Hotmail and other services."
+"Configure SMTP server to receive email messages from WordPress to Gmail, Yahoo, "
+"Hotmail and other services."
 msgstr ""
-"Konfigurieren Sie den SMTP-Server, um E-Mail-Nachrichten von WordPress an "
-"Gmail, Yahoo, Hotmail und andere Dienste zu empfangen."
+"Configura il server SMTP per ricevere messaggi e-mail da WordPress a Gmail, "
+"Yahoo, Hotmail e altri servizi."
 
 # automatic translation
 #: bws_menu/product_list.php:391
 msgid ""
-"Add social media buttons and widgets to WordPress posts, pages and widgets. "
-"FB, Twitter, Pinterest, LinkedIn."
+"Add social media buttons and widgets to WordPress posts, pages and widgets. FB, "
+"Twitter, Pinterest, LinkedIn."
 msgstr ""
-"Fügen Sie Social-Media-Schaltflächen und -Widgets zu WordPress-Posts, "
-"-Seiten und -Widgets hinzu. Facebook, Twitter, Pinterest, LinkedIn."
+"Aggiungi pulsanti e widget dei social media ai post, alle pagine e ai widget di "
+"WordPress. Facebook, Twitter, Pinterest, Linkedin."
 
 # automatic translation
 #: bws_menu/product_list.php:401
 msgid ""
-"Add social media login, registration, and commenting to your WordPress "
-"website."
+"Add social media login, registration, and commenting to your WordPress website."
 msgstr ""
-"Fügen Sie Ihrer WordPress-Website Anmeldung, Registrierung und Kommentare "
-"für soziale Medien hinzu."
+"Aggiungi l'accesso ai social media, la registrazione e i commenti al tuo sito Web "
+"WordPress."
 
 # automatic translation
 #: bws_menu/product_list.php:408
 msgid ""
-"Add email newsletter sign up form to WordPress posts, pages and widgets. "
-"Collect data and subscribe your users."
+"Add email newsletter sign up form to WordPress posts, pages and widgets. Collect "
+"data and subscribe your users."
 msgstr ""
-"Fügen Sie ein E-Mail-Newsletter-Anmeldeformular zu WordPress-Beiträgen, "
-"-Seiten und -Widgets hinzu. Sammeln Sie Daten und abonnieren Sie Ihre "
-"Benutzer."
+"Aggiungi il modulo di iscrizione alla newsletter via e-mail ai post, alle pagine "
+"e ai widget di WordPress. Raccogli dati e iscrivi i tuoi utenti."
 
 # automatic translation
 #: bws_menu/product_list.php:418
 msgid ""
-"Add testimonials and feedbacks from your customers to WordPress website "
-"posts, pages, and widgets."
+"Add testimonials and feedbacks from your customers to WordPress website posts, "
+"pages, and widgets."
 msgstr ""
-"Fügen Sie Testimonials und Feedbacks Ihrer Kunden zu Posts, Seiten und "
-"Widgets der WordPress-Website hinzu."
+"Aggiungi testimonianze e feedback dei tuoi clienti ai post, alle pagine e ai "
+"widget del sito web di WordPress."
 
 # automatic translation
 #: bws_menu/product_list.php:425
 msgid ""
-"Best timesheet plugin for WordPress. Track employee time, streamline "
-"attendance and generate reports."
+"Best timesheet plugin for WordPress. Track employee time, streamline attendance "
+"and generate reports."
 msgstr ""
-"Bestes Stundenzettel-Plugin für WordPress. Verfolgen Sie die Arbeitszeit "
-"Ihrer Mitarbeiter, optimieren Sie die Anwesenheit und erstellen Sie "
-"Berichte."
+"Miglior plugin scheda attività per WordPress. Tieni traccia del tempo dei "
+"dipendenti, ottimizza le presenze e genera report."
 
 # automatic translation
 #: bws_menu/product_list.php:435
 msgid ""
-"Add Twitter Follow, Tweet, Hashtag, and Mention buttons to WordPress posts "
-"and pages."
+"Add Twitter Follow, Tweet, Hashtag, and Mention buttons to WordPress posts and "
+"pages."
 msgstr ""
-"Füge Twitter-Folgen-, Tweet-, Hashtag- und Erwähnungs-Schaltflächen zu "
-"WordPress-Beiträgen und -Seiten hinzu."
+"Aggiungi i pulsanti Twitter Segui, Tweet, Hashtag e Menzione ai post e alle "
+"pagine di WordPress."
 
 # automatic translation
 #: bws_menu/product_list.php:445
 msgid ""
-"Automatically check and update WordPress website core with all installed "
-"plugins and themes to the latest versions."
+"Automatically check and update WordPress website core with all installed plugins "
+"and themes to the latest versions."
 msgstr ""
-"Überprüfen und aktualisieren Sie automatisch den Kern der WordPress-Website "
-"mit allen installierten Plugins und Themes auf die neuesten Versionen."
+"Controlla e aggiorna automaticamente il core del sito Web WordPress con tutti i "
+"plugin e i temi installati alle versioni più recenti."
 
 # automatic translation
 #: bws_menu/product_list.php:455
 msgid ""
-"Powerful user role management plugin for WordPress website. Create, edit, "
-"copy, and delete user roles."
+"Powerful user role management plugin for WordPress website. Create, edit, copy, "
+"and delete user roles."
 msgstr ""
-"Leistungsstarkes Plugin zur Benutzerrollenverwaltung für "
-"WordPress-Websites. Benutzerrollen erstellen, bearbeiten, kopieren und "
-"löschen."
+"Potente plug-in per la gestione dei ruoli utente per il sito Web WordPress. Crea, "
+"modifica, copia ed elimina i ruoli utente."
 
 # automatic translation
 #: bws_menu/product_list.php:465
 msgid ""
-"Display live count of online visitors who are currently browsing your "
-"WordPress website."
+"Display live count of online visitors who are currently browsing your WordPress "
+"website."
 msgstr ""
-"Zeigen Sie die Live-Zählung der Online-Besucher an, die derzeit auf Ihrer "
-"WordPress-Website surfen."
+"Visualizza il conteggio in tempo reale dei visitatori online che stanno "
+"attualmente navigando sul tuo sito Web WordPress."
 
 # automatic translation
 #: bws_menu/product_list.php:475
 msgid ""
-"Backup and export Zendesk Help Center content automatically to your "
-"WordPress website database."
+"Backup and export Zendesk Help Center content automatically to your WordPress "
+"website database."
 msgstr ""
-"Sichern und exportieren Sie Zendesk Help Center-Inhalte automatisch in Ihre "
-"WordPress-Website-Datenbank."
+"Esegui il backup ed esporta automaticamente i contenuti del Centro assistenza "
+"Zendesk nel database del tuo sito Web WordPress."
 
 # automatic translation
 #: includes/class-pgntn-settings.php:22
 msgid "Misc"
-msgstr "Sonstiges"
+msgstr "Varie"
 
 # automatic translation
 #: includes/class-pgntn-settings.php:110
 msgid ""
-"Choose some page types to display plugin`s pagination in frontend of your "
-"site."
+"Choose some page types to display plugin`s pagination in frontend of your site."
 msgstr ""
-"Wählen Sie einige Seitentypen aus, um die Paginierung des Plugins im "
-"Frontend Ihrer Website anzuzeigen."
+"Scegli alcuni tipi di pagina per visualizzare l'impaginazione del plugin nel "
+"frontend del tuo sito."
 
 # automatic translation
 #: includes/class-pgntn-settings.php:115
 msgid "Settings saved."
-msgstr "Einstellungen gespeichert."
+msgstr "Impostazioni salvate."
 
 # automatic translation
 #: includes/class-pgntn-settings.php:132 pagination.php:40 pagination.php:41
 #: pagination.php:133
 msgid "Pagination Settings"
-msgstr "Paginierungseinstellungen"
+msgstr "Impostazioni di impaginazione"
 
 # automatic translation
 #: includes/class-pgntn-settings.php:136
 msgid "General"
-msgstr "Allgemein"
+msgstr "Generale"
 
 # automatic translation
 #: includes/class-pgntn-settings.php:138
 msgid "Add Pagination to"
-msgstr "Paginierung hinzufügen zu"
+msgstr "Aggiungi impaginazione a"
 
 # automatic translation
 #: includes/class-pgntn-settings.php:142
 msgid "All pages"
-msgstr "Alle Seiten"
+msgstr "Tutte le pagine"
 
 # automatic translation
 #: includes/class-pgntn-settings.php:144
 msgid "Home"
-msgstr "Heim"
+msgstr "Casa"
 
 # automatic translation
 #: includes/class-pgntn-settings.php:144
 msgid "Only for Custom navigation"
-msgstr "Nur für benutzerdefinierte Navigation"
+msgstr "Solo per la navigazione personalizzata"
 
 # automatic translation
 #: includes/class-pgntn-settings.php:146
 msgid "Blog"
-msgstr "Bloggen"
+msgstr "Blog"
 
 # automatic translation
 #: includes/class-pgntn-settings.php:148
 msgid "Archive (by categories, date, tags etc.)"
-msgstr "Archiv (nach Kategorien, Datum, Tags etc.)"
+msgstr "Archivio (per categorie, data, tag ecc.)"
 
 # automatic translation
 #: includes/class-pgntn-settings.php:150
 msgid "Search results"
-msgstr "Suchergebnisse"
+msgstr "Risultati di ricerca"
 
 # automatic translation
 #: includes/class-pgntn-settings.php:152 includes/class-pgntn-settings.php:181
 msgid "Paginated posts/pages"
-msgstr "Paginierte Beiträge/Seiten"
+msgstr "Post/pagine impaginati"
 
 # automatic translation
 #: includes/class-pgntn-settings.php:152
 msgid ""
-"The position of the block navigation depends on the placement of the "
-"function in the theme template file"
+"The position of the block navigation depends on the placement of the function in "
+"the theme template file"
 msgstr ""
-"Die Position der Blocknavigation hängt von der Platzierung der Funktion in "
-"der Theme-Vorlagendatei ab"
+"La posizione della navigazione del blocco dipende dalla posizione della funzione "
+"nel file modello del tema"
 
 # automatic translation
 #: includes/class-pgntn-settings.php:162
 msgid "Paginated Divi modules"
-msgstr "Paginierte Divi-Module"
+msgstr "Moduli Divi impaginati"
 
 # automatic translation
 #: includes/class-pgntn-settings.php:174
 msgid "Hide Standard Pagination for"
-msgstr "Standard-Paginierung ausblenden für"
+msgstr "Nascondi impaginazione standard per"
 
 # automatic translation
 #: includes/class-pgntn-settings.php:179
 msgid "Posts"
-msgstr "Beiträge"
+msgstr "Messaggi"
 
 # automatic translation
 #: includes/class-pgntn-settings.php:183
 msgid "Comments"
-msgstr "Kommentare"
+msgstr "Commenti"
 
 # automatic translation
 #: includes/class-pgntn-settings.php:184
 msgid ""
-"Used for standard WordPress themes or themes, which use standard "
-"CSS-classes to display pagination blocks."
+"Used for standard WordPress themes or themes, which use standard CSS-classes to "
+"display pagination blocks."
 msgstr ""
-"Wird für Standard-WordPress-Themen oder Themen verwendet, die "
-"Standard-CSS-Klassen verwenden, um Paginierungsblöcke anzuzeigen."
+"Utilizzato per temi o temi WordPress standard, che utilizzano classi CSS standard "
+"per visualizzare i blocchi di paginazione."
 
 # automatic translation
 #: includes/class-pgntn-settings.php:190
 msgid "Hide Custom Pagination"
-msgstr "Benutzerdefinierte Paginierung ausblenden"
+msgstr "Nascondi impaginazione personalizzata"
 
 # automatic translation
 #: includes/class-pgntn-settings.php:197
 msgid ""
-"Enable to add one (or more comma-separated) CSS-classes or ID of blocks "
-"which you would like to hide."
+"Enable to add one (or more comma-separated) CSS-classes or ID of blocks which you "
+"would like to hide."
 msgstr ""
-"Aktivieren Sie diese Option, um eine (oder mehrere durch Kommas getrennte) "
-"CSS-Klassen oder IDs von Blöcken hinzuzufügen, die Sie ausblenden möchten."
+"Abilita per aggiungere una (o più classi CSS separate da virgole) o ID di blocchi "
+"che desideri nascondere."
 
 # automatic translation
 #: includes/class-pgntn-settings.php:205
 msgid "Example"
-msgstr "Beispiel"
+msgstr "Esempio"
 
 # automatic translation
 #: includes/class-pgntn-settings.php:218
 msgid "Nofollow Link"
-msgstr "Nofollow-Link"
+msgstr "Link non seguire"
 
 # automatic translation
 #: includes/class-pgntn-settings.php:222
 msgid ""
-"Enable to add a rel=\"nofollow\" attribute to your anchor (aka link) tags "
-"to help Google bots identify such links (recommended)."
+"Enable to add a rel=\"nofollow\" attribute to your anchor (aka link) tags to help "
+"Google bots identify such links (recommended)."
 msgstr ""
-"Aktivieren Sie diese Option, um ein rel=\"nofollow\"-Attribut zu Ihren "
-"Anker-Tags (auch bekannt als Link-Tags) hinzuzufügen, damit Google-Bots "
-"solche Links identifizieren können (empfohlen)."
+"Abilita l'aggiunta di un attributo rel=\"nofollow\" ai tag di ancoraggio (noti "
+"anche come link) per aiutare i bot di Google a identificare tali link "
+"(consigliato)."
 
 # automatic translation
 #: includes/class-pgntn-settings.php:234
 msgid "Pagination Type"
-msgstr "Paginierungstyp"
+msgstr "Tipo di impaginazione"
 
 # automatic translation
 #: includes/class-pgntn-settings.php:238
 msgid "Numeric"
-msgstr "Numerisch"
+msgstr "Numerico"
 
 # automatic translation
 #: includes/class-pgntn-settings.php:241
 msgid "Numeric with numbers input"
-msgstr "Numerisch mit Zahleneingabe"
+msgstr "Numerico con input di numeri"
 
 # automatic translation
 #: includes/class-pgntn-settings.php:244
 msgid "\"Load More\" button"
-msgstr "Schaltfläche \"Mehr laden\"."
+msgstr "Pulsante \"Carica altro\"."
 
 # automatic translation
 #: includes/class-pgntn-settings.php:245
 msgid "A single AJAX button."
-msgstr "Eine einzelne AJAX-Schaltfläche."
+msgstr "Un singolo pulsante AJAX."
 
 # automatic translation
 #: includes/class-pgntn-settings.php:248
 msgid "Infinite scroll"
-msgstr "Unendliche Schriftrolle"
+msgstr "Scroll infinito"
 
 # automatic translation
 #: includes/class-pgntn-settings.php:249
 msgid "An option that loads content continuously as the user scrolls down the page."
 msgstr ""
-"Eine Option, die Inhalte kontinuierlich lädt, während der Benutzer die "
-"Seite nach unten scrollt."
+"Un'opzione che carica continuamente il contenuto mentre l'utente scorre la pagina."
 
 # automatic translation
 #: includes/class-pgntn-settings.php:252
 msgid "Next/Previous buttons"
-msgstr "Weiter/Zurück-Schaltflächen"
+msgstr "Pulsanti successivo/precedente"
 
 # automatic translation
 #: includes/class-pgntn-settings.php:263
 msgid "Numeric Pagination"
-msgstr "Numerische Paginierung"
+msgstr "Impaginazione numerica"
 
 # automatic translation
 #: includes/class-pgntn-settings.php:265
 msgid "Pagination Position"
-msgstr "Paginierungsposition"
+msgstr "Posizione di impaginazione"
 
 # automatic translation
 #: includes/class-pgntn-settings.php:268
 msgid "Above content"
-msgstr "Oben Inhalt"
+msgstr "Sopra il contenuto"
 
 # automatic translation
 #: includes/class-pgntn-settings.php:269
 msgid "Below content"
-msgstr "Unten Inhalt"
+msgstr "Sotto il contenuto"
 
 # automatic translation
 #: includes/class-pgntn-settings.php:270
 msgid "Above & below content"
-msgstr "Oben und unten Inhalt"
+msgstr "Contenuti sopra e sotto"
 
 # automatic translation
 #: includes/class-pgntn-settings.php:271
 msgid "Custom function position"
-msgstr "Benutzerdefinierte Funktionsposition"
+msgstr "Posizione della funzione personalizzata"
 
 # automatic translation
 #: includes/class-pgntn-settings.php:273
 msgid "Select pagination position in the main content."
-msgstr "Paginierungsposition im Hauptinhalt auswählen."
+msgstr "Seleziona la posizione dell'impaginazione nel contenuto principale."
 
 # automatic translation
 #: includes/class-pgntn-settings.php:277
 msgid "Current (Total) Page Count"
-msgstr "Aktuelle (Gesamt-)Seitenzahl"
+msgstr "Conteggio pagine (totale) corrente"
 
 # automatic translation
 #: includes/class-pgntn-settings.php:280
 msgid ""
-"Enable to display current page and total page count (for example, Page 3 of "
-"7)."
+"Enable to display current page and total page count (for example, Page 3 of 7)."
 msgstr ""
-"Aktivieren Sie diese Option, um die aktuelle Seite und die "
-"Gesamtseitenanzahl anzuzeigen (z. B. Seite 3 von 7)."
+"Consente di visualizzare la pagina corrente e il conteggio totale delle pagine "
+"(ad esempio, Pagina 3 di 7)."
 
 # automatic translation
 #: includes/class-pgntn-settings.php:284
 msgid "Next & Previous Buttons"
-msgstr "Schaltflächen „Weiter“ und „Zurück“."
+msgstr "Pulsanti Avanti e Indietro"
 
 # automatic translation
 #: includes/class-pgntn-settings.php:287
 msgid "Enable to display next and previous page buttons."
-msgstr ""
-"Aktivieren Sie diese Option, um die Schaltflächen „Nächste und vorherige "
-"Seite“ anzuzeigen."
+msgstr "Consente di visualizzare i pulsanti della pagina successiva e precedente."
 
 # automatic translation
 #: includes/class-pgntn-settings.php:290
 msgid "Previous"
-msgstr "Vorherige"
+msgstr "Precedente"
 
 # automatic translation
 #: includes/class-pgntn-settings.php:293
 msgid "Next"
-msgstr "Nächste"
+msgstr "Prossimo"
 
 # automatic translation
 #: includes/class-pgntn-settings.php:298
 msgid "Page Range"
-msgstr "SeitenReichweite"
+msgstr "Intervallo di pagine"
 
 # automatic translation
 #: includes/class-pgntn-settings.php:301
 msgid ""
-"The number of page links/buttons to show before and after the current page "
-"(set to \"0\" if you want to display all buttons)."
+"The number of page links/buttons to show before and after the current page (set "
+"to \"0\" if you want to display all buttons)."
 msgstr ""
-"Die Anzahl der Seitenlinks/Schaltflächen, die vor und nach der aktuellen "
-"Seite angezeigt werden sollen (auf \"0\" setzen, wenn Sie alle "
-"Schaltflächen anzeigen möchten)."
+"Il numero di collegamenti/pulsanti della pagina da mostrare prima e dopo la "
+"pagina corrente (impostare su \"0\" se si desidera visualizzare tutti i pulsanti)."
 
 # automatic translation
 #: includes/class-pgntn-settings.php:305
 msgid "Custom Styles"
-msgstr "Benutzerdefinierte Stile"
+msgstr "Stili personalizzati"
 
 # automatic translation
 #: includes/class-pgntn-settings.php:308
 msgid "Custom Pagination Style"
-msgstr "Benutzerdefinierter Paginierungsstil"
+msgstr "Stile di impaginazione personalizzato"
 
 # automatic translation
 #: includes/class-pgntn-settings.php:311
 msgid "Enable to apply custom CSS styles for pagination."
-msgstr ""
-"Aktivieren Sie diese Option, um benutzerdefinierte CSS-Stile für die "
-"Paginierung anzuwenden."
+msgstr "Abilita per applicare stili CSS personalizzati per l'impaginazione."
 
 # automatic translation
 #: includes/class-pgntn-settings.php:315
 msgid "Page Pagination Block width"
-msgstr "Seitenumbruch Blockbreite"
+msgstr "Paginazione Paginazione Larghezza del blocco"
 
 # automatic translation
 #: includes/class-pgntn-settings.php:321
 msgid "Pagination Align"
-msgstr "Paginierung ausrichten"
+msgstr "Allineamento impaginazione"
 
 # automatic translation
 #: includes/class-pgntn-settings.php:325
 msgid "Left"
-msgstr "Links"
+msgstr "Sinistra"
 
 # automatic translation
 #: includes/class-pgntn-settings.php:326
 msgid "Center"
-msgstr "Center"
+msgstr "Centro"
 
 # automatic translation
 #: includes/class-pgntn-settings.php:328
 msgid "Right"
-msgstr "Rechts"
+msgstr "Giusto"
 
 # automatic translation
 #: includes/class-pgntn-settings.php:333
 msgid "Left Padding"
-msgstr "Linke Polsterung"
+msgstr "Imbottitura sinistra"
 
 # automatic translation
 #: includes/class-pgntn-settings.php:339
 msgid "Right Padding"
-msgstr "Rechte Polsterung"
+msgstr "Imbottitura destra"
 
 # automatic translation
 #: includes/class-pgntn-settings.php:345
 msgid "Background Color"
-msgstr "Hintergrundfarbe"
+msgstr "Colore di sfondo"
 
 # automatic translation
 #: includes/class-pgntn-settings.php:351
 msgid "Background Color for Current Page"
-msgstr "Hintergrundfarbe für aktuelle Seite"
+msgstr "Colore di sfondo per la pagina corrente"
 
 # automatic translation
 #: includes/class-pgntn-settings.php:357
 msgid "Text Color for Page"
-msgstr "Textfarbe für Seite"
+msgstr "Colore del testo per la pagina"
 
 # automatic translation
 #: includes/class-pgntn-settings.php:363
 msgid "Text Color for Current Page"
-msgstr "Textfarbe für aktuelle Seite"
+msgstr "Colore del testo per la pagina corrente"
 
 # automatic translation
 #: includes/class-pgntn-settings.php:369
 msgid "Hover Color"
-msgstr "Hover-Farbe"
+msgstr "Colore al passaggio del mouse"
 
 # automatic translation
 #: includes/class-pgntn-settings.php:375
 msgid "Border Color"
-msgstr "Randfarbe"
+msgstr "Colore del bordo"
 
 # automatic translation
 #: includes/class-pgntn-settings.php:381
 msgid "Border Width"
-msgstr "Rahmenbreite"
+msgstr "Larghezza del bordo"
 
 # automatic translation
 #: includes/class-pgntn-settings.php:387
 msgid "Border Radius"
-msgstr "Grenzradius"
+msgstr "Raggio del bordo"
 
 # automatic translation
 #: includes/class-pgntn-settings.php:408
 msgid "Pagination - Custom navigation"
-msgstr "Paginierung - Benutzerdefinierte Navigation"
+msgstr "Impaginazione - Navigazione personalizzata"
 
 # automatic translation
 #: includes/class-pgntn-settings.php:411
 msgid ""
-"If you would like to display pagination block in a different place on your "
-"site, add the following strings into the file"
+"If you would like to display pagination block in a different place on your site, "
+"add the following strings into the file"
 msgstr ""
-"Wenn Sie den Paginierungsblock an einer anderen Stelle auf Ihrer Website "
-"anzeigen möchten, fügen Sie die folgenden Zeichenfolgen in die Datei ein"
+"Se desideri visualizzare il blocco di paginazione in un punto diverso del tuo "
+"sito, aggiungi le seguenti stringhe nel file"
 
 # automatic translation
 #: includes/class-pgntn-settings.php:411
 msgid "of your theme"
-msgstr "Ihres Themas"
+msgstr "del tuo tema"
 
 # automatic translation
 #: includes/class-pgntn-settings.php:415
 msgid ""
-"If you would like to display pagination block for paginated posts or pages "
-"in a different place on your site, add the following strings into the "
-"appropriate templates source code of your theme"
+"If you would like to display pagination block for paginated posts or pages in a "
+"different place on your site, add the following strings into the appropriate "
+"templates source code of your theme"
 msgstr ""
-"Wenn Sie den Paginierungsblock für paginierte Beiträge oder Seiten an einer "
-"anderen Stelle auf Ihrer Website anzeigen möchten, fügen Sie die folgenden "
-"Zeichenfolgen in den entsprechenden Vorlagenquellcode Ihres Designs ein"
+"Se desideri visualizzare il blocco di paginazione per i post o le pagine "
+"impaginate in una posizione diversa del tuo sito, aggiungi le seguenti stringhe "
+"nel codice sorgente del modello appropriato del tuo tema"
 
 # automatic translation
 #: includes/class-pgntn-settings.php:419
@@ -2394,48 +2343,48 @@ msgid ""
 "Paste this into the comments template if you want to display pagination for "
 "comments"
 msgstr ""
-"Fügen Sie dies in die Kommentarvorlage ein, wenn Sie die Paginierung für "
-"Kommentare anzeigen möchten"
+"Incollalo nel modello dei commenti se desideri visualizzare l'impaginazione per i "
+"commenti"
 
 # automatic translation
 #: pagination.php:134
 msgid "Please enable JavaScript in your browser."
-msgstr "Bitte aktivieren Sie JavaScript in Ihrem Browser."
+msgstr "Si prega di abilitare javascript nel browser."
 
 # automatic translation
 #: pagination.php:158
 msgid "« Previous"
-msgstr "\" Vorherige"
+msgstr "\" Precedente"
 
 # automatic translation
 #: pagination.php:159
 msgid "Next »"
-msgstr "Nächste \""
+msgstr "Prossimo \""
 
 # automatic translation
 #: pagination.php:517 pagination.php:549
 msgid "Page"
-msgstr "Buchseite"
+msgstr "Pagina"
 
 # automatic translation
 #: pagination.php:517 pagination.php:549 pagination.php:594 pagination.php:701
 msgid "of"
-msgstr "von"
+msgstr "Di"
 
 # automatic translation
 #: pagination.php:594
 msgid "Pages"
-msgstr "Seiten"
+msgstr "Pagine"
 
 # automatic translation
 #: pagination.php:701
 msgid "Comments Page"
-msgstr "Kommentarseite"
+msgstr "Pagina dei commenti"
 
 # automatic translation
 #. Plugin Name of the plugin/theme
 msgid "Pagination by BestWebSoft"
-msgstr "Pagination by BestWebSoft"
+msgstr "Impaginazione di BestWebSoft"
 
 # automatic translation
 #. Plugin URI of the plugin/theme
@@ -2445,7 +2394,7 @@ msgstr "https://bestwebsoft.com/products/wordpress/plugins/pagination/"
 # automatic translation
 #. Author of the plugin/theme
 msgid "BestWebSoft"
-msgstr "BestWebSoft"
+msgstr "MigliorWebSoft"
 
 # automatic translation
 #. Author URI of the plugin/theme

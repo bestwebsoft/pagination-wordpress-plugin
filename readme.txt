@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://bestwebsoft.com/donate/
 Tags: pagination, pagination block, custom pagination block, multiple navigation, multiple pages, navigation, next page, post pagination, pagination buttons, pagination plugin, improve pages navigation, paginate plugin
 Requires at least: 5.6
-Tested up to: 6.1.1
-Stable tag: 1.2.3
+Tested up to: 6.3
+Stable tag: 1.2.4
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -174,6 +174,11 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 
 == Changelog ==
 
+= V1.2.4 - 04.09.2023 =
+* Update : All functionality was updated for WordPress 6.3
+* Update : BWS Panel section was updated.
+* Update : Improved compatibility with the Twenty-Three theme.
+
 = V1.2.3 - 22.03.2023 =
 * Update : All functionality was updated for WordPress 6.1.1
 * Update : BWS Panel section was updated.
@@ -280,6 +285,10 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 * Update : We updated all functionality for wordpress 4.2.2.
 
 == Upgrade Notice ==
+
+= V1.2.4 =
+* The compatibility with new WordPress version updated.
+* Usability improved.
 
 = V1.2.3 =
 * The compatibility with new WordPress version updated.
