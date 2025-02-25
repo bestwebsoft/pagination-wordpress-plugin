@@ -45,3 +45,27 @@ div.pgntn-page-pagination-block a.prev,
 	display: inline-block;
 	float: none;
 }
+.pgntn-scroll-to-top {
+	position: fixed;
+	right: 50px;
+	bottom: 50px;
+	display: none;
+	cursor: pointer;
+	padding: 10px;
+	align-items: center;
+	justify-content: center;
+}
+.pgntn-scroll-to-top-form-circle {
+	border-radius: 50%;
+}
+.pgntn-scroll-to-top-form-triangle {
+	border-top: 0;
+	height: 50px;
+	padding: 0;
+	background: transparent !important;
+	box-sizing: border-box;
+}
+.pgntn-scroll-to-top-form-triangle .pgntn-scroll-to-top-text {
+	position: absolute;
+	white-space: nowrap;
+}

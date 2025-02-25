@@ -4,7 +4,7 @@
 <p>Simple plugin which automatically adds custom pagination to your WordPress website blog, search results, archive, category, tags, and author pages. Choose pagination type, position, and customize its appearance.</p>
 <p>Improve navigation through your website content today!</p>
 <p><a href="https://bestwebsoft.com/demo-pagination-plugin/?ref=readme" rel="nofollow ugc">View Demo</a></p>
-<p><span class="embed-youtube" style="text-align:center; display: block;"></span></p>
+<p></p>
 <h4>Free Features</h4>
 <ul>
 <li>Automatically add pagination to:
@@ -38,6 +38,7 @@
 </li>
 <li>Display and customize Next/Previous arrows</li>
 <li>Display &#8220;Page X of Y&#8221; information</li>
+<li>Add Scroll to top button</li>
 <li>Set numeric pagination display type:
 <ul>
 <li>Full (1,2,3,4,5,6)</li>
@@ -96,6 +97,7 @@
 </li>
 <li>Display &#8220;Load More&#8221; button after page loading</li>
 <li>Compatibility with Divi [NEW]</li>
+<li>Abilty to add Scroll Progress Bar [NEW]</li>
 <li>Get answer to your support question within one business day (<a href="https://bestwebsoft.com/support-policy/" rel="nofollow ugc">Support Policy</a>)</li>
 </ul>
 <p><a href="https://bestwebsoft.com/products/wordpress/plugins/pagination/?k=beef8d83cadcb70a8565e009a280f80c" rel="nofollow ugc">Upgrade to Pro Now</a></p>

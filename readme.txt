@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://bestwebsoft.com/donate/
 Tags: pagination, pagination block, custom pagination block, multiple navigation, multiple pages, navigation, next page, post pagination, pagination buttons, pagination plugin, improve pages navigation, paginate plugin
 Requires at least: 5.6
-Tested up to: 6.3
-Stable tag: 1.2.4
+Tested up to: 6.7
+Stable tag: 1.2.6
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -41,6 +41,7 @@ http://www.youtube.com/watch?v=TwAd3DWLGr8
 	* Via function
 * Display and customize Next/Previous arrows
 * Display "Page X of Y" information
+* Add Scroll to top button
 * Set numeric pagination display type:
 	* Full (1,2,3,4,5,6)
 	* Short (1,2...5,6)
@@ -81,6 +82,7 @@ http://www.youtube.com/watch?v=TwAd3DWLGr8
 >	* Next/Previous buttons
 > * Display "Load More" button after page loading
 > * Compatibility with Divi [NEW]
+> * Abilty to add Scroll Progress Bar [NEW]
 > * Get answer to your support question within one business day ([Support Policy](https://bestwebsoft.com/support-policy/))
 >
 > [Upgrade to Pro Now](https://bestwebsoft.com/products/wordpress/plugins/pagination/?k=beef8d83cadcb70a8565e009a280f80c)
@@ -173,6 +175,12 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 3. Plugin settings in WordPress admin panel.
 
 == Changelog ==
+
+= V1.2.6 - 25.02.2025 =
+* Update : All functionality was updated for WordPress 6.7
+* Update : BWS Panel section was updated.
+* PRO : Progress Bar option was added.
+* NEW : Scroll to top option was added.
 
 = V1.2.4 - 04.09.2023 =
 * Update : All functionality was updated for WordPress 6.3
@@ -285,6 +293,11 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 * Update : We updated all functionality for wordpress 4.2.2.
 
 == Upgrade Notice ==
+
+= V1.2.6 =
+* The compatibility with new WordPress version updated.
+* New features added.
+* Usability improved.
 
 = V1.2.4 =
 * The compatibility with new WordPress version updated.

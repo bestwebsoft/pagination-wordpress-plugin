@@ -3,7 +3,14 @@
  * Displays the content on the plugin settings page
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 if ( ! class_exists( 'Pgntn_Settings_Tabs' ) ) {
+	/**
+	 * Class for display Settings Tabs
+	 */
 	class Pgntn_Settings_Tabs extends Bws_Settings_Tabs {
 		/**
 		 * Constructor.
@@ -12,7 +19,7 @@ if ( ! class_exists( 'Pgntn_Settings_Tabs' ) ) {
 		 *
 		 * @see Bws_Settings_Tabs::__construct() for more information on default arguments.
 		 *
-		 * @param string $plugin_basename
+		 * @param string $plugin_basename Plugin basename.
 		 */
 		public function __construct( $plugin_basename ) {
 			global $pgntn_options, $pgntn_plugin_info;
@@ -47,13 +54,14 @@ if ( ! class_exists( 'Pgntn_Settings_Tabs' ) ) {
 		 * Save plugin options to the database
 		 *
 		 * @access public
-		 * @param void
 		 * @return array The action results
 		 */
 		public function save_options() {
 			global $wpdb;
 
-			$message         = $notice = $error = '';
+			$message         = '';
+			$notice          = '';
+			$error           = '';
 			$array_classes   = array();
 			$plugin_basename = plugin_basename( __FILE__ );
 
@@ -91,11 +99,16 @@ if ( ! class_exists( 'Pgntn_Settings_Tabs' ) ) {
 				$this->options['padding_left']                = isset( $_REQUEST['pgntn_padding_left'] ) ? absint( $_REQUEST['pgntn_padding_left'] ) : $this->options['padding_left'];
 				$this->options['padding_right']               = isset( $_REQUEST['pgntn_padding_right'] ) ? absint( $_REQUEST['pgntn_padding_right'] ) : $this->options['padding_right'];
 				$this->options['nofollow_link']               = isset( $_REQUEST['pgntn_nofollow_attribute'] ) ? 1 : 0;
+				$this->options['scroll_to_top']               = isset( $_REQUEST['pgntn_scroll_to_top'] ) ? 1 : 0;
+				$this->options['scroll_to_top_color']         = isset( $_REQUEST['pgntn_scroll_to_top_color'] ) && function_exists( 'sanitize_hex_color' ) ? sanitize_hex_color( wp_unslash( $_REQUEST['pgntn_scroll_to_top_color'] ) ) : ( preg_match( '|^#([A-Fa-f0-9]{3}){1,2}$|', sanitize_text_field( wp_unslash( $_REQUEST['pgntn_scroll_to_top_color'] ) ) ) ? sanitize_text_field( wp_unslash( $_REQUEST['pgntn_pscroll_to_top_color'] ) ) : $this->options['scroll_to_top_color'] );
+				$this->options['scroll_to_top_text_color']         = isset( $_REQUEST['pgntn_scroll_to_top_text_color'] ) && function_exists( 'sanitize_hex_color' ) ? sanitize_hex_color( wp_unslash( $_REQUEST['pgntn_scroll_to_top_text_color'] ) ) : ( preg_match( '|^#([A-Fa-f0-9]{3}){1,2}$|', sanitize_text_field( wp_unslash( $_REQUEST['pgntn_scroll_to_top_text_color'] ) ) ) ? sanitize_text_field( wp_unslash( $_REQUEST['pgntn_scroll_to_top_text_color'] ) ) : $this->options['scroll_to_top_text_color'] );
+				$this->options['scroll_to_top_form']          = isset( $_REQUEST['pgntn_scroll_to_top_form'] ) && in_array( $_REQUEST['pgntn_scroll_to_top_form'], array( 'circle', 'square', 'triangle' ) ) ? sanitize_text_field( wp_unslash( $_REQUEST['pgntn_scroll_to_top_form'] ) ) : $this->options['scroll_to_top_form'];
+				$this->options['scroll_to_top_text']          = isset( $_REQUEST['pgntn_scroll_to_top_form'] ) ? sanitize_text_field( wp_unslash( $_REQUEST['pgntn_scroll_to_top_text'] ) ) : $this->options['scroll_to_top_text'];
 				$this->options['add_appearance']              = isset( $_REQUEST['pgntn_add_appearance'] ) ? 1 : 0;
 
 				if ( $this->options['add_appearance'] ) {
 					$this->options['width']                    = isset( $_REQUEST['pgntn_width'] ) ? absint( $_REQUEST['pgntn_width'] ) : $this->options['width'];
-					$this->options['align']                    = isset( $_REQUEST['pgntn_align'] ) ? $_REQUEST['pgntn_align'] : $this->options['align'];
+					$this->options['align']                    = isset( $_REQUEST['pgntn_align'] ) ? sanitize_text_field( wp_unslash( $_REQUEST['pgntn_align'] ) ) : $this->options['align'];
 					$this->options['background_color']         = isset( $_REQUEST['pgntn_background_color'] ) && function_exists( 'sanitize_hex_color' ) ? sanitize_hex_color( wp_unslash( $_REQUEST['pgntn_background_color'] ) ) : ( preg_match( '|^#([A-Fa-f0-9]{3}){1,2}$|', sanitize_text_field( wp_unslash( $_REQUEST['pgntn_background_color'] ) ) ) ? sanitize_text_field( wp_unslash( $_REQUEST['pgntn_background_color'] ) ) : $this->options['background_color'] );
 					$this->options['current_background_color'] = isset( $_REQUEST['pgntn_current_background_color'] ) && function_exists( 'sanitize_hex_color' ) ? sanitize_hex_color( wp_unslash( $_REQUEST['pgntn_current_background_color'] ) ) : ( preg_match( '|^#([A-Fa-f0-9]{3}){1,2}$|', sanitize_text_field( wp_unslash( $_REQUEST['pgntn_current_background_color'] ) ) ) ? sanitize_text_field( wp_unslash( $_REQUEST['pgntn_current_background_color'] ) ) : $this->options['current_background_color'] );
 					$this->options['text_color']               = isset( $_REQUEST['pgntn_text_color'] ) && function_exists( 'sanitize_hex_color' ) ? sanitize_hex_color( wp_unslash( $_REQUEST['pgntn_text_color'] ) ) : ( preg_match( '|^#([A-Fa-f0-9]{3}){1,2}$|', sanitize_text_field( wp_unslash( $_REQUEST['pgntn_text_color'] ) ) ) ? sanitize_text_field( wp_unslash( $_REQUEST['pgntn_text_color'] ) ) : $this->options['text_color'] );
@@ -119,6 +132,9 @@ if ( ! class_exists( 'Pgntn_Settings_Tabs' ) ) {
 			return compact( 'message', 'notice', 'error' );
 		}
 
+		/**
+		 * Display tab settings
+		 */
 		public function tab_settings() {
 			global $wp_version;
 
@@ -175,11 +191,11 @@ if ( ! class_exists( 'Pgntn_Settings_Tabs' ) ) {
 					</th>
 					<td>
 						<fieldset class="pgntn_input">
-							<input<?php echo $this->change_permission_attr; ?> id="pgntn_display_posts_pagination" name='pgntn_display_standard_pagination[]' type='checkbox' value='posts' <?php checked( ( ! empty( $this->options['display_standard_pagination'] ) ) && in_array( 'posts', $this->options['display_standard_pagination'] ) ); ?> />
+							<input<?php echo esc_html( $this->change_permission_attr ); ?> id="pgntn_display_posts_pagination" name='pgntn_display_standard_pagination[]' type='checkbox' value='posts' <?php checked( ( ! empty( $this->options['display_standard_pagination'] ) ) && in_array( 'posts', $this->options['display_standard_pagination'] ) ); ?> />
 							<label for="pgntn_display_posts_pagination"><?php esc_html_e( 'Posts', 'pagination' ); ?></label><br />
-							<input<?php echo $this->change_permission_attr; ?> id="pgntn_display_multipage_pagination" name='pgntn_display_standard_pagination[]' type='checkbox' value='multipage' <?php checked( ( ! empty( $this->options['display_standard_pagination'] ) ) && in_array( 'multipage', $this->options['display_standard_pagination'] ) ); ?>/>
+							<input<?php echo esc_html( $this->change_permission_attr ); ?> id="pgntn_display_multipage_pagination" name='pgntn_display_standard_pagination[]' type='checkbox' value='multipage' <?php checked( ( ! empty( $this->options['display_standard_pagination'] ) ) && in_array( 'multipage', $this->options['display_standard_pagination'] ) ); ?>/>
 							<label for="pgntn_display_multipage_pagination"><?php esc_html_e( 'Paginated posts/pages', 'pagination' ); ?></label><br />
-							<input<?php echo $this->change_permission_attr; ?> id="pgntn_display_comments_pagination" name='pgntn_display_standard_pagination[]' type='checkbox' value='comments' <?php checked( ( ! empty( $this->options['display_standard_pagination'] ) ) && in_array( 'comments', $this->options['display_standard_pagination'] ) ); ?> />
+							<input<?php echo esc_html( $this->change_permission_attr ); ?> id="pgntn_display_comments_pagination" name='pgntn_display_standard_pagination[]' type='checkbox' value='comments' <?php checked( ( ! empty( $this->options['display_standard_pagination'] ) ) && in_array( 'comments', $this->options['display_standard_pagination'] ) ); ?> />
 							<label for="pgntn_display_comments_pagination"><?php esc_html_e( 'Comments', 'pagination' ); ?></label>
 							<br/><span class="bws_info"> <?php esc_html_e( 'Used for standard WordPress themes or themes, which use standard CSS-classes to display pagination blocks.', 'pagination' ); ?>
 						</fieldset>
@@ -192,12 +208,12 @@ if ( ! class_exists( 'Pgntn_Settings_Tabs' ) ) {
 					<td>
 						<fieldset>
 							<label>
-								<input<?php echo $this->change_permission_attr; ?> id="pgntn_display_custom_pagination" class="bws_option_affect" data-affect-show=".pgntn_input_custom" name='pgntn_display_custom_pagination' type='checkbox' value='1' <?php checked( 1, $this->options['display_custom_pagination'] ); ?> />
+								<input<?php echo esc_html( $this->change_permission_attr ); ?> id="pgntn_display_custom_pagination" class="bws_option_affect" data-affect-show=".pgntn_input_custom" name='pgntn_display_custom_pagination' type='checkbox' value='1' <?php checked( 1, $this->options['display_custom_pagination'] ); ?> />
 							</label>
 							<span class="bws_info"><?php esc_html_e( 'Enable to add one (or more comma-separated) CSS-classes or ID of blocks which you would like to hide.', 'pagination' ); ?></span>
 							<div class="pgntn_input_custom">
 								<label>
-									<input<?php echo $this->change_permission_attr; ?> type="text" maxlength='250' value="<?php echo esc_attr( $this->options['additional_pagination_style'] ); ?>" id="pgntn_additional_pagination_style" class="pgntn_input_custom" name="pgntn_additional_pagination_style" <?php disabled( 0, $this->options['display_custom_pagination'] ); ?>/>
+									<input<?php echo esc_html( $this->change_permission_attr ); ?> type="text" maxlength='250' value="<?php echo esc_attr( $this->options['additional_pagination_style'] ); ?>" id="pgntn_additional_pagination_style" class="pgntn_input_custom" name="pgntn_additional_pagination_style" <?php disabled( 0, $this->options['display_custom_pagination'] ); ?>/>
 								</label>
 								<br />
 								<span class="bws_info"> 
@@ -218,8 +234,17 @@ if ( ! class_exists( 'Pgntn_Settings_Tabs' ) ) {
 					<th scope="row"><?php esc_html_e( 'Nofollow Link', 'pagination' ); ?></th>
 					<td>
 						<fieldset>
-							<input<?php echo $this->change_permission_attr; ?> type="checkbox" name="pgntn_nofollow_attribute" id="pgntn_nofollow_attribute" <?php checked( $this->options['nofollow_link'] ); ?> />
+							<input<?php echo esc_html( $this->change_permission_attr ); ?> type="checkbox" name="pgntn_nofollow_attribute" id="pgntn_nofollow_attribute" <?php checked( $this->options['nofollow_link'] ); ?> />
 							<span class="bws_info"><?php esc_html_e( 'Enable to add a rel="nofollow" attribute to your anchor (aka link) tags to help Google bots identify such links (recommended).', 'pagination' ); ?></span>
+						</fieldset>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row"><?php esc_html_e( 'Scroll to Top', 'pagination' ); ?></th>
+					<td>
+						<fieldset>
+							<input<?php echo esc_html( $this->change_permission_attr ); ?> type="checkbox" name="pgntn_scroll_to_top" id="pgntn_scroll_to_top" <?php checked( isset( $this->options['scroll_to_top'] ) && 1 === $this->options['scroll_to_top'] ); ?> />
+							<span class="bws_info"><?php esc_html_e( 'Enable to add a Scroll to Top button for all pages.', 'pagination' ); ?></span>
 						</fieldset>
 					</td>
 				</tr>
@@ -230,6 +255,15 @@ if ( ! class_exists( 'Pgntn_Settings_Tabs' ) ) {
 						<button type="submit" name="bws_hide_premium_options" class="notice-dismiss bws_hide_premium_options" title="<?php esc_html_e( 'Close', 'pagination' ); ?>"></button>
 						<div class="bws_table_bg"></div>
 						<table class="form-table bws_pro_version">
+							<tr>
+								<th scope="row"><?php esc_html_e( 'Progress Bar', 'pagination' ); ?></th>
+								<td>
+									<fieldset>
+										<input type="checkbox" id="pgntn_progress_bar" checked="checked" />
+										<span class="bws_info"><?php esc_html_e( 'Enable to add a Progress Bar when scrolling for all pages.', 'pagination' ); ?></span>
+									</fieldset>
+								</td>
+							</tr>
 							<tr valign="top">
 								<th scope="row"><?php esc_html_e( 'Pagination Type', 'pagination' ); ?></th>
 								<td>
@@ -259,8 +293,37 @@ if ( ! class_exists( 'Pgntn_Settings_Tabs' ) ) {
 					<?php $this->bws_pro_block_links(); ?>
 				</div>
 			<?php } ?>
+			<div class="bws_tab_sub_label pgntn_scroll_to_top"><?php esc_html_e( 'Scroll to Top', 'pagination' ); ?></div>
 			<table class="form-table">
-				<div class="bws_tab_sub_label pgntn_type_numeric_label"><?php esc_html_e( 'Numeric Pagination', 'pagination' ); ?></div>
+				<tr class="pgntn_add_scroll_to_top_style">
+					<th scope="row"><?php esc_html_e( 'Background Color', 'pagination' ); ?></th>
+					<td>
+						<input type="text" value="<?php echo isset( $this->options['scroll_to_top_color'] ) ? esc_attr( $this->options['scroll_to_top_color'] ) : '#cccccc'; ?>" name="pgntn_scroll_to_top_color" class="pgntn_color_picker" data-default-color="#cccccc" />
+					</td>
+				</tr>
+				<tr class="pgntn_add_scroll_to_top_style">
+					<th scope="row"><?php esc_html_e( 'Form', 'pagination' ); ?></th>
+					<td>
+						<label><input type="radio" value="circle" name="pgntn_scroll_to_top_form" <?php checked( ! isset( $this->options['scroll_to_top_form'] ) || ( isset( $this->options['scroll_to_top_form'] ) && 'circle' === $this->options['scroll_to_top_form'] ) ); ?> /> <?php esc_html_e( 'Circle', 'pagination' ); ?></label><br />
+						<label><input type="radio" value="square" name="pgntn_scroll_to_top_form" <?php checked( isset( $this->options['scroll_to_top_form'] ) && 'square' === $this->options['scroll_to_top_form'] ); ?> /> <?php esc_html_e( 'Square', 'pagination' ); ?></label><br />
+						<label><input type="radio" value="triangle" name="pgntn_scroll_to_top_form" <?php checked( isset( $this->options['scroll_to_top_form'] ) && 'triangle' === $this->options['scroll_to_top_form'] ); ?> /> <?php esc_html_e( 'Triangle', 'pagination' ); ?></label><br />
+					</td>
+				</tr>
+				<tr class="pgntn_add_scroll_to_top_style">
+					<th scope="row"><?php esc_html_e( 'Text', 'pagination' ); ?></th>
+					<td>
+						<input type="text" value="<?php echo isset( $this->options['scroll_to_top_text'] ) ? esc_html( $this->options['scroll_to_top_text'] ) : __( 'Top', 'pagination' ); ?>" name="pgntn_scroll_to_top_text" />
+					</td>
+				</tr>
+				<tr class="pgntn_add_scroll_to_top_style">
+					<th scope="row"><?php esc_html_e( 'Text Color', 'pagination' ); ?></th>
+					<td>
+						<input type="text" value="<?php echo isset( $this->options['scroll_to_top_text_color'] ) ? esc_attr( $this->options['scroll_to_top_text_color'] ) : '#ffffff'; ?>" name="pgntn_scroll_to_top_text_color" class="pgntn_color_picker" data-default-color="#ffffff" />
+					</td>
+				</tr>
+			</table>
+			<div class="bws_tab_sub_label pgntn_type_numeric_label"><?php esc_html_e( 'Numeric Pagination', 'pagination' ); ?></div>
+			<table class="form-table">
 				<tr valign="top">
 					<th scope="row"><?php esc_html_e( 'Pagination Position', 'pagination' ); ?></th>
 					<td>
@@ -356,7 +419,7 @@ if ( ! class_exists( 'Pgntn_Settings_Tabs' ) ) {
 				<tr class="pgntn_add_appearance">
 					<th scope="row"><?php esc_html_e( 'Text Color for Page', 'pagination' ); ?></th>
 					<td>
-						<input type="text" value="<?php echo $this->options['text_color']; ?>" name="pgntn_text_color" class="pgntn_color_picker" data-default-color="<?php echo esc_attr( $this->default_options['text_color'] ); ?>"<?php disabled( $this->options['add_appearance'], 0 ); ?> />
+						<input type="text" value="<?php echo esc_html( $this->options['text_color'] ); ?>" name="pgntn_text_color" class="pgntn_color_picker" data-default-color="<?php echo esc_attr( $this->default_options['text_color'] ); ?>"<?php disabled( $this->options['add_appearance'], 0 ); ?> />
 					</td>
 				</tr>
 				<tr class="pgntn_add_appearance">
@@ -398,8 +461,6 @@ if ( ! class_exists( 'Pgntn_Settings_Tabs' ) ) {
 		 * Display custom metabox
 		 *
 		 * @access public
-		 * @param void
-		 * @return array The action results
 		 */
 		public function display_metabox() {
 			?>

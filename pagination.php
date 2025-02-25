@@ -6,7 +6,7 @@ Description: Add customizable pagination to WordPress website. Split long conten
 Author: BestWebSoft
 Text Domain: pagination
 Domain Path: /languages
-Version: 1.2.4
+Version: 1.2.6
 Author URI: https://bestwebsoft.com/
 License: GPLv3 or later
  */
@@ -28,12 +28,16 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
-/**
- * Add WordPress page 'bws_panel' and sub-page of this plugin to admin-panel.
- *
- * @return void
- */
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 if ( ! function_exists( 'pgntn_add_admin_menu' ) ) {
+	/**
+	 * Add WordPress page 'bws_panel' and sub-page of this plugin to admin-panel.
+	 *
+	 * @return void
+	 */
 	function pgntn_add_admin_menu() {
 		global $submenu, $pgntn_plugin_info, $wp_version;
 
@@ -53,21 +57,21 @@ if ( ! function_exists( 'pgntn_add_admin_menu' ) ) {
 	}
 }
 
-/**
- * Internationalization
- */
 if ( ! function_exists( 'pgntn_plugins_loaded' ) ) {
+	/**
+	 * Internationalization
+	 */
 	function pgntn_plugins_loaded() {
 		load_plugin_textdomain( 'pagination', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 	}
 }
 
-/**
- * Plugin initialization and language localization on backend and front end
- *
- * @return void
- */
 if ( ! function_exists( 'pgntn_init' ) ) {
+	/**
+	 * Plugin initialization and language localization on backend and front end
+	 *
+	 * @return void
+	 */
 	function pgntn_init() {
 		global $bws_plugin_info, $pgntn_plugin_info;
 
@@ -90,12 +94,12 @@ if ( ! function_exists( 'pgntn_init' ) ) {
 	}
 }
 
-/**
- * Plugin initialization on backend
- *
- * @return void
- */
 if ( ! function_exists( 'pgntn_admin_init' ) ) {
+	/**
+	 * Plugin initialization on backend
+	 *
+	 * @return void
+	 */
 	function pgntn_admin_init() {
 		global $bws_plugin_info, $pgntn_plugin_info, $pagenow, $pgntn_options;
 
@@ -117,8 +121,10 @@ if ( ! function_exists( 'pgntn_admin_init' ) ) {
 	}
 }
 
-/* Add settings page in admin area */
 if ( ! function_exists( 'pgntn_settings_page' ) ) {
+	/**
+	 * Add settings page in admin area
+	 */
 	function pgntn_settings_page() {
 		if ( ! class_exists( 'Bws_Settings_Tabs' ) ) {
 			require_once dirname( __FILE__ ) . '/bws_menu/class-bws-settings.php';
@@ -139,6 +145,9 @@ if ( ! function_exists( 'pgntn_settings_page' ) ) {
 }
 
 if ( ! function_exists( 'pgntn_get_options_default' ) ) {
+	/**
+	 * Get default plugin options
+	 */
 	function pgntn_get_options_default() {
 		global $pgntn_options, $pgntn_plugin_info, $pgntn_option_defaults;
 
@@ -176,18 +185,24 @@ if ( ! function_exists( 'pgntn_get_options_default' ) ) {
 			'padding_left'                => 0,
 			'padding_right'               => 0,
 			'nofollow_link'               => 0,
+			'progress_bar'                => 0,
+			'progress_bar_color'          => '#cccccc',
+			'progress_bar_height'         => 5,
+			'scroll_to_top'               => 0,
+			'scroll_to_top_color'         => '#cccccc',
+			'scroll_to_top_form'          => 'circle',
+			'scroll_to_top_text'          => __( 'Top', 'pagination' ),
+			'scroll_to_top_text_color'    => '#ffffff'
 		);
 
 		return $pgntn_option_defaults;
 	}
 }
 
-/**
- * Write plugin settings in to database
- *
- * @return void
- */
 if ( ! function_exists( 'pgntn_settings' ) ) {
+	/**
+	 * Write plugin settings in to database
+	 */
 	function pgntn_settings() {
 		global $pgntn_options, $pgntn_plugin_info, $pgntn_option_defaults;
 
@@ -216,10 +231,10 @@ if ( ! function_exists( 'pgntn_settings' ) ) {
 	}
 }
 
-/**
- * Function for activation
- */
 if ( ! function_exists( 'pgntn_plugin_activate' ) ) {
+	/**
+	 * Function for activation
+	 */
 	function pgntn_plugin_activate() {
 		/* registering uninstall hook */
 		if ( is_multisite() ) {
@@ -232,43 +247,52 @@ if ( ! function_exists( 'pgntn_plugin_activate' ) ) {
 	}
 }
 
-/**
- * Include necessary css- and js-files in admin panel
- *
- * @return void
- */
 if ( ! function_exists( 'pgntn_admin_head' ) ) {
+	/**
+	 * Include necessary css- and js-files in admin panel
+	 */
 	function pgntn_admin_head() {
 		global $pgntn_plugin_info;
 		wp_enqueue_style( 'pgntn_icon', plugins_url( 'css/icon.css', __FILE__ ), array( 'wp-color-picker' ), $pgntn_plugin_info['Version'] );
 		if ( isset( $_REQUEST['page'] ) && 'pagination.php' === sanitize_text_field( wp_unslash( $_REQUEST['page'] ) ) ) {
 			wp_enqueue_style( 'pgntn_stylesheet', plugins_url( 'css/style.css', __FILE__ ), array( 'wp-color-picker' ), $pgntn_plugin_info['Version'] );
-			wp_enqueue_script( 'pgntn_script', plugins_url( 'js/script.js', __FILE__ ), array( 'jquery', 'wp-color-picker' ), $pgntn_plugin_info['Version'], true );
+			wp_enqueue_script( 'pgntn_script', plugins_url( 'js/admin_script.js', __FILE__ ), array( 'jquery', 'wp-color-picker' ), $pgntn_plugin_info['Version'], true );
 			bws_enqueue_settings_scripts();
 			bws_plugins_include_codemirror();
 		}
 	}
 }
 
-/**
- * Include necessary css- and js-files in front-end
- *
- * @return void
- */
-if ( ! function_exists( 'pgntn_wp_footer' ) ) {
-	function pgntn_wp_footer() {
-		global $pgntn_plugin_info;
-		wp_enqueue_style( 'pgntn_stylesheet', plugins_url( 'css/nav-style.css', __FILE__ ), array(), $pgntn_plugin_info['Version'] );
-		wp_enqueue_style( 'pgntn_styles', pgntn_print_style(), array(), $pgntn_plugin_info['Version'] );
+if ( ! function_exists( 'pgntn_add_script' ) ) {
+	/**
+	 * Include necessary css- and js-files
+	 */
+	function pgntn_add_script() {
+		global $pgntn_plugin_info, $pgntn_options;
+		if ( 1 === absint( $pgntn_options['scroll_to_top'] )  ) {
+			wp_enqueue_script( 'pgntn_script', plugins_url( 'js/script.js', __FILE__ ), array( 'jquery' ), $pgntn_plugin_info['Version'], true );
+		}
 	}
 }
 
-/**
- * Include styles for displaying block of page pagination
- *
- * @return void
- */
+if ( ! function_exists( 'pgntn_wp_footer' ) ) {
+	/**
+	 * Include necessary css- and js-files in front-end
+	 */
+	function pgntn_wp_footer() {
+		global $pgntn_plugin_info, $pgntn_options;
+		wp_enqueue_style( 'pgntn_stylesheet', plugins_url( 'css/nav-style.css', __FILE__ ), array(), $pgntn_plugin_info['Version'] );
+		wp_enqueue_style( 'pgntn_styles', pgntn_print_style(), array(), $pgntn_plugin_info['Version'] );
+		if ( 1 === $pgntn_options['scroll_to_top'] ) {
+			echo '<div class="pgntn-scroll-to-top pgntn-scroll-to-top-form-' . $pgntn_options['scroll_to_top_form'] . '"><div class="pgntn-scroll-to-top-text">' . $pgntn_options['scroll_to_top_text'] . '</div></div>';
+		}
+	}
+}
+
 if ( ! function_exists( 'pgntn_print_style' ) ) {
+	/**
+	 * Include styles for displaying block of page pagination
+	 */
 	function pgntn_print_style() {
 		global $pgntn_options;
 		?>
@@ -354,12 +378,27 @@ if ( ! function_exists( 'pgntn_print_style' ) ) {
 				$classes .= $pgntn_options['additional_pagination_style'];
 			}
 			if ( ! empty( $classes ) ) {
-				echo $classes . ' {
+				echo wp_kses_post( $classes ) . ' {
 						display: none !important;
 					}
 					.single-gallery .pagination.gllrpr_pagination {
 						display: block !important;
 					}';
+			}
+			if ( 1 === absint( $pgntn_options['scroll_to_top'] ) ) {
+				echo '.pgntn-scroll-to-top {
+					background-color: ' . $pgntn_options['scroll_to_top_color'] . ' !important;
+				}
+				.pgntn-scroll-to-top-text {
+					color: ' . $pgntn_options['scroll_to_top_text_color'] . ';
+				}';
+				if ( 'triangle' === $pgntn_options['scroll_to_top_form'] ) {
+					echo '.pgntn-scroll-to-top-form-triangle {
+						border-bottom: solid ' . $pgntn_options['scroll_to_top_color'] . ' 50px;
+						border-left: solid transparent 50px;
+						border-right: solid transparent 50px;
+					}';
+				}
 			}
 			?>
 		</style>
@@ -367,12 +406,10 @@ if ( ! function_exists( 'pgntn_print_style' ) ) {
 	}
 }
 
-/**
- * Display block of pagination
- *
- * @return void
- */
 if ( ! function_exists( 'pgntn_display' ) ) {
+	/**
+	 * Display block of pagination
+	 */
 	function pgntn_display() {
 		global $pgntn_options;
 		if ( empty( $pgntn_options ) ) {
@@ -393,13 +430,12 @@ if ( ! function_exists( 'pgntn_display' ) ) {
 	}
 }
 
-/**
- * Display pagination block in frontend above WordPress Loop
- *
- * @param   array   $content    list with data of posts, which needs to displating in the loop
- * @return  void
- */
 if ( ! function_exists( 'pgntn_display_with_loop' ) ) {
+	/**
+	 * Display pagination block in frontend above WordPress Loop
+	 *
+	 * @param array $content list with data of posts, which needs to displating in the loop.
+	 */
 	function pgntn_display_with_loop( $content ) {
 		if ( is_feed() ) {
 			return $content;
@@ -412,13 +448,12 @@ if ( ! function_exists( 'pgntn_display_with_loop' ) ) {
 	}
 }
 
-/**
- * Display pagination block in frontend below WordPress Loop
- *
- * @param   array   $content    list with data of posts, which needs to displating in the loop
- * @return  void
- */
 if ( ! function_exists( 'pgntn_display_with_loop_bottom' ) ) {
+	/**
+	 * Display pagination block in frontend below WordPress Loop
+	 *
+	 * @param array $content Llist with data of posts, which needs to displating in the loop.
+	 */
 	function pgntn_display_with_loop_bottom( $content ) {
 		if ( is_feed() ) {
 			return $content;
@@ -431,14 +466,14 @@ if ( ! function_exists( 'pgntn_display_with_loop_bottom' ) ) {
 	}
 }
 
-/**
- * Display pagination block on paginated posts or pages
- *
- * @param   string  $output HTML output of paginated posts' page links.
- * @param   array   $args   An array of arguments.
- * @return  string  $output
- */
 if ( ! function_exists( 'pgntn_wp_link_pages' ) ) {
+	/**
+	 * Display pagination block on paginated posts or pages
+	 *
+	 * @param string $output HTML output of paginated posts' page links.
+	 * @param array  $args   An array of arguments.
+	 * @return  string  $output
+	 */
 	function pgntn_wp_link_pages( $output, $args ) {
 		ob_start();
 		pgntn_nav_display( 'multipage', 'bottom' );
@@ -447,25 +482,26 @@ if ( ! function_exists( 'pgntn_wp_link_pages' ) ) {
 	}
 }
 
-/**
- * Display pagination block in the function call
- *
- * @param   string  $what   type of pagination ( posts, multipage, comments, custom )
- * @return void
- */
 if ( ! function_exists( 'pgntn_display_pagination' ) ) {
+	/**
+	 * Display pagination block in the function call
+	 *
+	 * @param string $what         Type of pagination ( posts, multipage, comments, custom ).
+	 * @param string $custom_query Custom query string.
+	 */
 	function pgntn_display_pagination( $what = 'posts', $custom_query = '' ) {
 		pgntn_nav_display( $what, false, $custom_query );
 	}
 }
 
-/**
- * Display block of pagination with the WordPress Loop
- *
- * @param   string  $what   type of pagination ( posts, multipage, comments )
- * @return  void
- */
 if ( ! function_exists( 'pgntn_nav_display' ) ) {
+	/**
+	 * Display block of pagination with the WordPress Loop
+	 *
+	 * @param string $what Type of pagination ( posts, multipage, comments ).
+	 * @param bool   $position Nav position.
+	 * @param string $custom_query Custom query string.
+	 */
 	function pgntn_nav_display( $what, $position = false, $custom_query = '' ) {
 		global $pgntn_options;
 		if ( empty( $pgntn_options ) ) {
@@ -571,7 +607,8 @@ if ( ! function_exists( 'pgntn_nav_display' ) ) {
 						/* For Gallery shortocode */
 						$pgntn_query['gllr_id'] = $custom_query->gllr_id;
 					}
-					$pgntn_custom_num_pages = $numpages = $custom_query->max_num_pages;
+					$pgntn_custom_num_pages = $custom_query->max_num_pages;
+					$numpages               = $custom_query->max_num_pages;
 					$current_page           = isset( $custom_query->current_page ) ? $custom_query->current_page : 1;
 				}
 				if ( $numpages > 1 && is_array( $classes ) && is_singular() ) {
@@ -718,6 +755,11 @@ if ( ! function_exists( 'pgntn_nav_display' ) ) {
 }
 
 if ( ! function_exists( 'pgntn_is_blog' ) ) {
+	/**
+	 * Check is blog page
+	 *
+	 * @return bool Flag for blog page.
+	 */
 	function pgntn_is_blog() {
 		if ( is_front_page() && is_home() ) {
 			/* Default homepage */
@@ -733,14 +775,14 @@ if ( ! function_exists( 'pgntn_is_blog' ) ) {
 		}
 	}
 }
-/**
- * Add link to plugin`s settings page on page with list of all installed plugins ( on table cell with plugin title )
- *
- * @param   $links  array   links bellow plugin title
- * @param   $file   array   relative path to the plugin`s main file
- * @return  $links  array   links bellow plugin title
- */
 if ( ! function_exists( 'pgntn_plugin_action_links' ) ) {
+	/**
+	 * Add link to plugin`s settings page on page with list of all installed plugins ( on table cell with plugin title )
+	 *
+	 * @param array $links Links bellow plugin title.
+	 * @param array $file  Relative path to the plugin`s main file.
+	 * @return $links array Links bellow plugin title.
+	 */
 	function pgntn_plugin_action_links( $links, $file ) {
 		if ( ! is_network_admin() ) {
 			/* Static so we don't call plugin_basename on every plugin row. */
@@ -757,14 +799,14 @@ if ( ! function_exists( 'pgntn_plugin_action_links' ) ) {
 		return $links;
 	}
 }
-/**
- * Add necessary links on page with list of all installed plugins ( on table cell with plugin description )
- *
- * @param   $links  array   links bellow plugins description
- * @param   $file   array   relative path to the plugin`s main file
- * @return  $links  array   links bellow plugins description
- */
 if ( ! function_exists( 'pgntn_register_plugin_links' ) ) {
+	/**
+	 * Add necessary links on page with list of all installed plugins ( on table cell with plugin description )
+	 *
+	 * @param array $links Links bellow plugin title.
+	 * @param array $file  Relative path to the plugin`s main file.
+	 * @return $links array Links bellow plugins description
+	 */
 	function pgntn_register_plugin_links( $links, $file ) {
 		$base = plugin_basename( __FILE__ );
 		if ( $file === $base ) {
@@ -778,8 +820,10 @@ if ( ! function_exists( 'pgntn_register_plugin_links' ) ) {
 	}
 }
 
-/* add help tab */
 if ( ! function_exists( 'pgntn_add_tabs' ) ) {
+	/**
+	 * Add help tab
+	 */
 	function pgntn_add_tabs() {
 		$screen = get_current_screen();
 		$args   = array(
@@ -790,8 +834,10 @@ if ( ! function_exists( 'pgntn_add_tabs' ) ) {
 	}
 }
 
-/* add admin notices */
 if ( ! function_exists( 'pgntn_admin_notices' ) ) {
+	/**
+	 * Add admin notice
+	 */
 	function pgntn_admin_notices() {
 		global $hook_suffix, $pgntn_plugin_info;
 		if ( 'plugins.php' === $hook_suffix && ! is_network_admin() ) {
@@ -803,12 +849,10 @@ if ( ! function_exists( 'pgntn_admin_notices' ) ) {
 	}
 }
 
-/**
- * Function for delete plugin options
- *
- * @return void
- */
 if ( ! function_exists( 'pgntn_delete_options' ) ) {
+	/**
+	 * Function for delete plugin options
+	 */
 	function pgntn_delete_options() {
 		global $wpdb;
 		/* Delete options */
@@ -835,6 +879,12 @@ if ( ! function_exists( 'pgntn_delete_options' ) ) {
 }
 
 if ( ! function_exists( 'pgntn_nofollow_link' ) ) {
+	/**
+	 * Function for nofollow link
+	 *
+	 * @param string $link Link for changes.
+	 * @retrun string $link
+	 */
 	function pgntn_nofollow_link( $link ) {
 		global $pgntn_options;
 		if ( 1 === absint( $pgntn_options['nofollow_link'] ) ) {
@@ -844,6 +894,12 @@ if ( ! function_exists( 'pgntn_nofollow_link' ) ) {
 	}
 }
 if ( ! function_exists( 'pgntn_link_page' ) ) {
+	/**
+	 * Function for display link
+	 *
+	 * @param array $query Current query.
+	 * @return string Url.
+	 */
 	function pgntn_link_page( $query ) {
 		if ( isset( $query['type'] ) && 'gallery' === $query['type'] ) {
 			$i              = $query['i'];
@@ -894,6 +950,7 @@ add_filter( 'plugin_action_links', 'pgntn_plugin_action_links', 10, 2 );
 add_filter( 'plugin_row_meta', 'pgntn_register_plugin_links', 10, 2 );
 /* Include necessary css- and js-files */
 add_action( 'admin_enqueue_scripts', 'pgntn_admin_head' );
+add_action( 'wp_enqueue_scripts', 'pgntn_add_script' );
 add_action( 'wp_footer', 'pgntn_wp_footer' );
 /* add admin notices */
 add_action( 'admin_notices', 'pgntn_admin_notices' );

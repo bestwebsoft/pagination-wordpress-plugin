@@ -1,85 +1,35 @@
 ( function( $ ) {
 	$( document ).ready( function() {
-		/* display blocks to choose necessary color for elements */
-		var pgntn_check = 0,
-			pgntn_flag = false,
-			window_width = $( window ).width();
-			$( window ).resize( function() {
-				window_width = $( window ).width();
-			} );
-		/* Color Picker */
-		$( '.pgntn_color_picker' ).wpColorPicker();
-		if( ! $( 'input[name="pgntn_add_appearance"]' ).is( ':checked' ) ){
-			$( '.wp-color-result' ).attr( "disabled", true );
+		$( window ).scroll( function() {
+			let scroll = document.body.scrollTop || document.documentElement.scrollTop;
+			if ( scroll > window.screen.height ) {
+				$( '.pgntn-scroll-to-top' ).css( 'display', 'flex' );
+			} else {
+				$( '.pgntn-scroll-to-top' ).hide();
+			}
+		});
+		$( '.pgntn-scroll-to-top' ).on( 'click touch', function(){
+			$( 'html, body' ).animate(
+				{
+					scrollTop: 0
+				},
+				'slow'
+			);
+		});
+		if ( $( '.pgntn-scroll-to-top-form-square' ).outerWidth() > $( '.pgntn-scroll-to-top-form-square' ).outerHeight() ) {
+			$( '.pgntn-scroll-to-top-form-square' ).css( 'height', $( '.pgntn-scroll-to-top-form-square' ).outerWidth() );
+		} else if ( $( '.pgntn-scroll-to-top-form-square' ).outerWidth() < $( '.pgntn-scroll-to-top-form-square' ).outerHeight() ) {
+			$( '.pgntn-scroll-to-top-form-square' ).css( 'width', $( '.pgntn-scroll-to-top-form-square' ).outerHeight() );
 		}
-		if( 350 >= window_width ) {
-			$( '.iris-square' ).css( {'margin-right': '2%', 'width': '163px'} );
-			$( '.iris-picker-inner' ).css( 'width', '196px' );
-			$( '.iris-picker' ).css( 'width', '209px' );
-			$( '.iris-palette' ).css( 'width', '17px' );
+		if ( $( '.pgntn-scroll-to-top-form-circle' ).outerWidth() > $( '.pgntn-scroll-to-top-form-circle' ).outerHeight() ) {
+			$( '.pgntn-scroll-to-top-form-circle' ).css( 'height', $( '.pgntn-scroll-to-top-form-circle' ).outerWidth() );
 		}
-		/* select or deselect all checkboxes with page types on setting page */
-		$( '#pgntn_everywhere' ).click( function() {
-			if ( $( this ).is( ':checked' ) ) {
-				$( '.pgntn_where_display' ).attr( 'checked', true );
-				$( '#pgntn_empty_page_type' ).hide();
-			} else {
-				$( '.pgntn_where_display' ).attr( 'checked', false );
-				$( '#pgntn_empty_page_type' ).show();
-			}
-		} );
-		$( 'input[name="pgntn_add_appearance"]' ).click( function() {
-			if ( $( this ).is( ':checked' ) ) {
-				$( '.pgntn_add_appearance input, .wp-color-result' ).attr( "disabled", false );
-			} else {
-				$( '.pgntn_add_appearance input, .wp-color-result' ).attr( "disabled", true );
-			}
-		} );
-		$( '.pgntn_where_display' ).click( function() {
-			if( $( this ).is( ':checked' ) ) {
-				$( '.pgntn_where_display' ).each( function() {
-					if ( $( this ).is( ':checked' ) )
-						pgntn_check ++;
-				} );
-				if ( pgntn_check == $( '.pgntn_where_display' ).length ) {
-					$( '#pgntn_everywhere' ).attr( 'checked', true );
-				}
-			} else {
-				$( '#pgntn_everywhere' ).attr( 'checked', false );
-			}
-			pgntn_check = 0;
-		} );
-		$( '#pgntn_display_next_prev' ).change( function() {
-			if ( $( this ).is( ':checked' ) ) {
-				$( '#pgntn_prev_text, #pgntn_next_text' ).attr( 'disabled', false );
-			} else {
-				$( '#pgntn_prev_text, #pgntn_next_text' ).attr( 'disabled', true );
-			}
-		} );
-		$( '#pgntn_show_not_all' ).click( function() {
-			$( 'input[name="pgntn_display_count_page"]' ).attr( 'disabled', false );
-		} );
-		$( '#pgntn_show_all' ).click( function() {
-			$( 'input[name="pgntn_display_count_page"]' ).attr( 'disabled', true );
-		} );
-		if ( "center" == $( 'input[name="pgntn_align"]:checked' ).val() ) {
-			$( '.pgntn_center_padding_hide' ).hide();
+		if ( 0 < $( '.pgntn-scroll-to-top-form-triangle' ).length ) {
+			$( '.pgntn-scroll-to-top' ).css({ 'visibility': 'hidden', 'display': 'block' });
+			var width = parseInt ( $( '.pgntn-scroll-to-top-text' ).width() ) + 20;
+			$( '.pgntn-scroll-to-top-form-triangle' ).css({ 'border-bottom-width': width, 'border-left-width': width, 'border-right-width': width });
+			$( '.pgntn-scroll-to-top-text' ).css( 'top', width / 2 );
+			$( '.pgntn-scroll-to-top' ).css({ 'display': 'none', 'visibility': 'visible' });
 		}
-		$( 'input[name="pgntn_align"]' ).change( function() {
-			if ( 'center' == $( this ).val() && $( this ).is( ':checked' ) ) {
-				$( '.pgntn_padding' ).attr( 'disabled', true );
-				$( '.pgntn_center_padding_hide' ).hide();
-			} else {
-				$( '.pgntn_padding' ).attr( 'disabled', false );
-				$( '.pgntn_center_padding_hide' ).show();
-			}
-		} );
-		$( 'input[name="pgntn_display_custom_pagination"]' ).change( function() {
-			if ( $( this ).is( ':checked' ) ) {
-				$( '#pgntn_additional_pagination_style' ).attr( 'disabled', false );
-			} else {
-				$( '#pgntn_additional_pagination_style' ).attr( 'disabled', true );
-			}
-		} );
 	} );
 } )( jQuery );
