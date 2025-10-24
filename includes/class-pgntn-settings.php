@@ -101,11 +101,13 @@ if ( ! class_exists( 'Pgntn_Settings_Tabs' ) ) {
 				$this->options['nofollow_link']               = isset( $_REQUEST['pgntn_nofollow_attribute'] ) ? 1 : 0;
 				$this->options['scroll_to_top']               = isset( $_REQUEST['pgntn_scroll_to_top'] ) ? 1 : 0;
 				$this->options['scroll_to_top_color']         = isset( $_REQUEST['pgntn_scroll_to_top_color'] ) && function_exists( 'sanitize_hex_color' ) ? sanitize_hex_color( wp_unslash( $_REQUEST['pgntn_scroll_to_top_color'] ) ) : ( preg_match( '|^#([A-Fa-f0-9]{3}){1,2}$|', sanitize_text_field( wp_unslash( $_REQUEST['pgntn_scroll_to_top_color'] ) ) ) ? sanitize_text_field( wp_unslash( $_REQUEST['pgntn_pscroll_to_top_color'] ) ) : $this->options['scroll_to_top_color'] );
-				$this->options['scroll_to_top_text_color']         = isset( $_REQUEST['pgntn_scroll_to_top_text_color'] ) && function_exists( 'sanitize_hex_color' ) ? sanitize_hex_color( wp_unslash( $_REQUEST['pgntn_scroll_to_top_text_color'] ) ) : ( preg_match( '|^#([A-Fa-f0-9]{3}){1,2}$|', sanitize_text_field( wp_unslash( $_REQUEST['pgntn_scroll_to_top_text_color'] ) ) ) ? sanitize_text_field( wp_unslash( $_REQUEST['pgntn_scroll_to_top_text_color'] ) ) : $this->options['scroll_to_top_text_color'] );
+				$this->options['scroll_to_top_text_color']    = isset( $_REQUEST['pgntn_scroll_to_top_text_color'] ) && function_exists( 'sanitize_hex_color' ) ? sanitize_hex_color( wp_unslash( $_REQUEST['pgntn_scroll_to_top_text_color'] ) ) : ( preg_match( '|^#([A-Fa-f0-9]{3}){1,2}$|', sanitize_text_field( wp_unslash( $_REQUEST['pgntn_scroll_to_top_text_color'] ) ) ) ? sanitize_text_field( wp_unslash( $_REQUEST['pgntn_scroll_to_top_text_color'] ) ) : $this->options['scroll_to_top_text_color'] );
 				$this->options['scroll_to_top_form']          = isset( $_REQUEST['pgntn_scroll_to_top_form'] ) && in_array( $_REQUEST['pgntn_scroll_to_top_form'], array( 'circle', 'square', 'triangle' ) ) ? sanitize_text_field( wp_unslash( $_REQUEST['pgntn_scroll_to_top_form'] ) ) : $this->options['scroll_to_top_form'];
 				$this->options['scroll_to_top_text']          = isset( $_REQUEST['pgntn_scroll_to_top_form'] ) ? sanitize_text_field( wp_unslash( $_REQUEST['pgntn_scroll_to_top_text'] ) ) : $this->options['scroll_to_top_text'];
 				$this->options['add_appearance']              = isset( $_REQUEST['pgntn_add_appearance'] ) ? 1 : 0;
+				$this->options['template']                    = isset( $_REQUEST['pgntn_template'] ) && in_array( sanitize_text_field( wp_unslash( $_REQUEST['pgntn_template'] ) ), array( 'square', 'rounded', 'round', 'stripe', 'underlined', 'volumetric', 'custom' ) ) ? sanitize_text_field( wp_unslash( $_REQUEST['pgntn_template'] ) ) : 'custom';
 
+				
 				if ( $this->options['add_appearance'] ) {
 					$this->options['width']                    = isset( $_REQUEST['pgntn_width'] ) ? absint( $_REQUEST['pgntn_width'] ) : $this->options['width'];
 					$this->options['align']                    = isset( $_REQUEST['pgntn_align'] ) ? sanitize_text_field( wp_unslash( $_REQUEST['pgntn_align'] ) ) : $this->options['align'];
@@ -248,6 +250,21 @@ if ( ! class_exists( 'Pgntn_Settings_Tabs' ) ) {
 						</fieldset>
 					</td>
 				</tr>
+				<tr>
+					<th scope="row"><?php esc_html_e( 'Pagination template', 'pagination' ); ?></th>
+					<td>
+						<fieldset>
+							<label><input<?php echo esc_html( $this->change_permission_attr ); ?> type="radio" name="pgntn_template" value="square" class="pgntn_template" <?php checked( isset( $this->options['template'] ) && 'square' === $this->options['template'] ); ?> /> <img src="<?php echo plugins_url( 'images/square.jpg', dirname( __FILE__ ) ); ?>" alt="square template" /></label></br />
+							<label><input<?php echo esc_html( $this->change_permission_attr ); ?> type="radio" name="pgntn_template" value="rounded" class="pgntn_template" <?php checked( isset( $this->options['template'] ) && 'rounded' === $this->options['template'] ); ?> /> <img src="<?php echo plugins_url( 'images/rounded.jpg', dirname( __FILE__ ) ); ?>" alt="rounded template" /></label></br />
+							<label><input<?php echo esc_html( $this->change_permission_attr ); ?> type="radio" name="pgntn_template" value="round" class="pgntn_template" <?php checked( isset( $this->options['template'] ) && 'round' === $this->options['template'] ); ?> /> <img src="<?php echo plugins_url( 'images/round.jpg', dirname( __FILE__ ) ); ?>" alt="round template" /></label></br />
+							<label><input<?php echo esc_html( $this->change_permission_attr ); ?> type="radio" name="pgntn_template" value="stripe" class="pgntn_template" <?php checked( isset( $this->options['template'] ) && 'stripe' === $this->options['template'] ); ?> /> <img src="<?php echo plugins_url( 'images/stripe.jpg', dirname( __FILE__ ) ); ?>" alt="stripe template" /></label></br />
+							<label><input<?php echo esc_html( $this->change_permission_attr ); ?> type="radio" name="pgntn_template" value="underlined" class="pgntn_template" <?php checked( isset( $this->options['template'] ) && 'underlined' === $this->options['template'] ); ?> /> <img src="<?php echo plugins_url( 'images/underlined.jpg', dirname( __FILE__ ) ); ?>" alt="underlined template" /></label></br />
+							<label><input<?php echo esc_html( $this->change_permission_attr ); ?> type="radio" name="pgntn_template" value="volumetric" class="pgntn_template" <?php checked( isset( $this->options['template'] ) && 'volumetric' === $this->options['template'] ); ?> /> <img src="<?php echo plugins_url( 'images/volumetric.jpg', dirname( __FILE__ ) ); ?>" alt="volumetric template" /></label></br />
+							<label><input<?php echo esc_html( $this->change_permission_attr ); ?> type="radio" name="pgntn_template" value="custom" class="pgntn_template" <?php checked( isset( $this->options['template'] ) && 'custom' === $this->options['template'] ); ?> /> <?php esc_html_e( 'Custom Pagination Style', 'pagination' ); ?></label>
+							<span class="bws_info"><?php esc_html_e( 'The settings block is located further down the page.', 'pagination' ); ?></span>					
+						</fieldset>
+					</td>
+				</tr>
 			</table>
 			<?php if ( ! $this->hide_pro_tabs ) { ?>
 				<div class="bws_pro_version_bloc">
@@ -365,8 +382,8 @@ if ( ! class_exists( 'Pgntn_Settings_Tabs' ) ) {
 					</td>
 				</tr>
 			</table>
-			<div class="bws_tab_sub_label pgntn_add_appearance_checkbox"><?php esc_html_e( 'Custom Styles', 'pagination' ); ?></div>
-			<table class="form-table">
+			<div class="bws_tab_sub_label pgntn_add_appearance_checkbox" <?php echo isset( $this->options['template'] ) && 'custom' !== $this->options['template'] ? 'style="display: none"' : ''; ?>><?php esc_html_e( 'Custom Styles', 'pagination' ); ?></div>
+			<table class="form-table pgntn_add_appearance_table" <?php echo isset( $this->options['template'] ) && 'custom' !== $this->options['template'] ? 'style="display: none"' : ''; ?>>
 				<tr>
 					<th scope="row"><?php esc_html_e( 'Custom Pagination Style', 'pagination' ); ?></th>
 					<td>

@@ -8,6 +8,9 @@
 .pgntn-empty-position {
 	clear: left;
 }
+label img {
+	vertical-align: middle;
+}
 @media screen and ( max-width: 714px ) {
 	a.nav-tab {
 		margin: 10px 10px 0 0;

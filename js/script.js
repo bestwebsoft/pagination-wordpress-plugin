@@ -28,7 +28,7 @@
 			$( '.pgntn-scroll-to-top' ).css({ 'visibility': 'hidden', 'display': 'block' });
 			var width = parseInt ( $( '.pgntn-scroll-to-top-text' ).width() ) + 20;
 			$( '.pgntn-scroll-to-top-form-triangle' ).css({ 'border-bottom-width': width, 'border-left-width': width, 'border-right-width': width });
-			$( '.pgntn-scroll-to-top-text' ).css( 'top', width / 2 );
+			$( '.pgntn-scroll-to-top-text' ).css( 'top', width / 2 - 15 );
 			$( '.pgntn-scroll-to-top' ).css({ 'display': 'none', 'visibility': 'visible' });
 		}
 	} );

@@ -6,7 +6,7 @@ Description: Add customizable pagination to WordPress website. Split long conten
 Author: BestWebSoft
 Text Domain: pagination
 Domain Path: /languages
-Version: 1.2.6
+Version: 1.2.7
 Author URI: https://bestwebsoft.com/
 License: GPLv3 or later
  */
@@ -192,7 +192,8 @@ if ( ! function_exists( 'pgntn_get_options_default' ) ) {
 			'scroll_to_top_color'         => '#cccccc',
 			'scroll_to_top_form'          => 'circle',
 			'scroll_to_top_text'          => __( 'Top', 'pagination' ),
-			'scroll_to_top_text_color'    => '#ffffff'
+			'scroll_to_top_text_color'    => '#ffffff',
+			'template'                    => 'custom'
 		);
 
 		return $pgntn_option_defaults;
@@ -545,7 +546,7 @@ if ( ! function_exists( 'pgntn_nav_display' ) ) {
 						}
 						?>
 						'>
-							<div class="pgntn-page-pagination-block">
+							<div class="pgntn-page-pagination-block pgntn-pagination-template-<?php echo $pgntn_options['template']; ?>">
 								<?php
 								if ( $display_info ) {
 									/* display block "Page __ of __" */

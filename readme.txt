@@ -1,20 +1,20 @@
 === Pagination by BestWebSoft - Customizable WordPress Content Splitter and Navigation Plugin ===
 Contributors: bestwebsoft
 Donate link: https://bestwebsoft.com/donate/
-Tags: pagination, pagination block, custom pagination block, multiple navigation, multiple pages, navigation, next page, post pagination, pagination buttons, pagination plugin, improve pages navigation, paginate plugin
-Requires at least: 5.6
-Tested up to: 6.7
-Stable tag: 1.2.6
+Tags: pagination, pagination block, custom pagination block, multiple navigation, multiple pages
+Requires at least: 6.2
+Tested up to: 6.8.2
+Stable tag: 1.2.7
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-Add customizable pagination to WordPress website. Split long content to multiple pages for better navigation.
+Add customizable WordPress pagination to your website. Easily split long posts and pages into multiple parts for improved navigation and user experience.
 
 == Description ==
 
-Simple plugin which automatically adds custom pagination to your WordPress website blog, search results, archive, category, tags, and author pages. Choose pagination type, position, and customize its appearance.
+A lightweight and powerful pagination plugin for WordPress that adds fully customizable pagination to your posts, pages, blog, search results, archive, category, tags, and author pages. Choose from numeric, "Load More", or infinite scroll styles, and customize their appearance and behavior.
 
-Improve navigation through your website content today!
+Perfect for WordPress users who want better content organization, enhanced SEO, and a smoother user journey.
 
 [View Demo](https://bestwebsoft.com/demo-pagination-plugin/?ref=readme)
 
@@ -28,66 +28,61 @@ http://www.youtube.com/watch?v=TwAd3DWLGr8
 	* Archive
 	* Search results
 	* Paginated posts/pages
-* Compatible with:
+* Seamless integration with:
 	* [Gallery](https://bestwebsoft.com/products/wordpress/plugins/gallery/?k=8a6c514916efe4264d0732b86b82487f)
 	* [Portfolio](https://bestwebsoft.com/products/wordpress/plugins/portfolio/?k=982e34e0a05371dc2dcca2a5fc535c1a)
-* Add pagination via function to:
+* Insert pagination via function into:
 	* Comments PHP template
-	* PHP files
-* Choose pagination position:
-	* Above the main content
-	* Below the main content
-	* Above and below the main content
-	* Via function
-* Display and customize Next/Previous arrows
-* Display "Page X of Y" information
-* Add Scroll to top button
-* Set numeric pagination display type:
-	* Full (1,2,3,4,5,6)
-	* Short (1,2...5,6)
-* Hide pagination for:
-	* Default
-		* Posts (for standard WP themes)
-		* On paginated post or pages
-		* Comments
-	* Custom pages
-* Set pagination block width
-* Add rel="nofollow" attribute
-* Set pagination align:
-	* Left
-	* Center
-	* Right
-* Set margins for left and right align
+	* Theme or plugin PHP files
+* Flexible positioning:
+	* Above content
+	* Below content
+	* Both above and below
+	* Manual placement via function
+* Customize Next/Previous arrows and add scroll to top
+* Display "Page X of Y" indicator
+* Choose pagination layout:
+	* Full numeric (1,2,3,4,5,6)
+	* Short numeric (1,2...5,6)
+* Selectively hide pagination for:
+	* Default themes
+	* Paginated posts or pages
+	* Comments
+	* Custom templates
+* Set width and alignment (left, center, right) with custom margins
 * Customize pagination styles:
-	* Hover color 
+	* Hover color
 	* Background color
 	* Current page background color
 	* Text color
 	* Current page text color
 	* Border color
 	* Border width and radius
-* Add custom code via plugin settings page
-* Compatible with latest WordPress version
-* Incredibly simple settings for fast setup without modifying code
-* Detailed step-by-step documentation and videos
+	* Several ready-made templates to choose from
+* Add custom HTML/CSS via plugin settings
+* Fully compatible with latest WordPress version
+* Intuitive interface – no coding required
+* Step-by-step guides and video tutorials included
 
 > **Pro Features**
 >
-> All features from Free version included plus:
+> All Free version features plus:
 >
-> * Choose pagination type:
-> 	* Numeric (default)
-> 	* Load More button
+> * Automatically add pagination to:
+>	* WooCommerce Shop
+> * Select pagination type:
+> 	* Numeric
+> 	* "Load More" button
 > 	* Infinite scroll
->	* Next/Previous buttons
-> * Display "Load More" button after page loading
-> * Compatibility with Divi [NEW]
-> * Abilty to add Scroll Progress Bar [NEW]
-> * Get answer to your support question within one business day ([Support Policy](https://bestwebsoft.com/support-policy/))
+>	* Next/Previous only
+> * "Load More" after initial content load
+> * Divi theme compatibility [NEW]
+> * Scroll Progress Bar option [NEW]
+> * Priority support within 1 business day ([Support Policy](https://bestwebsoft.com/support-policy/))
 >
 > [Upgrade to Pro Now](https://bestwebsoft.com/products/wordpress/plugins/pagination/?k=beef8d83cadcb70a8565e009a280f80c)
 
-If you have a feature suggestion or idea you'd like to see in the plugin, we'd love to hear about it! [Suggest a Feature](https://support.bestwebsoft.com/hc/en-us/requests/new)
+Have a feature request? Let us know! [Suggest a Feature](https://support.bestwebsoft.com/hc/en-us/requests/new)
 
 = Documentation & Videos =
 
@@ -98,75 +93,81 @@ If you have a feature suggestion or idea you'd like to see in the plugin, we'd l
 
 = Help & Support =
 
-Visit our Help Center if you have any questions, our friendly Support Team is happy to help - <https://support.bestwebsoft.com/>
+Need help? Visit our Help Center — our friendly Support Team is here for you: <https://support.bestwebsoft.com/>
 
 = Translation =
 
-* French (fr_FR) (thanks to [Jean-Louis Cordonnier](mailto:jlcord2@wanadoo.fr) www.labosdebabel.org)
+Available languages:
+
+* French (fr_FR)
 * German (de_DE)
-* Portuguese (pt_PT) (thanks to [Antonio Carreira](mailto:antoniocarreira@streetdog.pt) www.streetdog.pt)
-* Hebrew (he_IL) (thanks to [Rubb](mailto:hanan@mstudio.co.il))
+* Portuguese (pt_PT)
+* Hebrew (he_IL)
 * Russian (ru_RU)
 * Ukrainian (uk)
 
-Some of these translations are not complete. We are constantly adding new features which should be translated. If you would like to create your own language pack or update the existing one, you can send [the text of PO and MO files](http://codex.wordpress.org/Translating_WordPress) to [BestWebSoft](https://support.bestwebsoft.com/hc/en-us/requests/new) and we'll add it to the plugin. You can download the latest version of the program for work with PO and MO [files Poedit](http://www.poedit.net/download.php).
+Want to improve or add a translation? [Send us your PO/MO files](https://support.bestwebsoft.com/hc/en-us/requests/new). Use [Poedit](http://www.poedit.net/download.php) for editing translation files.
 
 = Recommended Plugins =
 
-* [Updater](https://bestwebsoft.com/products/wordpress/plugins/updater/?k=f471af6c58ecd7f550f0601416e4331f) - Automatically check and update WordPress website core with all installed plugins and themes to the latest versions.
-* [Gallery](https://bestwebsoft.com/products/wordpress/plugins/gallery/?k=8a6c514916efe4264d0732b86b82487f) - Add beautiful galleries, albums & images to your Wordpress website in few clicks.
-* [Portfolio](https://bestwebsoft.com/products/wordpress/plugins/portfolio/?k=982e34e0a05371dc2dcca2a5fc535c1a) - Create and add personal portfolio to your WordPress website. Manage and showcase past projects to get more clients.
+* [Updater](https://bestwebsoft.com/products/wordpress/plugins/updater/?k=f471af6c58ecd7f550f0601416e4331f) – Automatically update WordPress core, plugins, and themes.
+* [Gallery](https://bestwebsoft.com/products/wordpress/plugins/gallery/?k=8a6c514916efe4264d0732b86b82487f) – Add responsive galleries and albums to your WordPress site.
+* [Portfolio](https://bestwebsoft.com/products/wordpress/plugins/portfolio/?k=982e34e0a05371dc2dcca2a5fc535c1a) – Create and manage portfolios to showcase your work.
 
 == Installation ==
 
 1. Upload the `pagination` folder to the `/wp-content/plugins/` directory.
-2. Activate the plugin using the 'Plugins' menu in your WordPress admin panel.
-3. You can adjust the necessary settings using your WordPress admin panel in "Pagination".
+2. Activate the plugin via the "Plugins" menu in your WordPress dashboard.
+3. Go to "Pagination" in the admin menu and configure your settings.
 
-[View a Step-by-step Instruction on Pagination Installation](https://bestwebsoft.com/documentation/how-to-install-a-wordpress-product/how-to-install-a-wordpress-plugin/)
+[Step-by-step Installation Guide](https://bestwebsoft.com/documentation/how-to-install-a-wordpress-product/how-to-install-a-wordpress-plugin/)
 
 http://www.youtube.com/watch?v=Xh0LjOSgxzs
 
 == Frequently Asked Questions ==
 
-= Where can I find the settings to adjust the plugin work after activation? =
+= Where are the plugin settings? =
 
-In the 'Plugin' menu you can find a link to the settings page.
+Go to the WordPress admin area and click "Pagination" in the sidebar menu.
 
-= Can I replace the standard pagination in my theme? =
+= Can I disable my theme's default pagination? =
 
-Yes, in the Hide pagination block you can choose any pagination to be displayed as well as to hide your theme`s standard pagination.
+Yes, in the Hide Pagination section, you can override or disable the built-in pagination of your theme.
 
-= How can I remove the custom pagination? =
+= How do I remove the custom pagination block? =
 
-In order to hide it, type a block class or block id into the text field in the Hide pagination block and check the "Custom" checkbox.
+In the Hide Pagination block, enter the CSS class or ID of the element you want to exclude and check the "Custom" box.
 
-= I filled up all necessary settings, save the changes, but the custom pagination block did not appeared on some (or all) necessary pages. How can I fix it? =
+= Why isn't the pagination showing up on some pages? =
 
-Most likely that your theme was created incorrectly and it does not provide the needed functionality to display custom pagination block. Please, contact your support service (<https://support.bestwebsoft.com>) and we will help you to solve this issue.
+Your theme might not be built to support custom pagination. [Contact Support](https://support.bestwebsoft.com) and we’ll help.
 
-= I have custom post types where I output the information via custom query to the database. How can I add the pagination block to this custom post type? =
+= How do I use Pagination with custom post types or custom queries? =
 
-It is necessary to add function <?php if ( function_exists( 'pgntn_display_pagination' ) ) pgntn_display_pagination( 'custom', $second_query ); ?> to the necessary place. In this function, specify the name of your custom query to the database instead of $second_query.
+Use:  
+`<?php if ( function_exists( 'pgntn_display_pagination' ) ) pgntn_display_pagination( 'custom', $second_query ); ?>`  
+Replace `$second_query` with your custom WP_Query variable.
 
-= How to display Pagination (Next/Previous buttons, Infinite scroll, "Load More" button) for posts in the Divi theme? =
+= How to enable pagination in the Divi theme? =
 
-1. Go to the Pagination Settings page;
-2. Find "Posts selector" and set it to "#content-area div".
+1. Open Pagination Settings.
+2. Set "Posts selector" to `#content-area div`.
 
-= How to display Pagination (Next/Previous buttons, Infinite scroll, "Load More" button) for posts in the Avada theme? =
+= How to enable pagination in the Avada theme? =
 
-1. Go to the Pagination Settings page;
-2. Find "Posts selector" and set it to ".fusion-posts-container".
+1. Open Pagination Settings.
+2. Set "Posts selector" to `.fusion-posts-container`.
 
-= I have some problems with the plugin's work. What Information should I provide to receive proper support? =
+= What info should I provide for support? =
 
-Please make sure that the problem hasn't been discussed yet on our forum (<https://support.bestwebsoft.com>). If no, please provide the following data along with your problem's description:
+Before contacting support, make sure your issue hasn’t been addressed on our forum. Provide:
 
-1. The link to the page where the problem occurs
-2. The name of the plugin and its version. If you are using a pro version - your order number.
-3. The version of your WordPress installation
-4. Copy and paste into the message your system status report. Please read more here: [Instruction on System Status](https://bestwebsoft.com/documentation/admin-panel-issues/system-status/)
+1. A link to the affected page
+2. Plugin name and version
+3. WordPress version
+4. System status report ([how to get it](https://bestwebsoft.com/documentation/admin-panel-issues/system-status/))
+
+
 
 == Screenshots ==
 
@@ -175,6 +176,12 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 3. Plugin settings in WordPress admin panel.
 
 == Changelog ==
+
+= V1.2.7 - 24.10.2025 =
+* Update : All functionality was updated for WordPress 6.8.2
+* Update : BWS Panel section was updated.
+* PRO : Ability to display pagination in the WooCommerce Shop has been added.
+* NEW : Several ready-made templates to choose from has been added.
 
 = V1.2.6 - 25.02.2025 =
 * Update : All functionality was updated for WordPress 6.7
@@ -293,6 +300,11 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 * Update : We updated all functionality for wordpress 4.2.2.
 
 == Upgrade Notice ==
+
+= V1.2.7 =
+* The compatibility with new WordPress version updated.
+* New features added.
+* Usability improved.
 
 = V1.2.6 =
 * The compatibility with new WordPress version updated.

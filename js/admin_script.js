@@ -88,6 +88,13 @@
 				$( '.pgntn_scroll_to_top, .pgntn_add_scroll_to_top_style' ).hide();
 			}
 		} );
+		$( '.pgntn_template' ).change( function() {
+			if ( $( this ).is( ':checked' ) && 'custom' == $( this ).val() ) {
+				$( '.pgntn_add_appearance_checkbox, .pgntn_add_appearance_table' ).show();
+			} else {
+				$( '.pgntn_add_appearance_checkbox, .pgntn_add_appearance_table' ).hide();
+			}
+		} );
 		if ( $( '#pgntn_scroll_to_top' ).is( ':checked' ) ) {
 			$( '.pgntn_scroll_to_top, .pgntn_add_scroll_to_top_style' ).show();
 		} else {

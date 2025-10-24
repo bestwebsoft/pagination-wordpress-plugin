@@ -4,11 +4,15 @@
 .pgntn-page-pagination {
 	margin: 1em 0;
 	padding: 0;
-	overflow: hidden;
+	#overflow: hidden;
 	text-align: center !important;
 	clear: both;
 	cursor: default;
 }
+.pgntn-page-pagination .pgntn-page-pagination-block {
+	margin: 0 auto;
+}
+
 .pgntn-page-pagination .dots {
 	display: inline-block;
 	text-align: center;
@@ -69,3 +73,195 @@ div.pgntn-page-pagination-block a.prev,
 	position: absolute;
 	white-space: nowrap;
 }
+.pgntn-page-pagination .pgntn-pagination-template-rounded {
+	display: flex;
+	justify-content: center;
+	margin: 0 auto;
+}
+.pgntn-page-pagination .pgntn-pagination-template-rounded a,
+.pgntn-page-pagination .pgntn-pagination-template-rounded .current,
+.pgntn-page-pagination .pgntn-pagination-template-rounded .dots,
+.pgntn-pagination-template-rounded .pgntn-page-pagination-intro {
+	margin-left: -1px;
+	border: 1px solid #87cefa !important;
+	color: #767676 !important;
+}
+.pgntn-page-pagination .pgntn-pagination-template-rounded > *:first-child {
+	border-radius: 10px 0 0 10px;
+}
+.pgntn-page-pagination .pgntn-pagination-template-rounded > *:last-child {
+	border-radius: 0 10px 10px 0;
+}
+.pgntn-pagination-template-rounded .pgntn-page-pagination-intro,
+.pgntn-page-pagination .pgntn-pagination-template-rounded .current {
+	background-color: #c8e5f9 !important;
+}
+
+.pgntn-page-pagination .pgntn-pagination-template-round a,
+.pgntn-page-pagination .pgntn-pagination-template-round .current,
+.pgntn-page-pagination .pgntn-pagination-template-round .dots,
+.pgntn-page-pagination .pgntn-pagination-template-round .pgntn-page-pagination-intro {
+	border: 0 !important;
+	position: relative;
+	margin: 0 10px;
+	background-color: transparent !important;
+	color: #fff !important;
+}
+
+.pgntn-page-pagination .pgntn-pagination-template-round a:before,
+.pgntn-page-pagination .pgntn-pagination-template-round .current:before,
+.pgntn-page-pagination .pgntn-pagination-template-round .dots:before {
+	display: table;
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	content: '';
+	border-radius: 50%;
+	top: 50%;
+	left: 50%;
+	margin-top: -20px;
+	margin-left: -20px;
+	background-color: #f3ca98 !important;
+	border: 1px solid #8B4513 !important;
+	z-index: -1;
+}
+
+.pgntn-page-pagination .pgntn-pagination-template-round a.next::before,
+.pgntn-page-pagination .pgntn-pagination-template-round a.prev::before, 
+.pgntn-page-pagination .pgntn-pagination-template-round .pgntn-page-pagination-intro::before {
+	display: table;
+	position: absolute;
+	width: 100%;
+	height: 40px;
+	content: '';
+	border-radius: 20px;
+	top: 50%;
+	left: 0;
+	margin-top: -20px;
+	margin-left: 0;
+	background-color: #f3ca98 !important;
+	border: 1px solid #8B4513 !important;
+	z-index: -1;
+}
+.pgntn-page-pagination .pgntn-pagination-template-round .current::before {
+	background-color: #d08d5f !important;
+}
+.pgntn-page-pagination .pgntn-pagination-template-stripe {
+	background: linear-gradient(
+	  to left,
+	  rgba(0,0,0,7%) 2%,
+	  rgba(0,0,0,65%) 45%,
+	  rgba(0,0,0,65%) 65%,
+	  rgba(0,0,0,7%) 98%
+	);
+	display: inline-flex;
+	max-width: 60%;
+	width: auto !important;
+}
+.pgntn-page-pagination .pgntn-pagination-template-stripe a,
+.pgntn-page-pagination .pgntn-pagination-template-stripe .current,
+.pgntn-page-pagination .pgntn-pagination-template-stripe .dots,
+.pgntn-page-pagination .pgntn-pagination-template-stripe .pgntn-page-pagination-intro {
+	border: 0 !important;
+	position: relative;
+	margin: 0 10px;
+	background-color: transparent !important;
+	z-index: 2;
+	color: #0000ff !important;
+}
+.pgntn-page-pagination .pgntn-pagination-template-stripe a:hover {
+	color: #fff !important;
+}
+.pgntn-page-pagination .pgntn-pagination-template-stripe .current {
+	color: #fff !important;
+}
+.pgntn-page-pagination .pgntn-pagination-template-stripe .current::before {
+	display: table;
+	position: absolute;
+	width: 100%;
+	height: calc( 100% + 5px );
+	content: '';
+	background-color: #4169E1 !important;
+	z-index: -1;
+	left: 0;
+	top: -5px;
+}
+.pgntn-page-pagination .pgntn-pagination-template-stripe .current::after {
+	display: table;
+	position: absolute;
+	width: calc( 100% + 10px );
+	height: 5px;
+	content: '';
+	background-color: transparent !important;
+	z-index: -2;
+	left: -5px;
+	top: -5px;
+	border-bottom: 5px solid #0000cd;
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+}
+
+.pgntn-page-pagination .pgntn-pagination-template-underlined a,
+.pgntn-page-pagination .pgntn-pagination-template-underlined .current,
+.pgntn-page-pagination .pgntn-pagination-template-underlined .dots,
+.pgntn-page-pagination .pgntn-pagination-template-underlined .pgntn-page-pagination-intro {
+	border: 0 !important;
+	position: relative;
+	margin: 0 10px;
+	background-color: transparent !important;
+	border-bottom: 3px solid #9ACD32 !important;
+	color: #767676 !important;
+}
+.pgntn-page-pagination .pgntn-pagination-template-underlined .current {
+	border-bottom: 3px solid #556B2F !important;
+	color: #9ACD32 !important;
+}
+.pgntn-page-pagination .pgntn-pagination-template-underlined a:hover {
+	border-bottom: 3px solid #6B8E23 !important;
+}
+
+.pgntn-page-pagination .pgntn-pagination-template-volumetric a,
+.pgntn-page-pagination .pgntn-pagination-template-volumetric .current,
+.pgntn-page-pagination .pgntn-pagination-template-volumetric .dots,
+.pgntn-page-pagination .pgntn-pagination-template-volumetric .pgntn-page-pagination-intro {
+	border: 0 !important;
+	position: relative;
+	margin: 0 10px;
+	/*background: radial-gradient(
+		circle at 50% top,
+		#DA70D6,
+		#EE82EE 50%,
+		#fff 85%,
+		#DA70D6
+	);*/
+	background: #DA70D6 linear-gradient(#ffb5ff 5%, #EE82EE 35%, #FF00FF 95%, #DA70D6);
+	color: #fff !important;
+	border-radius: 20px;
+	min-width: 85px;
+	padding: 0 10px;
+	margin: 0 2px;
+}
+
+.pgntn-page-pagination .pgntn-pagination-template-volumetric .current {
+	#color: #8B008B !important;
+	background: #BA55D3 linear-gradient(#d376ff 5%, #b049e2 45%, #8e2abf 95%, #9400D3);
+}
+
+.pgntn-page-pagination .pgntn-pagination-template-volumetric a::after,
+.pgntn-page-pagination .pgntn-pagination-template-volumetric .current::after,
+.pgntn-page-pagination .pgntn-pagination-template-volumetric .dots::after,
+.pgntn-page-pagination .pgntn-pagination-template-volumetric .pgntn-page-pagination-intro::after {
+	display: table;
+	position: absolute;
+	width: calc( 100% - 30px);
+	height: 1px;
+	content: '';
+	box-shadow: 0px 4px 9px 9px #F0F;
+	background-color: #F0F;
+	opacity: 0.2;
+	border-radius: 10px;
+	left: 15px;
+	bottom: 2px;
+}
+
+
